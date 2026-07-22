@@ -1,0 +1,81 @@
+@import "tailwindcss";
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* The brand site intentionally uses a light canvas. Keeping these colours
+   stable prevents the browser's dark-mode preference from making text and
+   pale section backgrounds unreadable. */
+html {
+  background: #ffffff;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Service-page contrast guardrails.
+   Older service sections use inherited colours, so each page now starts from
+   an explicit light canvas while branded dark sections opt into white text. */
+.service-page {
+  background: #ffffff;
+  color: #334155;
+}
+
+.service-page section {
+  position: relative;
+}
+
+.service-page section.bg-white,
+.service-page section.bg-gray-50,
+.service-page section.bg-slate-50,
+.service-page section.bg-green-50,
+.service-page section.bg-emerald-50,
+.service-page section.bg-blue-50,
+.service-page section.bg-cyan-50,
+.service-page section.bg-purple-50,
+.service-page section.bg-pink-50,
+.service-page section.bg-rose-50,
+.service-page section.bg-amber-50,
+.service-page section.bg-orange-50,
+.service-page section[class*="from-white"],
+.service-page section[class*="from-gray-50"],
+.service-page section[class*="from-slate-50"],
+.service-page section[class*="from-green-50"],
+.service-page section[class*="from-emerald-50"],
+.service-page section[class*="from-blue-50"],
+.service-page section[class*="from-cyan-50"],
+.service-page section[class*="from-purple-50"],
+.service-page section[class*="from-pink-50"],
+.service-page section[class*="from-rose-50"],
+.service-page section[class*="from-amber-50"],
+.service-page section[class*="from-orange-50"] {
+  color: #334155;
+}
+
+.service-page > section:first-of-type {
+  color: #ffffff;
+}
+
+.service-page :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+/* Accessible fixed contact shortcut; its visible label is supplied by aria-label. */
+.whatsapp-float { position: fixed; width: 56px; height: 56px; bottom: 24px; left: 24px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.25); z-index: 100; transition: transform .2s ease, background .2s ease; }
+.whatsapp-float:hover, .whatsapp-float:focus-visible { background: #128c7e; transform: scale(1.06); outline: 3px solid #fff; outline-offset: 2px; }
+.whatsapp-icon { width: 31px; height: 31px; }
+@media (max-width: 768px) { .whatsapp-float { width: 50px; height: 50px; bottom: 18px; left: 18px; } .whatsapp-icon { width: 28px; height: 28px; } }

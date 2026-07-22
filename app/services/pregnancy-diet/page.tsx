@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { PregnancyDietStructuredData } from "./PregnancyDietStructuredData";
+import PregnancyDiet from "./PregnancyDiet";
+export const metadata: Metadata = { title: "Pregnancy Nutrition Support in Mumbai & Online", description: "Explore personalised pregnancy nutrition support from DietFiniti in Mumbai, Thane and online across India. Practical meal planning that complements antenatal care.", alternates: { canonical: "/services/pregnancy-diet" }, openGraph: { title: "Pregnancy Nutrition Support | DietFiniti", description: "Practical, personalised pregnancy nutrition support alongside antenatal care.", url: "https://dietfiniti.com/services/pregnancy-diet", images: [{ url: "/image/pregnancy-diet-img1.jpg", alt: "Pregnant person preparing a balanced meal" }] }, twitter: { card: "summary_large_image", title: "Pregnancy Nutrition Support | DietFiniti", description: "Personalised pregnancy nutrition support alongside antenatal care.", images: ["/image/pregnancy-diet-img1.jpg"] } };
+export default function PregnancyDietPage(){ return <><PregnancyDiet/><PregnancyDietStructuredData/></>; }

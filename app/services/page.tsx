@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+import ServicesPage from "./services";
+export const metadata:Metadata={title:"Nutrition Services in Mumbai, Thane & Online",description:"Explore DietFiniti personalised nutrition services for weight management, pregnancy, sports nutrition and more in Mumbai, Thane and online across India.",alternates:{canonical:"/services"},openGraph:{title:"Nutrition Services | DietFiniti",description:"Personalised nutrition services in Mumbai, Thane and online across India.",url:"https://dietfiniti.com/services",images:[{url:"/image/Servicesimg1.jpg",alt:"DietFiniti nutrition consultation"}]}};export default function Page(){return <ServicesPage/>}

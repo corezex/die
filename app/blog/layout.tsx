@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Nutrition & Healthy Eating Articles", description: "Practical nutrition articles, Indian meal ideas and wellbeing guidance from DietFiniti. Health information is educational and not medical diagnosis or treatment.", alternates: { canonical: "/blog" }, openGraph: { title: "Nutrition & Healthy Eating Articles | DietFiniti", description: "Practical nutrition articles and meal ideas from DietFiniti.", url: "https://dietfiniti.com/blog" } };
+export default function Layout({ children }: { children: React.ReactNode }) { return children; }

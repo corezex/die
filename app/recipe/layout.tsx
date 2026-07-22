@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Healthy Indian Recipe Ideas", description: "Explore practical recipe ideas for balanced everyday eating from DietFiniti. Recipe information is educational and should be adapted to individual dietary and medical needs.", alternates: { canonical: "/recipe" }, openGraph: { title: "Healthy Indian Recipe Ideas | DietFiniti", description: "Practical recipe ideas for balanced everyday eating.", url: "https://dietfiniti.com/recipe" } };
+export default function Layout({ children }: { children: React.ReactNode }) { return children; }
