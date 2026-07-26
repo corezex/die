@@ -31,11 +31,11 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ContactPage",
+        "@type": "WebPage",
         "@id": "https://dietfiniti.com/contact#webpage",
+        name: "Contact Dietitian in Mumbai | Book Consultation | DietFiniti",
+        description: "Contact Dietitian Tejal in Mumbai or Thane. Book in-person or online dietitian consultation for weight loss, PCOS, pregnancy & more.",
         url: "https://dietfiniti.com/contact",
-        name: "Contact DietFiniti",
-        description: "Contact Dietitian Tejal in Mumbai or Thane for personalised nutrition consultations. Online across India.",
         isPartOf: { "@id": "https://dietfiniti.com/#website" }
       },
       {
