@@ -30,14 +30,30 @@ export default function ContactPage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "ContactPage", "@id": "https://dietfiniti.com/contact#webpage", url: "https://dietfiniti.com/contact", name: "Contact DietFiniti", about: { "@id": "https://dietfiniti.com/#organization" } },
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://dietfiniti.com" }, { "@type": "ListItem", position: 2, name: "Contact", item: "https://dietfiniti.com/contact" }] },
-      { "@type": "FAQPage", "mainEntity": [
-        { "@type":"Question","name":"How is a nutrition plan personalised?","acceptedAnswer":{"@type":"Answer","text":"A plan is shaped around your goal, routine, food preferences, cooking arrangements and relevant health history. It is not a generic meal chart."}},
-        { "@type":"Question","name":"Do I need to eat special or expensive foods?","acceptedAnswer":{"@type":"Answer","text":"No. DietFiniti focuses on familiar, everyday food and practical planning."}},
-        { "@type":"Question","name":"Can I get support if I have a medical condition?","acceptedAnswer":{"@type":"Answer","text":"Nutrition guidance can support everyday food routines but does not replace medical care."}}
-      ]},
-    ],
+      {
+        "@type": "ContactPage",
+        "@id": "https://dietfiniti.com/contact#webpage",
+        url: "https://dietfiniti.com/contact",
+        name: "Contact DietFiniti",
+        description: "Contact Dietitian Tejal in Mumbai or Thane for personalised nutrition consultations. Online across India.",
+        isPartOf: { "@id": "https://dietfiniti.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://dietfiniti.com" },
+          { "@type": "ListItem", position: 2, name: "Contact", item: "https://dietfiniti.com/contact" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "How is a nutrition plan personalised?", acceptedAnswer: { "@type": "Answer", text: "A plan is shaped around your goal, routine, food preferences, cooking arrangements and relevant health history. It is not a generic meal chart." } },
+          { "@type": "Question", name: "Do I need to eat special or expensive foods?", acceptedAnswer: { "@type": "Answer", text: "No. DietFiniti focuses on familiar, everyday food and practical planning." } },
+          { "@type": "Question", name: "Can I get support if I have a medical condition?", acceptedAnswer: { "@type": "Answer", text: "Nutrition guidance can support everyday food routines but does not replace medical care." } }
+        ]
+      }
+    ]
   };
 
   return <>

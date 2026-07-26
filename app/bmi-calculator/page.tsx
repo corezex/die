@@ -277,15 +277,27 @@ export default function BMICalculator() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": bmiFAQs.map((faq) => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer,
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://dietfiniti.com/bmi-calculator#webpage",
+                name: "BMI Calculator for Adults",
+                description: "Free BMI calculator for adults. Understand your result and next steps for personalised nutrition.",
+                url: "https://dietfiniti.com/bmi-calculator",
+                isPartOf: { "@id": "https://dietfiniti.com/#website" }
               },
-            })),
+              {
+                "@type": "FAQPage",
+                mainEntity: bmiFAQs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                  },
+                })),
+              }
+            ]
           }),
         }}
       />

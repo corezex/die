@@ -14,30 +14,34 @@ export function WeightLossStructuredData() {
       {
         "@type": "Service",
         "@id": `${siteUrl}/services/weight-loss#service`,
-        name: "Personalised Weight-Loss Nutrition Support",
-        description: "Personalised nutrition consultation and practical meal-planning support for weight-management goals from DietFiniti.",
-        serviceType: "Weight-management nutrition consultation",
+        name: "Weight Loss Dietitian Mumbai - Personalised Indian Weight Loss Plans",
+        description: "Personalised weight loss nutrition support from Dietitian Tejal in Mumbai, Thane and online across India. Practical Indian meal plans for sustainable weight management.",
+        serviceType: "Weight loss nutrition consultation",
         url: `${siteUrl}/services/weight-loss`,
         provider: { "@id": `${siteUrl}/#organization` },
         areaServed: [
           { "@type": "City", name: "Mumbai" },
           { "@type": "City", name: "Thane" },
-          { "@type": "Country", name: "India" },
-        ],
+          { "@type": "Country", name: "India" }
+        ]
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
           { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
-          { "@type": "ListItem", position: 3, name: "Weight-Loss Nutrition Support", item: `${siteUrl}/services/weight-loss` },
-        ],
+          { "@type": "ListItem", position: 3, name: "Weight Loss Dietitian Mumbai", item: `${siteUrl}/services/weight-loss` }
+        ]
       },
       {
         "@type": "FAQPage",
-        mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
-      },
-    ],
+        mainEntity: faqs.map(([name, text]) => ({
+          "@type": "Question",
+          name,
+          acceptedAnswer: { "@type": "Answer", text }
+        }))
+      }
+    ]
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

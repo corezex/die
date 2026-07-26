@@ -22,14 +22,14 @@ import supportImage from "@/public/image/Servicesimg2.png";
 const siteUrl = "https://dietfiniti.com";
 
 export const metadata: Metadata = {
-  title: "Online Dietitian Consultation in India",
-  description: "Book an online dietitian consultation with DietFiniti. Personalised nutrition guidance designed around your goals, routine, food preferences and health history.",
+  title: "Online Dietitian Consultation India | Dietitian in Mumbai & Across India",
+  description: "Book an online dietitian consultation with Dietitian Tejal in Mumbai. Personalised Indian nutrition plans for weight loss, PCOS, thyroid, pregnancy & more — available online across India.",
   alternates: { canonical: "/online-dietitian-consultation" },
   openGraph: {
-    title: "Online Dietitian Consultation in India | DietFiniti",
-    description: "Personalised nutrition guidance from DietFiniti, available online across India.",
+    title: "Online Dietitian Consultation | Dietitian Tejal Mumbai & India",
+    description: "Personalised online nutrition consultations from DietFiniti. Practical Indian meal plans for weight loss, medical conditions, pregnancy & sports — anywhere in India.",
     url: `${siteUrl}/online-dietitian-consultation`,
-    images: [{ url: "/image/homeimage1.jpg", alt: "DietFiniti online dietitian consultation" }],
+    images: [{ url: "/image/homeimage1.jpg", alt: "Online dietitian consultation with Dietitian Tejal" }],
   },
 };
 
@@ -61,13 +61,40 @@ export default function OnlineDietitianConsultationPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "BreadcrumbList", itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-        { "@type": "ListItem", position: 2, name: "Online Dietitian Consultation", item: `${siteUrl}/online-dietitian-consultation` },
-      ] },
-      { "@type": "Service", name: "Online Dietitian Consultation", serviceType: "Online nutrition consultation", url: `${siteUrl}/online-dietitian-consultation`, provider: { "@id": `${siteUrl}/#organization` }, areaServed: { "@type": "Country", name: "India" }, description: "Personalised online nutrition consultations from DietFiniti for clients across India." },
-      { "@type": "FAQPage", mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) },
-    ],
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/online-dietitian-consultation#webpage`,
+        name: "Online Dietitian Consultation India",
+        description: "Personalised online nutrition consultations from Dietitian Tejal. Available across India.",
+        url: `${siteUrl}/online-dietitian-consultation`,
+        isPartOf: { "@id": `${siteUrl}/#website` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Online Dietitian Consultation", item: `${siteUrl}/online-dietitian-consultation` }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/online-dietitian-consultation#service`,
+        name: "Online Dietitian Consultation",
+        description: "Personalised online nutrition consultations from DietFiniti for clients across India.",
+        serviceType: "Online nutrition consultation",
+        url: `${siteUrl}/online-dietitian-consultation`,
+        provider: { "@id": `${siteUrl}/#organization` },
+        areaServed: { "@type": "Country", name: "India" }
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map(([name, text]) => ({
+          "@type": "Question",
+          name,
+          acceptedAnswer: { "@type": "Answer", text }
+        }))
+      }
+    ]
   };
 
   return <>

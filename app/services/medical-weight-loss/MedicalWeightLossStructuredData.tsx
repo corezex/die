@@ -11,10 +11,37 @@ export function MedicalWeightLossStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Service", "@id": `${siteUrl}/services/medical-weight-loss#service`, name: "Weight-Management Nutrition Support Alongside Medical Care", description: "Personalised nutrition consultation to support weight-management goals alongside a client’s existing medical care.", serviceType: "Nutrition consultation", url: `${siteUrl}/services/medical-weight-loss`, provider: { "@id": `${siteUrl}/#organization` }, areaServed: [{ "@type": "City", name: "Mumbai" }, { "@type": "City", name: "Thane" }, { "@type": "Country", name: "India" }] },
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` }, { "@type": "ListItem", position: 3, name: "Medical Weight-Management Nutrition Support", item: `${siteUrl}/services/medical-weight-loss` }] },
-      { "@type": "FAQPage", mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) },
-    ],
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services/medical-weight-loss#service`,
+        name: "Medical Weight Loss Dietitian Mumbai - PCOS, Thyroid & Diabetes Nutrition",
+        description: "Personalised nutrition support for weight management alongside medical care. PCOS, thyroid, diabetes and other conditions from Dietitian Tejal in Mumbai, Thane and online across India.",
+        serviceType: "Medical nutrition therapy",
+        url: `${siteUrl}/services/medical-weight-loss`,
+        provider: { "@id": `${siteUrl}/#organization` },
+        areaServed: [
+          { "@type": "City", name: "Mumbai" },
+          { "@type": "City", name: "Thane" },
+          { "@type": "Country", name: "India" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+          { "@type": "ListItem", position: 3, name: "Medical Weight Loss Dietitian Mumbai", item: `${siteUrl}/services/medical-weight-loss` }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map(([name, text]) => ({
+          "@type": "Question",
+          name,
+          acceptedAnswer: { "@type": "Answer", text }
+        }))
+      }
+    ]
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
