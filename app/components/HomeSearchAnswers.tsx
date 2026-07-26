@@ -14,9 +14,9 @@ export default function HomeSearchAnswers() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
           <div>
             <p className="mb-3 font-semibold uppercase tracking-wider text-teal-700 text-sm">Mumbai, Thane & online across India</p>
-            <h2 id="dietitian-mumbai-heading" className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Looking for a dietitian in Mumbai or an online nutrition consultation?</h2>
+            <h2 id="dietitian-mumbai-heading" className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Dietitian in Mumbai or online nutrition consultation?</h2>
             <div className="mt-4 rounded-xl bg-teal-50 border border-teal-200 p-5 text-base leading-7 text-slate-800">
-              <strong>Quick answer:</strong> DietFiniti is a personalised nutrition clinic led by Dietitian Tejal (MSc Dietetics, Certified Diabetic Educator) with clinics in Mumbai (Lower Parel) and Thane, plus online consultations across India. Services include weight loss, medical weight management, pregnancy nutrition, sports nutrition, weight gain and bridal plans—designed around Indian food, routine and health history rather than generic meal charts.
+              <strong>Quick answer:</strong> Yes — DietFiniti is a dietitian in Mumbai &amp; Thane (Lower Parel + Kolshet Road) led by Dietitian Tejal (MSc Dietetics, Certified Diabetic Educator). We offer personalised Indian meal plans for weight loss, PCOS, thyroid, diabetes, pregnancy, sports nutrition and online consultations across India. Plans use the foods you already eat.
             </div>
             <p className="mt-5 text-lg leading-8 text-slate-700">DietFiniti offers personalised nutrition consultations for people in Mumbai and Thane, as well as online consultations across India. Your plan is shaped around your goals, health history, routine and food preferences—not a generic meal chart.</p>
             <p className="mt-4 leading-7 text-slate-700">A consultation is a chance to discuss what is getting in the way, ask questions and decide whether the service is right for you. For diagnosed conditions, nutrition guidance supports—not replaces—care from your doctor.</p>

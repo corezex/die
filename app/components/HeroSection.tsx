@@ -27,7 +27,7 @@ export default function HeroSection() {
           {/* Desktop background */}
           <Image
             src={homeimage}
-            alt="Dietitian Tejal at the DietFiniti nutrition consultation clinic"
+            alt="Dietitian Tejal providing personalised nutrition consultation at DietFiniti clinic in Mumbai"
             fill
             priority
             className="object-cover hidden md:block"
@@ -38,7 +38,7 @@ export default function HeroSection() {
           {/* Mobile background */}
           <Image
             src={homemobileview}
-            alt="Dietitian Tejal at DietFiniti"
+            alt="Dietitian Tejal at DietFiniti Mumbai and Thane nutrition clinic"
             fill
             priority
             className="object-cover md:hidden"
@@ -103,9 +103,9 @@ export default function HeroSection() {
           >
             {/* Main Heading with Gradient */}
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6">
-              <span className="block mb-2">Personalised dietitian support for</span>
+              <span className="block mb-2">Dietitian in Mumbai &amp; Thane:</span>
               <span className="bg-gradient-to-r from-teal-400 to-teal-200 bg-clip-text text-transparent">
-                sustainable weight management
+                Personalised Indian nutrition plans for sustainable weight loss
               </span>
             </h1>
 
@@ -123,7 +123,7 @@ export default function HeroSection() {
                   aria-hidden
                 />
                 <p className="text-sm md:text-base font-semibold text-white leading-snug relative z-10">
-                  Practical nutrition support for Mumbai, Thane and online across India.
+                  Practical Indian nutrition plans from a dietitian in Mumbai, Thane &amp; online across India.
                 </p>
               </div>
               <div className="relative p-2.5 md:p-3 rounded-lg overflow-hidden max-w-xl">

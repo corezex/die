@@ -13,9 +13,9 @@ export const viewport: Viewport = { themeColor: "#0f766e", colorScheme: "light" 
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "DietFiniti | Personalised Dietitian & Nutrition Plans", template: "%s | DietFiniti" },
+  title: { default: "Dietitian in Mumbai | Personalised Weight Loss & Nutrition Plans | DietFiniti", template: "%s | DietFiniti" },
   description:
-    "Personalised nutrition consultations and practical Indian meal plans from DietFiniti. Visit our Mumbai clinic or book an online consultation anywhere in India.",
+    "Expert dietitian in Mumbai & Thane led by Dietitian Tejal (MSc Dietetics). Personalised Indian meal plans for weight loss, medical conditions, pregnancy, sports & online consultations across India.",
   applicationName: "DietFiniti",
   authors: [{ name: "Dietitian Tejal" }],
   creator: "DietFiniti",
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName: "DietFiniti",
-    title: "DietFiniti | Personalised Dietitian & Nutrition Plans",
-    description: "Personalised nutrition consultations and practical Indian meal plans in Mumbai, Thane and online across India.",
-    images: [{ url: "/image/homeimage.jpg", alt: "DietFiniti personalised nutrition consultation" }],
+    title: "Dietitian in Mumbai | Personalised Weight Loss & Nutrition Plans | DietFiniti",
+    description: "Expert dietitian in Mumbai & Thane led by Dietitian Tejal. Personalised Indian meal plans for weight loss, PCOS, thyroid, pregnancy & online consultations.",
+    images: [{ url: "/image/homeimage.jpg", alt: "DietFiniti personalised nutrition consultation by Dietitian Tejal in Mumbai" }],
   },
-  twitter: { card: "summary_large_image", title: "DietFiniti | Personalised Dietitian & Nutrition Plans", description: "Practical, personalised nutrition support from Dietitian Tejal.", images: ["/image/homeimage.jpg"] },
+  twitter: { card: "summary_large_image", title: "Dietitian in Mumbai | Personalised Weight Loss & Nutrition Plans", description: "Practical Indian nutrition plans by Dietitian Tejal for weight loss, medical conditions & online consultations.", images: ["/image/homeimage.jpg"] },
   category: "Health",
 };
 

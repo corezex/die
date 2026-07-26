@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Homepage from "@/app/components/HeroSection";
+import BelowHeroSection from "@/app/components/BelowHeroSection";
 import DietChallengesSection from "@/app/components/DietChallengesSection";
 import ProgramsSection from "@/app/components/ProgramsSection";
 import UniqueApproachSection from "@/app/components/UniqueApproachSection";
@@ -12,14 +13,16 @@ import HomeSearchAnswers from "@/app/components/HomeSearchAnswers";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  title: "Personalised Dietitian & Nutrition Plans",
-  description: "Personalised diet plans and nutrition consultations from Dietitian Tejal. Practical Indian meal guidance for clients in Mumbai, Thane and online across India.",
+  title: "Dietitian in Mumbai | Personalised Weight Loss & Nutrition Plans",
+  description: "Dietitian in Mumbai & Thane: Dietitian Tejal (MSc) provides personalised Indian diet plans for weight loss, PCOS, thyroid, pregnancy, sports nutrition and online consultations across India.",
 };
 
 export default function Home() {
   return (
     <>
       <Homepage />
+      {/* New high-intent section placed immediately below the hero for AEO / AI Overviews / featured snippets */}
+      <BelowHeroSection />
       <HomeSearchAnswers />
       <DietChallengesSection />
       <ProgramsSection />
