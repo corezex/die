@@ -13,6 +13,7 @@ const stats = [
   { icon: MapPin, number: "2", suffix: "", label: "Clinic locations", color: "from-blue-500 to-cyan-500" },
   { icon: Calendar, number: "Online", suffix: "", label: "Consultations across India", color: "from-green-500 to-emerald-500" },
   { icon: Users, number: "Personal", suffix: "", label: "Nutrition support", color: "from-orange-500 to-amber-500" },
+  { icon: Award, number: "12+", suffix: "", label: "Years Experience", color: "from-purple-500 to-violet-500" },
 ];
 
 const TrustSection = () => {
