@@ -18,8 +18,24 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const homeWebPage = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://dietfiniti.com/#webpage",
+        name: "Dietitian in Mumbai | Personalised Weight Loss & Nutrition Plans",
+        description: "Dietitian in Mumbai & Thane: Dietitian Tejal (MSc) provides personalised Indian diet plans for weight loss, PCOS, thyroid, pregnancy, sports nutrition and online consultations across India.",
+        url: "https://dietfiniti.com/",
+        isPartOf: { "@id": "https://dietfiniti.com/#website" },
+        about: { "@id": "https://dietfiniti.com/#organization" }
+      }
+    ]
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebPage) }} />
       <Homepage />
       {/* New high-intent section placed immediately below the hero for AEO / AI Overviews / featured snippets */}
       <BelowHeroSection />
