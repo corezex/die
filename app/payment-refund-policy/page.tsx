@@ -9,8 +9,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/payment-refund-policy" },
 };
 
+const siteUrl = "https://dietfiniti.com";
+const paymentSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/payment-refund-policy#webpage`,
+      name: "Payment & Refund Policy | DietFiniti",
+      description: "Learn about DietFiniti's payment methods, refund policy, cancellation terms, and billing procedures. Secure transactions guaranteed.",
+      url: `${siteUrl}/payment-refund-policy`,
+      isPartOf: { "@id": `${siteUrl}/#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Payment & Refund Policy", item: `${siteUrl}/payment-refund-policy` }
+      ]
+    }
+  ]
+};
+
 const PaymentRefundPolicy = () => {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(paymentSchema) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -316,6 +343,7 @@ const PaymentRefundPolicy = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

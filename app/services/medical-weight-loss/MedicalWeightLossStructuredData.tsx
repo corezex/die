@@ -12,6 +12,15 @@ export function MedicalWeightLossStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/medical-weight-loss#webpage`,
+        name: "Medical Weight-Management Nutrition | DietFiniti",
+        description: "Personalised nutrition guidance for weight-management goals alongside medical care.",
+        url: `${siteUrl}/services/medical-weight-loss`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/medical-weight-loss#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/medical-weight-loss#service`,
         name: "Medical Weight Loss Dietitian Mumbai - PCOS, Thyroid & Diabetes Nutrition",

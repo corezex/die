@@ -9,8 +9,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/community-guidelines" },
 };
 
+const siteUrl = "https://dietfiniti.com";
+const communitySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/community-guidelines#webpage`,
+      name: "Community Guidelines | DietFiniti",
+      description: "Learn about DietFiniti's community guidelines for respectful, professional, and supportive environment. Ensure confidentiality and authentic participation.",
+      url: `${siteUrl}/community-guidelines`,
+      isPartOf: { "@id": `${siteUrl}/#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Community Guidelines", item: `${siteUrl}/community-guidelines` }
+      ]
+    }
+  ]
+};
+
 const CommunityGuidelines = () => {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -294,6 +321,7 @@ const CommunityGuidelines = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

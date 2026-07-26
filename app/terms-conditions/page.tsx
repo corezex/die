@@ -8,8 +8,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms-conditions" },
 };
 
+const siteUrl = "https://dietfiniti.com";
+const termsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/terms-conditions#webpage`,
+      name: "Terms & Conditions | DietFiniti",
+      description: "Read DietFiniti's Terms & Conditions for services, health disclaimers, client responsibilities, and intellectual property rights.",
+      url: `${siteUrl}/terms-conditions`,
+      isPartOf: { "@id": `${siteUrl}/#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Terms & Conditions", item: `${siteUrl}/terms-conditions` }
+      ]
+    }
+  ]
+};
+
 const TermsConditions = () => {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-cyan-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -258,6 +285,7 @@ const TermsConditions = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

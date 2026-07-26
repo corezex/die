@@ -5,6 +5,15 @@ export function BridalDietStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/bridal-diet#webpage`,
+        name: "Bridal Dietitian Mumbai | Pre-Wedding Nutrition Plans",
+        description: "Bridal dietitian in Mumbai & Thane. Personalised pre-wedding Indian nutrition plans for glowing skin, energy & healthy weight by Dietitian Tejal. Practical plans for brides. Online across India.",
+        url: `${siteUrl}/services/bridal-diet`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/bridal-diet#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/bridal-diet#service`,
         name: "Bridal Dietitian Mumbai - Pre-Wedding Nutrition Plans",

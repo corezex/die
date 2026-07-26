@@ -9,6 +9,28 @@ import {
   shuffleMixedTestimonialSlides,
 } from "./carouselSlides";
 
+const siteUrl = "https://dietfiniti.com";
+const testimonialsWebPage = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/testimonials#webpage`,
+      name: "Client Stories | DietFiniti",
+      description: "Read client experiences with DietFiniti personalised nutrition support. Individual experiences and results vary.",
+      url: `${siteUrl}/testimonials`,
+      isPartOf: { "@id": `${siteUrl}/#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Client Stories", item: `${siteUrl}/testimonials` }
+      ]
+    }
+  ]
+};
+
 const cardVariants: Variants = {
   offscreen: {
     y: 50,
@@ -121,6 +143,11 @@ export default function TestimonialsPage() {
   const showApiLoading = loading && testimonials.length === 0;
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(testimonialsWebPage) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
 
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20 pb-10">
@@ -342,5 +369,6 @@ export default function TestimonialsPage() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

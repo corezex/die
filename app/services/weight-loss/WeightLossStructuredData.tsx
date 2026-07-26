@@ -12,6 +12,15 @@ export function WeightLossStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/weight-loss#webpage`,
+        name: "Weight-Loss Dietitian in Mumbai & Online",
+        description: "Explore personalised weight-loss nutrition support from DietFiniti in Mumbai, Thane and online across India. Practical guidance shaped around your routine, food preferences and goals.",
+        url: `${siteUrl}/services/weight-loss`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/weight-loss#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/weight-loss#service`,
         name: "Weight Loss Dietitian Mumbai - Personalised Indian Weight Loss Plans",

@@ -8,8 +8,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
+const siteUrl = "https://dietfiniti.com";
+const privacySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/privacy-policy#webpage`,
+      name: "Privacy Policy | DietFiniti",
+      description: "Learn how DietFiniti collects, uses, and protects your personal information. Understand your privacy rights and data protection measures.",
+      url: `${siteUrl}/privacy-policy`,
+      isPartOf: { "@id": `${siteUrl}/#website` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${siteUrl}/privacy-policy` }
+      ]
+    }
+  ]
+};
+
 const PrivacyPolicy = () => {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -366,6 +393,7 @@ const PrivacyPolicy = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

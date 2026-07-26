@@ -1,35 +1,37 @@
-const u = "https://dietfiniti.com";
+const siteUrl = "https://dietfiniti.com";
+
 export function AboutStructuredData() {
-  const d = {
+  const data = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Person",
-        "@id": `${u}/#person`,
-        name: "Dietitian Tejal",
-        jobTitle: "Founder and Dietitian",
-        worksFor: { "@id": `${u}/#organization` },
-        alumniOf: [
-          { "@type": "Organization", name: "LTMG Hospital (Sion Hospital)" },
-          { "@type": "Organization", name: "Bhatia Hospital, Tardeo" },
-        ],
+        "@type": "WebPage",
+        "@id": `${siteUrl}/about#webpage`,
+        name: "About Dietitian Tejal | DietFiniti Mumbai",
+        description: "Meet Dietitian Tejal (MSc Dietetics, Certified Diabetic Educator) — founder of DietFiniti. Personalised nutrition consultations in Mumbai (Lower Parel), Thane and online across India.",
+        url: `${siteUrl}/about`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#organization` }
       },
       {
-        "@type": "AboutPage",
-        "@id": `${u}/about#webpage`,
-        url: `${u}/about`,
-        name: "About DietFiniti & Dietitian Tejal",
-        about: { "@id": `${u}/#organization` },
-        inLanguage: "en-IN",
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Dietitian Tejal Parulkar",
+        jobTitle: "Founder & Registered Dietitian",
+        worksFor: { "@id": `${siteUrl}/#organization` },
+        alumniOf: [
+          { "@type": "Organization", name: "LTMG Hospital (Sion Hospital)" },
+          { "@type": "Organization", name: "Bhatia Hospital, Tardeo" }
+        ]
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: u },
-          { "@type": "ListItem", position: 2, name: "About", item: `${u}/about` },
-        ],
-      },
-    ],
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "About", item: `${siteUrl}/about` }
+        ]
+      }
+    ]
   };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

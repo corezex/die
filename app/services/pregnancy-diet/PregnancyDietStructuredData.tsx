@@ -12,6 +12,15 @@ export function PregnancyDietStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/pregnancy-diet#webpage`,
+        name: "Pregnancy Dietitian Mumbai | Prenatal & Postpartum Nutrition Plans",
+        description: "Pregnancy dietitian in Mumbai & Thane. Personalised Indian nutrition plans for each trimester and postpartum recovery by Dietitian Tejal. Safe support alongside your antenatal care. Online across India.",
+        url: `${siteUrl}/services/pregnancy-diet`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/pregnancy-diet#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/pregnancy-diet#service`,
         name: "Pregnancy Dietitian Mumbai - Prenatal & Postpartum Nutrition",

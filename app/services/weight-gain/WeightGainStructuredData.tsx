@@ -12,6 +12,15 @@ export function WeightGainStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/weight-gain#webpage`,
+        name: "Weight Gain Dietitian Mumbai | Healthy Weight Gain Plans",
+        description: "Weight gain dietitian in Mumbai & Thane. Personalised Indian nutrition plans for healthy weight gain, muscle building and underweight support by Dietitian Tejal. Online consultations across India.",
+        url: `${siteUrl}/services/weight-gain`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/weight-gain#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/weight-gain#service`,
         name: "Weight Gain Dietitian Mumbai - Healthy Weight Gain Plans",

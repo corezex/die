@@ -5,6 +5,15 @@ export function SportsNutritionStructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services/sports-nutrition#webpage`,
+        name: "Sports Nutritionist Mumbai | Athlete & Performance Diet Plans",
+        description: "Sports nutritionist in Mumbai & Thane. Personalised Indian meal plans for athletes, performance, recovery and training by Dietitian Tejal. Online sports nutrition consultations across India.",
+        url: `${siteUrl}/services/sports-nutrition`,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/services/sports-nutrition#service` }
+      },
+      {
         "@type": "Service",
         "@id": `${siteUrl}/services/sports-nutrition#service`,
         name: "Sports Nutritionist Mumbai - Athlete & Performance Diet Plans",
