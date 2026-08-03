@@ -153,13 +153,6 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
           </div>
         </div>
 
-        {/* Results Info */}
-        <div className="mb-6 flex justify-between items-center text-sm text-gray-600">
-          <p>
-            Showing <strong>{currentRecipes.length > 0 ? startIndex + 1 : 0}-{Math.min(endIndex, totalRecipes)}</strong> of <strong>{totalRecipes}</strong> recipes
-          </p>
-        </div>
-
         {/* Empty State */}
         {currentRecipes.length === 0 && (
           <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-sm">
