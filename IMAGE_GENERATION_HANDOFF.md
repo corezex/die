@@ -2,82 +2,48 @@
 
 ## Project Context
 The user requested the generation of **538 healthy Indian recipes** and their corresponding AI-generated food photography. 
-The recipes and JSON structure are complete, however, due to session limits on AI image generation, the images must be created in batches across multiple sessions.
+The recipes and JSON structure are complete. Because of the image generation caps (10 per session), the user is generating images across multiple chat sessions and pushing them to various remote branches.
 
 ## Current Progress Status
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Total Images Successfully Generated & Linked:** 28 images
-- **Remaining Images to Generate:** 510 images
-
-### Recipes Currently Completed (Images Generated & Mapped to JSON):
-1. `oats-idli`
-2. `ragi-dosa`
-3. `moong-dal-chilla`
-4. `vegetable-poha`
-5. `daliya-upma`
-6. `besan-chilla`
-7. `quinoa-upma`
-8. `sprouts-salad`
-9. `methi-thepla` (Mapped as `methi-thepla-low-oil` in JSON)
-10. `palak-paratha`
-11. `multigrain-idli`
-12. `jowar-dosa`
-13. `bajra-rotla`
-14. `pesarattu-green-gram-dosa`
-15. `appam-with-vegetable-stew`
-16. `neer-dosa`
-17. `rava-idli-with-veggies`
-18. `sattu-ka-paratha`
-19. `oats-cheela`
-20. `millet-pongal`
-21. `kanda-poha`
-22. `matar-poha`
-23. `brown-rice-poha`
-24. `red-poha`
-25. `sweet-potato-tikki` (Mapped as `sweet-potato-tikki-air-fried` in JSON)
-26. `makhana-porridge`
-27. `ragi-malt`
-28. `oats-smoothie` *(Generated, but not yet mapped in JSON!)*
+- **Current Number of Unique Mapped Images:** ~217 images
+- **Remaining Images to Generate:** ~321 images
 
 ---
 
 ## Instructions for the Next Agent
 
-When you start the new session, you must continue generating images for the remaining recipes without watermarks. 
-Follow these exact steps:
+The user generates images in separate chat branches. When they open a new chat with you and say "I generated X images in other branches, please fetch and map them", you should:
 
-### 1. Map the last generated image
-The previous session generated `oats-smoothie.jpg` but ran out of limits before mapping it to the JSON. 
-Write a script to update `app/data/recipes.json` so that the `coverImage` for `oats-smoothie` points to `/image/recipes/oats-smoothie.jpg`.
+### 1. Fetch from All Branches
+Run `git fetch --all` to pull down the latest refs from the user's remote repository.
 
-### 2. Identify the Next Batch
-Look at `app/data/recipes.json`. 
-Find the recipes where `coverImage` is still set to the default placeholder (`/image/homeimage.jpg`). 
-The next logical ones in the list are:
-- `almond-banana-milkshake-no-sugar`
-- `green-gram-dosa`
-- `horsegram-idli`
-- `adai-dosa`
-- `akki-roti-with-added-greens`
-- `sorghum-pancake`
-- `amaranth-porridge`
-- `buckwheat-upma`
-- `chia-seed-pudding-indian-spiced`
-- `vegetable-sevai-vermicelli`
+### 2. Extract Images from the Remote Branches
+Locate the user's recent branches (e.g. via `git ls-remote origin` or `git branch -r`). You can loop through these branches and checkout the `public/image/recipes/` directory directly into the current active branch.
+Example:
+```bash
+mkdir -p temp_images && for branch in arena/branch-name-1 arena/branch-name-2; do
+  git fetch origin $branch
+  git checkout FETCH_HEAD -- public/image/recipes/ 2>/dev/null || echo "No images in $branch"
+done
+```
 
-### 3. Generate Images
-Use the `generate_image` tool to create beautiful, appetizing "Professional food photography" style images for 10 recipes at a time (this is the hard limit per session). Save them in `public/image/recipes/<slug>.jpg`.
-*IMPORTANT: Do NOT add watermarks or logos to the images.*
+### 3. Map the New Images to the JSON Database
+Run the `map_all_images.py` script. This script scans the `public/image/recipes/` directory and matches every valid image to its corresponding recipe in `app/data/recipes.json` based on the slug. 
+*Note: Any recipe that does not have an image will safely default back to `/image/homeimage.jpg`.*
 
-### 4. Link the Generated Images to the Database
-Write a python script (similar to the previous ones) to update `app/data/recipes.json`. 
-Match the `slug` of the recipe to the generated image path (`/image/recipes/<slug>.jpg`) and overwrite the `coverImage` field.
+```bash
+python3 map_all_images.py
+```
+
+### 4. Verify and Build
+Run `npm run build` to ensure the JSON mapping is valid and Next.js can generate the static pages.
 
 ### 5. Commit and Push
-Run `npm run build` to ensure no errors were introduced.
-Run `git add`, `git commit`, and `git push` to save the work.
-
-### 6. Repeat
-Provide an updated status file so the user can easily pass the context to the next session until all 538 recipes are completed.
+```bash
+git add public/image/recipes/ app/data/recipes.json
+git commit -m "Pull in newly generated recipe images from other branches and map to json"
+git push origin <current-active-branch>
+```
