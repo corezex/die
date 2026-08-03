@@ -16,8 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/services/sports-nutrition", "monthly", 0.8],
     ["/bmi-calculator", "monthly", 0.7],
     ["/testimonials", "monthly", 0.7],
-    ["/blog", "weekly", 0.8],
-    ["/recipe", "weekly", 0.7],
     ["/contact", "monthly", 0.8],
     ["/privacy-policy", "yearly", 0.2],
     ["/terms-conditions", "yearly", 0.2],
