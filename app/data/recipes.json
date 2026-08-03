@@ -417,7 +417,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/palak-paratha.jpg"
   },
   {
     "slug": "multigrain-idli",
@@ -459,7 +459,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/multigrain-idli.jpg"
   },
   {
     "slug": "jowar-dosa",
@@ -501,7 +501,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/jowar-dosa.jpg"
   },
   {
     "slug": "bajra-rotla",
@@ -543,7 +543,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/bajra-rotla.jpg"
   },
   {
     "slug": "pesarattu-green-gram-dosa",
@@ -585,7 +585,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pesarattu-green-gram-dosa.jpg"
   },
   {
     "slug": "appam-with-vegetable-stew",
@@ -627,7 +627,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/appam-with-vegetable-stew.jpg"
   },
   {
     "slug": "neer-dosa",
@@ -669,7 +669,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/neer-dosa.jpg"
   },
   {
     "slug": "rava-idli-with-veggies",
@@ -711,7 +711,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/rava-idli-with-veggies.jpg"
   },
   {
     "slug": "sattu-ka-paratha",
@@ -753,7 +753,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sattu-ka-paratha.jpg"
   },
   {
     "slug": "oats-cheela",
