@@ -1,7 +1,7 @@
 # Image Generation Handoff & Progress Report
 
 **Date:** 2026-08-03  
-**Project:** DietFiniti Recipe Image Generation (Batch 5 & Batch 6)  
+**Project:** DietFiniti Recipe Image Generation (Batches 5, 6, & 7)  
 **Status:** Completed  
 
 ---
@@ -14,8 +14,6 @@
 5. **Multigrain Khichdi** — `public/image/recipes/multigrain-khichdi.jpg`
 
 ## Completed Asset Generation (Batch 6)
-The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
-
 1. **Methi Thepla** — `public/image/recipes/methi-thepla.jpg`
 2. **Besan Chilla** — `public/image/recipes/besan-chilla.jpg`
 3. **Palak Paneer** — `public/image/recipes/palak-paneer.jpg`
@@ -25,6 +23,19 @@ The following 9 high-resolution healthy Indian recipe images have been generated
 7. **Dal Tadka & Brown Rice** — `public/image/recipes/dal-brown-rice.jpg`
 8. **Jowar Roti** — `public/image/recipes/jowar-roti.jpg`
 9. **Roasted Makhana** — `public/image/recipes/roasted-makhana.jpg`
+
+## Completed Asset Generation (Batch 7)
+The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
+
+1. **Egg Bhurji** — `public/image/recipes/egg-bhurji.jpg`
+2. **Sprouts Dhokla** — `public/image/recipes/sprouts-dhokla.jpg`
+3. **Ragi Malt** — `public/image/recipes/ragi-malt.jpg`
+4. **Vegetable Soup** — `public/image/recipes/veg-soup.jpg`
+5. **Grilled Chicken Salad** — `public/image/recipes/grilled-chicken-salad.jpg`
+6. **Detox Green Tea** — `public/image/recipes/detox-green-tea.jpg`
+7. **Baked Samosa** — `public/image/recipes/baked-samosa.jpg`
+8. **Stuffed Besan Chilla** — `public/image/recipes/stuffed-besan-chilla.jpg`
+9. **Curd Rice** — `public/image/recipes/curd-rice.jpg`
 
 ---
 
