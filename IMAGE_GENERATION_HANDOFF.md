@@ -1,7 +1,7 @@
 # Image Generation Handoff & Progress Report
 
 **Date:** 2026-08-03  
-**Project:** DietFiniti Recipe Image Generation (Batches 5, 6, 7, 8, & 9)  
+**Project:** DietFiniti Recipe Image Generation (Batches 5, 6, 7, 8, 9, & 10)  
 **Status:** Completed  
 
 ---
@@ -47,17 +47,28 @@
 9. **Lemon Rice** — `public/image/recipes/lemon-rice.jpg`
 
 ## Completed Asset Generation (Batch 9)
-The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
-
 1. **Dal Makhani** — `public/image/recipes/dal-makhani.jpg`
 2. **Paneer Tikka** — `public/image/recipes/paneer-tikka.jpg`
 3. **Soya Chunks Pulao** — `public/image/recipes/soya-chunks-pulav.jpg`
 4. **Mixed Vegetable Curry** — `public/image/recipes/mix-veg-curry.jpg`
 5. **Rajma Chawal** — `public/image/recipes/rajma-chawal.jpg`
 6. **Bottle Gourd Thepla** — `public/image/recipes/bottle-gourd-thepla.jpg`
-7. **Sprouted Moong Upma** — `public/image/recipes/sprouted-upma.jpg`
+7. **Sprouted Moong Upma** — `public/image/recipes/sprouts-upma.jpg`
 8. **Beetroot Paratha** — `public/image/recipes/beetroot-paratha.jpg`
 9. **Golden Milk / Turmeric Latte** — `public/image/recipes/haldi-doodh.jpg`
+
+## Completed Asset Generation (Batch 10)
+The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
+
+1. **Oats Uttapam** — `public/image/recipes/oats-uttapam.jpg`
+2. **Moong Dal Khichdi** — `public/image/recipes/moong-dal-khichdi.jpg`
+3. **Stuffed Paneer Paratha** — `public/image/recipes/stuffed-paneer-paratha.jpg`
+4. **Masala Oats** — `public/image/recipes/masala-oats.jpg`
+5. **Methi Matar Malai** — `public/image/recipes/methi-matar-malai.jpg`
+6. **Healthy Chicken Soup** — `public/image/recipes/healthy-chicken-soup.jpg`
+7. **Sattu Drink** — `public/image/recipes/sattu-drink.jpg`
+8. **Karela Stir Fry** — `public/image/recipes/karela-stir-fry.jpg`
+9. **Brown Rice Pulao** — `public/image/recipes/brown-rice-pulao.jpg`
 
 ---
 
