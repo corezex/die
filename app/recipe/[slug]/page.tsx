@@ -241,6 +241,17 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
                 ))}
               </div>
             </section>
+            
+            {/* Call to Action for Consultation (Moved below content for mobile/desktop flow) */}
+            <div className="bg-green-600 text-white rounded-2xl p-8 shadow-md text-center mt-12">
+              <h3 className="text-2xl font-bold mb-4">Want a personalized diet plan?</h3>
+              <p className="text-green-50 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Consult with Dietitian Tejal to get a custom meal plan tailored to your health goals, medical history, and lifestyle.
+              </p>
+              <Link href="/contact" className="inline-block bg-white text-green-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors shadow-sm">
+                Book Your Consultation Now
+              </Link>
+            </div>
           </div>
 
           {/* Sidebar Area */}
@@ -279,17 +290,6 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
                   <strong>Disclaimer:</strong> Nutritional values are estimates. Actual values may vary based on specific ingredients and portion sizes used.
                 </p>
               </div>
-            </div>
-            
-            {/* Call to Action for Consultation */}
-            <div className="bg-green-600 text-white rounded-2xl p-6 shadow-md text-center">
-              <h3 className="text-lg font-bold mb-3">Want a personalized diet plan?</h3>
-              <p className="text-sm text-green-100 mb-6 leading-relaxed">
-                Consult with Dietitian Tejal to get a custom meal plan tailored to your health goals, medical history, and lifestyle.
-              </p>
-              <Link href="/contact" className="inline-block w-full bg-white text-green-700 font-bold py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                Book Consultation
-              </Link>
             </div>
           </div>
 
