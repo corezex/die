@@ -39,7 +39,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-idli.jpg"
   },
   {
     "slug": "ragi-dosa",
@@ -81,7 +81,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-dosa.jpg"
   },
   {
     "slug": "moong-dal-chilla",
@@ -123,7 +123,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/moong-dal-chilla.jpg"
   },
   {
     "slug": "vegetable-poha",
@@ -165,7 +165,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/vegetable-poha.jpg"
   },
   {
     "slug": "daliya-upma",
@@ -207,7 +207,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/daliya-upma.jpg"
   },
   {
     "slug": "besan-chilla",
@@ -249,7 +249,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/besan-chilla.jpg"
   },
   {
     "slug": "quinoa-upma",
@@ -291,7 +291,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/quinoa-upma.jpg"
   },
   {
     "slug": "sprouts-salad",
@@ -333,7 +333,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sprouts-salad.jpg"
   },
   {
     "slug": "methi-thepla-low-oil",
@@ -375,7 +375,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/methi-thepla.jpg"
   },
   {
     "slug": "palak-paratha",
