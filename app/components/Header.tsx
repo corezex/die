@@ -22,6 +22,7 @@ import {
   Users,
   Star,
   PhoneCall,
+  ChefHat,
   Activity 
 } from "lucide-react";
 
@@ -41,6 +42,7 @@ const navigationItems = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: Users },
   { name: "Services", path: "/services", icon: Utensils, submenu: servicesItems },
+  { name: "Recipes", path: "/recipe", icon: ChefHat },
   { name: "Testimonials", path: "/testimonials", icon: Star },
     { name: "BMI", path: "/bmi-calculator", icon: Activity  },
   { name: "Contact", path: "/contact", icon: PhoneCall },
