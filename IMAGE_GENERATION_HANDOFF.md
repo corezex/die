@@ -1,7 +1,7 @@
 # Image Generation Handoff & Progress Report
 
 **Date:** 2026-08-03  
-**Project:** DietFiniti Recipe Image Generation (Batches 5, 6, 7, & 8)  
+**Project:** DietFiniti Recipe Image Generation (Batches 5, 6, 7, 8, & 9)  
 **Status:** Completed  
 
 ---
@@ -36,8 +36,6 @@
 9. **Curd Rice** — `public/image/recipes/curd-rice.jpg`
 
 ## Completed Asset Generation (Batch 8)
-The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
-
 1. **Methi Paratha** — `public/image/recipes/methi-paratha.jpg`
 2. **Kanda Poha** — `public/image/recipes/poha.jpg`
 3. **Masoor Dal Tadka** — `public/image/recipes/masoor-dal.jpg`
@@ -47,6 +45,19 @@ The following 9 high-resolution healthy Indian recipe images have been generated
 7. **Chia Seed Pudding** — `public/image/recipes/chia-seed-pudding.jpg`
 8. **Sprouted Moong Khichdi** — `public/image/recipes/sprouted-moong-khichdi.jpg`
 9. **Lemon Rice** — `public/image/recipes/lemon-rice.jpg`
+
+## Completed Asset Generation (Batch 9)
+The following 9 high-resolution healthy Indian recipe images have been generated and saved to `public/image/recipes/`:
+
+1. **Dal Makhani** — `public/image/recipes/dal-makhani.jpg`
+2. **Paneer Tikka** — `public/image/recipes/paneer-tikka.jpg`
+3. **Soya Chunks Pulao** — `public/image/recipes/soya-chunks-pulav.jpg`
+4. **Mixed Vegetable Curry** — `public/image/recipes/mix-veg-curry.jpg`
+5. **Rajma Chawal** — `public/image/recipes/rajma-chawal.jpg`
+6. **Bottle Gourd Thepla** — `public/image/recipes/bottle-gourd-thepla.jpg`
+7. **Sprouted Moong Upma** — `public/image/recipes/sprouted-upma.jpg`
+8. **Beetroot Paratha** — `public/image/recipes/beetroot-paratha.jpg`
+9. **Golden Milk / Turmeric Latte** — `public/image/recipes/haldi-doodh.jpg`
 
 ---
 
