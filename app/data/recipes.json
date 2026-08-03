@@ -795,7 +795,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-cheela.jpg"
   },
   {
     "slug": "millet-pongal",
@@ -837,7 +837,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-pongal.jpg"
   },
   {
     "slug": "kanda-poha",
@@ -879,7 +879,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/kanda-poha.jpg"
   },
   {
     "slug": "matar-poha",
@@ -921,7 +921,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/matar-poha.jpg"
   },
   {
     "slug": "brown-rice-poha",
@@ -963,7 +963,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/brown-rice-poha.jpg"
   },
   {
     "slug": "red-poha",
@@ -1005,7 +1005,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/red-poha.jpg"
   },
   {
     "slug": "sweet-potato-tikki-air-fried",
@@ -1047,7 +1047,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sweet-potato-tikki.jpg"
   },
   {
     "slug": "makhana-porridge",
@@ -1089,7 +1089,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/makhana-porridge.jpg"
   },
   {
     "slug": "ragi-malt",
@@ -1131,7 +1131,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-malt.jpg"
   },
   {
     "slug": "oats-smoothie",
