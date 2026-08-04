@@ -24,11 +24,8 @@ for recipe in recipes:
         if recipe.get("coverImage") != image_files[slug]:
             recipe["coverImage"] = image_files[slug]
             updated_count += 1
-        elif recipe.get("coverImage") == image_files[slug]:
-            # Already set
-            pass
     else:
-        # Try a substring match (e.g. 'methi-thepla-low-oil' -> 'methi-thepla.jpg')
+        # Try a substring match
         matched = False
         for img_name in image_files:
             if img_name in slug or slug in img_name:
@@ -40,9 +37,12 @@ for recipe in recipes:
         
         # If no match is found, ensure it uses the common image
         if not matched:
-            recipe["coverImage"] = "/image/homeimage.jpg"
+            if recipe.get("coverImage") != "/image/homeimage.jpg":
+                recipe["coverImage"] = "/image/homeimage.jpg"
+                updated_count += 1
 
 with open(json_path, "w", encoding="utf-8") as f:
     json.dump(recipes, f, indent=2)
 
-print(f"Successfully mapped a total of {len(image_files)} unique images to the recipes.")
+print(f"Total images found in directory: {len(image_files)}")
+print(f"Updated JSON with {updated_count} image mappings (or fallbacks).")
