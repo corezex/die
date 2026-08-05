@@ -8,14 +8,20 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 293 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 407 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 131 recipes
-- **Fallback to `/image/homeimage.jpg`:** 407 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 303 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 394 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 144 recipes
+- **Fallback to `/image/homeimage.jpg`:** 394 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 3 — Batch 3 (10 images) — DONE, pushed as `33b9a56`
+Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
+moong-dal-tadka, toor-dal, dal-methi, lauki-chana-dal-bottle-gourd-lentils, rajma-masala-kidney-beans, chole-masala-chickpeas-low-oil, lobia-curry-black-eyed-peas, kala-chana-curry-black-chickpeas, green-moong-curry, moth-bean-curry-matki.
+- Note: `map_all_images.py` also matched 3 extra recipes via substring (mapped count 131 → 144).
+- **Next batch (Batch 4) to generate:** sprouted-moong-curry, horsegram-rasam-kollu-rasam, tomato-rasam, pepper-rasam, lemon-rasam, dal-dhokli-whole-wheat, sindhi-dal-pakwan-baked-pakwan, gujarati-trevti-dal, bengali-cholar-dal, amritsari-dal-low-butter.
 
 ### Generation session 2 — Batch 2 (10 images) — DONE, pushed as `536f45c`
 Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
