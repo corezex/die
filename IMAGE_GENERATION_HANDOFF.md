@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 453 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 85 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 453 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 85 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 463 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 75 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 463 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 75 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 19 — Batch 19 (10 images) — DONE, pushed as `7dadb58`
+Generated: broccoli-rice, cabbage-rice-pulao, mushroom-brown-rice, sweet-corn-quinoa, green-peas-millet, spinach-ragi-roti, beetroot-jowar-roti, carrot-bajra-roti, methi-makki-roti, multigrain-pulao.
+- **Next batch (Batch 20) to generate:** brown-rice-bisi-bele-bath, red-rice-pongal, millet-veggie-upma, oats-tikki, air-fried-tofu, roasted-chana, millet-cookies, ragi-ladoo, baked-mathri-1, baked-namak-pare.
 
 ### Generation session 18 — Batch 18 (10 images) — DONE, pushed as `f062d35`
 Generated: brown-rice-jeera-pulao, quinoa-curd-rice, oats-curd-rice, amaranth-pulao, buckwheat-khichdi, water-chestnut-roti, multi-millet-roti, soya-flour-roti, chickpea-flour-roti, cauliflower-rice.
