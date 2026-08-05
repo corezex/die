@@ -86,7 +86,7 @@ Also fixed: **sports & bridal service pages had a visible FAQ with no FAQPage sc
 - ✅ Freshness: blog dates staggered Jan–Aug 2026, `dateModified` in schema
 - ✅ Author entity + credentials visible (Person schema → `/about`) — helps YMYL citation
 - ⚠️ Health is an incumbent-dominated vertical (Cleveland Clinic ~30% AIO share); DietFiniti's play is the practical-Indian + local angle, which the content now supports
-- ⚠️ Recipe `why_healthy`/`who_for` health claims appear in FAQ schema — recommend Dietitian Tejal review (flagged before, still outstanding)
+- ✅ Recipe `why_healthy`/`who_for` health claims rewritten to safe language (no cure/treat/prevent/boost claims, doctor-referral caveat added); FAQ schema now emits the safe text
 
 ---
 
@@ -120,5 +120,5 @@ Also fixed: **sports & bridal service pages had a visible FAQ with no FAQPage sc
 - Compress `public/image/*.jpg` (3840px heroes) and consider AVIF.
 - Add labelled quick-answer callouts + a sourced stat to each service page.
 - Confirm the displayed rating/award/99% claims are verifiable (or remove from visible + schema).
-- Get Dietitian Tejal's review of recipe `why_healthy`/`who_for` claims before treating them as final.
+- ✅ **DONE (2026-08-05):** recipe `why_healthy`/`who_for` health claims rewritten to safe, evidence-aware language — see `RECIPE_SEO_AEO_GEO_AUDIT.md` §5.
 - Track GSC + AI citation share per the measurement plan in the blog audit.

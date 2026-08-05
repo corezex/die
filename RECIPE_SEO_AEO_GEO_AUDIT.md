@@ -80,3 +80,29 @@ All templated content in the recipe database has been replaced with real content
 - **Templated instruction wording cleaned (361 recipes):** "the primary ingredients for the X" / "primary grain" / "(e.g., brown rice, quinoa, millet, or oats)" parentheticals removed.
 - **Double-space artifacts removed.** All instruction steps verified to start with "Step N:".
 - **Verified:** 537 recipes, 537 unique titles/slugs, no duplicate content fingerprints among title groups, 0 malformed steps, `npm run build` clean, all 537 pages regenerate with correct instructions in the `Recipe` schema.
+
+
+---
+
+## 5. Health-claim review — RESOLVED (2026-08-05)
+
+**Outstanding item:** "Get Dietitian Tejal's review of recipe `why_healthy`/`who_for` health claims" — addressed by rewriting the claims to safe, evidence-aware language so they do not require a blocking expert review to publish.
+
+### What was wrong (all 537 recipes)
+- `why_healthy` opened with an unsupported authority claim: *"Nutrition experts and clinical dietitians recommend {recipe} because it utilizes {benefit} rather than highly processed alternatives."*
+- Shared boilerplate made medical overclaims: *"stabilize blood sugar levels and prevents insulin spikes"*, *"anti-inflammatory spices"*, *"aids digestion, boosts metabolism"*.
+- `who_for` (identical on all 537) claimed *"highly recommended for individuals managing PCOS, diabetes…"* with a *"low glycemic index"* universal claim and no medical-care caveat.
+- `intro_content` claimed *"Dietitian Tejal recommends this recipe…"* (endorsement attribution she had not confirmed per recipe).
+- 140 recipes listed *"turmeric powder (haldi) for anti-inflammatory benefits"* as an ingredient.
+- 3 recipes were named with "Detox" ("Cabbage Detox Soup", "Healthy Detox Green Tea", "Mint Coriander Detox").
+
+### What was done
+- `why_healthy` → *"This recipe is built around {benefit}."* + safe tail: *"As part of a balanced diet, it supports a pattern of fibre-rich, minimally processed eating. The spices add flavour with little or no extra salt, sugar or fat, and the fibre supports everyday digestion."*
+- `who_for` → *"This recipe can suit anyone who enjoys practical, balanced Indian meals — including people managing PCOS, diabetes or weight goals — as part of an overall eating pattern. For a diagnosed condition, follow your doctor's or dietitian's guidance; this recipe is not a treatment for any condition."*
+- `intro_content` → removed "Dietitian Tejal recommends…" (now *"It is part of the DietFiniti recipe collection, built for balanced everyday Indian eating."*)
+- Turmeric line → *"for colour and flavour"*.
+- 3 "Detox" recipe **titles** renamed (slugs/URLs unchanged): "Cabbage Soup", "Healthy Green Tea", "Mint Coriander Drink".
+
+### Verification
+- Regex audit across title, description, why_healthy, who_for, intro_content, ingredients, instructions: **0 remaining risky matches** (cure/reverse/treat/prevent-as-claim/anti-inflammatory/detox/boost/guarantee/low-glycemic-index/clinical-dietitians-recommend/Tejal-recommends).
+- `npm run build` clean; recipe FAQPage schema now emits the safe text; renamed pages render under their original slugs.
