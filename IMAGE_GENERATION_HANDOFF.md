@@ -8,14 +8,20 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 283 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 417 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 121 recipes
-- **Fallback to `/image/homeimage.jpg`:** 417 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 293 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 407 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 131 recipes
+- **Fallback to `/image/homeimage.jpg`:** 407 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 2 — Batch 2 (10 images) — DONE, pushed as `536f45c`
+Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
+tomato-omelette-besan-based, spinach-mushroom-scramble, tofu-bhurji, soya-bhurji, idiyappam-with-kadala-curry, ragi-puttu, kuttu-ka-paratha, singhare-ka-cheela, mooli-thepla-stuffed-radish-flatbread, dal-tadka-minimal-oil.
+- Image generation cap: **10 per session** — after batch 2, the quota is exhausted; batch 3 must run in the next session/turn.
+- **Next batch (Batch 3) to generate:** moong-dal-tadka, toor-dal, dal-methi, lauki-chana-dal-bottle-gourd-lentils, rajma-masala-kidney-beans, chole-masala-chickpeas-low-oil, lobia-curry-black-eyed-peas, kala-chana-curry-black-chickpeas, green-moong-curry, moth-bean-curry-matki.
 
 ### Generation session 1 — Batch 1 (10 images) — DONE, pushed as `df02dca`
 Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
