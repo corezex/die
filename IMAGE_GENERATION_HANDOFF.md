@@ -8,14 +8,20 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 333 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 397 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 141 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 397 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 343 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 387 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 151 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 387 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 7 — Batch 7 (10 images) — DONE, pushed as `1ab271e`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+green-gram-dosa, chana-dal-palak, dalma-odisha-mixed-dal-with-veggies, chhoda-matar-dal, sookhi-urad-dal-dry-black-lentils, karela-sabzi-bitter-gourd, lauki-ki-sabzi-bottle-gourd, tori-ki-sabzi-ridge-gourd, parwal-sabzi-pointed-gourd, jeera-aloo-boiled-tossed.
+- Fixed `map_images_strict.py` bug: pass 2 now re-decides ALL non-exact mappings every run (no skipping stale mappings) so images can never be reused/shared. Verified: shared = 0.
+- **Next batch (Batch 8) to generate:** mutter-paneer-no-cream, kadai-paneer-healthy-less-oil, tofu-tikka-masala-dairy-free, mushroom-mutter, broccoli-stir-fry-indian-style, cabbage-poriyal, carrot-beans-poriyal, beetroot-thoran, snake-gourd-curry, ridge-gourd-sabzi.
 
 ### Generation session 6 — Batch 6 (10 images) — DONE, pushed as `db7dcf3`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
