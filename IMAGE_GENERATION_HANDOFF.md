@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 383 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 347 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 191 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 347 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 393 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 337 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 201 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 337 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 12 — Batch 12 (10 images) — DONE, pushed as `d51ec62`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+black-rice, quinoa-pulao, millet-bisi-bele-bath, oats-khichdi, daliya-khichdi-broken-wheat, bajra-khichdi, bajra-roti, ragi-roti, makki-ki-roti-cornmeal, oats-roti.
+- **Next batch (Batch 13) to generate:** amaranth-roti, buckwheat-roti, water-chestnut-roti-singhara, sorghum-roti, pearl-millet-roti, finger-millet-roti, foxtail-millet-rice, kodo-millet-pulao, little-millet-upma, barnyard-millet-pulao.
 
 ### Generation session 11 — Batch 11 (10 images) — DONE, pushed as `63fcc35`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
