@@ -8013,7 +8013,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/tamarind-rice-brown-rice.jpg"
   },
   {
     "slug": "raw-mango-rice",
@@ -8259,7 +8259,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/jeera-brown-rice.jpg"
   },
   {
     "slug": "tomato-brown-rice",
@@ -8301,7 +8301,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/tomato-brown-rice.jpg"
   },
   {
     "slug": "capsicum-brown-rice",
@@ -8343,7 +8343,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/capsicum-brown-rice.jpg"
   },
   {
     "slug": "apple-pie",
@@ -9355,7 +9355,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/recipes/lentil-soup.jpg"
+    "coverImage": "/image/recipes/clear-lentil-soup.jpg"
   },
   {
     "slug": "berry-bowl",
@@ -9841,7 +9841,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/recipes/toor-dal.jpg"
+    "coverImage": "/image/recipes/toor-dal-soup.jpg"
   },
   {
     "slug": "brown-rice-soup",
@@ -11463,7 +11463,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/recipes/ragi-malt.jpg"
+    "coverImage": "/image/recipes/ragi-malt-salty-version.jpg"
   },
   {
     "slug": "detox-green-tea",
@@ -12549,7 +12549,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/besan-chilla.jpg"
+    "coverImage": "/image/recipes/oats-besan-chilla.jpg"
   },
   {
     "slug": "soya-chunk-poha",
@@ -12591,7 +12591,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/poha.jpg"
+    "coverImage": "/image/recipes/soya-chunk-poha.jpg"
   },
   {
     "slug": "millet-dosa",
@@ -12633,7 +12633,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/proso-millet-dosa.jpg"
+    "coverImage": "/image/recipes/millet-dosa.jpg"
   },
   {
     "slug": "honey-oatmeal",
@@ -12795,7 +12795,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/millet-pongal.jpg"
+    "coverImage": "/image/recipes/little-millet-pongal.jpg"
   },
   {
     "slug": "jaggery-milk",
@@ -13239,7 +13239,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/poha.jpg"
+    "coverImage": "/image/recipes/spinach-poha.jpg"
   },
   {
     "slug": "mango-lassi",
@@ -13321,7 +13321,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/poha.jpg"
+    "coverImage": "/image/recipes/sweet-potato-poha.jpg"
   },
   {
     "slug": "mango-lickery",
@@ -13403,7 +13403,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/poha.jpg"
+    "coverImage": "/image/recipes/methi-poha.jpg"
   },
   {
     "slug": "mango-pudding",
@@ -13565,7 +13565,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/brown-rice-idli.jpg"
   },
   {
     "slug": "methi-matar-malai",
@@ -14091,7 +14091,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/recipes/masoor-dal.jpg"
+    "coverImage": "/image/recipes/masoor-dal-tadka.jpg"
   },
   {
     "slug": "moong-dal-khichdi",
@@ -14293,7 +14293,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/recipes/dal-makhani.jpg"
+    "coverImage": "/image/recipes/dal-makhani-vegan.jpg"
   },
   {
     "slug": "mushroom-curry",
@@ -14655,7 +14655,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/recipes/toor-dal.jpg"
+    "coverImage": "/image/recipes/mango-toor-dal.jpg"
   },
   {
     "slug": "oats-uttapam",
@@ -14817,7 +14817,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/recipes/thotakura-pappu-amaranth-dal.jpg"
+    "coverImage": "/image/recipes/amaranth-dal.jpg"
   },
   {
     "slug": "palak-soup",
@@ -16461,7 +16461,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/recipes/colocasia-roast-air-fried-arbi.jpg"
+    "coverImage": "/image/recipes/colocasia-roast.jpg"
   },
   {
     "slug": "stuffed-paneer-paratha",
@@ -17345,7 +17345,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/ragi-roti.jpg"
+    "coverImage": "/image/recipes/ragi-roti-with-greens.jpg"
   },
   {
     "slug": "watermelon-juice",
@@ -17467,7 +17467,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/oats-khichdi.jpg"
+    "coverImage": "/image/recipes/oats-khichdi-with-spinach.jpg"
   },
   {
     "slug": "whole-wheat-pasta",
@@ -17549,7 +17549,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/brown-rice-lemon-pulao.jpg"
   },
   {
     "slug": "red-rice-tomato-bath",
@@ -17591,7 +17591,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/red-rice.jpg"
+    "coverImage": "/image/recipes/red-rice-tomato-bath.jpg"
   },
   {
     "slug": "black-rice-khichdi",
@@ -17633,7 +17633,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/black-rice.jpg"
+    "coverImage": "/image/recipes/black-rice-khichdi.jpg"
   },
   {
     "slug": "zucchini-noodles",
@@ -17715,7 +17715,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-bisibelebath.jpg"
   },
   {
     "slug": "sorghum-lemon-rice",
@@ -17757,7 +17757,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/lemon-rice.jpg"
+    "coverImage": "/image/recipes/sorghum-lemon-rice.jpg"
   },
   {
     "slug": "pearl-millet-khichdi",
@@ -17799,7 +17799,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pearl-millet-khichdi.jpg"
   },
   {
     "slug": "barnyard-millet-curd-rice",
@@ -17883,7 +17883,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/little-millet-tamarind-rice.jpg"
   },
   {
     "slug": "kodo-millet-puliyogare",
@@ -17925,7 +17925,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/kodo-millet-puliyogare.jpg"
   },
   {
     "slug": "proso-millet-tomato-rice",
@@ -18009,7 +18009,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/brown-rice-jeera-pulao.jpg"
   },
   {
     "slug": "quinoa-curd-rice",
@@ -18051,7 +18051,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/curd-rice.jpg"
+    "coverImage": "/image/recipes/quinoa-curd-rice.jpg"
   },
   {
     "slug": "oats-curd-rice",
@@ -18093,7 +18093,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/curd-rice.jpg"
+    "coverImage": "/image/recipes/oats-curd-rice.jpg"
   },
   {
     "slug": "amaranth-pulao",
@@ -18135,7 +18135,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/amaranth-pulao.jpg"
   },
   {
     "slug": "buckwheat-khichdi",
@@ -18177,7 +18177,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/buckwheat-khichdi.jpg"
   },
   {
     "slug": "water-chestnut-roti",
@@ -18219,7 +18219,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/water-chestnut-roti-singhara.jpg"
+    "coverImage": "/image/recipes/water-chestnut-roti.jpg"
   },
   {
     "slug": "multi-millet-roti",
@@ -18261,7 +18261,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/multi-millet-roti.jpg"
   },
   {
     "slug": "soya-flour-roti",
@@ -18303,7 +18303,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/soya-flour-roti.jpg"
   },
   {
     "slug": "chickpea-flour-roti",
@@ -18345,7 +18345,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/chickpea-flour-roti.jpg"
   },
   {
     "slug": "cauliflower-rice",
@@ -18387,7 +18387,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cauliflower-rice.jpg"
   },
   {
     "slug": "broccoli-rice",
@@ -18429,7 +18429,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/broccoli-rice.jpg"
   },
   {
     "slug": "cabbage-rice-pulao",
@@ -18471,7 +18471,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/cabbage-rice.jpg"
+    "coverImage": "/image/recipes/cabbage-rice-pulao.jpg"
   },
   {
     "slug": "mushroom-brown-rice",
@@ -18513,7 +18513,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/mushroom-brown-rice.jpg"
   },
   {
     "slug": "sweet-corn-quinoa",
@@ -18555,7 +18555,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sweet-corn-quinoa.jpg"
   },
   {
     "slug": "green-peas-millet",
@@ -18597,7 +18597,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/green-peas-millet.jpg"
   },
   {
     "slug": "spinach-ragi-roti",
@@ -18639,7 +18639,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/ragi-roti.jpg"
+    "coverImage": "/image/recipes/spinach-ragi-roti.jpg"
   },
   {
     "slug": "beetroot-jowar-roti",
@@ -18681,7 +18681,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/jowar-roti.jpg"
+    "coverImage": "/image/recipes/beetroot-jowar-roti.jpg"
   },
   {
     "slug": "carrot-bajra-roti",
@@ -18723,7 +18723,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/bajra-roti.jpg"
+    "coverImage": "/image/recipes/carrot-bajra-roti.jpg"
   },
   {
     "slug": "methi-makki-roti",
@@ -18765,7 +18765,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/methi-makki-roti.jpg"
   },
   {
     "slug": "multigrain-pulao",
@@ -18807,7 +18807,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/multigrain-pulao.jpg"
   },
   {
     "slug": "brown-rice-bisi-bele-bath",
@@ -18849,7 +18849,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/brown-rice.jpg"
+    "coverImage": "/image/recipes/brown-rice-bisi-bele-bath.jpg"
   },
   {
     "slug": "red-rice-pongal",
@@ -18891,7 +18891,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/recipes/red-rice.jpg"
+    "coverImage": "/image/recipes/red-rice-pongal.jpg"
   },
   {
     "slug": "millet-veggie-upma",
@@ -18933,7 +18933,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-veggie-upma.jpg"
   },
   {
     "slug": "oats-tikki",
@@ -18975,7 +18975,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-tikki.jpg"
   },
   {
     "slug": "baked-paneer-tikka",
@@ -19059,7 +19059,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/air-fried-tofu.jpg"
   },
   {
     "slug": "roasted-chana",
@@ -19101,7 +19101,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/roasted-chana.jpg"
   },
   {
     "slug": "millet-cookies",
@@ -19143,7 +19143,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-cookies.jpg"
   },
   {
     "slug": "ragi-ladoo",
@@ -19185,7 +19185,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-ladoo.jpg"
   },
   {
     "slug": "baked-mathri-1",
@@ -19227,7 +19227,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/baked-mathri-1.jpg"
   },
   {
     "slug": "baked-namak-pare",
@@ -19269,7 +19269,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/baked-namak-pare.jpg"
   },
   {
     "slug": "oats-chakli",
@@ -19311,7 +19311,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-chakli.jpg"
   },
   {
     "slug": "baked-nippattu",
@@ -19353,7 +19353,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/baked-nippattu.jpg"
   },
   {
     "slug": "roasted-soyabean",
@@ -19395,7 +19395,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/roasted-soyabean.jpg"
   },
   {
     "slug": "pumpkin-seed-mix",
@@ -19479,7 +19479,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/recipes/seed-mix.jpg"
+    "coverImage": "/image/recipes/sunflower-seed-mix.jpg"
   },
   {
     "slug": "chia-seed-energy-bites",
@@ -19521,7 +19521,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/chia-seed-energy-bites.jpg"
   },
   {
     "slug": "flaxseed-chutney-powder",
@@ -19563,7 +19563,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/flaxseed-chutney-powder.jpg"
   },
   {
     "slug": "curry-leaves-powder",
@@ -19605,7 +19605,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/curry-leaves-powder.jpg"
   },
   {
     "slug": "garlic-pepper-soup-1",
@@ -19647,7 +19647,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/recipes/pepper-soup.jpg"
+    "coverImage": "/image/recipes/garlic-pepper-soup-1.jpg"
   },
   {
     "slug": "tomato-basil-soup",
@@ -19689,7 +19689,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tomato-basil-soup.jpg"
   },
   {
     "slug": "carrot-ginger-soup",
@@ -19731,7 +19731,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/carrot-ginger-soup.jpg"
   },
   {
     "slug": "pumpkin-coriander-soup",
@@ -19773,7 +19773,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pumpkin-coriander-soup.jpg"
   },
   {
     "slug": "mushroom-garlic-soup",
@@ -19857,7 +19857,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/spinach-corn-soup.jpg"
   },
   {
     "slug": "broccoli-pea-soup",
@@ -19941,7 +19941,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/lentil-lemon-soup.jpg"
   },
   {
     "slug": "cabbage-detox-soup",
@@ -19983,7 +19983,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cabbage-detox-soup.jpg"
   },
   {
     "slug": "zucchini-basil-soup",
@@ -20025,7 +20025,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/zucchini-basil-soup.jpg"
   },
   {
     "slug": "bottle-gourd-tomato-soup",
@@ -20067,7 +20067,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/bottle-gourd-tomato-soup.jpg"
   },
   {
     "slug": "radish-soup",
@@ -20109,7 +20109,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/radish-soup.jpg"
   },
   {
     "slug": "beetroot-carrot-soup",
@@ -20151,7 +20151,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/beetroot-carrot-soup.jpg"
   },
   {
     "slug": "cucumber-mint-soup",
@@ -20193,7 +20193,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cucumber-mint-soup.jpg"
   },
   {
     "slug": "baked-samosa-millet-crust",
@@ -20235,7 +20235,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/recipes/baked-samosa.jpg"
+    "coverImage": "/image/recipes/baked-samosa-millet-crust.jpg"
   },
   {
     "slug": "baked-kachori-oats-crust",
@@ -20277,7 +20277,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/baked-kachori-oats-crust.jpg"
   },
   {
     "slug": "moong-dal-mini-idlis",
@@ -20319,7 +20319,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/moong-dal-mini-idlis.jpg"
   },
   {
     "slug": "sprouted-moong-chaat",
@@ -20361,7 +20361,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sprouted-moong-chaat.jpg"
   },
   {
     "slug": "peanut-chaat",
@@ -20403,7 +20403,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/peanut-chaat.jpg"
   },
   {
     "slug": "sweet-corn-chaat",
@@ -20445,7 +20445,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sweet-corn-chaat.jpg"
   },
   {
     "slug": "makhana-bhel",
@@ -20487,7 +20487,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/makhana-bhel.jpg"
   },
   {
     "slug": "puffed-rice-chivda",
@@ -20529,7 +20529,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/puffed-rice-chivda.jpg"
   },
   {
     "slug": "oats-bhel",
@@ -20571,7 +20571,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-bhel.jpg"
   },
   {
     "slug": "ragi-khakhra",
@@ -20613,7 +20613,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-khakhra.jpg"
   },
   {
     "slug": "amla-aloe-vera-juice",
@@ -20655,7 +20655,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/amla-aloe-vera-juice.jpg"
   },
   {
     "slug": "mint-coriander-detox",
@@ -20697,7 +20697,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/mint-coriander-detox.jpg"
   },
   {
     "slug": "cucumber-chia-drink",
@@ -20739,7 +20739,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cucumber-chia-drink.jpg"
   },
   {
     "slug": "lemon-honey-water",
@@ -20781,7 +20781,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/lemon-honey-water.jpg"
   },
   {
     "slug": "warm-ginger-water",
@@ -20823,7 +20823,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/warm-ginger-water.jpg"
   },
   {
     "slug": "tulsi-green-tea",
@@ -20865,7 +20865,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/recipes/green-tea.jpg"
+    "coverImage": "/image/recipes/tulsi-green-tea.jpg"
   },
   {
     "slug": "hibiscus-iced-tea",
@@ -20907,7 +20907,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/hibiscus-iced-tea.jpg"
   },
   {
     "slug": "moringa-tea",
@@ -20949,7 +20949,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/moringa-tea.jpg"
   },
   {
     "slug": "ashwagandha-tea",
@@ -20991,7 +20991,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ashwagandha-tea.jpg"
   },
   {
     "slug": "turmeric-black-pepper-tea",
@@ -21033,7 +21033,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/turmeric-black-pepper-tea.jpg"
   },
   {
     "slug": "cinnamon-milk",
@@ -21075,7 +21075,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cinnamon-milk.jpg"
   },
   {
     "slug": "saffron-almond-milk",
@@ -21117,7 +21117,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/recipes/almond-milk.jpg"
+    "coverImage": "/image/recipes/saffron-almond-milk.jpg"
   },
   {
     "slug": "walnut-milk",
@@ -21159,7 +21159,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/walnut-milk.jpg"
   },
   {
     "slug": "oats-banana-smoothie",
@@ -21201,7 +21201,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-banana-smoothie.jpg"
   },
   {
     "slug": "apple-cinnamon-smoothie",
@@ -21243,7 +21243,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/apple-cinnamon-smoothie.jpg"
   },
   {
     "slug": "papaya-chia-smoothie",
@@ -21285,7 +21285,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/papaya-chia-smoothie.jpg"
   },
   {
     "slug": "mango-spinach-smoothie",
@@ -21411,7 +21411,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tomato-celery-juice.jpg"
   },
   {
     "slug": "pineapple-ginger-juice",
@@ -21453,7 +21453,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pineapple-ginger-juice.jpg"
   },
   {
     "slug": "ragi-halwa",
@@ -21495,7 +21495,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-halwa.jpg"
   },
   {
     "slug": "oats-kheer",
@@ -21537,7 +21537,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-kheer.jpg"
   },
   {
     "slug": "millet-payasam",
@@ -21579,7 +21579,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-payasam.jpg"
   },
   {
     "slug": "apple-rabdi",
@@ -21621,7 +21621,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/apple-rabdi.jpg"
   },
   {
     "slug": "lauki-halwa",
@@ -21663,7 +21663,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/lauki-halwa.jpg"
   },
   {
     "slug": "carrot-kheer",
@@ -21705,7 +21705,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/carrot-kheer.jpg"
   },
   {
     "slug": "pumpkin-halwa",
@@ -21747,7 +21747,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pumpkin-halwa.jpg"
   },
   {
     "slug": "sweet-potato-pudding",
@@ -21789,7 +21789,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sweet-potato-pudding.jpg"
   },
   {
     "slug": "chia-coconut-pudding",
@@ -21831,7 +21831,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/chia-coconut-pudding.jpg"
   },
   {
     "slug": "fruit-custard",
@@ -21873,7 +21873,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/fruit-custard.jpg"
   },
   {
     "slug": "dates-almond-roll",
@@ -21915,7 +21915,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/dates-almond-roll.jpg"
   },
   {
     "slug": "fig-walnut-bites",
@@ -21957,7 +21957,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/fig-walnut-bites.jpg"
   },
   {
     "slug": "peanut-jaggery-bar",
@@ -21999,7 +21999,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/peanut-jaggery-bar.jpg"
   },
   {
     "slug": "sesame-ladoo",
@@ -22041,7 +22041,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sesame-ladoo.jpg"
   },
   {
     "slug": "coconut-ladoo",
@@ -22083,7 +22083,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/coconut-ladoo.jpg"
   },
   {
     "slug": "amaranth-ladoo",
@@ -22125,7 +22125,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/amaranth-ladoo.jpg"
   },
   {
     "slug": "foxnut-kheer",
@@ -22167,7 +22167,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/foxnut-kheer.jpg"
   },
   {
     "slug": "jowar-apple-crumble",
@@ -22209,6 +22209,6 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/jowar-apple-crumble.jpg"
   }
 ]
