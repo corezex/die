@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import recipesData from "@/app/data/recipes.json";
 
 const siteUrl = "https://dietfiniti.com";
 
@@ -16,8 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/services/sports-nutrition", "monthly", 0.8],
     ["/bmi-calculator", "monthly", 0.7],
     ["/testimonials", "monthly", 0.7],
-    ["/blog", "weekly", 0.8],
-    ["/recipe", "weekly", 0.7],
+    ["/recipe", "weekly", 0.9],
     ["/contact", "monthly", 0.8],
     ["/privacy-policy", "yearly", 0.2],
     ["/terms-conditions", "yearly", 0.2],
@@ -25,11 +25,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/community-guidelines", "yearly", 0.2],
     ["/disclaimer", "yearly", 0.2],
   ];
+  
   const lastModified = new Date();
-  return routes.map(([path, changeFrequency, priority]) => ({
+  
+  const staticRoutes = routes.map(([path, changeFrequency, priority]) => ({
     url: `${siteUrl}${path}`,
     lastModified,
     changeFrequency,
     priority,
   }));
+
+  const recipeRoutes = recipesData.map((recipe) => ({
+    url: `${siteUrl}/recipe/${recipe.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as MetadataRoute.Sitemap[0]["changeFrequency"],
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...recipeRoutes];
 }

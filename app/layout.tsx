@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { SiteStructuredData } from "@/app/components/SiteStructuredData";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 const siteUrl = "https://dietfiniti.com";
 
 export const viewport: Viewport = { themeColor: "#0f766e", colorScheme: "light" };
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-IN">
-      <body className={inter.className}>
+      <body>
         <SiteStructuredData />
         <Header />
         <main>{children}</main>

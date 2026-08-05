@@ -1,502 +1,275 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { motion, Variants } from "framer-motion";
-import {
-  Search,
-  Clock,
-  Users,
-  ChefHat,
-  ArrowRight,
-  Flame,
-  UtensilsCrossed,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Clock, ChefHat, Search, Filter } from "lucide-react";
+import recipesData from "@/app/data/recipes.json";
+import { Metadata } from "next";
 
-// Types based on your API response
-interface Recipe {
-  _id: string;
-  title: string;
-  slug: string;
-  content: string;
-  ingredients: string[];
-  tags: string[];
-  cookingTime: number | null;
-  difficulty: string;
-  servings: number;
-  coverImage: string | null;
-  images:
-    | string
-    | Array<{ url: string; filename: string; _id: string; uploadedAt: string }>;
-  status: string;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-}
-
-interface RecipeResponse {
-  status: boolean;
-  message: string;
-  data: Recipe[];
-}
-
-// API function to fetch recipes
-const getRecipes = async (): Promise<RecipeResponse> => {
-  try {
-    const response = await fetch("https://api.dietfiniti.com/api/getrecipe");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching recipes:", error);
-    return {
-      status: false,
-      message: "Failed to fetch recipes",
-      data: [],
-    };
+export const metadata: Metadata = {
+  title: "500+ Healthy Indian Recipes & Diet Food Ideas",
+  description: "Browse our comprehensive collection of 500+ healthy Indian recipes. From low-calorie breakfasts to protein-packed dinners and guilt-free snacks, designed by a nutritionist.",
+  alternates: {
+    canonical: "https://dietfiniti.com/recipe"
   }
 };
 
-// Function to extract first image from content
-const getFirstImageFromContent = (content: string): string | null => {
-  const imgRegex = /<img[^>]+src="([^">]+)"/g;
-  const match = imgRegex.exec(content);
-  return match ? match[1] : null;
-};
+const RECIPES_PER_PAGE = 24;
+const CATEGORIES = [
+  "All", 
+  "Healthy Breakfast", 
+  "Dals & Legumes", 
+  "Vegetable Curries", 
+  "Healthy Grains", 
+  "Snacks & Soups", 
+  "Beverages & Desserts"
+];
 
-// Function to get featured image from recipe data
-const getFeaturedImage = (recipe: Recipe): string | null => {
-  // Priority 1: Cover image
-  if (recipe.coverImage) return recipe.coverImage;
+export default async function RecipeListPage(props: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const searchParams = await props.searchParams;
+  
+  const pageParam = searchParams?.page;
+  const currentPage = typeof pageParam === "string" ? parseInt(pageParam, 10) : 1;
+  const page = isNaN(currentPage) || currentPage < 1 ? 1 : currentPage;
+  
+  const q = typeof searchParams?.q === "string" ? searchParams.q : "";
+  const category = typeof searchParams?.category === "string" ? searchParams.category : "All";
 
-  // Priority 2: Handle images field (can be string or array)
-  if (recipe.images) {
-    if (typeof recipe.images === "string") {
-      return recipe.images;
-    } else if (Array.isArray(recipe.images) && recipe.images.length > 0) {
-      // Handle array of image objects or strings
-      const firstImage = recipe.images[0];
-      return typeof firstImage === "string" ? firstImage : firstImage.url;
-    }
+  // Filter recipes based on search query and category
+  let filteredRecipes = recipesData;
+  
+  if (category && category !== "All") {
+    filteredRecipes = filteredRecipes.filter(r => r.category === category);
   }
-
-  // Priority 3: First image from content
-  const contentImage = getFirstImageFromContent(recipe.content);
-  if (contentImage) return contentImage;
-
-  return null;
-};
-
-// Function to construct proper image URL
-const constructImageUrl = (imagePath: string | null): string | null => {
-  if (!imagePath) return null;
-
-  // If it's already a full URL, return as is
-  if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
-    return imagePath;
-  }
-
-  // If it's a data URL, return as is
-  if (imagePath.startsWith("data:")) {
-    return imagePath;
-  }
-
-  // If it starts with /, prepend your API domain
-  if (imagePath.startsWith("/")) {
-    return `https://api.dietfiniti.com${imagePath}`;
-  }
-
-  // If none of the above, return as is (might be a relative path)
-  return imagePath;
-};
-
-// Function to strip HTML tags for excerpt
-const stripHtml = (html: string): string => {
-  const text = html.replace(/<[^>]*>/g, "");
-  return text.length > 120 ? text.substring(0, 120) + "..." : text;
-};
-
-// Function to format cooking time
-const formatCookingTime = (minutes: number | null): string => {
-  if (!minutes) return "Not specified";
-  if (minutes < 60) return `${minutes} min`;
-  const hours = Math.floor(minutes / 60);
-  const mins = minutes % 60;
-  return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
-};
-
-// Difficulty badge styling
-const difficultyStyles: Record<string, string> = {
-  easy: "bg-green-50 text-green-700 border-green-200",
-  medium: "bg-amber-50 text-amber-700 border-amber-200",
-  hard: "bg-red-50 text-red-700 border-red-200",
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 100, damping: 15 },
-  },
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
-};
-
-// Custom Image component that handles image URLs properly
-const RecipeImage = ({
-  src,
-  alt,
-  className,
-}: {
-  src: string | null;
-  alt: string;
-  className?: string;
-}) => {
-  const [imageError, setImageError] = useState(false);
-
-  // If no src or image error, show placeholder
-  if (!src || imageError) {
-    return (
-      <div className={`relative ${className}`}>
-        <div className="w-full h-full bg-gradient-to-br from-orange-100 to-yellow-100 flex items-center justify-center">
-          <div className="text-center text-gray-400">
-            <ChefHat className="w-8 h-8 mx-auto mb-2" />
-            <p className="text-sm">No Image</p>
-          </div>
-        </div>
-      </div>
+  
+  if (q) {
+    const lowerQ = q.toLowerCase();
+    filteredRecipes = filteredRecipes.filter(r => 
+      r.title.toLowerCase().includes(lowerQ) || 
+      r.description.toLowerCase().includes(lowerQ) ||
+      r.ingredients.some(i => i.toLowerCase().includes(lowerQ))
     );
   }
+  
+  const totalRecipes = filteredRecipes.length;
+  const totalPages = Math.max(1, Math.ceil(totalRecipes / RECIPES_PER_PAGE));
+  const validPage = Math.min(page, totalPages);
+  
+  const startIndex = (validPage - 1) * RECIPES_PER_PAGE;
+  const endIndex = startIndex + RECIPES_PER_PAGE;
+  
+  const currentRecipes = filteredRecipes.slice(startIndex, endIndex);
 
-  // Construct the full image URL
-  const imageUrl = constructImageUrl(src);
-
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {imageUrl && (
-        <Image
-          src={imageUrl}
-          alt={alt}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          onError={() => setImageError(true)}
-          unoptimized={true}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      )}
-    </div>
-  );
-};
-
-export default function RecipeListPage() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const response = await getRecipes();
-
-        if (response.status && Array.isArray(response.data)) {
-          setRecipes(response.data);
-        } else {
-          setError(response.message || "Invalid data format");
-        }
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError("Failed to load recipes");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRecipes();
-  }, []);
-
-  // Save recipes to localStorage for access on individual recipe page
-  useEffect(() => {
-    if (recipes.length > 0) {
-      localStorage.setItem("recipesData", JSON.stringify(recipes));
-    }
-  }, [recipes]);
-
-  // Get unique categories from tags
-  const categories = [
-    "All",
-    ...new Set(recipes.flatMap((recipe) => recipe.tags)),
-  ];
-
-  // Filter recipes based on category and search
-  const filteredRecipes = recipes.filter((recipe) => {
-    const matchesCategory =
-      selectedCategory === "All" || recipe.tags.includes(selectedCategory);
-    const matchesSearch =
-      recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      recipe.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      recipe.ingredients.some((ingredient) =>
-        ingredient.toLowerCase().includes(searchQuery.toLowerCase())
-      ) ||
-      recipe.tags.some((tag) =>
-        tag.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    return matchesCategory && matchesSearch;
-  });
-
-  // Function to handle recipe click
-  const handleViewRecipe = (recipe: Recipe) => {
-    router.push(`/recipe/${recipe.slug || recipe._id}`);
+  // Helper for pagination URLs
+  const buildUrl = (p: number) => {
+    const params = new URLSearchParams();
+    if (p > 1) params.set("page", p.toString());
+    if (q) params.set("q", q);
+    if (category !== "All") params.set("category", category);
+    const queryString = params.toString();
+    return `/recipe${queryString ? `?${queryString}` : ""}`;
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading recipes...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-red-500 text-xl mb-4">⚠️</div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">
-            Error Loading Recipes
-          </h2>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
-          >
-            Try Again
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50/50 via-white to-amber-50/50">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 py-20 md:py-28">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-44 h-44 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm mb-6 border border-white/30">
-              <ChefHat className="w-4 h-4 mr-2" />
-              Everyday Recipe Ideas
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              Healthy Indian Recipe Ideas
-            </h1>
-            <p className="text-lg md:text-2xl text-orange-50 max-w-2xl mx-auto font-light">
-              Practical recipe ideas for balanced everyday eating. Adapt recipes to your own dietary needs and medical advice.
-            </p>
-
-            {/* Search Bar */}
-            <div className="max-w-xl mx-auto mt-8">
-              <div className="relative">
-                <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search published recipes or ingredients..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-5 py-4 rounded-2xl border-0 bg-white shadow-xl text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-white/70 focus:outline-none"
-                />
-              </div>
-            </div>
-          </motion.div>
+    <div className="bg-gray-50 min-h-screen py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header Section */}
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            500+ Healthy Indian Recipes
+          </h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Looking for <strong>healthy Indian food options</strong>? We've compiled 500+ nutritious, low-calorie, and high-protein recipes. 
+            Filter below to find weight loss diet plans, diabetic-friendly meals, or wholesome family food.
+          </p>
         </div>
-      </section>
 
-      {/* Categories */}
-      {categories.length > 1 && (
-        <section className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-2 py-4">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedCategory === category
-                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md"
-                      : "bg-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-700"
+        {/* Filter & Search Bar Section */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-10">
+          <form method="GET" action="/recipe" className="flex flex-col md:flex-row gap-4">
+            {/* Search Input */}
+            <div className="flex-1 relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                name="q"
+                defaultValue={q}
+                placeholder="Search recipes or ingredients (e.g. Oats, Paneer)..."
+                className="block w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl leading-5 bg-gray-50 placeholder-gray-500 focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
+              />
+            </div>
+            
+            {/* Category Dropdown */}
+            <div className="md:w-72 relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Filter className="h-5 w-5 text-gray-400" />
+              </div>
+              <select
+                name="category"
+                defaultValue={category}
+                className="block w-full pl-11 pr-10 py-3 border border-gray-200 rounded-xl leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 appearance-none transition-colors"
+              >
+                {CATEGORIES.map(cat => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+            </div>
+            
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="bg-green-600 text-white py-3 px-8 rounded-xl font-medium hover:bg-green-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            >
+              Search
+            </button>
+          </form>
+
+          {/* Quick Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 mt-6 pt-5 border-t border-gray-100">
+            <span className="text-sm text-gray-500 font-medium mr-2">Quick Filters:</span>
+            {CATEGORIES.map(cat => {
+              const isSelected = category === cat;
+              const params = new URLSearchParams();
+              if (q) params.set("q", q);
+              if (cat !== "All") params.set("category", cat);
+              const queryString = params.toString();
+              const href = `/recipe${queryString ? `?${queryString}` : ""}`;
+              
+              return (
+                <Link
+                  key={cat}
+                  href={href}
+                  className={`text-xs px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                    isSelected 
+                      ? "bg-green-600 text-white shadow-sm" 
+                      : "bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-800"
                   }`}
                 >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Recipe Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {filteredRecipes.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-gray-100">
-            <ChefHat className="w-14 h-14 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              No recipes found
-            </h3>
-            <p className="text-gray-600">
-              {searchQuery || selectedCategory !== "All"
-                ? "Try adjusting your search terms or category filter"
-                : "No recipes published yet"}
-            </p>
-          </div>
-        ) : (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {filteredRecipes.map((recipe) => {
-              const featuredImage = getFeaturedImage(recipe);
-              const difficultyClass =
-                difficultyStyles[recipe.difficulty?.toLowerCase()] ||
-                "bg-gray-50 text-gray-700 border-gray-200";
-
-              return (
-                <motion.article
-                  key={recipe._id}
-                  variants={cardVariants}
-                  whileHover={{ y: -6 }}
-                  onClick={() => handleViewRecipe(recipe)}
-                  className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200 flex flex-col h-full cursor-pointer"
-                >
-                  {/* Image with difficulty badge */}
-                  <div className="relative">
-                    <RecipeImage
-                      src={featuredImage}
-                      alt={recipe.title}
-                      className="h-52 w-full"
-                    />
-                    {recipe.difficulty && (
-                      <span
-                        className={`absolute top-3 right-3 z-10 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border capitalize shadow-sm bg-white/95 ${difficultyClass}`}
-                      >
-                        <Flame className="w-3 h-3 mr-1" />
-                        {recipe.difficulty}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    {/* Title */}
-                    <h2 className="font-bold text-gray-900 text-lg mb-3 line-clamp-2 group-hover:text-orange-700 transition-colors">
-                      {recipe.title}
-                    </h2>
-
-                    {/* Recipe Meta Info */}
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 mb-4">
-                      {recipe.cookingTime && (
-                        <span className="flex items-center gap-1.5 bg-orange-50 px-2.5 py-1 rounded-lg">
-                          <Clock className="w-4 h-4 text-orange-500" />
-                          {formatCookingTime(recipe.cookingTime)}
-                        </span>
-                      )}
-                      <span className="flex items-center gap-1.5 bg-orange-50 px-2.5 py-1 rounded-lg">
-                        <Users className="w-4 h-4 text-orange-500" />
-                        {recipe.servings} serving
-                        {recipe.servings !== 1 ? "s" : ""}
-                      </span>
-                    </div>
-
-                    {/* Ingredients Preview */}
-                    {recipe.ingredients.length > 0 && (
-                      <div className="mb-4 flex items-start gap-2">
-                        <UtensilsCrossed className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-gray-600 line-clamp-2">
-                          {recipe.ingredients.slice(0, 3).join(", ")}
-                          {recipe.ingredients.length > 3 && "..."}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Excerpt */}
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
-                      {stripHtml(recipe.content)}
-                    </p>
-
-                    {/* View Recipe Button */}
-                    <div className="mt-auto w-full inline-flex items-center justify-center px-4 py-2.5 bg-orange-50 text-orange-700 group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-amber-500 group-hover:text-white text-sm font-medium rounded-xl transition-all">
-                      View Recipe
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </motion.article>
+                  {cat}
+                </Link>
               );
             })}
-          </motion.div>
-        )}
-      </section>
+          </div>
+        </div>
 
-      {/* Stats */}
-      {recipes.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl p-8 shadow-xl"
-          >
-            <div className="grid grid-cols-3 gap-8 text-center text-white">
-              <div>
-                <div className="text-3xl font-bold">{recipes.length}</div>
-                <div className="text-sm text-orange-50 mt-1">Total Recipes</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">
-                  {new Set(recipes.flatMap((recipe) => recipe.tags)).size}
-                </div>
-                <div className="text-sm text-orange-50 mt-1">Categories</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">
-                  {
-                    recipes.filter(
-                      (recipe) => recipe.difficulty?.toLowerCase() === "easy"
-                    ).length
-                  }
-                </div>
-                <div className="text-sm text-orange-50 mt-1">Easy Recipes</div>
-              </div>
+        {/* Empty State */}
+        {currentRecipes.length === 0 && (
+          <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-sm">
+            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-green-500" />
             </div>
-          </motion.div>
-        </section>
-      )}
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No recipes found</h3>
+            <p className="text-gray-500 mb-6">We couldn't find any recipes matching your criteria.</p>
+            <Link 
+              href="/recipe" 
+              className="inline-block bg-green-600 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Clear Filters
+            </Link>
+          </div>
+        )}
+
+        {/* Recipe Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {currentRecipes.map((recipe) => (
+            <Link href={`/recipe/${recipe.slug}`} key={recipe.slug} className="group">
+              <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+                <div className="relative w-full h-48 bg-gray-200 overflow-hidden">
+                  <Image
+                    src={recipe.coverImage}
+                    alt={recipe.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded text-xs font-semibold text-green-700">
+                    {recipe.category}
+                  </div>
+                </div>
+                
+                <div className="p-5 flex flex-col flex-grow">
+                  <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors line-clamp-2">
+                    {recipe.title}
+                  </h2>
+                  <p className="text-sm text-gray-600 line-clamp-2 mb-4 flex-grow">
+                    {recipe.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100 mt-auto">
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 mr-1.5 text-orange-500" />
+                      <span>{recipe.total_time} mins</span>
+                    </div>
+                    <div className="flex items-center">
+                      <ChefHat className="w-4 h-4 mr-1.5 text-green-500" />
+                      <span>{recipe.difficulty}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Server-Side Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center space-x-2 mt-12">
+            {validPage > 1 && (
+              <Link 
+                href={buildUrl(validPage - 1)}
+                className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-green-50 hover:text-green-700 hover:border-green-300 transition-colors flex items-center"
+                aria-label="Previous page"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+            )}
+            
+            <div className="flex items-center space-x-1">
+              {Array.from({ length: totalPages }).map((_, idx) => {
+                const pageNum = idx + 1;
+                // Show first, last, and pages around current
+                if (
+                  pageNum === 1 || 
+                  pageNum === totalPages || 
+                  (pageNum >= validPage - 2 && pageNum <= validPage + 2)
+                ) {
+                  return (
+                    <Link
+                      key={pageNum}
+                      href={buildUrl(pageNum)}
+                      className={`w-10 h-10 flex items-center justify-center rounded-lg border transition-colors ${
+                        validPage === pageNum
+                          ? "bg-green-600 text-white border-green-600 font-semibold"
+                          : "bg-white text-gray-700 border-gray-300 hover:bg-green-50 hover:text-green-700 hover:border-green-300"
+                      }`}
+                    >
+                      {pageNum}
+                    </Link>
+                  );
+                } else if (
+                  pageNum === validPage - 3 || 
+                  pageNum === validPage + 3
+                ) {
+                  return <span key={pageNum} className="px-1 text-gray-500">...</span>;
+                }
+                return null;
+              })}
+            </div>
+
+            {validPage < totalPages && (
+              <Link 
+                href={buildUrl(validPage + 1)}
+                className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-green-50 hover:text-green-700 hover:border-green-300 transition-colors flex items-center"
+                aria-label="Next page"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+            )}
+          </div>
+        )}
+
+      </div>
     </div>
   );
 }
