@@ -119,3 +119,31 @@ why-choose), amber/orange (about stats, weight-gain), and a cream footer (#FAF3E
 
 **Verified:** all 18+ routes (incl. blog article + recipe detail) render with zero
 teal/blue/cyan/purple/pink/rose/amber/orange classes; build clean.
+
+
+---
+
+## 8. llms.txt + separated sitemaps + crawlability audit (2026-08-05)
+
+### llms.txt (added)
+- `/llms.txt` — LLM-readable index (llmstxt.org standard): description, 16 key pages,
+  all 87 blog posts with excerpts, pointer to llms-full.txt. Generated from the same
+  data files as the site (always in sync), served `text/plain`.
+- `/llms-full.txt` — complete index: key pages + 87 blog posts + all 537 recipes with
+  descriptions (653 lines).
+- Linked from the footer on every page; explicitly allowed in robots.txt.
+
+### Sitemaps (separated)
+- `/sitemap.xml` — proper `<sitemapindex>` (3 entries)
+- `/sitemap/static.xml` — 20 key static pages
+- `/sitemap/recipes.xml` — 537 recipe pages
+- `/sitemap/blog.xml` — 87 blog posts
+- robots.txt points to the index; each sub-sitemap served `application/xml`.
+
+### Crawlability fixes
+- robots.txt: removed non-standard `host` directive; explicit `Allow: /llms.txt` &
+  `/llms-full.txt`; kept `Disallow: /api/, /_next/`.
+- Verified: sitemap index root correct; **all 644 URLs in sitemaps return 200**;
+  internal-link BFS (134 pages) found **0 broken links**; every crawled page has a
+  canonical; filtered/paginated recipe & blog states remain `noindex, follow` +
+  canonical to parent; llms files not blocked and served with correct content types.

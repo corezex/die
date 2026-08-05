@@ -260,7 +260,15 @@ export default function Footer() {
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500 mx-1" />
               <span>for your health</span>
-            </div>
+                          <a
+                href="/llms.txt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-green-700 transition-colors"
+              >
+                llms.txt
+              </a>
+</div>
           </div>
         </div>
       </div>
