@@ -8,14 +8,23 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 273 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 265 images
-- **Mapped in recipes.json (real image paths):** 111 recipes
-- **Fallback to `/image/homeimage.jpg`:** 427 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 283 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 417 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 121 recipes
+- **Fallback to `/image/homeimage.jpg`:** 417 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 1 — Batch 1 (10 images) — DONE, pushed as `df02dca`
+Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
+almond-banana-milkshake-no-sugar, horsegram-idli, adai-dosa, akki-roti-with-added-greens, sorghum-pancake, amaranth-porridge, buckwheat-upma, vegetable-sevai-vermicelli, egg-white-omelette-with-spinach, mushroom-omelette.
+- Image generation cap: **10 per session** (hit the limit; no more generations possible in this session).
+- **To continue:** next session should generate the next 10 from the fallback list (recipes whose `coverImage` is `/image/homeimage.jpg`, in `recipes.json` order): tomato-omelette-besan-based, spinach-mushroom-scramble, tofu-bhurji, soya-bhurji, idiyappam-with-kadala-curry, ragi-puttu, kuttu-ka-paratha, singhare-ka-cheela, mooli-thepla-stuffed-radish-flatbread, dal-tadka-minimal-oil.
+- Prompt style used: "Professional food photography of [dish], [description], healthy Indian breakfast, natural daylight, rustic wooden table, appetizing, overhead/45-degree angle".
+
+### Fetch & consolidation session (earlier, same date)
 - Fetched all remote branches (`origin/arena/019f9c0f-die`, `origin/arena/019fc7e0-die`, `origin/arena/019fc829-die`, `origin/arena/019fc83a-die`).
 - Checked out `public/image/recipes/` (273 images) from the consolidation branch `origin/arena/019fc7e0-die` (its set is a superset; `019fc829-die` = 59 images and `019fc83a-die` = 273 images are both fully contained in it).
 - Checked out `app/data/recipes.json` (538 recipes) and the static recipe pages (`app/recipe/[slug]/page.tsx`, `app/recipe/page.tsx`) from `origin/arena/019fc7e0-die`; deleted the obsolete client-side recipe files (`actions.ts`, `error.tsx`, `loading.tsx`, `recipe.tsx`, `layout.tsx`).
