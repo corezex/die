@@ -119,13 +119,17 @@ export default function ImageCarousel({
                   key={i}
                   type="button"
                   onClick={() => setIndex(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === index
-                      ? "w-8 bg-green-600"
-                      : "w-2 bg-gray-300 hover:bg-green-300"
-                  }`}
+                  className="flex h-6 w-6 items-center justify-center"
                   aria-label={`Go to slide ${i + 1}`}
-                />
+                >
+                  <span
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      i === index
+                        ? "w-7 bg-green-700"
+                        : "w-2.5 bg-gray-400 hover:bg-green-400"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 

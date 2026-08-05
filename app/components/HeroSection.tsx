@@ -199,7 +199,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-4 mb-4">
 
                 <div>
-                  <h3 className="text-xl font-bold text-white">Tejal Parulkar</h3>
+                  <p className="text-xl font-bold text-white">Tejal Parulkar</p>
                   <div className="w-12 h-1 bg-teal-400 rounded-full my-1"></div>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-4 mb-4">
 
               <div>
-                <h3 className="text-xl font-bold text-white">Tejal Parulkar</h3>
+                <p className="text-xl font-bold text-white">Tejal Parulkar</p>
                 <p className="text-teal-300 font-medium">MSc Dietetics, Diabetic Educator</p>
               </div>
             </div>

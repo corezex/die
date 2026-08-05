@@ -135,6 +135,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
               </div>
               <select
                 name="category"
+                aria-label="Filter recipes by category"
                 defaultValue={category}
                 className="block w-full pl-11 pr-10 py-3 border border-gray-200 rounded-xl leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 appearance-none transition-colors"
               >
@@ -147,7 +148,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-green-600 text-white py-3 px-8 rounded-xl font-medium hover:bg-green-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              className="bg-green-700 text-white py-3 px-8 rounded-xl font-medium hover:bg-green-800 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
               Search
             </button>
@@ -170,7 +171,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                   href={href}
                   className={`text-xs px-4 py-2 rounded-full font-medium transition-all duration-200 ${
                     isSelected 
-                      ? "bg-green-600 text-white shadow-sm" 
+                      ? "bg-green-700 text-white shadow-sm" 
                       : "bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-800"
                   }`}
                 >
@@ -191,7 +192,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
             <p className="text-gray-500 mb-6">We couldn&apos;t find any recipes matching your criteria.</p>
             <Link 
               href="/recipe" 
-              className="inline-block bg-green-600 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-green-700 transition-colors"
+              className="inline-block bg-green-700 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-green-800 transition-colors"
             >
               Clear Filters
             </Link>
@@ -268,7 +269,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                       href={buildUrl(pageNum)}
                       className={`w-10 h-10 flex items-center justify-center rounded-lg border transition-colors ${
                         validPage === pageNum
-                          ? "bg-green-600 text-white border-green-600 font-semibold"
+                          ? "bg-green-700 text-white border-green-700 font-semibold"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-green-50 hover:text-green-700 hover:border-green-300"
                       }`}
                     >

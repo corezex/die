@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | DietFiniti",
+  title: "Terms & Conditions",
   description: "Read DietFiniti's Terms & Conditions for services, health disclaimers, client responsibilities, and intellectual property rights.",
   alternates: { canonical: "/terms-conditions" },
 };

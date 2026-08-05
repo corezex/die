@@ -176,10 +176,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold text-green-700 flex items-center">
+            <h2 className="text-lg font-semibold text-green-700 flex items-center">
               <ArrowRight className="w-5 h-5 mr-2" />
               Quick Links
-            </h3>
+            </h2>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -197,10 +197,10 @@ export default function Footer() {
 
           {/* Services */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold text-green-700 flex items-center">
+            <h2 className="text-lg font-semibold text-green-700 flex items-center">
               <Star className="w-5 h-5 mr-2" />
               Our Services
-            </h3>
+            </h2>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -220,9 +220,9 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-6">
             {/* Social Links */}
             <div className="space-y-4 bg-white p-4 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-semibold text-green-700">
+              <h2 className="text-lg font-semibold text-green-700">
                 Follow Us
-              </h3>
+              </h2>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => (
                   <Link

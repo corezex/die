@@ -36,7 +36,9 @@ const containerVariants: Variants = {
 };
 
 export default function TestimonialsPage() {
-  const [mixedSlides, setMixedSlides] = useState<CarouselSlide[]>([]);
+  const [mixedSlides] = useState<CarouselSlide[]>(() =>
+    shuffleMixedTestimonialSlides(testimonialSlides)
+  );
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [visibleCount, setVisibleCount] = useState(6);
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
@@ -44,10 +46,6 @@ export default function TestimonialsPage() {
   const [error, setError] = useState<string | null>(null);
   const [totalCount, setTotalCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    setMixedSlides(shuffleMixedTestimonialSlides(testimonialSlides));
-  }, []);
 
   useEffect(() => {
     fetchTestimonials();

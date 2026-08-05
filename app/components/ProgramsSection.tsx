@@ -332,7 +332,7 @@ const ProgramsSection = () => {
                         <span
                           className={`bg-gradient-to-r ${program.color} bg-clip-text text-transparent`}
                         >
-                          Learn More
+                          Explore {program.title}
                         </span>
                         <ArrowRight
                           className={`w-4 h-4 ml-2 ${

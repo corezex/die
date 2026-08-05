@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Users, Shield, Heart, BookOpen, AlertTriangle, Lock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Community Guidelines | DietFiniti",
+  title: "Community Guidelines",
   description: "Learn about DietFiniti's community guidelines for respectful, professional, and supportive environment. Ensure confidentiality and authentic participation.",
   alternates: { canonical: "/community-guidelines" },
 };

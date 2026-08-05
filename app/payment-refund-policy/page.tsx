@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Check, Clock, Shield, Mail, Banknote, Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Payment & Refund Policy | DietFiniti",
+  title: "Payment & Refund Policy",
   description: "Learn about DietFiniti's payment methods, refund policy, cancellation terms, and billing procedures. Secure transactions guaranteed.",
   alternates: { canonical: "/payment-refund-policy" },
 };

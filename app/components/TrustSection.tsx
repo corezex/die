@@ -17,11 +17,9 @@ const stats = [
 ];
 
 const TrustSection = () => {
-  const [mixedSlides, setMixedSlides] = useState<CarouselSlide[]>([]);
-
-  useEffect(() => {
-    setMixedSlides(shuffleMixedTestimonialSlides(testimonialSlides));
-  }, []);
+  const [mixedSlides] = useState<CarouselSlide[]>(() =>
+    shuffleMixedTestimonialSlides(testimonialSlides)
+  );
 
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-8  bg-white">

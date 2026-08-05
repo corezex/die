@@ -116,13 +116,13 @@ export default function ServicesPage() {
               <Utensils className="h-4 w-4" /> Mumbai, Thane & online across India
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#262262] sm:text-5xl lg:text-6xl">
-              Nutrition support designed around <span className="text-green-600">your real life</span>
+              Nutrition support designed around <span className="text-green-700">your real life</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
               Your body, schedule and food preferences are personal. Choose a DietFiniti programme that starts with your context and helps turn nutrition advice into realistic everyday action.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700">
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-6 py-3.5 font-bold text-white shadow-lg shadow-green-700/20 transition hover:bg-green-800">
                 <MessageCircle className="h-5 w-5" /> Find my programme
               </a>
               <Link href="/online-dietitian-consultation" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#262262] bg-white px-6 py-3 font-bold text-[#262262] transition hover:bg-[#262262] hover:text-white">
@@ -147,7 +147,7 @@ export default function ServicesPage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-600">Our specialised programmes</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Our specialised programmes</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">Choose support for your health goal</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">Every programme begins with a conversation. Explore what each service covers and find the right starting point for you.</p>
           </div>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                     <ul className="mt-5 space-y-2 border-t border-slate-100 pt-5 text-sm font-medium text-slate-700">
                       {service.features.map((feature) => <li key={feature} className="flex items-center gap-2"><Check className="h-4 w-4 text-green-600" />{feature}</li>)}
                     </ul>
-                    <Link href={service.href} className="mt-6 inline-flex items-center gap-2 font-bold text-green-700 transition group-hover:gap-3" aria-label={`Learn more about ${service.title}`}>
+                    <Link href={service.href} className="mt-6 inline-flex items-center gap-2 font-bold text-green-700 transition group-hover:gap-3" aria-label={service.title}>
                       Explore programme <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -214,7 +214,7 @@ export default function ServicesPage() {
               <p className="flex gap-3"><Check className="mt-1 h-5 w-5 shrink-0 text-green-600" />Understand the next steps, availability and suitability.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-bold text-white hover:bg-green-700"><MessageCircle className="h-5 w-5" /> WhatsApp DietFiniti</a>
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-green-700 px-6 py-3.5 font-bold text-white hover:bg-green-800"><MessageCircle className="h-5 w-5" /> WhatsApp DietFiniti</a>
               <Link href="/contact" className="inline-flex items-center rounded-xl border border-slate-300 px-6 py-3.5 font-bold text-[#262262] hover:border-[#262262]">Visit our clinics</Link>
             </div>
             <p className="mt-6 text-xs leading-5 text-slate-500">Nutrition guidance does not replace medical diagnosis, treatment or medication. Continue to work with your treating clinician where relevant.</p>

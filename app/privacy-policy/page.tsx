@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | DietFiniti",
+  title: "Privacy Policy",
   description: "Learn how DietFiniti collects, uses, and protects your personal information. Understand your privacy rights and data protection measures.",
   alternates: { canonical: "/privacy-policy" },
 };

@@ -358,7 +358,7 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
             </section>
 
             {/* Call to Action for Consultation (Moved below content for mobile/desktop flow) */}
-            <div className="bg-green-600 text-white rounded-2xl p-8 shadow-md text-center mt-12">
+            <div className="bg-green-700 text-white rounded-2xl p-8 shadow-md text-center mt-12">
               <h3 className="text-2xl font-bold mb-4">Want a personalized diet plan?</h3>
               <p className="text-green-50 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
                 Consult with Dietitian Tejal to get a custom meal plan tailored to your health goals, medical history, and lifestyle.
@@ -396,7 +396,7 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
                 </li>
                 <li className="flex justify-between items-center text-gray-700 border-t border-gray-100 pt-4">
                   <span className="font-medium">Dietary Fiber</span>
-                  <span className="font-bold text-green-600">{recipe.nutrition.fiber}</span>
+                  <span className="font-bold text-green-700">{recipe.nutrition.fiber}</span>
                 </li>
               </ul>
 
