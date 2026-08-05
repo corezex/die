@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/thyroid-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -46,6 +47,34 @@ const faqs = [
     "Will you change my thyroid medication dose?",
     "No. Medication decisions belong to your doctor. DietFiniti plans food around your treatment and helps you discuss relevant points with your clinician.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["⏰", "Medication-friendly timing", "Guidance on meal and chai timing around thyroid medication so absorption is not disturbed."],
+  ["🥗", "Balanced Indian meals", "Protein, vegetables and whole grains at regular meals — no special 'thyroid' products needed."],
+  ["⚖️", "Energy and weight patterns", "Steady energy and gradual weight goals without crash dieting."],
+  ["🩺", "Working with your physician", "Plans that respect your thyroid treatment, blood tests and monitoring."],
+  ["📊", "Routine follow-ups", "Regular check-ins to keep your plan relevant as your routine changes."],
+  ["🛡️", "Honest scope", "No diet replaces thyroid medication — clear about what nutrition supports and what it doesn't."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Comprehensive assessment", "A discussion of your routine, preferences, medication schedule and current medical care."],
+  ["02", "Medication-aware planning", "Meal and chai timing built around your thyroid medication, without disturbing absorption."],
+  ["03", "Coordination where helpful", "With your permission, guidance aligned with the direction of your treating physician."],
+  ["04", "Ongoing follow-ups", "Regular check-ins to refine the plan as your routine and goals evolve."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — no more guesswork between appointments."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your treatment plan, with decisions staying with your physician."],
+];
+
+const stories: [string, string, string][] = [
+  ["Hypothyroidism & energy", "Over ~6 months", "The medication timing guidance alone was worth it — I had no idea chai mattered. My meals now feel normal again instead of a battle."],
+  ["Thyroid & weight changes", "Over ~5 months", "I finally understood how to balance my plate for steady energy. My doctor continues to manage my medication and tests."],
 ];
 
 export default function ThyroidNutritionPage() {
@@ -145,6 +174,13 @@ export default function ThyroidNutritionPage() {
         </section>
 
         {/* Section C */}
+        <ServiceExtraSections
+          featuresTitle="What a thyroid consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
             <div>

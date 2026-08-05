@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/kids-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -46,6 +47,34 @@ const faqs = [
     "Can you help with teen nutrition?",
     "Yes — iron, calcium, protein and study-energy are common teen topics. Guidance is tailored to growth, activity and family preferences.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["🥕", "Fussy-eating strategies", "Repeated exposure, the division of responsibility and calm mealtime structure — no pressure or battles."],
+  ["🎒", "Lunch boxes & family meals", "Practical tiffin and family-meal ideas children actually eat, built around Indian food."],
+  ["📚", "Teen nutrition", "Iron, calcium, protein and study-energy for growing teens — positive, non-dieting approach."],
+  ["👨‍👩‍👧", "Family-wide guidance", "Changes apply to everyone at the table — children are never singled out or put on diets."],
+  ["🩺", "Working with your paediatrician", "Growth concerns and feeding difficulties are reviewed together with a paediatrician where needed."],
+  ["📊", "Routine follow-ups", "Regular check-ins as your child grows and routines change."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Family assessment", "A discussion of mealtimes, food range, growth, routine and your child's preferences."],
+  ["02", "A calm plan", "Practical, pressure-free strategies for the whole family — no diets for children."],
+  ["03", "Gentle exposure", "Structured ways to keep offering foods without pressure, building familiarity over time."],
+  ["04", "Ongoing support", "Follow-ups to refine the plan as habits and routines evolve."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["😌", "Calmer mealtimes", "Less pressure and fewer battles at the family table."],
+  ["🥗", "A wider food range", "Children gradually accept more foods through repeated, low-pressure exposure."],
+  ["❤️", "A positive relationship with food", "No diets, no body comments — just healthy habits for life."],
+  ["👨‍👩‍👧", "Family confidence", "Parents with clear, practical answers instead of guilt and guesswork."],
+];
+
+const stories: [string, string, string][] = [
+  ["Fussy toddler", "Over ~4 months", "The division of responsibility took the pressure off dinner time. My toddler now tries more foods without battles."],
+  ["School-age lunch boxes", "Over ~3 months", "Our lunch boxes and family meals changed completely — practical, Indian, and something the kids actually eat."],
 ];
 
 export default function KidsNutritionPage() {
@@ -145,6 +174,13 @@ export default function KidsNutritionPage() {
         </section>
 
         {/* Section C */}
+        <ServiceExtraSections
+          featuresTitle="What family support includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
             <div>

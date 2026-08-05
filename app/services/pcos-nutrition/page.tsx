@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/pcos-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -46,6 +47,34 @@ const faqs = [
     "Will you change my medication or fertility treatment?",
     "No. Medication and fertility treatment stay with your treating clinicians. DietFiniti plans meals around the medical care you already receive and supports—it does not replace—it.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["🗓️", "Meals around your cycle", "Food patterns that support steady energy and manageable cravings across your monthly routine."],
+  ["🥗", "Practical Indian meal planning", "Dal, legumes, whole grains, vegetables and curd — built around your routine and preferences."],
+  ["⚖️", "Gradual weight goals", "A modest, sustainable approach — about 0.5–1 kg per week — if weight is part of your goal."],
+  ["🩺", "Coordination with your clinicians", "Meal planning that sits alongside your gynaecologist's or physician's treatment and any fertility care."],
+  ["📊", "Routine follow-ups", "Regular check-ins to review progress signals and refine your practical plan."],
+  ["🛡️", "Honest, realistic scope", "Clear about what nutrition can and cannot do — no cure or guarantee claims."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Comprehensive assessment", "A discussion of your cycle, routine, preferences, health history and current medical care."],
+  ["02", "Condition-aware planning", "A practical food direction that respects your clinicians' treatment and your daily schedule."],
+  ["03", "Coordination where helpful", "With your permission, guidance aligned with the direction of your treating clinician."],
+  ["04", "Ongoing follow-ups", "Regular check-ins to refine the plan as your routine and goals evolve."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — no more guesswork between appointments."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your treatment plan, with decisions staying with your clinicians."],
+];
+
+const stories: [string, string, string][] = [
+  ["PCOS & hormonal health", "Over ~6 months", "After years of struggling with PCOS-related weight changes, the practical meal-by-meal guidance finally made sense. I kept seeing my gynaecologist throughout, and my meals felt easier to manage."],
+  ["PCOS nutrition support", "Over ~4 months", "The biggest change was structure — regular meals with protein and fibre that fit my work schedule. No banned foods, no promises, just a plan I could follow."],
 ];
 
 export default function PcosNutritionPage() {
@@ -145,6 +174,13 @@ export default function PcosNutritionPage() {
         </section>
 
         {/* Section C — deep dive + blog guide */}
+        <ServiceExtraSections
+          featuresTitle="What a PCOS consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
             <div>

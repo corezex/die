@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/fatty-liver-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -46,6 +47,34 @@ const faqs = [
     "Will you interpret my liver tests?",
     "No. Your doctor interprets scans and blood tests. DietFiniti plans food around the medical picture and supports healthy weight change.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["⚖️", "Modest weight change", "About 5–10% weight loss where relevant, at 0.5–1 kg per week — sustainable, not dramatic."],
+  ["🥗", "Food patterns that help", "Fewer sugary drinks and refined carbs; more vegetables, dal, whole grains and healthy fats."],
+  ["🚰", "Hydration & habits", "Water or buttermilk instead of sugary drinks; modest oil and limited alcohol."],
+  ["🩺", "Coordination with your doctor", "Scans and blood tests stay with your clinician; food changes stay aligned with them."],
+  ["📊", "Routine follow-ups", "Regular check-ins to review progress and keep the plan practical."],
+  ["🛡️", "Honest scope", "No cure is promised — the focus is evidence-backed lifestyle change."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Comprehensive assessment", "A discussion of your routine, preferences, health history and current medical monitoring."],
+  ["02", "Condition-aware planning", "A practical food direction that supports healthy weight change and fits your schedule."],
+  ["03", "Coordination where helpful", "With your permission, guidance aligned with the direction of your treating clinician."],
+  ["04", "Ongoing follow-ups", "Regular check-ins to refine the plan as your routine and goals evolve."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — no more guesswork between appointments."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your treatment plan, with decisions staying with your doctor."],
+];
+
+const stories: [string, string, string][] = [
+  ["Fatty liver & weight", "Over ~8 months", "The focus was modest weight change and fewer sugary drinks — not a dramatic diet. My doctor monitors my scans; I just needed someone to show me the food part."],
+  ["Metabolic health support", "Over ~6 months", "I replaced the evening sugary drink with buttermilk and built more vegetables into meals. Small changes, consistently, that I could actually keep up."],
 ];
 
 export default function FattyLiverNutritionPage() {
@@ -145,6 +174,13 @@ export default function FattyLiverNutritionPage() {
         </section>
 
         {/* Section C */}
+        <ServiceExtraSections
+          featuresTitle="What a fatty liver consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
             <div>

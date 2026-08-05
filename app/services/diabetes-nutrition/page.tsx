@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/diabetes-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -46,6 +47,34 @@ const faqs = [
     "What if I have gestational diabetes?",
     "Plans are tailored around pregnancy and your readings, and always coordinated with your obstetrician. Nutrition supports—it does not replace—your antenatal diabetes care.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["🍛", "The plate method, personalised", "Half vegetables, a quarter protein, a quarter grains — built around your routine and readings."],
+  ["🎉", "Festivals and eating out", "Practical ways to enjoy mithai, feasts and restaurants without derailing your pattern."],
+  ["📋", "Medication-aware planning", "Meal timing that respects your medication, insulin or pregnancy care."],
+  ["🩺", "Coordination with your doctor", "Your clinician stays informed; medication and insulin decisions remain with them."],
+  ["📊", "Routine follow-ups", "Regular check-ins to refine your plan around real-life challenges."],
+  ["🛡️", "Honest, realistic scope", "Meal planning supports management — never stop or reduce medication on your own."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Comprehensive assessment", "A discussion of your routine, preferences, readings and current diabetes care."],
+  ["02", "Plate-method planning", "A practical Indian plate built around your schedule, preferences and treatment."],
+  ["03", "Coordination where helpful", "With your permission, guidance aligned with the direction of your treating clinician."],
+  ["04", "Ongoing follow-ups", "Regular check-ins to refine the plan as your routine and goals evolve."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — festivals and dining out included."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your treatment plan, with decisions staying with your doctor."],
+];
+
+const stories: [string, string, string][] = [
+  ["Type 2 diabetes", "Over ~6 months", "The plate method changed how I see every meal — half vegetables, a quarter dal, a quarter roti. My meals feel satisfying, and my readings are steadier with my doctor's care."],
+  ["Gestational diabetes", "Over ~5 months", "I stopped fearing festivals. I learned how to enjoy mithai in a way that fits my pattern, while keeping my obstetrician's care unchanged."],
 ];
 
 export default function DiabetesNutritionPage() {
@@ -145,6 +174,13 @@ export default function DiabetesNutritionPage() {
         </section>
 
         {/* Section C */}
+        <ServiceExtraSections
+          featuresTitle="What a diabetes consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
             <div>

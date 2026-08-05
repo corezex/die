@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/corporate-wellnessimg1.jpg";
 import img2 from "@/public/image/corporate-wellnessimg2.jpg";
 
@@ -47,6 +48,34 @@ const faqs = [
     "How do we get started?",
     "Share your team size, location and goals through the contact page — the team will propose a program outline and options.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["🎯", "Tailored programs", "Workshops and webinars shaped around your team size, location and goals."],
+  ["💻", "Online for remote teams", "Sessions work across India and internationally for remote and hybrid teams."],
+  ["🏢", "In-person in Mumbai & Thane", "On-site workshops available for teams in the Mumbai–Thane region."],
+  ["🥗", "Practical, usable content", "Desk-day eating, meal prep, labels and cravings — built around Indian food."],
+  ["🛡️", "Educational, not medical", "Group programs are educational; employees with conditions continue with their own doctors."],
+  ["📊", "Clear next steps", "A simple outline and options after your first enquiry."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Share your goals", "Tell us team size, location and what you'd like to cover."],
+  ["02", "Program outline", "Receive a tailored outline — topics, format and duration."],
+  ["03", "Schedule & deliver", "Sessions delivered online or in person at a time that suits your team."],
+  ["04", "Feedback & follow-up", "Practical takeaways and optional follow-up sessions."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["👥", "Engaged teams", "Sessions people actually attend and use — not generic wellness content."],
+  ["🥗", "Practical skills", "Better snack, meal and label-reading choices in real workdays."],
+  ["⚖️", "Sustainable habits", "The anti-crash-diet approach to weight and energy."],
+  ["🤝", "A healthier culture", "Small, honest steps your team can keep up after the session."],
+];
+
+const stories: [string, string, string][] = [
+  ["HR lead, Mumbai startup", "Half-day session", "Our team loved the practical desk-day session — no fad-diet noise, just usable food guidance for busy schedules."],
+  ["People ops, remote-first company", "Webinar series", "The webinars worked well for our hybrid team — clear, honest content that people still reference months later."],
 ];
 
 export default function CorporateWellnessPage() {
@@ -172,6 +201,13 @@ export default function CorporateWellnessPage() {
         </section>
 
         {/* Section C — related content */}
+        <ServiceExtraSections
+          featuresTitle="What a corporate wellness program includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto max-w-5xl">
             <div className="rounded-2xl border border-green-200 bg-white p-6 md:p-8">

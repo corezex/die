@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, HeartPulse, ShieldCheck, Stethoscope } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/condition-nutritionimg1.jpg";
 
 const SITE = "https://dietfiniti.com";
@@ -85,6 +86,34 @@ const faqs = [
     "When should I see a doctor instead?",
     "For new or worsening symptoms, unexplained weight change, or any urgent concern, contact your doctor first. Nutrition support does not diagnose or treat medical conditions.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["🗂️", "One practice, multiple conditions", "PCOS, thyroid, diabetes, fatty liver and gut support under one roof — with one coordinated plan."],
+  ["🥗", "Practical Indian meal planning", "Everyday food patterns built around your routine and preferences."],
+  ["🩺", "Coordination with your care team", "Guidance aligned with your treating clinician; medical decisions remain with them."],
+  ["📊", "Routine follow-ups", "Regular check-ins to refine the plan as your health context evolves."],
+  ["🔗", "Dedicated condition guides", "Separate deep-dive pages for PCOS, thyroid, diabetes, fatty liver and gut."],
+  ["🛡️", "Honest, realistic scope", "No cure or guarantee claims — clear about what nutrition supports and what it doesn't."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Discuss your context", "Share your diagnosis, routine, medications and questions for your doctor."],
+  ["02", "Build a practical food pattern", "Meal-planning direction built around Indian food, your schedule and what you can follow."],
+  ["03", "Review with your care team", "Keep your treating clinician informed so nutrition and medical care stay aligned."],
+  ["04", "Ongoing follow-ups", "Refine the plan as your routine, goals and health context change."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — no more guesswork between appointments."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your treatment plan, with decisions staying with your clinicians."],
+];
+
+const stories: [string, string, string][] = [
+  ["PCOS & thyroid together", "Over ~6 months", "One practice for the whole picture — PCOS and thyroid together. The plan respected both my gynaecologist and physician."],
+  ["Diabetes meal planning", "Over ~5 months", "I came with diabetes questions and left with a plate I could actually use, while my doctor kept managing my care."],
 ];
 
 export default function ConditionNutritionPage() {
@@ -205,6 +234,13 @@ export default function ConditionNutritionPage() {
         </section>
 
         {/* Section C — how it works */}
+        <ServiceExtraSections
+          featuresTitle="What a condition-specific consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">How condition-specific support works</h2>

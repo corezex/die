@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
+import { ServiceExtraSections } from "@/app/components/ServiceExtraSections";
 import img1 from "@/public/image/gut-health-nutritionimg1.jpg";
 import img2 from "@/public/image/gut-health-nutritionimg2.jpg";
 
@@ -47,6 +48,34 @@ const faqs = [
     "Do I need a medical diagnosis first?",
     "Yes. IBS is diagnosed by a doctor after other conditions are ruled out. Start with your clinician, then bring the food-side questions to a dietitian.",
   ],
+];
+
+const features: [string, string, string][] = [
+  ["📓", "Structured food-symptom diary", "Capture when bloating, pain or bowel changes happen and which foods seem connected."],
+  ["🌾", "A fibre plan that suits you", "The right type and amount of fibre for your symptoms — often soluble fibre first, adjusted gradually."],
+  ["🔄", "Low-FODMAP, done properly", "A guided elimination and reintroduction phase if persistent bloating warrants it — not a permanent diet."],
+  ["🍽️", "Regular meal patterns", "Smaller, regular meals at similar times to settle digestion."],
+  ["🩺", "Working with your clinician", "IBS is diagnosed by a doctor first; food work then sits alongside that diagnosis."],
+  ["🛡️", "Honest scope", "There is no cure, but symptoms can often be managed well — no miracle promises."],
+];
+
+const steps: [string, string, string][] = [
+  ["01", "Comprehensive assessment", "A discussion of your symptom pattern, routine, preferences and any existing diagnosis."],
+  ["02", "A layered food plan", "Regular meals, the right fibre and a structured diary — personalised to your symptoms."],
+  ["03", "Guided elimination", "A short, supervised low-FODMAP phase if persistent bloating warrants it — then careful reintroduction."],
+  ["04", "Ongoing follow-ups", "Regular check-ins to refine the plan as you learn your personal triggers."],
+];
+
+const outcomes: [string, string, string][] = [
+  ["🍽️", "A sustainable approach", "A steady eating pattern that fits alongside your medical care. Individual results vary."],
+  ["🌱", "Better everyday routine", "Practical food habits that are easier to maintain than restrictive rules."],
+  ["✅", "Confidence with food", "Clearer answers to daily food questions — no more guesswork between appointments."],
+  ["🤝", "Aligned with your care team", "Nutrition guidance that complements your diagnosis and treatment, with decisions staying with your clinician."],
+];
+
+const stories: [string, string, string][] = [
+  ["IBS & bloating", "Over ~6 months", "The food-symptom diary was a revelation — I finally saw my triggers. The low-FODMAP phase was short and guided, not a permanent diet."],
+  ["IBS support", "Over ~4 months", "Regular meals and the right fibre for me made bloating manageable. It's not cured, but I have a way of eating I can live with."],
 ];
 
 export default function GutHealthNutritionPage() {
@@ -172,6 +201,13 @@ export default function GutHealthNutritionPage() {
         </section>
 
         {/* Section C — blog guide */}
+        <ServiceExtraSections
+          featuresTitle="What a gut health consultation includes"
+          features={features}
+          steps={steps}
+          outcomes={outcomes}
+          stories={stories}
+        />
         <section className="bg-green-50 px-4 py-16 md:py-20">
           <div className="mx-auto max-w-5xl">
             <div className="rounded-2xl border border-green-200 bg-white p-6 md:p-8">
