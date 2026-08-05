@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import recipesData from "@/app/data/recipes.json";
+import postsData from "@/app/data/posts.json";
 
 const siteUrl = "https://dietfiniti.com";
 
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/bmi-calculator", "monthly", 0.7],
     ["/testimonials", "monthly", 0.7],
     ["/recipe", "weekly", 0.9],
+    ["/blog", "weekly", 0.8],
     ["/contact", "monthly", 0.8],
     ["/privacy-policy", "yearly", 0.2],
     ["/terms-conditions", "yearly", 0.2],
@@ -42,5 +44,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...recipeRoutes];
+  const blogRoutes = postsData
+    .filter((post) => post.status === "published")
+    .map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt ? new Date(post.updatedAt) : lastModified,
+      changeFrequency: "monthly" as MetadataRoute.Sitemap[0]["changeFrequency"],
+      priority: 0.7,
+    }));
+
+  return [...staticRoutes, ...recipeRoutes, ...blogRoutes];
 }

@@ -23,7 +23,8 @@ import {
   Star,
   PhoneCall,
   ChefHat,
-  Activity 
+  Activity,
+  BookOpen
 } from "lucide-react";
 
 // Define servicesItems first since navigationItems depends on it
@@ -43,6 +44,7 @@ const navigationItems = [
   { name: "About", path: "/about", icon: Users },
   { name: "Services", path: "/services", icon: Utensils, submenu: servicesItems },
   { name: "Recipes", path: "/recipe", icon: ChefHat },
+  { name: "Blog", path: "/blog", icon: BookOpen },
   { name: "Testimonials", path: "/testimonials", icon: Star },
     { name: "BMI", path: "/bmi-calculator", icon: Activity  },
   { name: "Contact", path: "/contact", icon: PhoneCall },
