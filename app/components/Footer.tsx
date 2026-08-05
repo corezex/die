@@ -126,24 +126,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Business Hours */}
-            <div className="space-y-2 bg-white p-3 rounded-lg border border-gray-200">
-              <div className="flex items-center space-x-2 text-green-700">
-                <Clock className="w-4 h-4" />
-                <span className="font-semibold">Business Hours</span>
-              </div>
-              <div className="text-sm text-gray-700 space-y-1">
-                <div className="flex justify-between">
-                  <span>Mon - Sat:</span>
-                  <span>11:00 AM - 8:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           {/* Quick Links */}
           <div className="space-y-4">
@@ -164,6 +147,8 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            </div>
           </div>
 
           {/* Services */}
@@ -185,6 +170,24 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* Business Hours */}
+            <div className="mt-6 space-y-2 rounded-lg border border-gray-200 bg-white p-3">
+              <div className="flex items-center space-x-2 text-green-700">
+                <Clock className="w-4 h-4" />
+                <span className="font-semibold">Business Hours</span>
+              </div>
+              <div className="space-y-1 text-sm text-gray-700">
+                <div className="flex justify-between">
+                  <span>Mon - Sat:</span>
+                  <span>11:00 AM - 8:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Sunday:</span>
+                  <span>Closed</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Newsletter & Social */}
