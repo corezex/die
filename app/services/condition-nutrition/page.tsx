@@ -57,6 +57,12 @@ const conditions = [
     text: "Eating patterns for bloating and IBS symptoms, including structured food-diary work.",
     blog: "/blog/ibs-diet-guide",
   },
+  {
+    name: "Medical Weight-Management Support",
+    href: "/services/medical-weight-loss",
+    text: "Weight-management nutrition when a health condition is part of your goals — planned alongside your clinician's care.",
+    blog: "",
+  },
 ];
 
 const faqs = [
@@ -175,9 +181,11 @@ export default function ConditionNutritionPage() {
                 <Link href={c.href} className="font-semibold text-green-700 hover:underline">
                   Service page <ArrowRight className="inline h-4 w-4" aria-hidden="true" />
                 </Link>
-                <Link href={c.blog} className="font-semibold text-slate-500 hover:text-green-700 hover:underline">
-                  Read the guide <BookOpen className="inline h-4 w-4" aria-hidden="true" />
-                </Link>
+                {c.blog && (
+                  <Link href={c.blog} className="font-semibold text-slate-500 hover:text-green-700 hover:underline">
+                    Read the guide <BookOpen className="inline h-4 w-4" aria-hidden="true" />
+                  </Link>
+                )}
               </div>
             </article>
           ))}

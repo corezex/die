@@ -4,7 +4,7 @@ import medicalNutrition from "@/public/image/MedicalWeightLoss1.jpg";
 import { ServiceCtaButtons } from "@/app/components/ServiceCtaButtons";
 import { MedicalWeightLossStructuredData } from "./MedicalWeightLossStructuredData";
 import { MedicalWeightLossSections } from "./MedicalWeightLossSections";
-import { Heart, Activity, TrendingUp, Zap } from "lucide-react";
+import { Heart, Activity, TrendingUp, Zap, ArrowRight } from "lucide-react";
 
 const medicalConditions = [
   { icon: "🦋", title: "Thyroid Disorders", description: "Nutrition support alongside medical care for hypothyroidism or hyperthyroidism, focusing on practical everyday food routines." },
@@ -55,7 +55,7 @@ export default function MedicalWeightLossProgram() {
   return <div className="service-page">
     <MedicalWeightLossStructuredData />
     <section className="bg-[#262262] px-4 py-16 text-white md:py-24"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-center"><div><p className="mb-4 font-semibold uppercase tracking-[0.18em] text-green-100 text-sm">Mumbai, Thane & online across India</p><h1 className="text-4xl font-bold tracking-tight md:text-6xl">Weight-management nutrition support alongside medical care</h1>
-      <p className="mt-4 max-w-3xl text-lg leading-8 text-blue-50/90">A <strong>dietitian for PCOS</strong>, <strong>dietitian for thyroid</strong> or <strong>dietitian for diabetes</strong> in Mumbai, Thane and online — nutrition support that works alongside your doctor&apos;s care, not instead of it.</p><p className="mt-6 max-w-3xl text-lg leading-8 text-green-50 md:text-xl">If a health condition is part of your weight-management journey, you deserve nutrition guidance that respects your medical care. DietFiniti can help you discuss practical food routines while you continue to work with your doctor or treating clinical team.</p><div className="mt-9"><ServiceCtaButtons contactColorClass="text-green-800" /></div></div><aside className="rounded-2xl border border-white/20 bg-white/10 p-7 backdrop-blur-sm"><h2 className="text-2xl font-bold">Important to know</h2><ul className="mt-5 space-y-4 leading-7 text-green-50"><li>• This service is nutrition support, not medical diagnosis or treatment.</li><li>• Do not start, stop or alter medication without your treating clinician.</li><li>• Share relevant medical guidance so nutrition advice can be considered in context.</li><li>• For urgent symptoms or emergencies, contact your doctor or emergency services.</li></ul></aside></div></section>
+      <p className="mt-4 max-w-3xl text-lg leading-8 text-blue-50/90"><strong>Medical weight-loss nutrition support</strong> in Mumbai, Thane and online — practical guidance for weight-management goals when a health condition is part of the picture, working alongside your doctor&apos;s care, not instead of it.</p><p className="mt-6 max-w-3xl text-lg leading-8 text-green-50 md:text-xl">If a health condition is part of your weight-management journey, you deserve nutrition guidance that respects your medical care. DietFiniti can help you discuss practical food routines while you continue to work with your doctor or treating clinical team.</p><div className="mt-9"><ServiceCtaButtons contactColorClass="text-green-800" /></div></div><aside className="rounded-2xl border border-white/20 bg-white/10 p-7 backdrop-blur-sm"><h2 className="text-2xl font-bold">Important to know</h2><ul className="mt-5 space-y-4 leading-7 text-green-50"><li>• This service is nutrition support, not medical diagnosis or treatment.</li><li>• Do not start, stop or alter medication without your treating clinician.</li><li>• Share relevant medical guidance so nutrition advice can be considered in context.</li><li>• For urgent symptoms or emergencies, contact your doctor or emergency services.</li></ul></aside></div></section>
 
     <main><section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-20"><div><p className="font-semibold text-green-700">A careful, coordinated approach</p><h2 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">Nutrition guidance should fit the wider care you receive</h2><p className="mt-5 leading-8 text-slate-700">A condition, medication, dietary restriction or changing health situation can make generic weight-loss advice inappropriate. A consultation gives you space to discuss the food and routine questions that matter to you, while keeping medical decisions with the clinician responsible for your care.</p><p className="mt-4 leading-8 text-slate-700">DietFiniti can support practical meal planning and nutrition habits. If specialist therapeutic nutrition or medical monitoring is required, the team can help you understand when to seek appropriate clinical advice.</p></div><Image src={medicalNutrition} alt="Balanced vegetables and meal ingredients for personalised nutrition planning" className="h-auto w-full rounded-2xl shadow-lg" /></section>
 
@@ -70,6 +70,33 @@ export default function MedicalWeightLossProgram() {
       expectedOutcomes={expectedOutcomes}
       successStories={successStories}
     />
+
+    {/* Dedicated condition guides — distinct pages, not duplicates */}
+    <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div className="rounded-2xl border border-green-100 bg-white p-7 md:p-10">
+        <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Dedicated guides for specific conditions</h2>
+        <p className="mt-3 max-w-3xl leading-7 text-slate-600">
+          This page focuses on weight management alongside medical care. For condition-specific nutrition support,
+          the dedicated service pages below each have their own guidance, FAQs and scope.
+        </p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["PCOS Nutrition Support", "/services/pcos-nutrition"],
+            ["Thyroid Nutrition Support", "/services/thyroid-nutrition"],
+            ["Diabetes Nutrition Support", "/services/diabetes-nutrition"],
+            ["Fatty Liver Nutrition Support", "/services/fatty-liver-nutrition"],
+            ["Gut Health & IBS Nutrition", "/services/gut-health-nutrition"],
+            ["All condition services", "/services/condition-nutrition"],
+          ].map(([label, href]) => (
+            <li key={href}>
+              <Link href={href} className="flex items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 font-semibold text-slate-800 transition hover:border-green-300 hover:text-green-700">
+                {label} <ArrowRight className="h-4 w-4 shrink-0 text-green-700" aria-hidden="true" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
 
     <section className="bg-green-50 px-4 py-16 md:py-20"><div className="mx-auto max-w-4xl"><h2 className="text-3xl font-bold text-slate-900">Medical nutrition support FAQs</h2><div className="mt-7 divide-y divide-green-100 rounded-xl border border-green-100 bg-white">{faqs.map(([question, answer]) => <details key={question} className="group p-5"><summary className="cursor-pointer list-none pr-8 font-semibold text-slate-900">{question}<span className="float-right text-green-700 group-open:rotate-45">+</span></summary><p className="mt-4 leading-7 text-slate-700">{answer}</p></details>)}</div></div></section>
     </main>
