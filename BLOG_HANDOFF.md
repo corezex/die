@@ -15,25 +15,31 @@
 | Item | Status | Notes |
 |---|---|---|
 | `/blog` listing page | ✅ BUILT | `app/blog/page.tsx` — hero, search, category filter, noindex on filtered states |
-| `/blog/[slug]` article pages | ✅ BUILT | `app/blog/[slug]/page.tsx` — 7 posts, SSG via `generateStaticParams` |
-| Blog data file | ✅ BUILT | `app/data/posts.json` — 7 published posts (see content list below) |
+| `/blog/[slug]` article pages | ✅ BUILT | `app/blog/[slug]/page.tsx` — **87 posts** (7 original + 80 added 2026-08-05), SSG via `generateStaticParams` |
+| Blog data file | ✅ BUILT | `app/data/posts.json` — **87 published posts** across 11 categories (~51,000 words) |
 | Blog nav link | ✅ ADDED | `app/components/Header.tsx` (navigationItems) + Footer quick links |
-| Blog URLs in sitemap | ✅ ADDED | `app/sitemap.ts` — `/blog` + 7 post URLs |
+| Blog URLs in sitemap | ✅ ADDED | `app/sitemap.ts` — `/blog` + **87 post URLs** (645 total sitemap URLs incl. 538 recipes) |
 | Blog images | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no images in the blog. Covers were removed, `public/image/blog/` deleted, `coverImage` dropped from `posts.json`. Only sitewide Header/Footer logos remain (on every page). Listing OG meta still uses the pre-existing `public/blog.png` for social sharing (not shown on-page). |
 | Phone on CTAs | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no phone icons or `tel:` details on blog CTAs. Article CTA panel = related-service links only (no icons); listing CTA = single "Book a consultation" button. |
 | "Reviewed by" text | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): removed the "Reviewed by Dietitian Tejal" byline badge and the author-card sentence about reviewing content. Byline shows author + credentials + dates only. |
-| Articles written | ✅ 7 PUBLISHED | PCOS, thyroid, diabetes, postpartum, BMI guide, consultation guide, meal-planning FAQs |
+| Articles written | ✅ **87 PUBLISHED** | 7 original + 80 added 2026-08-05 covering: Healthy Eating Basics (14), Weight Management (12), Condition Support (19), Women's Health (7), Men's Health (3), Kids & Family (6), Fitness & Sports (6), Diet Patterns (7), Lifestyle & Habits (5), Guides & Tools (5), About DietFiniti (3) |
 | `BlogPosting` / `FAQPage` / `BreadcrumbList` schema | ✅ BUILT | Injected on every article page, matching visible content |
 | **Remaining work** | ⚠️ | Owner review of medical claims (guardrail: Dietitian Tejal review), then merge to `main` to deploy |
 
-**Published articles (2026-08-05, all `status: "published"`):**
-1. `pcos-nutrition-support` — PCOS Nutrition Support: A Practical Indian Diet Guide
-2. `thyroid-nutrition-support` — Thyroid Nutrition Support: Diet, Medication Timing & Weight
-3. `diabetes-meal-planning` — Diabetes Meal Planning: A Balanced Indian Plate Guide
-4. `postpartum-nutrition` — Postpartum Nutrition: Eating Well After Delivery in India
-5. `bmi-calculator-guide` — BMI Calculator Guide: What Your BMI Does and Doesn't Mean
-6. `what-to-expect-dietitian-consultation` — What to Expect From a Dietitian Consultation
-7. `indian-meal-planning-faqs` — Indian Meal Planning FAQs: Building a Healthy Weekly Plate
+**Original 7 articles (2026-08-05):** PCOS nutrition, thyroid nutrition, diabetes meal planning, postpartum nutrition, BMI guide, consultation guide, Indian meal-planning FAQs.
+
+**80 articles added 2026-08-05** (same structure — quick answer, question-phrased sections, FAQs, references, related services; no images, no reviewed-by claims, no phone icons on CTAs):
+- **Healthy Eating Basics (13):** food labels, cooking oils, salt, hidden sugar, fibre, vegetarian protein, hydration, portion control, snacks, eating out, meal prep, mindful eating, breakfasts
+- **Weight Management (12):** healthy weight loss, calorie deficit, plateaus, emotional eating, late-night eating, weight gain, belly fat, intermittent fasting, crash diets, metabolism myths, habits, progress tracking
+- **Condition Support (19):** prediabetes, gestational diabetes, anaemia, cholesterol, blood pressure, acidity/reflux, IBS, fatty liver, kidney stones, bone health, gout, insulin resistance, diabetes festivals, diabetes travel, PCOS fertility, sugar myths
+- **Women's Health (7):** PMS, menopause, pregnancy essentials, morning sickness, milk supply, postpartum weight-loss timeline
+- **Men's Health (3):** male fertility, muscle building (vegetarian), testosterone myths
+- **Kids & Family (6):** kids' healthy eating, fussy eaters, teens, lunch boxes, family meal planning, seniors
+- **Fitness & Sports (6):** pre/post-workout, sports hydration, vegetarian sports nutrition, recovery, protein timing, running
+- **Diet Patterns (7):** plant-based, vegan India, Mediterranean-Indian, millets, dairy & ghee, gluten-free, low-carb
+- **Lifestyle & Habits (5):** sleep & weight, stress eating, gut health, detox myths, food & mood
+- **Guides & Tools (5):** calorie tracking, grocery shopping, supplements, nutrition claims
+- **About DietFiniti (3):** how the program works, online vs clinic
 
 **Important:** the SEO roadmap guardrail requires Dietitian Tejal to review all medical nutrition content before it is treated as final. The posts were written conservatively (no cure/guarantee claims, sources cited) and are built as `status: "published"` per the request, but plan an owner review pass before promotion to production.
 
