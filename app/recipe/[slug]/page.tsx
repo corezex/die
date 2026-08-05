@@ -50,7 +50,7 @@ export async function generateMetadata(
   const canonical = `${SITE_URL}/recipe/${recipe.slug}`;
 
   return {
-    title: `${recipe.title} Recipe - Healthy Indian Food | DietFiniti`,
+    title: `${recipe.title} Recipe - Healthy Indian Food`,
     description: recipe.description,
     alternates: {
       canonical

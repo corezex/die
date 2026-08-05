@@ -51,3 +51,26 @@
 - Add per-recipe `dateModified` on data updates.
 - Consider `HowTo` schema only if step-by-step with images/video becomes available (not needed for rich results today).
 - Add "reviewed by" medical disclaimer line only on condition-specific recipes if Dietitian Tejal review is confirmed per recipe (owner previously opted out of "reviewed by" claims on the blog — same policy applies here unless changed).
+
+---
+
+## 4. Title audit (2026-08-05, follow-up)
+
+### Finding
+12 duplicate titles were shared across **45 recipes** (template-generated content, e.g. "Antioxidant Green/Fruit Smoothie" × 9, "High-Protein Chickpea Pasta" × 6, "Protein-Packed Chia Pudding" × 5). Every affected page emitted an identical `<title>` tag and identical listing card heading, and the copy inside each page referenced the generic template name instead of the actual dish (e.g. a Mango Smoothie page whose text said "Antioxidant Green/Fruit Smoothie").
+
+### Fix (applied)
+- **43 recipes retitled** to unique, accurate names derived from each recipe's slug (the slug encoded the real dish): e.g. `mango-smoothie` → "Mango Smoothie", `beet-chips` → "Baked Beetroot Chips (Low Oil)", `paneer-wrap` → "Paneer Whole-Wheat Wrap", `walnut-brownie` → "Ragi Walnut Brownie (No Sugar)".
+- **Templated copy synced**: `description`, `intro_content`, `why_healthy` and instructions now reference each recipe's own new title.
+- **Templated first-ingredient placeholders replaced** with real ingredients for the retitled recipes (e.g. "1 cup primary ingredient for X (e.g., …)" → "1 cup ripe mango, peeled and chopped").
+- **1 true duplicate removed**: `garlic-pepper-soup-1` was byte-identical to `garlic-pepper-soup` (same description, ingredients, instructions, nutrition, times). Removed from data + image file deleted. Recipe count: 538 → **537** (site copy says "500+" — unaffected).
+- **Title tag bug fixed**: recipe pages previously rendered `… | DietFiniti | DietFiniti` (page metadata already contained "| DietFiniti" and the layout template appended it again). Removed the duplicate from the page metadata → single suffix.
+- `sesame-noodle` / `sesame-noodles` were near-duplicates (differed only in nutrition/times); both kept but titles differentiated ("Sesame Zucchini Noodles" / "Sesame Noodles") — flag for consolidation if desired.
+
+### Verification
+- ✅ 537 recipes, **537 unique titles** (data + rendered `<title>` tags — checked all built HTML files).
+- ✅ `garlic-pepper-soup-1` gone from data, build output and sitemap.
+- ✅ `npm run build` clean; all titles render with a single "| DietFiniti" suffix.
+
+### Remaining content-quality issue (separate from titles)
+- **354 recipes still contain templated placeholder ingredient lines** ("1 cup primary ingredient for {template} (e.g., …)" — 299×, "healthy flour blend …" — 33×, "primary base for …" — 22×). Titles are unique, but these ingredient lists are not real. **Not fixed in this pass** (title scope); recommend a dedicated content pass to write real ingredients for all 354 recipes, or a decision to remove/consolidate the worst duplicates.
