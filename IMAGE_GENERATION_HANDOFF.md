@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 503 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 35 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 503 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 35 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 513 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 25 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 513 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 25 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 24 — Batch 24 (10 images) — DONE, pushed as `7f7dea7`
+Generated: mint-coriander-detox, cucumber-chia-drink, lemon-honey-water, warm-ginger-water, tulsi-green-tea, hibiscus-iced-tea, moringa-tea, ashwagandha-tea, turmeric-black-pepper-tea, cinnamon-milk.
+- **Next batch (Batch 25) to generate:** saffron-almond-milk, walnut-milk, oats-banana-smoothie, apple-cinnamon-smoothie, papaya-chia-smoothie, tomato-celery-juice, pineapple-ginger-juice, ragi-halwa, oats-kheer, millet-payasam.
 
 ### Generation session 23 — Batch 23 (10 images) — DONE, pushed as `ee68388`
 Generated: baked-kachori-oats-crust, moong-dal-mini-idlis, sprouted-moong-chaat, peanut-chaat, sweet-corn-chaat, makhana-bhel, puffed-rice-chivda, oats-bhel, ragi-khakhra, amla-aloe-vera-juice.
