@@ -6927,7 +6927,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/amaranth-roti.jpg"
   },
   {
     "slug": "buckwheat-roti",
@@ -6969,7 +6969,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/buckwheat-roti.jpg"
   },
   {
     "slug": "water-chestnut-roti-singhara",
@@ -7011,7 +7011,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/water-chestnut-roti-singhara.jpg"
   },
   {
     "slug": "sorghum-roti",
@@ -7053,7 +7053,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sorghum-roti.jpg"
   },
   {
     "slug": "pearl-millet-roti",
@@ -7095,7 +7095,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pearl-millet-roti.jpg"
   },
   {
     "slug": "finger-millet-roti",
@@ -7137,7 +7137,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/finger-millet-roti.jpg"
   },
   {
     "slug": "foxtail-millet-rice",
@@ -7179,7 +7179,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/foxtail-millet-rice.jpg"
   },
   {
     "slug": "kodo-millet-pulao",
@@ -7221,7 +7221,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/kodo-millet-pulao.jpg"
   },
   {
     "slug": "little-millet-upma",
@@ -7263,7 +7263,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/little-millet-upma.jpg"
   },
   {
     "slug": "barnyard-millet-pulao",
@@ -7305,7 +7305,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/barnyard-millet-pulao.jpg"
   },
   {
     "slug": "proso-millet-dosa",
