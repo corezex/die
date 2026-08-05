@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 343 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 387 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 151 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 387 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 353 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 377 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 161 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 377 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 8 — Batch 8 (10 images) — DONE, pushed as `25d5e3f`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+mutter-paneer-no-cream, kadai-paneer-healthy-less-oil, tofu-tikka-masala-dairy-free, mushroom-mutter, broccoli-stir-fry-indian-style, cabbage-poriyal, carrot-beans-poriyal, beetroot-thoran, snake-gourd-curry, ridge-gourd-sabzi.
+- **Next batch (Batch 9) to generate:** ash-gourd-kootu, pumpkin-olan, raw-banana-kootu, yam-stew-suran, jackfruit-stir-fry-kathal, colocasia-roast-air-fried-arbi, drumstick-curry, tinda-masala-apple-gourd, pointed-gourd-curry, bitter-gourd-stir-fry-low-oil.
 
 ### Generation session 7 — Batch 7 (10 images) — DONE, pushed as `1ab271e`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
