@@ -1257,7 +1257,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/green-gram-dosa.jpg"
   },
   {
     "slug": "horsegram-idli",
@@ -2433,7 +2433,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/chana-dal-palak.jpg"
   },
   {
     "slug": "lauki-chana-dal-bottle-gourd-lentils",
@@ -4113,7 +4113,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/dalma-odisha-mixed-dal-with-veggies.jpg"
   },
   {
     "slug": "chhoda-matar-dal",
@@ -4155,7 +4155,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/chhoda-matar-dal.jpg"
   },
   {
     "slug": "sookhi-urad-dal-dry-black-lentils",
@@ -4197,7 +4197,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sookhi-urad-dal-dry-black-lentils.jpg"
   },
   {
     "slug": "bhindi-masala-air-friedstir-fried",
@@ -4281,7 +4281,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/karela-sabzi-bitter-gourd.jpg"
   },
   {
     "slug": "lauki-ki-sabzi-bottle-gourd",
@@ -4323,7 +4323,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/lauki-ki-sabzi-bottle-gourd.jpg"
   },
   {
     "slug": "tori-ki-sabzi-ridge-gourd",
@@ -4365,7 +4365,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tori-ki-sabzi-ridge-gourd.jpg"
   },
   {
     "slug": "parwal-sabzi-pointed-gourd",
@@ -4407,7 +4407,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/parwal-sabzi-pointed-gourd.jpg"
   },
   {
     "slug": "aloo-gobi-baked-cauliflower-potatoes",
@@ -4533,7 +4533,7 @@
       "Indian",
       "Vegetable"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/jeera-aloo-boiled-tossed.jpg"
   },
   {
     "slug": "mix-veg-curry",

@@ -10,6 +10,7 @@ json_path = "app/data/recipes.json"
 #    other recipe (guarantees 1 image : 1 recipe, no repeats/sharing).
 # 3) Everything else defaults to /image/homeimage.jpg so it gets its own
 #    unique image in a future generation batch.
+# Deterministic: every non-exact mapping is re-decided from scratch each run.
 
 image_files = {}
 if os.path.exists(recipes_dir):
@@ -23,18 +24,20 @@ with open(json_path, "r", encoding="utf-8") as f:
 
 used = set()  # image names already assigned
 
-# Pass 1: exact matches
+# Pass 1: exact matches (authoritative, always win)
 for recipe in recipes:
     slug = recipe["slug"]
     if slug in image_files:
         recipe["coverImage"] = image_files[slug]
         used.add(slug)
 
-# Pass 2: substring matches with unused files only (1:1 guaranteed)
+# Pass 2: every non-exact recipe is re-decided (substring only with unused
+# files, otherwise fallback). No `continue` for previously substring-mapped
+# recipes -> stale/shared mappings are cleaned up on every run.
 for recipe in recipes:
     slug = recipe["slug"]
-    if recipe.get("coverImage") and recipe["coverImage"] != "/image/homeimage.jpg":
-        continue  # already mapped
+    if slug in image_files:
+        continue  # exact match already assigned in pass 1
     matched = False
     for img_name in image_files:
         if img_name in used:
