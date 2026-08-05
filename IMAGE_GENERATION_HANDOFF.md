@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 393 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 337 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 201 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 337 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 403 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 327 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 211 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 327 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 13 — Batch 13 (10 images) — DONE, pushed as `e06fca8`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+amaranth-roti, buckwheat-roti, water-chestnut-roti-singhara, sorghum-roti, pearl-millet-roti, finger-millet-roti, foxtail-millet-rice, kodo-millet-pulao, little-millet-upma, barnyard-millet-pulao.
+- **Next batch (Batch 14) to generate:** proso-millet-dosa, vegetable-pulao-less-oil, peas-pulao, mushroom-pulao, paneer-pulao, soya-pulao, sprouts-pulao, cabbage-rice, carrot-rice, beetroot-rice.
 
 ### Generation session 12 — Batch 12 (10 images) — DONE, pushed as `d51ec62`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
