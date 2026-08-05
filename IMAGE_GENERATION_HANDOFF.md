@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 533 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 5 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 533 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 5 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 538 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 0 recipes — **ALL 538 COMPLETE** 🎉
+- **Mapped in recipes.json (real image paths):** 538 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 0 recipes
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 27 — Batch 27 (FINAL, 5 images) — DONE, pushed as `58b9f4f`
+Generated: sesame-ladoo, coconut-ladoo, amaranth-ladoo, foxnut-kheer, jowar-apple-crumble.
+
+**✅ PROJECT COMPLETE: All 538 recipes have unique 1:1 images.**
 
 ### Generation session 26 — Batch 26 (10 images) — DONE, pushed as `e5a5b66`
 Generated: apple-rabdi, lauki-halwa, carrot-kheer, pumpkin-halwa, sweet-potato-pudding, chia-coconut-pudding, fruit-custard, dates-almond-roll, fig-walnut-bites, peanut-jaggery-bar.
