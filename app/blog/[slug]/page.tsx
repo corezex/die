@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen, Phone, PhoneCall } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
 interface Post {
@@ -13,7 +13,6 @@ interface Post {
   keywords: string;
   author: string;
   authorCredentials: string;
-  reviewedBy: string;
   publishedAt: string;
   updatedAt: string;
   readingTime: string;
@@ -151,9 +150,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               </p>
               <p className="text-sm text-slate-600">{post.authorCredentials}</p>
             </div>
-            <span className="ml-auto rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800 ring-1 ring-teal-200">
-              Reviewed by {post.reviewedBy}
-            </span>
+
           </div>
         </div>
       </header>
@@ -226,19 +223,11 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               ? "A one-size-fits-all chart rarely survives real life. DietFiniti builds plans around your health history, routine and kitchen — in Mumbai, Thane or online anywhere in India."
               : "DietFiniti builds personalised plans around your health history, routine and kitchen — in Mumbai, Thane or online anywhere in India."}
           </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link href="/online-dietitian-consultation" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-teal-800 shadow transition hover:bg-teal-50">
-              <Phone className="h-5 w-5" aria-hidden="true" /> Book a consultation
-            </Link>
-            <Link href="tel:+919321057899" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 px-6 py-3.5 font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/25">
-              <PhoneCall className="h-5 w-5" aria-hidden="true" /> Call +91 93210 57899
-            </Link>
-          </div>
           <div className="mt-5 space-y-3">
             {post.relatedServices.map((service) => (
               <Link key={service.path} href={service.path} className="block rounded-xl bg-white/10 p-4 ring-1 ring-white/25 transition hover:bg-white/20">
                 <span className="flex items-center gap-2 font-semibold text-white">
-                  {service.name} <PhoneCall className="h-4 w-4" aria-hidden="true" />
+{service.name}
                 </span>
                 <span className="mt-1 block text-sm leading-6 text-teal-50">{service.description}</span>
               </Link>
@@ -254,7 +243,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               <p className="text-lg font-bold text-slate-900">{post.author}</p>
               <p className="text-sm font-medium text-teal-700">{post.authorCredentials}</p>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Founder and lead dietitian at DietFiniti, with clinics in Mumbai (Lower Parel) and Thane and online consultations across India. She reviews all nutrition content on this blog before publication.
+                Founder and lead dietitian at DietFiniti, with clinics in Mumbai (Lower Parel) and Thane and online consultations across India. Her articles focus on practical, evidence-aware nutrition guidance for everyday Indian eating.
               </p>
               <Link href="/about" className="mt-3 inline-flex items-center gap-1 font-semibold text-teal-700 transition hover:text-teal-900">
                 About Dietitian Tejal <ArrowLeft className="h-4 w-4 rotate-180" aria-hidden="true" />

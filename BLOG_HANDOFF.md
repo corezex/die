@@ -20,6 +20,8 @@
 | Blog nav link | ✅ ADDED | `app/components/Header.tsx` (navigationItems) + Footer quick links |
 | Blog URLs in sitemap | ✅ ADDED | `app/sitemap.ts` — `/blog` + 7 post URLs |
 | Blog images | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no images in the blog. Covers were removed, `public/image/blog/` deleted, `coverImage` dropped from `posts.json`. Only sitewide Header/Footer logos remain (on every page). Listing OG meta still uses the pre-existing `public/blog.png` for social sharing (not shown on-page). |
+| Phone on CTAs | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no phone icons or `tel:` details on blog CTAs. Article CTA panel = related-service links only (no icons); listing CTA = single "Book a consultation" button. |
+| "Reviewed by" text | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): removed the "Reviewed by Dietitian Tejal" byline badge and the author-card sentence about reviewing content. Byline shows author + credentials + dates only. |
 | Articles written | ✅ 7 PUBLISHED | PCOS, thyroid, diabetes, postpartum, BMI guide, consultation guide, meal-planning FAQs |
 | `BlogPosting` / `FAQPage` / `BreadcrumbList` schema | ✅ BUILT | Injected on every article page, matching visible content |
 | **Remaining work** | ⚠️ | Owner review of medical claims (guardrail: Dietitian Tejal review), then merge to `main` to deploy |
