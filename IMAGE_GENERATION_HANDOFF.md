@@ -8,14 +8,24 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 323 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 374 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 164 recipes
-- **Fallback to `/image/homeimage.jpg`:** 374 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 333 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 397 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 141 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 397 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 6 — Batch 6 (10 images) — DONE, pushed as `db7dcf3`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+toor-dal-with-cabbage, adzuki-bean-curry, mixed-sprout-curry, kulith-saar-horsegram-soup, mudda-pappu, gongura-pappu-sorrel-leaves-dal, dosakaya-pappu-cucumber-dal, thotakura-pappu-amaranth-dal, palak-pappu, tomato-pappu.
+
+**IMPORTANT — uniqueness policy (user request):** never repeat or share images.
+- Use `python3 map_images_strict.py` (NOT `map_all_images.py`). Policy: exact slug match wins; substring match allowed ONLY for unused image files (guarantees 1 image : 1 recipe); everything else falls back to `/image/homeimage.jpg`.
+- Reverted 76 substring over-mappings from earlier sessions (e.g. `brown-rice.jpg` was shared by 11 recipes) so those recipes will each get their own unique image.
+- Verify after mapping: `shared images = 0`.
+- **Next batch (Batch 7) to generate:** green-gram-dosa, chana-dal-palak, dalma-odisha-mixed-dal-with-veggies, chhoda-matar-dal, sookhi-urad-dal-dry-black-lentils, karela-sabzi-bitter-gourd, lauki-ki-sabzi-bottle-gourd, tori-ki-sabzi-ridge-gourd, parwal-sabzi-pointed-gourd, jeera-aloo-boiled-tossed.
 
 ### Generation session 5 — Batch 5 (10 images) — DONE, pushed as `eb7d18d`
 Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
