@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 303 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 394 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 144 recipes
-- **Fallback to `/image/homeimage.jpg`:** 394 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 313 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 384 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 154 recipes
+- **Fallback to `/image/homeimage.jpg`:** 384 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 4 — Batch 4 (10 images) — DONE, pushed as `519fb22`
+Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
+sprouted-moong-curry, horsegram-rasam-kollu-rasam, tomato-rasam, pepper-rasam, lemon-rasam, dal-dhokli-whole-wheat, sindhi-dal-pakwan-baked-pakwan, gujarati-trevti-dal, bengali-cholar-dal, amritsari-dal-low-butter.
+- **Next batch (Batch 5) to generate:** dal-fry, lasooni-dal-garlic-lentils, dhaba-style-dal-olive-oil-substitute, pahari-dal, moong-dal-with-dill-leaves, spinach-urad-dal, yellow-peas-dal-matar-dal, black-eyed-peas-sundal, chickpea-stew, pinto-bean-curry.
 
 ### Generation session 3 — Batch 3 (10 images) — DONE, pushed as `33b9a56`
 Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
