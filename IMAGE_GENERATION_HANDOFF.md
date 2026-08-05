@@ -8,10 +8,10 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 413 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 317 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 221 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 317 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 413 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 125 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 413 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 125 recipes (these are the ones whose images are not generated yet)
 
 ---
 
