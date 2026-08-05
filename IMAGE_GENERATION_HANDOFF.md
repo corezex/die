@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 433 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 105 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 433 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 105 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 443 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 95 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 443 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 95 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 17 — Batch 17 (10 images) — DONE, pushed as `245d659`
+Generated: ragi-roti-with-greens, oats-khichdi-with-spinach, brown-rice-lemon-pulao, red-rice-tomato-bath, black-rice-khichdi, millet-bisibelebath, sorghum-lemon-rice, pearl-millet-khichdi, little-millet-tamarind-rice, kodo-millet-puliyogare.
+- **Next batch (Batch 18) to generate:** brown-rice-jeera-pulao, quinoa-curd-rice, oats-curd-rice, amaranth-pulao, buckwheat-khichdi, water-chestnut-roti, multi-millet-roti, soya-flour-roti, chickpea-flour-roti, cauliflower-rice.
 
 ### Generation session 16 — Batch 16 (10 images) — DONE, pushed as `0c6c09b`
 Generated: little-millet-pongal, spinach-poha, sweet-potato-poha, methi-poha, brown-rice-idli, masoor-dal-tadka, dal-makhani-vegan, mango-toor-dal, amaranth-dal, colocasia-roast.
