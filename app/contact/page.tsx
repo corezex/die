@@ -33,9 +33,14 @@ export default function ContactPage() {
       { "@type": "ContactPage", "@id": "https://dietfiniti.com/contact#webpage", url: "https://dietfiniti.com/contact", name: "Contact DietFiniti", about: { "@id": "https://dietfiniti.com/#organization" } },
       { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://dietfiniti.com" }, { "@type": "ListItem", position: 2, name: "Contact", item: "https://dietfiniti.com/contact" }] },
       { "@type": "FAQPage", "mainEntity": [
-        { "@type":"Question","name":"How is a nutrition plan personalised?","acceptedAnswer":{"@type":"Answer","text":"A plan is shaped around your goal, routine, food preferences, cooking arrangements and relevant health history. It is not a generic meal chart."}},
-        { "@type":"Question","name":"Do I need to eat special or expensive foods?","acceptedAnswer":{"@type":"Answer","text":"No. DietFiniti focuses on familiar, everyday food and practical planning."}},
-        { "@type":"Question","name":"Can I get support if I have a medical condition?","acceptedAnswer":{"@type":"Answer","text":"Nutrition guidance can support everyday food routines but does not replace medical care."}}
+        { "@type": "Question", "name": "How is a nutrition plan personalised?", "acceptedAnswer": { "@type": "Answer", "text": "A plan is shaped around your goal, routine, food preferences, cooking arrangements and relevant health history. It is not a generic meal chart." } },
+        { "@type": "Question", "name": "Do I need to eat special or expensive foods?", "acceptedAnswer": { "@type": "Answer", "text": "No. DietFiniti focuses on familiar, everyday food and practical planning. Ask during your consultation about what is appropriate for your circumstances." } },
+        { "@type": "Question", "name": "How often will I have follow-ups?", "acceptedAnswer": { "@type": "Answer", "text": "Follow-up frequency depends on the programme you select. The team will explain what is included before you enrol." } },
+        { "@type": "Question", "name": "Can I get support if I have a medical condition?", "acceptedAnswer": { "@type": "Answer", "text": "Nutrition guidance can support everyday food routines but does not replace medical care. Continue to work with your treating clinician for diagnosis, medication and clinical decisions." } },
+        { "@type": "Question", "name": "How long does it take to see progress?", "acceptedAnswer": { "@type": "Answer", "text": "Individual results and timelines vary. DietFiniti focuses on realistic, sustainable habits rather than promising a particular result by a specific date." } },
+        { "@type": "Question", "name": "What payment options are available?", "acceptedAnswer": { "@type": "Answer", "text": "Payment options can be discussed at the time of enrolment. The team will explain the fees and process before you commit." } },
+        { "@type": "Question", "name": "What if progress feels slow?", "acceptedAnswer": { "@type": "Answer", "text": "Follow-ups are the space to discuss what is or is not working. Plans are refined based on realistic feedback from your everyday life." } },
+        { "@type": "Question", "name": "Will my results last after the programme?", "acceptedAnswer": { "@type": "Answer", "text": "The focus is on building food habits you can continue to use. Long-term maintenance depends on ongoing choices; individual outcomes vary." } },
       ]},
     ],
   };

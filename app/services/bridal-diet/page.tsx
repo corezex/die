@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import BridalDiet from "./BridalDiet";
-import { BridalDietStructuredData } from "./BridalDietStructuredData";
 
 export const metadata: Metadata = {
   title: "Bridal Nutrition Support in Mumbai & Online | DietFiniti",
@@ -11,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function BridalDietPage() {
-  return <><BridalDiet /><BridalDietStructuredData /></>;
+  // BridalDiet already renders <BridalDietStructuredData /> —
+  // rendering it here too would duplicate the JSON-LD block.
+  return <><BridalDiet /></>;
 }

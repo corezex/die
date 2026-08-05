@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import WeightGain from "./WeightGain";
-import { WeightGainStructuredData } from "./WeightGainStructuredData";
 
 export const metadata: Metadata = {
   title: "Weight-Gain Nutrition Support in Mumbai & Online | DietFiniti",
@@ -11,5 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function WeightGainPage() {
-  return <><WeightGain /><WeightGainStructuredData /></>;
+  // WeightGain already renders <WeightGainStructuredData /> — avoid duplicate JSON-LD.
+  return <><WeightGain /></>;
 }

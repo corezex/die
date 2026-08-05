@@ -247,9 +247,9 @@ export const BridalDietSections = () => {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#262262] mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#262262] mb-6">
               Bridal Goal Planning Timeline
-            </h1>
+            </h2>
           </motion.div>
 
           {/* Text + Image Section */}

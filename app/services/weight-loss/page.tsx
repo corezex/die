@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import WeightLoss from "./WeightLoss";
-import { WeightLossStructuredData } from "./WeightLossStructuredData";
 
 export const metadata: Metadata = {
   title: "Weight-Loss Dietitian in Mumbai & Online",
@@ -21,5 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default function WeightLossPage() {
-  return <><WeightLoss /><WeightLossStructuredData /></>;
+  // WeightLoss already renders <WeightLossStructuredData /> — avoid duplicate JSON-LD.
+  return <><WeightLoss /></>;
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { MedicalWeightLossStructuredData } from "./MedicalWeightLossStructuredData";
 import MedicalWeight from "./MedicalWeight";
 
 export const metadata: Metadata = {
@@ -10,4 +9,5 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Weight-Management Nutrition Support | DietFiniti", description: "Personalised nutrition guidance that complements medical care.", images: ["/image/MedicalWeightLoss1.jpg"] },
 };
 
-export default function MedicalWeightLossPage() { return <><MedicalWeight /><MedicalWeightLossStructuredData /></>; }
+// MedicalWeight already renders <MedicalWeightLossStructuredData /> — avoid duplicate JSON-LD.
+export default function MedicalWeightLossPage() { return <><MedicalWeight /></>; }

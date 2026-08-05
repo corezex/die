@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import SportsNutrition from "./SportsNutrition";
-import { SportsNutritionStructuredData } from "./SportsNutritionStructuredData";
 
 export const metadata: Metadata = {
   title: "Sports Nutrition Support in Mumbai & Online | DietFiniti",
@@ -11,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function SportsNutritionPage() {
-  return <><SportsNutrition /><SportsNutritionStructuredData /></>;
+  // SportsNutrition already renders <SportsNutritionStructuredData /> —
+  // rendering it here too would duplicate the JSON-LD block.
+  return <><SportsNutrition /></>;
 }
