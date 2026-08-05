@@ -22041,7 +22041,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sesame-ladoo.jpg"
   },
   {
     "slug": "coconut-ladoo",
@@ -22083,7 +22083,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/coconut-ladoo.jpg"
   },
   {
     "slug": "amaranth-ladoo",
@@ -22125,7 +22125,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/amaranth-ladoo.jpg"
   },
   {
     "slug": "foxnut-kheer",
@@ -22167,7 +22167,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/foxnut-kheer.jpg"
   },
   {
     "slug": "jowar-apple-crumble",
@@ -22209,6 +22209,6 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/jowar-apple-crumble.jpg"
   }
 ]
