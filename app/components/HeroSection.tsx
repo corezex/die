@@ -11,9 +11,9 @@ import { CalendarCheck, MessageCircle, CheckCircle2, MapPin, MonitorSmartphone, 
  */
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-teal-950 via-teal-900 to-emerald-950">
-      {/* Subtle decorative gradient (no photo behind text) */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(45,212,191,0.15),transparent_55%)]" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-black via-neutral-950 to-neutral-900">
+      {/* Subtle brand-glow (kept minimal so the banner matches the logo's black) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(45,212,191,0.08),transparent_55%)]" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid lg:grid-cols-[1.05fr_.95fr]">
         {/* ---- Left: content ---- */}
