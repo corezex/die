@@ -7347,7 +7347,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/proso-millet-dosa.jpg"
   },
   {
     "slug": "brown-rice-vegetable-biryani",
@@ -7431,7 +7431,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/vegetable-pulao-less-oil.jpg"
   },
   {
     "slug": "peas-pulao",
@@ -7473,7 +7473,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/peas-pulao.jpg"
   },
   {
     "slug": "mushroom-pulao",
@@ -7515,7 +7515,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/mushroom-pulao.jpg"
   },
   {
     "slug": "paneer-pulao",
@@ -7557,7 +7557,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/paneer-pulao.jpg"
   },
   {
     "slug": "soya-pulao",
@@ -7599,7 +7599,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/soya-pulao.jpg"
   },
   {
     "slug": "sprouts-pulao",
@@ -7641,7 +7641,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sprouts-pulao.jpg"
   },
   {
     "slug": "cabbage-rice",
@@ -7683,7 +7683,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cabbage-rice.jpg"
   },
   {
     "slug": "carrot-rice",
@@ -7725,7 +7725,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/carrot-rice.jpg"
   },
   {
     "slug": "beetroot-rice",
@@ -7767,7 +7767,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/beetroot-rice.jpg"
   },
   {
     "slug": "spinach-rice",
