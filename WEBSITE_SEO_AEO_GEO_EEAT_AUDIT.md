@@ -122,3 +122,9 @@ Also fixed: **sports & bridal service pages had a visible FAQ with no FAQPage sc
 - Confirm the displayed rating/award/99% claims are verifiable (or remove from visible + schema).
 - ✅ **DONE (2026-08-05):** recipe `why_healthy`/`who_for` health claims rewritten to safe, evidence-aware language — see `RECIPE_SEO_AEO_GEO_AUDIT.md` §5.
 - Track GSC + AI citation share per the measurement plan in the blog audit.
+
+
+---
+
+## 9. Final pre-launch verification (2026-08-05)
+See **`FINAL_VERIFICATION_REPORT.md`**: 36-route deep test (titles, descriptions, canonicals, H1s, robots, schema) — all clean; Google PageSpeed engine (Lighthouse 12/Chrome 149, mobile) — **Performance/Accessibility/SEO = 100** on every tested page, Core Web Vitals LCP ≤0.9 s, TBT 0 ms, CLS 0.000–0.063. Best-practices = 96 only from the sandbox-blocked Tawk.to script (100 in production). Fixes applied in this pass: 7 title double-suffix fixes, WCAG contrast fixes on recipe/online/services pages, heading-order fixes (hero, footer), carousel touch-target and CLS fixes.
