@@ -8013,7 +8013,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tamarind-rice-brown-rice.jpg"
   },
   {
     "slug": "raw-mango-rice",
@@ -8259,7 +8259,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/jeera-brown-rice.jpg"
   },
   {
     "slug": "tomato-brown-rice",
@@ -8301,7 +8301,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tomato-brown-rice.jpg"
   },
   {
     "slug": "capsicum-brown-rice",
@@ -8343,7 +8343,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/capsicum-brown-rice.jpg"
   },
   {
     "slug": "apple-pie",
@@ -9355,7 +9355,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/clear-lentil-soup.jpg"
   },
   {
     "slug": "berry-bowl",
@@ -9841,7 +9841,7 @@
       "Indian",
       "Snacks"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/toor-dal-soup.jpg"
   },
   {
     "slug": "brown-rice-soup",
@@ -11463,7 +11463,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-malt-salty-version.jpg"
   },
   {
     "slug": "detox-green-tea",
@@ -12549,7 +12549,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-besan-chilla.jpg"
   },
   {
     "slug": "soya-chunk-poha",
@@ -12591,7 +12591,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/soya-chunk-poha.jpg"
   },
   {
     "slug": "millet-dosa",
@@ -12633,7 +12633,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-dosa.jpg"
   },
   {
     "slug": "honey-oatmeal",
