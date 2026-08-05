@@ -133,7 +133,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Services + Business Hours */}
+          {/* Column 3 — Services */}
           <div className="space-y-4">
             <h2 className="flex items-center text-lg font-semibold text-green-700">
               <Star className="mr-2 h-5 w-5" />
@@ -153,7 +153,12 @@ export default function Footer() {
               ))}
             </ul>
 
-            <div className="mt-6 space-y-2 rounded-lg border border-gray-200 bg-white p-3">
+
+          </div>
+
+          {/* Column 4 — Business Hours, Social + Rating */}
+          <div className="space-y-6">
+            <div className="space-y-2 rounded-lg border border-gray-200 bg-white p-3">
               <div className="flex items-center space-x-2 text-green-700">
                 <Clock className="h-4 w-4" />
                 <span className="font-semibold">Business Hours</span>
@@ -169,10 +174,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Column 4 — Social + Rating */}
-          <div className="space-y-6">
             <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-4">
               <h2 className="text-lg font-semibold text-green-700">Follow Us</h2>
               <div className="flex space-x-3">
