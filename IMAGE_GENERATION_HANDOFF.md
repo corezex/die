@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 313 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 384 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 154 recipes
-- **Fallback to `/image/homeimage.jpg`:** 384 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 323 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 374 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 164 recipes
+- **Fallback to `/image/homeimage.jpg`:** 374 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 5 — Batch 5 (10 images) — DONE, pushed as `eb7d18d`
+Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
+dal-fry, lasooni-dal-garlic-lentils, dhaba-style-dal-olive-oil-substitute, pahari-dal, moong-dal-with-dill-leaves, spinach-urad-dal, yellow-peas-dal-matar-dal, black-eyed-peas-sundal, chickpea-stew, pinto-bean-curry.
+- **Next batch (Batch 6) to generate:** adzuki-bean-curry, mixed-sprout-curry, kulith-saar-horsegram-soup, mudda-pappu, gongura-pappu-sorrel-leaves-dal, dosakaya-pappu-cucumber-dal, thotakura-pappu-amaranth-dal, palak-pappu, tomato-pappu, dalma-odisha-mixed-dal-with-veggies.
 
 ### Generation session 4 — Batch 4 (10 images) — DONE, pushed as `519fb22`
 Generated AI food photography for these 10 recipes (all mapped to `recipes.json`):
