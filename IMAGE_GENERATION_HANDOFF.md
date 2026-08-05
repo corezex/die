@@ -8,14 +8,19 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 363 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 367 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 171 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 367 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 373 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 357 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 181 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 357 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 10 — Batch 10 (10 images) — DONE, pushed as `e24cb35`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+cluster-beans-curry-gawar-phali, broad-beans-sabzi, french-beans-poriyal, snow-peas-sabzi, snap-peas-stir-fry, cauliflower-sabzi-without-potato, cabbage-peas-sabzi, capsicum-besan-masala, kohlrabi-curry-ganth-gobi, turnip-sabzi-shalgam.
+- **Next batch (Batch 11) to generate:** radish-greens-sabzi-mooli-patta, mustard-greens-curry-sarson-ka-saag-no-butter, amaranth-leaves-stir-fry-chaulai, fenugreek-leaves-sabzi-methi, spinach-stir-fry-palak, dill-leaves-sabzi-suva, spring-onion-sabzi, mushroom-pepper-fry, baby-corn-masala, red-rice.
 
 ### Generation session 9 — Batch 9 (10 images) — DONE, pushed as `069077d`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
