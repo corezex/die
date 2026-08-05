@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen, PhoneCall } from "lucide-react";
 import postsData from "@/app/data/posts.json";
@@ -19,7 +18,6 @@ interface Post {
   updatedAt: string;
   readingTime: string;
   status: string;
-  coverImage: string;
   quickAnswer: string;
   sections: { heading: string; body: string }[];
   faqs: { question: string; answer: string }[];
@@ -53,13 +51,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
       type: "article",
       url: `${SITE_URL}/blog/${post.slug}`,
       siteName: "DietFiniti",
-      images: [{ url: `${SITE_URL}${post.coverImage}`, alt: post.title }],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: post.title,
       description: post.excerpt,
-      images: [`${SITE_URL}${post.coverImage}`],
     },
   };
 }
@@ -76,7 +72,6 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     "@id": `${SITE_URL}/blog/${post.slug}#article`,
     headline: post.title,
     description: post.excerpt,
-    image: `${SITE_URL}${post.coverImage}`,
     keywords: post.keywords,
     articleSection: post.category,
     inLanguage: "en-IN",
@@ -162,13 +157,6 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
           </div>
         </div>
       </header>
-
-      {/* Cover image */}
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-teal-50">
-          <Image src={post.coverImage} alt={post.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" priority />
-        </div>
-      </div>
 
       {/* Body */}
       <div className="mx-auto max-w-3xl px-4 pb-8 sm:px-6">

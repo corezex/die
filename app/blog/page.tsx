@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Search, ChefHat, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
@@ -133,15 +132,7 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((post) => (
               <article key={post.slug} className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
-                <Link href={`/blog/${post.slug}`} className="relative block aspect-[16/10] overflow-hidden bg-teal-50" aria-label={post.title}>
-                  <Image
-                    src={post.coverImage}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </Link>
+                <div className="h-1.5 bg-gradient-to-r from-teal-600 via-emerald-500 to-teal-300" aria-hidden="true" />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-teal-700">
                     <span className="rounded-full bg-teal-50 px-3 py-1 font-semibold uppercase tracking-wide">{post.category}</span>

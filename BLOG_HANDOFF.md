@@ -19,8 +19,7 @@
 | Blog data file | ✅ BUILT | `app/data/posts.json` — 7 published posts (see content list below) |
 | Blog nav link | ✅ ADDED | `app/components/Header.tsx` (navigationItems) + Footer quick links |
 | Blog URLs in sitemap | ✅ ADDED | `app/sitemap.ts` — `/blog` + 7 post URLs |
-| Blog covers | ✅ GENERATED | `public/image/blog/{slug}.jpg` (7 images) + `public/blog.png` for listing hero/OG |
-| Blog hero asset | ✅ IN USE | `public/blog.png` used as the blog listing Open Graph image |
+| Blog images | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no images in the blog. Covers were removed, `public/image/blog/` deleted, `coverImage` dropped from `posts.json`. Only sitewide Header/Footer logos remain (on every page). Listing OG meta still uses the pre-existing `public/blog.png` for social sharing (not shown on-page). |
 | Articles written | ✅ 7 PUBLISHED | PCOS, thyroid, diabetes, postpartum, BMI guide, consultation guide, meal-planning FAQs |
 | `BlogPosting` / `FAQPage` / `BreadcrumbList` schema | ✅ BUILT | Injected on every article page, matching visible content |
 | **Remaining work** | ⚠️ | Owner review of medical claims (guardrail: Dietitian Tejal review), then merge to `main` to deploy |
@@ -139,8 +138,8 @@ Copy the patterns from `app/recipe/[slug]/page.tsx`:
 - `app/sitemap.ts` → add `["/blog", "weekly", 0.8]` and a `blogRoutes` array (`/blog/{slug}`, `monthly`, priority `0.6`) — mirror the recipe route block
 - `app/robots.ts` — no change needed (crawling is already enabled), just confirm
 
-### 5. Article images
-- Reuse `public/blog.png` for the listing hero if it fits the design; otherwise generate cover images per post in the same style as recipe images (see `IMAGE_GENERATION_HANDOFF.md` for conventions and the batch-fetch workflow across chat sessions). Store at `public/image/blog/{slug}.jpg` and reference as `/image/blog/{slug}.jpg`.
+### 5. Images — NOT used
+- **Owner decision (2026-08-05): the blog does not use images.** Do not add cover images to listing cards or article pages, and do not generate/post `public/image/blog/` assets. If this changes, see `IMAGE_GENERATION_HANDOFF.md` for conventions.
 
 ### 6. Verify
 ```bash
