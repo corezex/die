@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import tejalImage from "@/public/image/homeimage1.jpg"; // You'll need to add this image
+import tejalImage from "@/public/image/tejal-founder.jpg";
 
 const AboutTrustSection = () => {
   return (
