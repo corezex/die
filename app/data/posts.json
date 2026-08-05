@@ -95,6 +95,11 @@
         "name": "Online Dietitian Consultation",
         "path": "/online-dietitian-consultation",
         "description": "Personalised planning from anywhere in India, with weekly support."
+      },
+      {
+        "name": "PCOS Nutrition Support",
+        "path": "/services/pcos-nutrition",
+        "description": "A personalised plan for hormonal health alongside your gynaecologist."
       }
     ]
   },
@@ -194,6 +199,11 @@
         "name": "Online Dietitian Consultation",
         "path": "/online-dietitian-consultation",
         "description": "A personalised eating plan around your routine, medications and food preferences."
+      },
+      {
+        "name": "Thyroid Nutrition Support",
+        "path": "/services/thyroid-nutrition",
+        "description": "Eating patterns that work alongside thyroid medication."
       }
     ]
   },
@@ -297,6 +307,11 @@
         "name": "Online Dietitian Consultation",
         "path": "/online-dietitian-consultation",
         "description": "A personalised diabetes meal pattern built around your routine and readings."
+      },
+      {
+        "name": "Diabetes Nutrition Support",
+        "path": "/services/diabetes-nutrition",
+        "description": "Personalised Indian meal planning for steady blood sugar."
       }
     ]
   },
@@ -2963,6 +2978,11 @@
         "name": "Online Dietitian Consultation",
         "path": "/online-dietitian-consultation",
         "description": "A personalised blood-sugar-friendly Indian eating pattern."
+      },
+      {
+        "name": "Diabetes Nutrition Support",
+        "path": "/services/diabetes-nutrition",
+        "description": "Early, practical action for prediabetes with your doctor."
       }
     ]
   },
@@ -3485,6 +3505,11 @@
         "name": "Medical Weight-Loss Program",
         "path": "/services/medical-weight-loss",
         "description": "Weight and nutrition support for gut-sensitive health conditions."
+      },
+      {
+        "name": "Gut Health & IBS Nutrition Support",
+        "path": "/services/gut-health-nutrition",
+        "description": "Structured eating patterns for bloating and IBS."
       }
     ]
   },
@@ -3572,6 +3597,11 @@
         "name": "Online Dietitian Consultation",
         "path": "/online-dietitian-consultation",
         "description": "A liver-friendly Indian meal pattern from your blood and scan results."
+      },
+      {
+        "name": "Fatty Liver Nutrition Support",
+        "path": "/services/fatty-liver-nutrition",
+        "description": "Weight and food-pattern support for liver health."
       }
     ]
   },
@@ -5138,6 +5168,11 @@
         "name": "Healthy Indian Recipes",
         "path": "/recipe",
         "description": "Kid-friendly recipes across the 500+ healthy Indian collection."
+      },
+      {
+        "name": "Kids Nutrition Support",
+        "path": "/services/kids-nutrition",
+        "description": "Family-friendly guidance for healthy eaters."
       }
     ]
   },
@@ -5225,6 +5260,11 @@
         "name": "Healthy Indian Recipes",
         "path": "/recipe",
         "description": "Toddler-friendly recipes from the healthy Indian collection."
+      },
+      {
+        "name": "Kids Nutrition Support",
+        "path": "/services/kids-nutrition",
+        "description": "Pressure-free strategies for food refusal."
       }
     ]
   },
@@ -5312,6 +5352,11 @@
         "name": "Sports Nutrition Plan",
         "path": "/services/sports-nutrition",
         "description": "Fuel plans for teen athletes and active students."
+      },
+      {
+        "name": "Kids Nutrition Support",
+        "path": "/services/kids-nutrition",
+        "description": "Teen nutrition for growth, energy and study."
       }
     ]
   },
@@ -5399,6 +5444,11 @@
         "name": "Healthy Indian Recipes",
         "path": "/recipe",
         "description": "Tiffin-friendly recipes from the 500+ collection."
+      },
+      {
+        "name": "Kids Nutrition Support",
+        "path": "/services/kids-nutrition",
+        "description": "Tiffin ideas children actually eat."
       }
     ]
   },
@@ -6965,6 +7015,11 @@
         "name": "Medical Weight-Loss Program",
         "path": "/services/medical-weight-loss",
         "description": "Digestive-supporting nutrition alongside medical care."
+      },
+      {
+        "name": "Gut Health & IBS Nutrition Support",
+        "path": "/services/gut-health-nutrition",
+        "description": "Practical gut-friendly eating, personalised."
       }
     ]
   },

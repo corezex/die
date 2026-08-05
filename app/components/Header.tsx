@@ -37,6 +37,9 @@ const servicesItems = [
   { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
   { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
   { name: "Sports Nutrition Plan", path: "/services/sports-nutrition", icon: Trophy },
+  { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: HeartPulse },
+  { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
+  { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Users },
 ];
 
 const navigationItems = [

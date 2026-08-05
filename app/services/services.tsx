@@ -13,6 +13,8 @@ import {
   Trophy,
   Utensils,
   Video,
+  Salad,
+  Briefcase,
 } from "lucide-react";
 
 import hero from "@/public/image/Servicesimg1.jpg";
@@ -22,6 +24,9 @@ import pregnancy from "@/public/image/pregnancy-diet-img1.jpg";
 import weightGain from "@/public/image/weightgainimg1.jpg";
 import sports from "@/public/image/sports-nutritionimg1.jpg";
 import bridal from "@/public/image/bridal-dietimg1.jpg";
+import conditionImg from "@/public/image/MedicalWeightLoss1.jpg";
+import kidsImg from "@/public/image/Servicesimg1.jpg";
+import corpImg from "@/public/image/Servicesimg2.png";
 
 type Service = {
   title: string;
@@ -94,6 +99,36 @@ const services: Service[] = [
     icon: Sparkles,
     features: ["Timeline-based planning", "Energy and wellbeing focus"],
     accent: "bg-violet-600",
+  },
+  {
+    title: "Condition Nutrition",
+    description: "Practical nutrition support for PCOS, thyroid, diabetes, fatty liver and gut health — designed to work alongside your doctor's care.",
+    href: "/services/condition-nutrition",
+    image: conditionImg,
+    imageAlt: "Condition-specific nutrition planning with balanced food",
+    icon: HeartPulse,
+    features: ["PCOS, thyroid, diabetes & more", "Works alongside medical care"],
+    accent: "bg-green-600",
+  },
+  {
+    title: "Kids Nutrition",
+    description: "Pressure-free support for fussy eating, lunch boxes, teen nutrition and family meals that actually work.",
+    href: "/services/kids-nutrition",
+    image: kidsImg,
+    imageAlt: "Healthy family meals for kids nutrition",
+    icon: Salad,
+    features: ["Fussy eating & lunch boxes", "Family meal planning"],
+    accent: "bg-green-600",
+  },
+  {
+    title: "Corporate Wellness",
+    description: "Practical nutrition workshops and webinars for teams — desk-day eating, sugar awareness and sustainable habits.",
+    href: "/services/corporate-wellness",
+    image: corpImg,
+    imageAlt: "Corporate wellness nutrition program",
+    icon: Briefcase,
+    features: ["Team workshops & webinars", "Online or in Mumbai/Thane"],
+    accent: "bg-green-600",
   },
 ];
 

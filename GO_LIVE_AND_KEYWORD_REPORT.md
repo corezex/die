@@ -104,3 +104,34 @@ The site covers 6 services well. Based on the competitor + keyword landscape, th
 - `app/services/weight-loss/WeightLoss.tsx` + `medical-weight-loss/MedicalWeight.tsx` (keyword body + a11y-safe placement)
 - `app/recipe/page.tsx`, `app/blog/page.tsx`, `app/bmi-calculator/layout.tsx` (title/desc length)
 - `GO_LIVE_AND_KEYWORD_REPORT.md` (this file)
+
+
+---
+
+## 6. NEW SERVICES — IMPLEMENTED (2026-08-05)
+
+Built 8 new optimized service pages, each with unique keyword-rich titles (≤60 chars),
+50–160 char descriptions, canonical, `Service` + `BreadcrumbList` + `FAQPage` schema
+matching visible FAQs, AEO quick-answer blocks, internal links to blog guides, and
+medical disclaimers ("supports—not replaces—medical care"; no cure/guarantee claims):
+
+| Page | Keyword target |
+|---|---|
+| /services/condition-nutrition | Dietitian for PCOS, Thyroid, Diabetes & Gut (umbrella) |
+| /services/pcos-nutrition | PCOS Dietitian in Mumbai & Online |
+| /services/thyroid-nutrition | Thyroid Dietitian in Mumbai & Online |
+| /services/diabetes-nutrition | Diabetes Dietitian in Mumbai & Online |
+| /services/fatty-liver-nutrition | Fatty Liver Dietitian in Mumbai & Online |
+| /services/gut-health-nutrition | Gut Health & IBS Dietitian in Mumbai |
+| /services/kids-nutrition | Kids Nutrition Dietitian in Mumbai & Online |
+| /services/corporate-wellness | Corporate Wellness in Mumbai & Online |
+
+**Integration:** Header services dropdown (+3), Footer (+3), services index cards (+3),
+sitemap static.xml (+8 routes), llms.txt + llms-full.txt (+8 pages), and 11 blog posts
+cross-link to the new condition/kids service pages.
+
+**Verified:** all 8 pages 200 with correct titles/schema/canonical; Lighthouse
+Performance/A11y/SEO = 100 on every new page; sitemap & llms updated.
+
+**Owner action:** Dietitian Tejal to review the condition-specific pages before
+treating them as final (roadmap guardrail) — copy is already conservative.

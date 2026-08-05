@@ -34,6 +34,9 @@ const services = [
   { name: "Pregnancy & Postpartum Nutrition", slug: "pregnancy-diet" },
   { name: "Bridal Wellness Program", slug: "bridal-diet" },
   { name: "Sports Performance Nutrition", slug: "sports-nutrition" },
+  { name: "Condition-Specific Nutrition", slug: "condition-nutrition" },
+  { name: "Kids Nutrition", slug: "kids-nutrition" },
+  { name: "Corporate Wellness", slug: "corporate-wellness" },
 ];
 
 const legalLinks = [
