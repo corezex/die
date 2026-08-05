@@ -8,14 +8,20 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 403 images (files present in `public/image/recipes/`)
-- **Remaining Images to Generate:** 327 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 211 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 327 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 413 images (files present in `public/image/recipes/`)
+- **Remaining Images to Generate:** 317 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 221 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 317 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 14 — Batch 14 (10 images) — DONE, pushed as `0b1f22c`
+Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
+proso-millet-dosa, vegetable-pulao-less-oil, peas-pulao, mushroom-pulao, paneer-pulao, soya-pulao, sprouts-pulao, cabbage-rice, carrot-rice, beetroot-rice.
+- Note: user chose to LEAVE the 192 orphan files as-is (no deletion/mapping) for now.
+- **Next batch (Batch 15) to generate:** spinach-rice, coriander-rice, curry-leaves-rice, tamarind-rice-brown-rice, sesame-rice, peanut-rice, flaxseed-rice, jeera-brown-rice, tomato-brown-rice, capsicum-brown-rice.
 
 ### Generation session 13 — Batch 13 (10 images) — DONE, pushed as `e06fca8`
 Generated AI food photography for these 10 recipes (all mapped 1:1 to `recipes.json`):
