@@ -18429,7 +18429,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/broccoli-rice.jpg"
   },
   {
     "slug": "cabbage-rice-pulao",
@@ -18471,7 +18471,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/cabbage-rice-pulao.jpg"
   },
   {
     "slug": "mushroom-brown-rice",
@@ -18513,7 +18513,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/mushroom-brown-rice.jpg"
   },
   {
     "slug": "sweet-corn-quinoa",
@@ -18555,7 +18555,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/sweet-corn-quinoa.jpg"
   },
   {
     "slug": "green-peas-millet",
@@ -18597,7 +18597,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/green-peas-millet.jpg"
   },
   {
     "slug": "spinach-ragi-roti",
@@ -18639,7 +18639,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/spinach-ragi-roti.jpg"
   },
   {
     "slug": "beetroot-jowar-roti",
@@ -18681,7 +18681,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/beetroot-jowar-roti.jpg"
   },
   {
     "slug": "carrot-bajra-roti",
@@ -18723,7 +18723,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/carrot-bajra-roti.jpg"
   },
   {
     "slug": "methi-makki-roti",
@@ -18765,7 +18765,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/methi-makki-roti.jpg"
   },
   {
     "slug": "multigrain-pulao",
@@ -18807,7 +18807,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/multigrain-pulao.jpg"
   },
   {
     "slug": "brown-rice-bisi-bele-bath",
