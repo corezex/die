@@ -12,7 +12,7 @@ export async function generateMetadata(
   const base: Metadata = {
     title: "Healthy Indian Nutrition Blog & Diet Tips",
     description:
-      "Practical nutrition articles by Dietitian Tejal: PCOS and thyroid nutrition support, diabetes meal planning, postpartum nutrition, BMI guidance and Indian meal-planning FAQs.",
+      "Practical nutrition articles by Dietitian Tejal — PCOS, thyroid, diabetes, weight loss, meal planning and healthy Indian eating.",
     alternates: { canonical: "https://dietfiniti.com/blog" },
     openGraph: {
       title: "Healthy Indian Nutrition Blog & Diet Tips | DietFiniti",

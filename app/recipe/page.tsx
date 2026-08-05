@@ -13,8 +13,8 @@ export async function generateMetadata(
   const filtered = searchParams?.page || searchParams?.category || searchParams?.q;
 
   const base: Metadata = {
-    title: "500+ Healthy Indian Recipes & Diet Food Ideas",
-    description: "Browse our comprehensive collection of 500+ healthy Indian recipes. From low-calorie breakfasts to protein-packed dinners and guilt-free snacks, designed by a nutritionist.",
+    title: "500+ Healthy Indian Recipes",
+    description: "Browse 500+ healthy Indian recipes by Dietitian Tejal — low-calorie breakfasts, high-protein dinners, millets, dals, snacks and desserts.",
     alternates: { canonical: `${SITE_URL}/recipe` },
     openGraph: {
       title: "500+ Healthy Indian Recipes & Diet Food Ideas | DietFiniti",
