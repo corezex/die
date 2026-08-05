@@ -12,7 +12,6 @@ import {
   Linkedin,
   Send,
   ArrowRight,
-  Heart,
   Calendar,
   Clock,
   Star,
@@ -44,6 +43,7 @@ const legalLinks = [
   { name: "Payment & Refund Policy", href: "/payment-refund-policy" },
   { name: "Community Guidelines", href: "/community-guidelines" },
   { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Sitemap", href: "/sitemap.xml" },
 ];
 
 const socialLinks = [
@@ -236,7 +236,7 @@ export default function Footer() {
       {/* Bottom Footer */}
       <div className="border-t border-gray-300 bg-white animate-fade-up">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-between">
             {/* Copyright */}
             <div className="text-gray-600 text-sm flex items-center">
               <span>© {currentYear} Nutritionist. All rights reserved.</span>
@@ -253,22 +253,17 @@ export default function Footer() {
                   {link.name}
                 </Link>
               ))}
-            </div>
-
-            {/* Made with love */}
-            <div className="text-gray-600 text-sm flex items-center">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500 mx-1" />
-              <span>for your health</span>
-                          <a
+              <a
                 href="/llms.txt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-green-700 transition-colors"
+                className="text-gray-600 hover:text-green-700 transition-colors duration-300 hover:underline"
               >
                 llms.txt
               </a>
-</div>
+            </div>
+
+
           </div>
         </div>
       </div>
