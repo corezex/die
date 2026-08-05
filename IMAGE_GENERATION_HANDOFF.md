@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 483 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 55 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 483 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 55 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 493 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 45 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 493 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 45 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 22 — Batch 22 (10 images) — DONE, pushed as `2bda949`
+Generated: pumpkin-coriander-soup, spinach-corn-soup, lentil-lemon-soup, cabbage-detox-soup, zucchini-basil-soup, bottle-gourd-tomato-soup, radish-soup, beetroot-carrot-soup, cucumber-mint-soup, baked-samosa-millet-crust.
+- **Next batch (Batch 23) to generate:** baked-kachori-oats-crust, moong-dal-mini-idlis, sprouted-moong-chaat, peanut-chaat, sweet-corn-chaat, makhana-bhel, puffed-rice-chivda, oats-bhel, ragi-khakhra, amla-aloe-vera-juice.
 
 ### Generation session 21 — Batch 21 (10 images) — DONE, pushed as `68ba287`
 Generated: oats-chakli, baked-nippattu, roasted-soyabean, sunflower-seed-mix, chia-seed-energy-bites, flaxseed-chutney-powder, curry-leaves-powder, garlic-pepper-soup-1, tomato-basil-soup, carrot-ginger-soup.
