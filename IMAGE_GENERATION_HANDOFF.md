@@ -7,9 +7,10 @@ The recipes and JSON structure are complete. Because of the image generation cap
 ## Current Progress Status
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
-- **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 273 images
-- **Remaining Images to Generate:** 265 images
+- **Current Number of Correctly Mapped Images:** 263 images
+- **Remaining Images to Generate:** 275 images
+
+*Note: A previous agent hallucinated generic food names (like `berry-muffin.jpg`) instead of using the actual slugs from the database. You MUST only generate images for the exact slugs that still have `/image/homeimage.jpg` as their coverImage.*
 
 ---
 
@@ -24,19 +25,14 @@ Run `git fetch --all` to pull down the latest refs from the user's remote reposi
 Locate the user's recent branches (e.g. via `git ls-remote --heads origin` or `git branch -r`). You can loop through these branches and checkout the `public/image/recipes/` directory directly into the current active branch.
 Example:
 ```bash
-# First make sure we have references to all origin branches locally
 git fetch origin "refs/heads/*:refs/remotes/origin/*"
-
-# Iterate over remote branches (excluding main/HEAD and the current active branch)
 for branch in $(git branch -r | grep -v 'origin/HEAD' | grep -v 'origin/main' | grep -v "origin/$(git branch --show-current)"); do
-  echo "Checking $branch for images..."
-  git checkout $branch -- public/image/recipes/ 2>/dev/null || echo "No images in $branch"
+  git checkout $branch -- public/image/recipes/ 2>/dev/null
 done
 ```
 
 ### 3. Generate Mapping Script & Map the New Images
-Create and run a python script to scan the `public/image/recipes/` directory and match every valid image to its corresponding recipe in `app/data/recipes.json` based on the slug. 
-*Note: Any recipe that does not have an image must safely default back to `/image/homeimage.jpg`.*
+Create and run a python script to scan the `public/image/recipes/` directory and match every valid image to its corresponding recipe in `app/data/recipes.json` based on the exact slug or substring. 
 
 Here is the exact `map_all_images.py` script you should write and run:
 
@@ -47,7 +43,6 @@ import os
 recipes_dir = "public/image/recipes"
 json_path = "app/data/recipes.json"
 
-# Get all image files
 image_files = {}
 if os.path.exists(recipes_dir):
     for f in os.listdir(recipes_dir):
@@ -62,13 +57,11 @@ updated_count = 0
 for recipe in recipes:
     slug = recipe["slug"]
     
-    # Check for exact match first
     if slug in image_files:
         if recipe.get("coverImage") != image_files[slug]:
             recipe["coverImage"] = image_files[slug]
             updated_count += 1
     else:
-        # Try a substring match
         matched = False
         for img_name in image_files:
             if img_name in slug or slug in img_name:
@@ -77,8 +70,6 @@ for recipe in recipes:
                     updated_count += 1
                 matched = True
                 break
-        
-        # If no match is found, ensure it uses the common image
         if not matched:
             if recipe.get("coverImage") != "/image/homeimage.jpg":
                 recipe["coverImage"] = "/image/homeimage.jpg"
@@ -87,7 +78,6 @@ for recipe in recipes:
 with open(json_path, "w", encoding="utf-8") as f:
     json.dump(recipes, f, indent=2)
 
-print(f"Total images found in directory: {len(image_files)}")
 print(f"Updated JSON with {updated_count} image mappings (or fallbacks).")
 ```
 
