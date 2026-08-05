@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Users, Trophy, Calendar, Award, Star, MapPin } from "lucide-react";
+import { Users, Trophy, Calendar, Award, Star, MapPin, ChefHat } from "lucide-react";
 import ImageCarousel, { CarouselSlide } from "@/app/testimonials/ImageCarousel";
 import {
   testimonialSlides,
@@ -13,6 +13,7 @@ const stats = [
   { icon: MapPin, number: "2", suffix: "", label: "Clinic locations", color: "from-blue-500 to-cyan-500" },
   { icon: Calendar, number: "Online", suffix: "", label: "Consultations across India", color: "from-green-500 to-emerald-500" },
   { icon: Users, number: "Personal", suffix: "", label: "Nutrition support", color: "from-orange-500 to-amber-500" },
+  { icon: ChefHat, number: "500+", suffix: "", label: "Healthy Indian recipes", color: "from-pink-500 to-rose-500" },
 ];
 
 const TrustSection = () => {
