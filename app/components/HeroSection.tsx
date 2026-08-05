@@ -18,8 +18,8 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid lg:grid-cols-[1.05fr_.95fr]">
         {/* ---- Left: content ---- */}
         <div className="order-2 lg:order-1">
-          <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal-100 ring-1 ring-white/20 backdrop-blur-sm sm:text-sm">
-            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+          <p className="inline-block max-w-full rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase leading-snug text-teal-100 ring-1 ring-white/20 backdrop-blur-sm sm:text-xs">
+            <MapPin className="-mt-0.5 mr-1.5 inline-block h-3.5 w-3.5 align-middle text-teal-200" aria-hidden="true" />
             DietFiniti by Dietitian Tejal · Mumbai, Thane &amp; online across India
           </p>
 
