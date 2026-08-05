@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 423 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 115 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 423 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 115 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 433 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 105 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 433 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 105 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 16 — Batch 16 (10 images) — DONE, pushed as `0c6c09b`
+Generated: little-millet-pongal, spinach-poha, sweet-potato-poha, methi-poha, brown-rice-idli, masoor-dal-tadka, dal-makhani-vegan, mango-toor-dal, amaranth-dal, colocasia-roast.
+- **Next batch (Batch 17) to generate:** ragi-roti-with-greens, oats-khichdi-with-spinach, brown-rice-lemon-pulao, red-rice-tomato-bath, black-rice-khichdi, millet-bisibelebath, sorghum-lemon-rice, pearl-millet-khichdi, little-millet-tamarind-rice, kodo-millet-puliyogare.
 
 ### Generation session 15 — Batch 15 (10 images) — DONE, pushed as `55ec7c3`
 Generated: tamarind-rice-brown-rice, jeera-brown-rice, tomato-brown-rice, capsicum-brown-rice, clear-lentil-soup, toor-dal-soup, ragi-malt-salty-version, oats-besan-chilla, soya-chunk-poha, millet-dosa.
