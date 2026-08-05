@@ -1719,7 +1719,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tomato-omelette-besan-based.jpg"
   },
   {
     "slug": "spinach-mushroom-scramble",
@@ -1761,7 +1761,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/spinach-mushroom-scramble.jpg"
   },
   {
     "slug": "tofu-bhurji",
@@ -1803,7 +1803,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tofu-bhurji.jpg"
   },
   {
     "slug": "paneer-bhurji-low-fat",
@@ -1887,7 +1887,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/soya-bhurji.jpg"
   },
   {
     "slug": "idiyappam-with-kadala-curry",
@@ -1929,7 +1929,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/idiyappam-with-kadala-curry.jpg"
   },
   {
     "slug": "ragi-puttu",
@@ -1971,7 +1971,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-puttu.jpg"
   },
   {
     "slug": "kuttu-ka-paratha",
@@ -2013,7 +2013,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/kuttu-ka-paratha.jpg"
   },
   {
     "slug": "singhare-ka-cheela",
@@ -2055,7 +2055,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/singhare-ka-cheela.jpg"
   },
   {
     "slug": "mooli-thepla-stuffed-radish-flatbread",
@@ -2097,7 +2097,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/mooli-thepla-stuffed-radish-flatbread.jpg"
   },
   {
     "slug": "dal-tadka-minimal-oil",
@@ -2139,7 +2139,7 @@
       "Indian",
       "Dals"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/dal-tadka-minimal-oil.jpg"
   },
   {
     "slug": "moong-dal-tadka",
