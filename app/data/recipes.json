@@ -6423,7 +6423,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/black-rice.jpg"
   },
   {
     "slug": "quinoa-pulao",
@@ -6465,7 +6465,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/quinoa-pulao.jpg"
   },
   {
     "slug": "millet-bisi-bele-bath",
@@ -6507,7 +6507,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-bisi-bele-bath.jpg"
   },
   {
     "slug": "oats-khichdi",
@@ -6549,7 +6549,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-khichdi.jpg"
   },
   {
     "slug": "daliya-khichdi-broken-wheat",
@@ -6591,7 +6591,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/daliya-khichdi-broken-wheat.jpg"
   },
   {
     "slug": "bajra-khichdi",
@@ -6633,7 +6633,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/bajra-khichdi.jpg"
   },
   {
     "slug": "jowar-roti",
@@ -6717,7 +6717,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/bajra-roti.jpg"
   },
   {
     "slug": "ragi-roti",
@@ -6759,7 +6759,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-roti.jpg"
   },
   {
     "slug": "makki-ki-roti-cornmeal",
@@ -6801,7 +6801,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/makki-ki-roti-cornmeal.jpg"
   },
   {
     "slug": "multigrain-roti",
@@ -6885,7 +6885,7 @@
       "Indian",
       "Healthy"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-roti.jpg"
   },
   {
     "slug": "amaranth-roti",
