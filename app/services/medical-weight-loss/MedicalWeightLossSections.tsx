@@ -59,7 +59,7 @@ interface MedicalWeightLossSectionsProps {
 
 // Placeholder component for images
 const ImagePlaceholder = ({ text }: { text: string }) => (
-  <div className="w-full h-64 md:h-80 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg flex items-center justify-center">
+  <div className="w-full h-64 md:h-80 bg-gradient-to-br from-green-100 to-green-100 rounded-2xl shadow-lg flex items-center justify-center">
     <span className="text-gray-500 text-sm">{text}</span>
   </div>
 );
@@ -101,7 +101,7 @@ export const MedicalWeightLossSections = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-all duration-300 w-full"
+                  className="bg-white rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300 w-full"
                 >
                   <div className="text-3xl md:text-4xl mb-4">
                     {condition.icon}
@@ -148,10 +148,10 @@ export const MedicalWeightLossSections = ({
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-6 md:p-8 border border-blue-200 hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-br from-green-50 to-green-50 rounded-3xl p-6 md:p-8 border border-green-200 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-start gap-4 md:gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg md:text-xl">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-green-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg md:text-xl">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -190,7 +190,7 @@ export const MedicalWeightLossSections = ({
       </section>
 
       {/* Program Features Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-purple-50 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-green-50 to-green-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Image Left + Text Right */}
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 mb-12 md:mb-16">
@@ -243,7 +243,7 @@ export const MedicalWeightLossSections = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-all duration-300 w-full"
+                className="bg-white rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300 w-full"
               >
                 <div className="text-2xl md:text-3xl mb-4">{feature.icon}</div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
@@ -284,9 +284,9 @@ export const MedicalWeightLossSections = ({
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-blue-50 rounded-2xl p-4 md:p-6 text-center shadow-lg border border-blue-200 hover:shadow-xl transition-all duration-300 w-full"
+                className="bg-green-50 rounded-2xl p-4 md:p-6 text-center shadow-lg border border-green-200 hover:shadow-xl transition-all duration-300 w-full"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-green-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
                   <div className="text-white">{outcome.icon}</div>
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2 md:mb-3 text-sm md:text-base">
@@ -302,7 +302,7 @@ export const MedicalWeightLossSections = ({
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-purple-50 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-green-50 to-green-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -327,14 +327,14 @@ export const MedicalWeightLossSections = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-6 md:p-8 text-white w-full"
+                className="bg-gradient-to-br from-green-600 to-green-600 rounded-3xl p-6 md:p-8 text-white w-full"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="text-lg md:text-xl font-bold">
                       {story.name}
                     </h3>
-                    <p className="text-blue-200 text-sm md:text-base">
+                    <p className="text-green-200 text-sm md:text-base">
                       {story.age} · {story.condition}
                     </p>
                   </div>
@@ -342,10 +342,10 @@ export const MedicalWeightLossSections = ({
                     {story.loss}
                   </div>
                 </div>
-                <p className="text-blue-100 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
+                <p className="text-green-100 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
                   {story.testimonial}
                 </p>
-                <div className="text-blue-200 text-xs md:text-sm">
+                <div className="text-green-200 text-xs md:text-sm">
                   {story.duration}
                 </div>
               </motion.div>
@@ -355,7 +355,7 @@ export const MedicalWeightLossSections = ({
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-green-600 to-green-600 w-full">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -367,17 +367,17 @@ export const MedicalWeightLossSections = ({
               Get Expert Medical Weight Loss Support
             </h2>
 
-            <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-green-100 mb-6 md:mb-8 max-w-2xl mx-auto">
               Start your specialized weight loss journey today with expert
               guidance for your medical condition.
             </p>
 
             <ServiceCtaButtons
-              contactColorClass="text-blue-600"
+              contactColorClass="text-green-600"
               variant="section"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto text-blue-200">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto text-green-200">
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-2">
                   <Users className="w-4 h-4 md:w-5 md:h-5" />
@@ -385,7 +385,7 @@ export const MedicalWeightLossSections = ({
                     2,000+
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Medical Clients
                 </div>
               </div>
@@ -397,7 +397,7 @@ export const MedicalWeightLossSections = ({
                     5/5
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Satisfaction Rating
                 </div>
               </div>
@@ -409,7 +409,7 @@ export const MedicalWeightLossSections = ({
                     99%
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Health Improvement
                 </div>
               </div>

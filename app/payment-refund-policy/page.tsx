@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 const PaymentRefundPolicy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
               <span className="text-2xl">💳</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
@@ -33,19 +33,19 @@ const PaymentRefundPolicy = () => {
           {/* Section 1: Payment Methods */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 1
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Banknote className="w-6 h-6 mr-3 text-purple-600" />
+                  <Banknote className="w-6 h-6 mr-3 text-green-600" />
                   Payment Methods
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Online Payments */}
-                  <div className="bg-purple-50 rounded-xl p-6">
-                    <h3 className="font-semibold text-purple-800 mb-4 flex items-center">
+                  <div className="bg-green-50 rounded-xl p-6">
+                    <h3 className="font-semibold text-green-800 mb-4 flex items-center">
                       <Shield className="w-5 h-5 mr-2" />
                       Online Payments
                     </h3>
@@ -60,8 +60,8 @@ const PaymentRefundPolicy = () => {
                   </div>
 
                   {/* Other Payment Methods */}
-                  <div className="bg-indigo-50 rounded-xl p-6">
-                    <h3 className="font-semibold text-indigo-800 mb-4 flex items-center">
+                  <div className="bg-green-50 rounded-xl p-6">
+                    <h3 className="font-semibold text-green-800 mb-4 flex items-center">
                       <Banknote className="w-5 h-5 mr-2" />
                       Other Methods
                     </h3>
@@ -89,7 +89,7 @@ const PaymentRefundPolicy = () => {
           {/* Section 2: Payment Terms */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 2
               </div>
               <div className="flex-1">
@@ -97,14 +97,14 @@ const PaymentRefundPolicy = () => {
                   Payment Terms
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-start bg-blue-50 rounded-xl p-4">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4"></div>
+                  <div className="flex items-start bg-green-50 rounded-xl p-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4"></div>
                     <p className="text-gray-700">
                       <strong>Payment is required in full</strong> before the commencement of the program.
                     </p>
                   </div>
-                  <div className="flex items-start bg-blue-50 rounded-xl p-4">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4"></div>
+                  <div className="flex items-start bg-green-50 rounded-xl p-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4"></div>
                     <p className="text-gray-700">
                       <strong>Subscriptions or consultation bookings are confirmed</strong> only after successful payment.
                     </p>
@@ -117,12 +117,12 @@ const PaymentRefundPolicy = () => {
           {/* Section 3: Refund Policy */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 3
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Clock className="w-6 h-6 mr-3 text-purple-600" />
+                  <Clock className="w-6 h-6 mr-3 text-green-600" />
                   Refund Policy
                 </h2>
                 
@@ -147,14 +147,14 @@ const PaymentRefundPolicy = () => {
                   </div>
 
                   {/* After 24 Hours */}
-                  <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-6">
+                  <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
-                        <Calendar className="w-5 h-5 text-orange-600" />
+                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                        <Calendar className="w-5 h-5 text-green-600" />
                       </div>
-                      <h3 className="text-lg font-bold text-orange-800">After 24 Hours</h3>
+                      <h3 className="text-lg font-bold text-green-800">After 24 Hours</h3>
                     </div>
-                    <div className="text-orange-700 text-sm space-y-2">
+                    <div className="text-green-700 text-sm space-y-2">
                       <p><strong>No refunds will be issued;</strong> however, clients may:</p>
                       <p>• Postpone or hold their program for up to 30 days</p>
                       <p>• <strong>Program cannot be transferred</strong> to another person</p>
@@ -168,16 +168,16 @@ const PaymentRefundPolicy = () => {
           {/* Section 4: Cancellation */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 4
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Mail className="w-6 h-6 mr-3 text-purple-600" />
+                  <Mail className="w-6 h-6 mr-3 text-green-600" />
                   Cancellation
                 </h2>
-                <div className="bg-purple-50 rounded-xl p-6">
-                  <p className="text-purple-800 mb-4">
+                <div className="bg-green-50 rounded-xl p-6">
+                  <p className="text-green-800 mb-4">
                     To request cancellation or refund, contact us within the 24-hour period:
                   </p>
                   <div className="space-y-2 text-sm">
@@ -192,23 +192,23 @@ const PaymentRefundPolicy = () => {
           {/* Section 5: Program Validity */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 5
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Calendar className="w-6 h-6 mr-3 text-purple-600" />
+                  <Calendar className="w-6 h-6 mr-3 text-green-600" />
                   Program Validity
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-start bg-indigo-50 rounded-xl p-4">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-4"></div>
+                  <div className="flex items-start bg-green-50 rounded-xl p-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4"></div>
                     <p className="text-gray-700">
                       <strong>Deferred or postponed programs</strong> must commence within 30 days from the original purchase date.
                     </p>
                   </div>
-                  <div className="flex items-start bg-indigo-50 rounded-xl p-4">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-4"></div>
+                  <div className="flex items-start bg-green-50 rounded-xl p-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4"></div>
                     <p className="text-gray-700">
                       <strong>After 30 days,</strong> the payment and program access will expire.
                     </p>
@@ -221,7 +221,7 @@ const PaymentRefundPolicy = () => {
           {/* Section 6: Billing Errors */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 6
               </div>
               <div className="flex-1">
@@ -245,7 +245,7 @@ const PaymentRefundPolicy = () => {
           {/* Section 7: Jurisdiction */}
           <section className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-purple-100 text-purple-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
+              <div className="bg-green-100 text-green-800 rounded-xl px-4 py-2 text-lg font-bold min-w-[60px] text-center">
                 7
               </div>
               <div className="flex-1">
@@ -262,7 +262,7 @@ const PaymentRefundPolicy = () => {
           </section>
 
           {/* Summary Card */}
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-green-600 to-green-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4 text-center">Policy Summary</h3>
             <div className="grid md:grid-cols-3 gap-4 text-center">
               <div className="bg-white/10 rounded-lg p-4">
@@ -292,7 +292,7 @@ const PaymentRefundPolicy = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:dietfiniti@gmail.com"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg"
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Email Support

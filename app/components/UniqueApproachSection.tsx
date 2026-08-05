@@ -32,7 +32,7 @@ const UniqueApproachSection = () => {
     <section className="py-10 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-50 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
       <div className="absolute top-1/2 right-0 w-48 h-48 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -51,11 +51,11 @@ const UniqueApproachSection = () => {
             <div className="group animate-fade-up">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 hover:border-green-200 relative overflow-hidden h-full flex flex-col">
                 {/* Accent Line */}
-                <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-green-500 to-cyan-500"></div>
+                <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-green-500 to-emerald-500"></div>
 
                 {/* Icon Row */}
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-md">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-md">
                     <span className="text-2xl">{approach.icon}</span>
                   </div>
                 </div>

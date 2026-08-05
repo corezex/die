@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const TermsConditions = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-cyan-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-emerald-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -135,13 +135,13 @@ const TermsConditions = () => {
                 <p className="text-gray-700 leading-relaxed mt-2">
                   All such publications will be handled professionally and ethically, ensuring that clients&apos; identities are protected by blurring faces, concealing names, or anonymizing identifiable details.
                 </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                  <p className="text-blue-800 text-sm">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mt-4">
+                  <p className="text-green-800 text-sm">
                     <strong>Consent Notice:</strong> By availing any DietFiniti service, clients provide implicit consent to such limited use of their anonymized visuals and testimonials for marketing and educational purposes.
                   </p>
-                  <p className="text-blue-800 text-sm mt-2">
+                  <p className="text-green-800 text-sm mt-2">
                     <strong>Withdrawal:</strong> Clients who wish to withdraw consent for such use may contact{" "}
-                    <a href="mailto:dietfiniti@gmail.com" className="text-blue-600 hover:text-blue-800 underline">
+                    <a href="mailto:dietfiniti@gmail.com" className="text-green-600 hover:text-green-800 underline">
                       dietfiniti@gmail.com
                     </a>
                     , and DietFiniti will respect and remove such content within a reasonable timeframe.

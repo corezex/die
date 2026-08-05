@@ -241,8 +241,8 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
 
           <div className="flex flex-wrap gap-6 bg-white p-4 rounded-xl shadow-sm border border-gray-100 inline-flex">
             <div className="flex items-center">
-              <div className="bg-orange-100 p-2 rounded-lg mr-3">
-                <Clock className="w-5 h-5 text-orange-600" />
+              <div className="bg-green-100 p-2 rounded-lg mr-3">
+                <Clock className="w-5 h-5 text-green-600" />
               </div>
               <div>
                 <p className="text-xs text-gray-500 font-medium">TOTAL TIME</p>
@@ -253,8 +253,8 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
             <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
 
             <div className="flex items-center">
-              <div className="bg-blue-100 p-2 rounded-lg mr-3">
-                <Users className="w-5 h-5 text-blue-600" />
+              <div className="bg-green-100 p-2 rounded-lg mr-3">
+                <Users className="w-5 h-5 text-green-600" />
               </div>
               <div>
                 <p className="text-xs text-gray-500 font-medium">SERVINGS</p>
@@ -265,8 +265,8 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
             <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
 
             <div className="flex items-center">
-              <div className="bg-purple-100 p-2 rounded-lg mr-3">
-                <ChefHat className="w-5 h-5 text-purple-600" />
+              <div className="bg-green-100 p-2 rounded-lg mr-3">
+                <ChefHat className="w-5 h-5 text-green-600" />
               </div>
               <div>
                 <p className="text-xs text-gray-500 font-medium">DIFFICULTY</p>
@@ -400,8 +400,8 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
                 </li>
               </ul>
 
-              <div className="mt-8 bg-orange-50 rounded-xl p-4 border border-orange-100">
-                <p className="text-xs text-orange-800 text-center leading-relaxed">
+              <div className="mt-8 bg-green-50 rounded-xl p-4 border border-green-100">
+                <p className="text-xs text-green-800 text-center leading-relaxed">
                   <strong>Disclaimer:</strong> Nutritional values are estimates. Actual values may vary based on specific ingredients and portion sizes used.
                 </p>
               </div>
@@ -434,7 +434,7 @@ export default async function RecipePage(props: { params: Promise<{ slug: string
                         {rel.title}
                       </h3>
                       <div className="flex items-center text-xs text-gray-500 mt-auto">
-                        <Clock className="w-3.5 h-3.5 mr-1 text-orange-500" />
+                        <Clock className="w-3.5 h-3.5 mr-1 text-green-500" />
                         <span>{rel.total_time} mins</span>
                       </div>
                     </div>

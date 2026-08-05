@@ -53,7 +53,7 @@ const services: Service[] = [
     imageAlt: "Nutrition support alongside medical weight management care",
     icon: HeartPulse,
     features: ["Health-aware planning", "Supports clinical care"],
-    accent: "bg-rose-600",
+    accent: "bg-green-600",
   },
   {
     title: "Pregnancy Diet Plan",
@@ -63,7 +63,7 @@ const services: Service[] = [
     imageAlt: "Nutritious food for pregnancy diet planning",
     icon: Baby,
     features: ["Trimester-aware guidance", "Practical everyday meals"],
-    accent: "bg-pink-600",
+    accent: "bg-green-600",
   },
   {
     title: "Weight Gain Program",
@@ -73,7 +73,7 @@ const services: Service[] = [
     imageAlt: "Healthy meal for a personalised weight gain programme",
     icon: Dumbbell,
     features: ["Balanced calorie planning", "Strength-focused nutrition"],
-    accent: "bg-amber-600",
+    accent: "bg-green-600",
   },
   {
     title: "Sports Nutrition Plan",
@@ -83,7 +83,7 @@ const services: Service[] = [
     imageAlt: "Sports nutrition meal planning for performance and recovery",
     icon: Trophy,
     features: ["Training-day nutrition", "Recovery and hydration"],
-    accent: "bg-blue-600",
+    accent: "bg-green-600",
   },
   {
     title: "Bridal Diet Plan",
@@ -184,14 +184,14 @@ export default function ServicesPage() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-300">One clear process</p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">How your DietFiniti journey works</h2>
-            <p className="mt-5 max-w-xl leading-8 text-indigo-100">No confusing rules and no one-size-fits-all charts. We begin by understanding what is realistic for you.</p>
+            <p className="mt-5 max-w-xl leading-8 text-green-100">No confusing rules and no one-size-fits-all charts. We begin by understanding what is realistic for you.</p>
           </div>
           <ol className="grid gap-4 sm:grid-cols-2">
             {process.map(([number, title, description]) => (
               <li key={number} className="rounded-2xl border border-white/15 bg-white/10 p-5">
                 <div className="flex gap-4">
                   <span className="text-2xl font-black text-green-300">{number}</span>
-                  <div><h3 className="text-lg font-bold text-white">{title}</h3><p className="mt-2 leading-6 text-indigo-100">{description}</p></div>
+                  <div><h3 className="text-lg font-bold text-white">{title}</h3><p className="mt-2 leading-6 text-green-100">{description}</p></div>
                 </div>
               </li>
             ))}

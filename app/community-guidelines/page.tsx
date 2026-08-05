@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const CommunityGuidelines = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -91,8 +91,8 @@ const CommunityGuidelines = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
-                    <p className="text-blue-800">
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+                    <p className="text-green-800">
                       Client progress, health information, or personal details shared during sessions or group interactions are strictly confidential.
                     </p>
                   </div>
@@ -121,11 +121,11 @@ const CommunityGuidelines = () => {
                 </div>
                 
                 <div className="grid gap-4">
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-                    <h3 className="font-semibold text-amber-800 mb-2">Required</h3>
-                    <ul className="space-y-2 text-amber-700">
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+                    <h3 className="font-semibold text-green-800 mb-2">Required</h3>
+                    <ul className="space-y-2 text-green-700">
                       <li className="flex items-start">
-                        <span className="text-amber-500 mr-2">•</span>
+                        <span className="text-green-500 mr-2">•</span>
                         Provide accurate health and lifestyle information for effective results
                       </li>
                     </ul>
@@ -157,16 +157,16 @@ const CommunityGuidelines = () => {
                   <h2 className="text-2xl font-bold text-gray-900">No Medical Substitution</h2>
                 </div>
                 
-                <div className="bg-orange-50 border-2 border-orange-300 rounded-xl p-6">
+                <div className="bg-green-50 border-2 border-green-300 rounded-xl p-6">
                   <div className="flex items-start">
-                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                      <span className="text-orange-600 font-bold">!</span>
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <span className="text-green-600 font-bold">!</span>
                     </div>
                     <div>
-                      <p className="text-orange-800 font-semibold mb-2">
+                      <p className="text-green-800 font-semibold mb-2">
                         Important Medical Disclaimer
                       </p>
-                      <p className="text-orange-700">
+                      <p className="text-green-700">
                         The advice provided by DietFiniti is not a substitute for medical treatment. Always consult your physician before making major health changes.
                       </p>
                     </div>
@@ -188,12 +188,12 @@ const CommunityGuidelines = () => {
                   <h2 className="text-2xl font-bold text-gray-900">Intellectual Property</h2>
                 </div>
                 
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                  <p className="text-purple-800 mb-4">
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                  <p className="text-green-800 mb-4">
                     All content, plans, videos, and materials shared during consultations or via the website remain the property of DietFiniti.
                   </p>
-                  <div className="bg-white rounded-lg p-4 border border-purple-300">
-                    <p className="text-purple-700 font-semibold text-center">
+                  <div className="bg-white rounded-lg p-4 border border-green-300">
+                    <p className="text-green-700 font-semibold text-center">
                       Cannot be reproduced, shared, or sold
                     </p>
                   </div>
@@ -229,7 +229,7 @@ const CommunityGuidelines = () => {
           </section>
 
           {/* Community Pledge */}
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white text-center">
+          <div className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-8 text-white text-center">
             <h3 className="text-2xl font-bold mb-4">Our Community Pledge</h3>
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="bg-white/10 rounded-lg p-4">

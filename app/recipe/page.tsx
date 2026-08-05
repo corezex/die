@@ -227,7 +227,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                   
                   <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1.5 text-orange-500" />
+                      <Clock className="w-4 h-4 mr-1.5 text-green-500" />
                       <span>{recipe.total_time} mins</span>
                     </div>
                     <div className="flex items-center">

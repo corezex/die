@@ -58,10 +58,10 @@ const HowItWorks = () => {
 
   // Properly typed color map
   const colorMap = {
-    blue: { bg: "from-blue-500 to-blue-600", light: "bg-blue-50", text: "text-blue-600" },
+    blue: { bg: "from-green-500 to-green-600", light: "bg-green-50", text: "text-green-600" },
     green: { bg: "from-green-500 to-green-600", light: "bg-green-50", text: "text-green-600" },
-    purple: { bg: "from-purple-500 to-purple-600", light: "bg-purple-50", text: "text-purple-600" },
-    orange: { bg: "from-orange-500 to-orange-600", light: "bg-orange-50", text: "text-orange-600" }
+    purple: { bg: "from-green-500 to-green-600", light: "bg-green-50", text: "text-green-600" },
+    orange: { bg: "from-green-500 to-green-600", light: "bg-green-50", text: "text-green-600" }
   };
 
   // Animation variants

@@ -10,10 +10,10 @@ import {
 } from "@/app/testimonials/carouselSlides";
 
 const stats = [
-  { icon: MapPin, number: "2", suffix: "", label: "Clinic locations", color: "from-blue-500 to-cyan-500" },
+  { icon: MapPin, number: "2", suffix: "", label: "Clinic locations", color: "from-green-500 to-emerald-500" },
   { icon: Calendar, number: "Online", suffix: "", label: "Consultations across India", color: "from-green-500 to-emerald-500" },
-  { icon: Users, number: "Personal", suffix: "", label: "Nutrition support", color: "from-orange-500 to-amber-500" },
-  { icon: ChefHat, number: "500+", suffix: "", label: "Healthy Indian recipes", color: "from-pink-500 to-rose-500" },
+  { icon: Users, number: "Personal", suffix: "", label: "Nutrition support", color: "from-green-500 to-green-500" },
+  { icon: ChefHat, number: "500+", suffix: "", label: "Healthy Indian recipes", color: "from-green-500 to-green-500" },
 ];
 
 const TrustSection = () => {
@@ -36,7 +36,7 @@ const TrustSection = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Why clients trust Dietfiniti
             </h2>
-            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-6"></div>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-6"></div>
           </div>
 
           <p className="text-xl text-gray-700 leading-relaxed mb-8">
@@ -63,7 +63,7 @@ const TrustSection = () => {
                     viewport={{ once: true }}
                     className="flex items-start group"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
                     <p className="text-lg text-gray-700 pt-1">{point}</p>
@@ -103,11 +103,11 @@ const TrustSection = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100"
+              className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100"
             >
               {/* <div className="flex items-start mb-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const TrustSection = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 text-amber-500"
+                        className="w-4 h-4 text-green-500"
                         fill="#f59e0b"
                       />
                     ))}
@@ -147,11 +147,11 @@ const TrustSection = () => {
                     href="https://www.google.com/search?sca_esv=21fd1ad54828f0e3&sxsrf=ANbL-n6GkHlPUQdILL7YojzwK7e-xbWjYg:1770888691933&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfl89iUqcFh2jCZ6lNAKM9TPQEqznMtSdfw8kz5xkZBtyTRkOeDyhxkoHDTMtDs9EfqzSP1AGr7ZgqBbeNZNcauG150nsTG9nwDfiaZKtBU--gRaPoVLmOh7p0CnJDlUUjZWpYM%3D&q=DietFiniti+by+Dietitian+Tejal,+Mumbai+Reviews&sa=X&ved=2ahUKEwivna270tOSAxWSTGwGHRuwEPgQ0bkNegQIHRAF&cshid=1770888701713339&biw=1280&bih=551&dpr=1.5"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-xl shadow-sm hover:shadow-md transition-all hover:border-blue-500 group w-full lg:w-auto"
+                    className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-xl shadow-sm hover:shadow-md transition-all hover:border-green-500 group w-full lg:w-auto"
                   >
                     <div className="flex items-center w-full">
                       <div className="mr-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
                           <Star className="w-6 h-6 text-white" fill="white" />
                         </div>
                       </div>
@@ -161,7 +161,7 @@ const TrustSection = () => {
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className="w-4 h-4 text-amber-500"
+                                className="w-4 h-4 text-green-500"
                                 fill="#f59e0b"
                               />
                             ))}
@@ -175,7 +175,7 @@ const TrustSection = () => {
                         </p>
                       </div>
                       <div className="ml-4">
-                        <MapPin className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                        <MapPin className="w-5 h-5 text-gray-400 group-hover:text-green-500 transition-colors" />
                       </div>
                     </div>
                   </a>

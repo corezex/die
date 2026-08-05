@@ -37,7 +37,7 @@ const ProgramsSection = () => {
       ],
       idealFor:
         "Individuals looking to lose weight for aesthetic reasons, improved fitness, or overall health enhancement. Perfect for those without any underlying medical conditions who want to achieve their weight goals through sustainable lifestyle changes.",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-green-500 to-emerald-500",
       slug: "weight-loss",
     },
     {
@@ -90,7 +90,7 @@ const ProgramsSection = () => {
       ],
       idealFor:
         "Individuals who are underweight, have fast metabolism, struggle to gain weight despite eating regularly, or want to build a healthier physique. Perfect for those who want to gain weight in a healthy, sustainable manner without using supplements or unhealthy foods.",
-      color: "from-orange-500 to-amber-500",
+      color: "from-green-500 to-green-500",
       slug: "weight-gain",
     },
     {
@@ -110,7 +110,7 @@ const ProgramsSection = () => {
       ],
       idealFor:
         "Expecting mothers who want to maintain healthy weight during pregnancy, manage pregnancy-related nutrition concerns, and prepare for postpartum recovery. Perfect for first-time mothers and those seeking professional nutrition guidance throughout their pregnancy journey.",
-      color: "from-pink-500 to-rose-500",
+      color: "from-green-500 to-green-500",
       slug: "pregnancy-diet",
     },
     {
@@ -130,7 +130,7 @@ const ProgramsSection = () => {
       ],
       idealFor:
         "Brides-to-be who want to achieve their ideal weight, glowing skin, and high energy levels for their wedding day. Perfect for those with busy wedding preparation schedules who need a practical, results-driven nutrition plan.",
-      color: "from-purple-500 to-violet-500",
+      color: "from-green-500 to-violet-500",
       slug: "bridal-diet",
     },
     {
@@ -150,7 +150,7 @@ const ProgramsSection = () => {
       ],
       idealFor:
         "Athletes and fitness enthusiasts who want to optimize their performance, improve recovery, build muscle, or achieve sport-specific body composition goals. Perfect for competitive athletes, recreational sports players, and anyone training for athletic events.",
-      color: "from-red-500 to-orange-500",
+      color: "from-red-500 to-green-500",
       slug: "sports-nutrition",
     },
   ];

@@ -52,9 +52,9 @@ export const BridalDietSections = () => {
       duration: "Months 3-2 before wedding",
       icon: "✨",
       title: "Results & Refinement",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Visible Transformation",
       weightLoss: "Continued steady loss",
       highlights: [
@@ -72,9 +72,9 @@ export const BridalDietSections = () => {
       duration: "Month 1 before wedding",
       icon: "💎",
       title: "Final Glow & Perfection",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200",
+      color: "from-green-500 to-green-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Peak Appearance",
       weightLoss: "Maintenance & fine-tuning",
       highlights: [
@@ -367,7 +367,7 @@ export const BridalDietSections = () => {
       </section>
 
       {/* Unique Features Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-rose-50/30">
+      <section className="py-16 bg-gradient-to-b from-white to-green-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -394,7 +394,7 @@ export const BridalDietSections = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-rose-100"
+                className="bg-white rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-green-100"
               >
                 <div className="text-2xl lg:text-3xl mb-4">{feature.icon}</div>
                 <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3">
@@ -435,9 +435,9 @@ export const BridalDietSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl lg:rounded-2xl p-6 border border-rose-200 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-green-50 to-green-50 rounded-xl lg:rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center mb-4">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-green-500 to-green-500 rounded-2xl flex items-center justify-center mb-4">
                   <div className="text-white">{benefit.icon}</div>
                 </div>
                 <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-3">
@@ -453,7 +453,7 @@ export const BridalDietSections = () => {
       </section>
 
       {/* Wedding Timelines Section */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-50">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
           <motion.div
@@ -512,18 +512,18 @@ export const BridalDietSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl lg:rounded-2xl p-6 shadow-lg border border-rose-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl lg:rounded-2xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300"
               >
                 <div className="text-2xl lg:text-3xl mb-4">{timeline.icon}</div>
                 <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">
                   {timeline.duration}
                 </h3>
-                <div className="text-sm text-rose-600 font-medium mb-3">
+                <div className="text-sm text-green-600 font-medium mb-3">
                   {timeline.idealFor}
                 </div>
 
-                <div className="bg-rose-50 rounded-lg lg:rounded-xl p-3 lg:p-4 mb-4">
-                  <div className="text-xs text-rose-600 font-medium mb-1">
+                <div className="bg-green-50 rounded-lg lg:rounded-xl p-3 lg:p-4 mb-4">
+                  <div className="text-xs text-green-600 font-medium mb-1">
                     Expected Results
                   </div>
                   <div className="text-sm text-gray-700">
@@ -574,12 +574,12 @@ export const BridalDietSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl lg:rounded-3xl p-6 text-white"
+                className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl lg:rounded-3xl p-6 text-white"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 space-y-2 sm:space-y-0">
                   <div>
                     <h3 className="text-xl font-bold">{story.name}</h3>
-                    <p className="text-rose-200 text-sm">
+                    <p className="text-green-200 text-sm">
                       {story.age} · {story.duration}
                     </p>
                   </div>
@@ -587,11 +587,11 @@ export const BridalDietSections = () => {
                     {story.loss}
                   </div>
                 </div>
-                <p className="text-rose-100 leading-relaxed text-sm lg:text-base mb-4">
+                <p className="text-green-100 leading-relaxed text-sm lg:text-base mb-4">
                   {story.testimonial}
                 </p>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-                  <div className="text-rose-200 text-sm font-medium">
+                  <div className="text-green-200 text-sm font-medium">
                     {story.outcome}
                   </div>
                   <div className="flex items-center space-x-1">
@@ -607,7 +607,7 @@ export const BridalDietSections = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-rose-500 to-pink-600 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-green-500 to-green-600 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-20 h-20 lg:w-32 lg:h-32 bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-0 right-0 w-24 h-24 lg:w-40 lg:h-40 bg-white/10 rounded-full blur-xl"></div>
 
@@ -622,7 +622,7 @@ export const BridalDietSections = () => {
               Start Your Bridal Transformation Journey
             </h2>
 
-            <p className="text-lg text-rose-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-green-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Achieve your dream wedding look with personalized nutrition
               guidance and continuous support throughout your wedding
               preparation.
@@ -630,7 +630,7 @@ export const BridalDietSections = () => {
 
             <div className="flex justify-center mb-8">
               <ServiceCtaButtons
-                contactColorClass="text-rose-600"
+                contactColorClass="text-green-600"
                 variant="bridal"
               />
             </div>
@@ -643,37 +643,37 @@ export const BridalDietSections = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 max-w-2xl mx-auto"
             >
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-rose-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Users className="w-4 h-4 lg:w-5 lg:h-5" />
                   <span className="text-base lg:text-lg font-semibold">
                     2,000+
                   </span>
                 </div>
-                <div className="text-rose-100 text-xs lg:text-sm mt-1">
+                <div className="text-green-100 text-xs lg:text-sm mt-1">
                   Happy Brides
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-rose-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Star className="w-4 h-4 lg:w-5 lg:h-5" fill="currentColor" />
                   <span className="text-base lg:text-lg font-semibold">
                     5/5
                   </span>
                 </div>
-                <div className="text-rose-100 text-xs lg:text-sm mt-1">
+                <div className="text-green-100 text-xs lg:text-sm mt-1">
                   Bride Satisfaction
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-rose-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Crown className="w-4 h-4 lg:w-5 lg:h-5" />
                   <span className="text-base lg:text-lg font-semibold">
                     99%
                   </span>
                 </div>
-                <div className="text-rose-100 text-xs lg:text-sm mt-1">
+                <div className="text-green-100 text-xs lg:text-sm mt-1">
                   Goal Achievement
                 </div>
               </div>

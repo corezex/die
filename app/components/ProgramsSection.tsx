@@ -29,7 +29,7 @@ const ProgramsSection = () => {
       description:
         "Our Weight Loss Program is designed for individuals who want to lose weight in a healthy, sustainable way without any existing medical conditions.",
       icon: Scale,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-green-500 to-emerald-500",
       slug: "weight-loss",
       features: [
         "Customized Diet Plans",
@@ -65,7 +65,7 @@ const ProgramsSection = () => {
       description:
         "Our Weight Gain Program is designed for individuals with fast metabolism, hypermetabolism, or those who are underweight and want to gain healthy weight.",
       icon: Target,
-      color: "from-orange-500 to-amber-500",
+      color: "from-green-500 to-green-500",
       slug: "weight-gain",
       features: ["Muscle Building", "Calorie Management", "Nutrition Timing"],
       duration: "12-20 weeks",
@@ -79,7 +79,7 @@ const ProgramsSection = () => {
       description:
         "Our Pregnancy Diet Plan is designed for women in their pregnancy stages who wish to maintain a healthy weight and balanced nutrition.",
       icon: Baby,
-      color: "from-pink-500 to-rose-500",
+      color: "from-green-500 to-green-500",
       slug: "pregnancy-diet",
       features: [
         "Trimester-specific Plans",
@@ -97,7 +97,7 @@ const ProgramsSection = () => {
       description:
         "Our Bridal Diet Plan is designed to help brides look and feel their best for the wedding day by supporting skin glow, energy, and healthy weight management.",
       icon: Diamond,
-      color: "from-purple-500 to-violet-500",
+      color: "from-green-500 to-violet-500",
       slug: "bridal-diet",
       features: ["Skin Glow Focus", "Timeline-based Plan", "Stress Management"],
       duration: "12-24 weeks",
@@ -111,7 +111,7 @@ const ProgramsSection = () => {
       description:
         "Our Sports Nutrition Plan helps athletes achieve peak performance and recovery through tailored diet and hydration strategies.",
       icon: Activity,
-      color: "from-red-500 to-rose-500",
+      color: "from-red-500 to-green-500",
       slug: "sports-nutrition",
       features: [
         "Performance Optimization",
@@ -131,22 +131,22 @@ const ProgramsSection = () => {
       className="py-10 bg-gradient-to-br from-gray-50 via-white to-green-50/30 relative overflow-hidden"
     >
       {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50/40 via-transparent to-blue-50/30"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50/40 via-transparent to-green-50/30"></div>
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent z-0"></div>
 
       {/* Animated Background Shapes */}
-      <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-green-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-green-200 to-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
-      <div className="absolute -bottom-32 -left-20 w-80 h-80 bg-gradient-to-tr from-blue-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
+      <div className="absolute -bottom-32 -left-20 w-80 h-80 bg-gradient-to-tr from-green-200 to-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <WhyChooseSection />
 
         {/* Programs Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-blue-700">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 mb-6">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-green-700">
               Our Specialized Programs
             </span>
           </div>
@@ -171,7 +171,7 @@ const ProgramsSection = () => {
               {/* Popular Badge */}
               {program.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-30">
-                  <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
+                  <div className="bg-gradient-to-r from-green-500 to-green-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
                     <Star className="w-3 h-3 fill-white" />
                     Most Popular
                   </div>
@@ -215,7 +215,7 @@ const ProgramsSection = () => {
                   {/* Program Stats */}
                   {/* <div className="absolute top-5 left-5 z-20 flex items-center gap-2">
                     <div className="bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                      <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+                      <Star className="w-3 h-3 text-green-400 fill-green-400" />
                       <span className="text-white text-sm font-medium">
                         {program.rating}
                       </span>

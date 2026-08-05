@@ -100,3 +100,22 @@ The user's live test URL (`die-phi.vercel.app`) showed **PageSpeed mobile Perfor
 - All 36 routes still render correctly; a11y/SEO remain 100.
 
 **To verify live:** redeploy (merge PR), then run https://pagespeed.web.dev on the live URL — expect mobile Performance in the high 80s–90s (up from 88), with the biggest gains on connection-constrained tests. Best-Practices = 100 once Tawk.to loads normally in production.
+
+
+---
+
+## 7. Brand theming — uniform green (2026-08-05)
+
+The site previously mixed many accent hues: teal (blog, contact, BMI, home components),
+blue/cyan (trust stats, sports, medical, testimonials), purple/pink (pregnancy, bridal,
+why-choose), amber/orange (about stats, weight-gain), and a cream footer (#FAF3E0).
+
+**Applied the brand green everywhere** (same as the `/online-dietitian-consultation` hero):
+- `teal-*`, `blue-*`, `indigo-*`, `purple-*`, `pink-*`, `rose-*`, `amber-*`, `orange-*` → `green-*` (cyan → emerald)
+- `#FAF3E0` cream → `#f4faf5` mint
+- Kept intentionally: `#262262` navy (brand headings/buttons), `red-*` (semantic warnings in
+  community guidelines), WhatsApp green (`#25d366`), emerald/lime (green family)
+- **720 tokens replaced across 40 files**
+
+**Verified:** all 18+ routes (incl. blog article + recipe detail) render with zero
+teal/blue/cyan/purple/pink/rose/amber/orange classes; build clean.
