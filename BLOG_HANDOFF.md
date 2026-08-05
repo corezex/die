@@ -16,7 +16,7 @@
 |---|---|---|
 | `/blog` listing page | ✅ BUILT | `app/blog/page.tsx` — hero, search, category filter, noindex on filtered states |
 | `/blog/[slug]` article pages | ✅ BUILT | `app/blog/[slug]/page.tsx` — **87 posts** (7 original + 80 added 2026-08-05), SSG via `generateStaticParams` |
-| Blog data file | ✅ BUILT | `app/data/posts.json` — **87 published posts** across 11 categories (~51,000 words) |
+| Blog data file | ✅ BUILT | `app/data/posts.json` — **87 published posts** across 11 categories (~51,000 words); publication dates staggered 2026-01-10 → 2026-08-04 (~9–13 posts/month, unique date per post) |
 | Blog nav link | ✅ ADDED | `app/components/Header.tsx` (navigationItems) + Footer quick links |
 | Blog URLs in sitemap | ✅ ADDED | `app/sitemap.ts` — `/blog` + **87 post URLs** (645 total sitemap URLs incl. 538 recipes) |
 | Blog images | 🚫 NONE BY CHOICE | Owner preference (2026-08-05): no images in the blog. Covers were removed, `public/image/blog/` deleted, `coverImage` dropped from `posts.json`. Only sitewide Header/Footer logos remain (on every page). Listing OG meta still uses the pre-existing `public/blog.png` for social sharing (not shown on-page). |
