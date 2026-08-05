@@ -1,5 +1,4 @@
 // components/Footer.tsx
-"use client";
 import Image from "next/image";
 import footerlogo from "@/public/image/footerlogo.png";
 import Link from "next/link";
@@ -18,7 +17,6 @@ import {
   Clock,
   Star,
 } from "lucide-react";
-import { motion, Variants } from "framer-motion";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -55,43 +53,16 @@ const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gradient-to-br from-[#FAF3E0] to-[#F5F5F5] text-gray-800 shadow-lg">
       {/* Main Footer Content */}
-      <motion.div
-        className="container mx-auto px-4 py-12"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-      >
+      <div className="container mx-auto px-4 py-12 animate-fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <motion.div variants={itemVariants} className="space-y-4">
+          <div className="space-y-4">
             <Link href="/" className="inline-block">
               <div className="p-4 w-full max-w-sm">
                 {/* Logo Box */}
@@ -172,10 +143,10 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick Links */}
-          <motion.div variants={itemVariants} className="space-y-4">
+          <div className="space-y-4">
             <h2 className="text-lg font-semibold text-green-700 flex items-center">
               <ArrowRight className="w-5 h-5 mr-2" />
               Quick Links
@@ -193,10 +164,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Services */}
-          <motion.div variants={itemVariants} className="space-y-4">
+          <div className="space-y-4">
             <h2 className="text-lg font-semibold text-green-700 flex items-center">
               <Star className="w-5 h-5 mr-2" />
               Our Services
@@ -214,10 +185,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Newsletter & Social */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <div className="space-y-6">
             {/* Social Links */}
             <div className="space-y-4 bg-white p-4 rounded-xl border border-gray-200">
               <h2 className="text-lg font-semibold text-green-700">
@@ -259,17 +230,11 @@ export default function Footer() {
   </div>
 </a>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
       {/* Bottom Footer */}
-      <motion.div
-        className="border-t border-gray-300 bg-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5 }}
-      >
+      <div className="border-t border-gray-300 bg-white animate-fade-up">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
@@ -298,7 +263,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 }

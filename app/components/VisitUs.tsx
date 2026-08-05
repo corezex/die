@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   MapPin,
@@ -15,13 +12,6 @@ import {
 } from "lucide-react";
 
 const VisitUs = () => {
-  const handleWhatsAppRedirect = () => {
-    const phoneNumber = "919321057899"; // Replace with actual WhatsApp number
-    const message = "Hi! I'd like to book a consultation with DietFiniti.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* New "Our Clinics" Section */}
@@ -29,13 +19,7 @@ const VisitUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left side - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:col-span-6 space-y-8"
-            >
+            <div className="lg:col-span-6 space-y-8 animate-fade-up">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold text-[#262262] leading-tight mb-6">
                   Ready to stop guessing and start progressing?
@@ -56,44 +40,22 @@ const VisitUs = () => {
                     "Sustainable habits for long-term success",
                     "Progress tracking and regular check-ins",
                   ].map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start"
-                    >
+                    <div className="flex items-start animate-fade-up">
                       <CheckCircle className="w-6 h-6 text-teal-500 mr-3 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-lg">{feature}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
-                  onClick={handleWhatsAppRedirect}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-xl hover:shadow-xl transition-all duration-300 font-semibold text-lg group"
-                >
+                <a href="https://wa.me/919321057899?text=Hi!%20I%27d%20like%20to%20book%20a%20consultation%20with%20DietFiniti." target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-xl hover:shadow-xl transition-all duration-300 font-semibold text-lg group animate-fade-up">
                   <Calendar className="w-5 h-5 mr-3" />
                   Book Your Consultation Today
                   <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />
-                </motion.button>
+                </a>
 
                 {/* Trust Indicators */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  viewport={{ once: true }}
-                  className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-gray-200"
-                >
+                <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-gray-200 animate-fade-up">
                   <div className="flex items-center">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
@@ -116,18 +78,12 @@ const VisitUs = () => {
                     <Award className="w-4 h-4 mr-2" />
                     <span className="text-sm">12 Years Experience</span>
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right side - Clinic Locations */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="lg:col-span-6"
-            >
+            <div className="lg:col-span-6 animate-fade-up">
               <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                 {/* Header */}
                 <div className="bg-gradient-to-r from-teal-500 to-cyan-500 p-6">
@@ -146,13 +102,7 @@ const VisitUs = () => {
                 <div className="p-6 space-y-6">
                   {/* Mumbai Clinic */}
                   <Link href="/contact" className="block" aria-label="View Lower Parel clinic address on contact page">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="border border-gray-200 rounded-2xl p-6 hover:border-teal-300 hover:shadow-lg transition-all cursor-pointer"
-                  >
+                  <div className="border border-gray-200 rounded-2xl p-6 hover:border-teal-300 hover:shadow-lg transition-all cursor-pointer animate-fade-up">
                     <div className="flex items-start mb-4">
                       <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mr-4">
                         <Home className="w-6 h-6 text-teal-600" />
@@ -192,18 +142,12 @@ const VisitUs = () => {
                         <span>500+ Google Reviews</span>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                   </Link>
 
                   {/* Thane Clinic */}
                   <Link href="/contact" className="block" aria-label="View Thane clinic address on contact page">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="border border-gray-200 rounded-2xl p-6 hover:border-orange-300 hover:shadow-lg transition-all cursor-pointer relative"
-                  >
+                  <div className="border border-gray-200 rounded-2xl p-6 hover:border-orange-300 hover:shadow-lg transition-all cursor-pointer relative animate-fade-up">
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
                         New
@@ -249,13 +193,13 @@ const VisitUs = () => {
                         <span>Perfect Rating</span>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                   </Link>
                 </div>
 
           
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

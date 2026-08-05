@@ -1,6 +1,4 @@
 // components/ProgramsSection.tsx
-"use client";
-
 import Link from "next/link";
 import {
   CheckCircle,
@@ -14,7 +12,6 @@ import {
   Scale,
   Clock,
 } from "lucide-react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import WhyChooseSection from "./WhyChooseSection";
 import weightlossimg from "@/public/image/weightgainimg1.jpg";
@@ -138,44 +135,15 @@ const ProgramsSection = () => {
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent z-0"></div>
 
       {/* Animated Background Shapes */}
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-green-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"
-      ></motion.div>
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-green-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
-      <motion.div
-        animate={{
-          y: [0, 20, 0],
-          rotate: [0, -5, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-        className="absolute -bottom-32 -left-20 w-80 h-80 bg-gradient-to-tr from-blue-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"
-      ></motion.div>
+      <div className="absolute -bottom-32 -left-20 w-80 h-80 bg-gradient-to-tr from-blue-200 to-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <WhyChooseSection />
 
         {/* Programs Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-blue-700">
@@ -194,27 +162,12 @@ const ProgramsSection = () => {
             requirements. Each plan is carefully crafted for sustainable,
             life-changing results.
           </p>
-        </motion.div>
+        </div>
 
         {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {programs.map((program, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              whileHover={{
-                y: -8,
-                transition: { duration: 0.3, ease: "easeOut" },
-              }}
-              className="group relative"
-            >
+            <div className="group relative animate-fade-up">
               {/* Popular Badge */}
               {program.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-30">
@@ -251,17 +204,13 @@ const ProgramsSection = () => {
                   />
 
                   {/* Enhanced Icon Badge */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-                    transition={{ duration: 0.5 }}
-                    className={`absolute top-5 right-5 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/20 group-hover:shadow-xl transition-all duration-300`}
-                  >
+                  <div className={`absolute top-5 right-5 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/20 group-hover:shadow-xl transition-all duration-300`}>
                     <program.icon
                       className={`w-7 h-7 ${
                         program.color.replace("from-", "text-").split(" ")[0]
                       }`}
                     />
-                  </motion.div>
+                  </div>
 
                   {/* Program Stats */}
                   {/* <div className="absolute top-5 left-5 z-20 flex items-center gap-2">
@@ -304,27 +253,18 @@ const ProgramsSection = () => {
                   {/* Features List */}
                   <div className="mb-4 space-y-3">
                     {program.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={featureIndex}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.4,
-                          delay: featureIndex * 0.1,
-                        }}
-                        className="flex items-center text-sm text-gray-500 group/feature"
-                      >
+                      <div className="flex items-center text-sm text-gray-500 group/feature animate-fade-up">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0 group-hover/feature:scale-110 transition-transform duration-200" />
                         <span className="group-hover/feature:text-gray-700 transition-colors duration-200">
                           {feature}
                         </span>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
 
                   {/* Enhanced Footer */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100/50 mt-auto">
-                    <motion.div whileHover={{ x: 5 }} className="flex-1">
+                    <div className="flex-1">
                       <Link
                         href={`/services/${program.slug}`}
                         className="inline-flex items-center font-semibold group/link cursor-pointer relative z-10 py-1"
@@ -342,7 +282,7 @@ const ProgramsSection = () => {
                           } group-hover/link:translate-x-1 transition-transform duration-200`}
                         />
                       </Link>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
 
@@ -353,17 +293,8 @@ const ProgramsSection = () => {
               </div>
 
               {/* Floating Animation */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.5,
-                }}
-                className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${program.color} opacity-5 -z-20 pointer-events-none`}
-              ></motion.div>
-            </motion.div>
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${program.color} opacity-5 -z-20 pointer-events-none`}></div>
+            </div>
           ))}
         </div>
       </div>

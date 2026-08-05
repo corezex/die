@@ -81,7 +81,6 @@ export default function ImageCarousel({
                 fill
                 className="object-contain bg-gray-50 p-1 sm:p-2"
                 sizes="(max-width: 640px) 280px, (max-width: 1024px) 384px, 512px"
-                priority={index === 0}
               />
               {slides[index].label && (
                 <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-green-600/90 text-white shadow-md">

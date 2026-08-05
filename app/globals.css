@@ -79,3 +79,13 @@ body {
 .whatsapp-float:hover, .whatsapp-float:focus-visible { background: #128c7e; transform: scale(1.06); outline: 3px solid #fff; outline-offset: 2px; }
 .whatsapp-icon { width: 31px; height: 31px; }
 @media (max-width: 768px) { .whatsapp-float { width: 50px; height: 50px; bottom: 18px; left: 18px; } .whatsapp-icon { width: 28px; height: 28px; } }
+
+/* Lightweight entrance animations (CSS-only; replaces framer-motion whileInView
+   on server-rendered sections to reduce client JS and main-thread work). */
+@keyframes df-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes df-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade-up { animation: df-fade-up .6s ease-out both; }
+.animate-fade-in { animation: df-fade-in .7s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-fade-in { animation: none; }
+}

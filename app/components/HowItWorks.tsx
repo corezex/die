@@ -1,7 +1,6 @@
 // components/HowItWorks.tsx
 'use client';
 
-import { motion, Variants } from 'framer-motion';
 import { 
   Calendar, 
   FileText, 
@@ -66,7 +65,7 @@ const HowItWorks = () => {
   };
 
   // Animation variants
-  const containerVariants: Variants = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -76,7 +75,7 @@ const HowItWorks = () => {
     }
   };
 
-  const cardVariants: Variants = {
+  const cardVariants = {
     hidden: { 
       opacity: 0, 
       y: 30,
@@ -103,7 +102,7 @@ const HowItWorks = () => {
     }
   };
 
-  const stepNumberVariants: Variants = {
+  const stepNumberVariants = {
     hidden: { scale: 0, rotate: -180 },
     visible: {
       scale: 1,
@@ -123,23 +122,11 @@ const HowItWorks = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-6 border border-green-200"
-          >
+        <div className="text-center mb-16 animate-fade-up">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-6 border border-green-200 animate-fade-up">
             <CheckCircle className="w-4 h-4 mr-2" />
             Simple 4-Step Process
-          </motion.div>
+          </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             How It <span className="text-green-600">Works</span>
@@ -147,35 +134,21 @@ const HowItWorks = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Your journey to better health through our proven, step-by-step process designed for your success
           </p>
-        </motion.div>
+        </div>
 
         {/* Steps Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up">
           {steps.map((step) => {
             const StepIcon = step.icon;
             const colors = colorMap[step.color];
             
             return (
-              <motion.div
-                key={step.step}
-                variants={cardVariants}
-                whileHover="hover"
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group relative h-full flex flex-col"
-              >
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group relative h-full flex flex-col">
                 {/* Step Number with Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <motion.div
-                    variants={stepNumberVariants}
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-r ${colors.bg} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
-                  >
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${colors.bg} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
                     {step.step}
-                  </motion.div>
+                  </div>
                   <div className={`p-2 rounded-lg ${colors.light}`}>
                     <StepIcon className={`w-6 h-6 ${colors.text}`} />
                   </div>
@@ -196,24 +169,17 @@ const HowItWorks = () => {
                   {/* Features */}
                   <ul className="space-y-3">
                     {step.features.map((feature, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-center text-sm text-gray-700"
-                      >
+                      <li className="flex items-center text-sm text-gray-700 animate-fade-up">
                         <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${colors.bg} mr-3 flex-shrink-0`}></div>
                         {feature}
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
