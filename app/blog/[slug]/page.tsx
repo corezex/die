@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen, PhoneCall } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen, Phone, PhoneCall } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
 interface Post {
@@ -226,6 +226,14 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               ? "A one-size-fits-all chart rarely survives real life. DietFiniti builds plans around your health history, routine and kitchen — in Mumbai, Thane or online anywhere in India."
               : "DietFiniti builds personalised plans around your health history, routine and kitchen — in Mumbai, Thane or online anywhere in India."}
           </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link href="/online-dietitian-consultation" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-teal-800 shadow transition hover:bg-teal-50">
+              <Phone className="h-5 w-5" aria-hidden="true" /> Book a consultation
+            </Link>
+            <Link href="tel:+919321057899" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 px-6 py-3.5 font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/25">
+              <PhoneCall className="h-5 w-5" aria-hidden="true" /> Call +91 93210 57899
+            </Link>
+          </div>
           <div className="mt-5 space-y-3">
             {post.relatedServices.map((service) => (
               <Link key={service.path} href={service.path} className="block rounded-xl bg-white/10 p-4 ring-1 ring-white/25 transition hover:bg-white/20">

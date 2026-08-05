@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search, ChefHat, Calendar, User, Clock, ArrowRight } from "lucide-react";
+import { Search, Phone, PhoneCall, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
 export async function generateMetadata(
@@ -164,9 +164,14 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
                 Turn these articles into a plan built around your health history, routine and kitchen — in Mumbai, Thane or online anywhere in India.
               </p>
             </div>
-            <Link href="/online-dietitian-consultation" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-teal-800 shadow transition hover:bg-teal-50">
-              Book a consultation <ChefHat className="h-5 w-5" aria-hidden="true" />
-            </Link>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Link href="/online-dietitian-consultation" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-teal-800 shadow transition hover:bg-teal-50">
+                <Phone className="h-5 w-5" aria-hidden="true" /> Book a consultation
+              </Link>
+              <Link href="tel:+919321057899" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 px-6 py-3.5 font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/25">
+                <PhoneCall className="h-5 w-5" aria-hidden="true" /> Call +91 93210 57899
+              </Link>
+            </div>
           </div>
         </aside>
       </section>
