@@ -72,5 +72,11 @@
 - ✅ `garlic-pepper-soup-1` gone from data, build output and sitemap.
 - ✅ `npm run build` clean; all titles render with a single "| DietFiniti" suffix.
 
-### Remaining content-quality issue (separate from titles)
-- **354 recipes still contain templated placeholder ingredient lines** ("1 cup primary ingredient for {template} (e.g., …)" — 299×, "healthy flour blend …" — 33×, "primary base for …" — 22×). Titles are unique, but these ingredient lists are not real. **Not fixed in this pass** (title scope); recommend a dedicated content pass to write real ingredients for all 354 recipes, or a decision to remove/consolidate the worst duplicates.
+### Content cleanup — COMPLETE (2026-08-05, follow-up "fix everything")
+All templated content in the recipe database has been replaced with real content:
+- **Ingredient placeholders eliminated (498 recipes fixed):** "primary ingredient for X", "primary base for X", "healthy flour blend", "Greek Yogurt Dip base", "primary grain for X", and "{Dish} base (e.g., …)" lines all replaced with real, dish-specific ingredient lines (e.g. `mango-smoothie` now starts "1 cup ripe mango, peeled and chopped"; `methi-thepla-low-oil` starts "1 cup whole wheat flour" + "1 cup fresh methi (fenugreek) leaves"). 0 placeholders remain.
+- **Wrong cooking methods fixed (159 recipes):** recipes whose instructions said "Preheat your oven / air-fry" but were actually soups, dals, stir-fries, bhurjis, chutneys, beverages, stovetop desserts or porridges now have correct method-specific steps (soup method for soups, tadka method for dals, tawa method for sabzis, etc.). Genuinely baked items (brownies, muffins, chips, samosas, mathri) kept their oven/air-fryer method.
+- **Flatbread instructions personalised (38 recipes):** generic "Sift the required healthy flours (like jowar, bajra…)" replaced with each recipe's actual flour ("Measure out 1 cup bajra…").
+- **Templated instruction wording cleaned (361 recipes):** "the primary ingredients for the X" / "primary grain" / "(e.g., brown rice, quinoa, millet, or oats)" parentheticals removed.
+- **Double-space artifacts removed.** All instruction steps verified to start with "Step N:".
+- **Verified:** 537 recipes, 537 unique titles/slugs, no duplicate content fingerprints among title groups, 0 malformed steps, `npm run build` clean, all 537 pages regenerate with correct instructions in the `Recipe` schema.
