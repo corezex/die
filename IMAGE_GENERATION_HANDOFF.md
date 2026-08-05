@@ -8,14 +8,18 @@ The recipes and JSON structure are complete. Because of the image generation cap
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
 - **Location for Generated Images:** `public/image/recipes/`
-- **Current Number of Unique Mapped Images:** 443 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
-- **Remaining Images to Generate:** 95 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
-- **Mapped in recipes.json (real image paths):** 443 recipes (strict 1:1, zero shared images)
-- **Fallback to `/image/homeimage.jpg`:** 95 recipes (these are the ones whose images are not generated yet)
+- **Current Number of Unique Mapped Images:** 453 images (files present in `public/image/recipes/`), all mapped 1:1 (zero shared, zero orphans)
+- **Remaining Images to Generate:** 85 recipes still on fallback `/image/homeimage.jpg` (generation rate: 10 per session)
+- **Mapped in recipes.json (real image paths):** 453 recipes (strict 1:1, zero shared images)
+- **Fallback to `/image/homeimage.jpg`:** 85 recipes (these are the ones whose images are not generated yet)
 
 ---
 
 ## Session Log (2026-08-05 — branch arena/019fd09d-die)
+
+### Generation session 18 — Batch 18 (10 images) — DONE, pushed as `f062d35`
+Generated: brown-rice-jeera-pulao, quinoa-curd-rice, oats-curd-rice, amaranth-pulao, buckwheat-khichdi, water-chestnut-roti, multi-millet-roti, soya-flour-roti, chickpea-flour-roti, cauliflower-rice.
+- **Next batch (Batch 19) to generate:** broccoli-rice, cabbage-rice-pulao, mushroom-brown-rice, sweet-corn-quinoa, green-peas-millet, spinach-ragi-roti, beetroot-jowar-roti, carrot-bajra-roti, methi-makki-roti, multigrain-pulao.
 
 ### Generation session 17 — Batch 17 (10 images) — DONE, pushed as `245d659`
 Generated: ragi-roti-with-greens, oats-khichdi-with-spinach, brown-rice-lemon-pulao, red-rice-tomato-bath, black-rice-khichdi, millet-bisibelebath, sorghum-lemon-rice, pearl-millet-khichdi, little-millet-tamarind-rice, kodo-millet-puliyogare.
