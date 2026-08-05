@@ -21117,7 +21117,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/saffron-almond-milk.jpg"
   },
   {
     "slug": "walnut-milk",
@@ -21159,7 +21159,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/walnut-milk.jpg"
   },
   {
     "slug": "oats-banana-smoothie",
@@ -21201,7 +21201,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-banana-smoothie.jpg"
   },
   {
     "slug": "apple-cinnamon-smoothie",
@@ -21243,7 +21243,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/apple-cinnamon-smoothie.jpg"
   },
   {
     "slug": "papaya-chia-smoothie",
@@ -21285,7 +21285,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/papaya-chia-smoothie.jpg"
   },
   {
     "slug": "mango-spinach-smoothie",
@@ -21411,7 +21411,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/tomato-celery-juice.jpg"
   },
   {
     "slug": "pineapple-ginger-juice",
@@ -21453,7 +21453,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/pineapple-ginger-juice.jpg"
   },
   {
     "slug": "ragi-halwa",
@@ -21495,7 +21495,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/ragi-halwa.jpg"
   },
   {
     "slug": "oats-kheer",
@@ -21537,7 +21537,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/oats-kheer.jpg"
   },
   {
     "slug": "millet-payasam",
@@ -21579,7 +21579,7 @@
       "Indian",
       "Beverages"
     ],
-    "coverImage": "/image/homeimage.jpg"
+    "coverImage": "/image/recipes/millet-payasam.jpg"
   },
   {
     "slug": "apple-rabdi",
