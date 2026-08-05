@@ -7,10 +7,8 @@ The recipes and JSON structure are complete. Because of the image generation cap
 ## Current Progress Status
 - **Total Recipes in Database:** 538 recipes
 - **Location of Database:** `app/data/recipes.json`
-- **Current Number of Correctly Mapped Images:** 263 images
-- **Remaining Images to Generate:** 275 images
-
-*Note: A previous agent hallucinated generic food names (like `berry-muffin.jpg`) instead of using the actual slugs from the database. You MUST only generate images for the exact slugs that still have `/image/homeimage.jpg` as their coverImage.*
+- **Current Number of Correctly Mapped Images:** 413 images
+- **Remaining Images to Generate:** 125 images
 
 ---
 
