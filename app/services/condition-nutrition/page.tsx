@@ -218,16 +218,21 @@ export default function ConditionNutritionPage() {
                   </div>
                 </article>
               ))}
-              <article className="rounded-xl border border-dashed border-green-300 bg-green-50 p-6">
-                <h3 className="flex items-center gap-2 text-xl font-bold text-slate-900">
-                  <HeartPulse className="h-5 w-5 text-green-700" aria-hidden="true" /> Not sure where to start?
-                </h3>
-                <p className="mt-2 leading-7 text-slate-600">
-                  Book a consultation and the team can discuss which approach fits your health history, routine and goals.
-                </p>
-                <Link href="/contact" className="mt-4 inline-flex items-center gap-2 font-semibold text-green-700 hover:underline">
-                  Contact DietFiniti <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+              <article className="rounded-xl border border-dashed border-green-300 bg-green-50 p-6 md:col-span-2">
+                <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+                  <div className="flex items-start gap-3">
+                    <HeartPulse className="mt-0.5 h-6 w-6 shrink-0 text-green-700" aria-hidden="true" />
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900">Not sure where to start?</h3>
+                      <p className="mt-1 leading-7 text-slate-600">
+                        Book a consultation and the team can discuss which approach fits your health history, routine and goals.
+                      </p>
+                    </div>
+                  </div>
+                  <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-green-700 px-5 py-3 font-semibold text-white transition hover:bg-green-800">
+                    Contact DietFiniti <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
               </article>
             </div>
           </div>
