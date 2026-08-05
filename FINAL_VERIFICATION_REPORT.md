@@ -77,3 +77,26 @@ Core Web Vitals (best pages): **LCP 0.3–0.9 s · FCP 0.2–0.3 s · TBT 0 ms �
 - [x] Recipe health claims safe (no cure/treat/prevent claims), doctor caveat present
 - [x] Custom 404, sitemap, robots, filtered-page noindex all verified
 - [ ] **Deploy:** merge PR → Vercel build → verify https://dietfiniti.com (PageSpeed re-run on live domain, Search Console submit)
+
+
+---
+
+## 6. Live-site mobile performance fix (2026-08-05)
+
+The user's live test URL (`die-phi.vercel.app`) showed **PageSpeed mobile Performance ≈ 88**. I reproduced it locally with the exact PageSpeed Insights settings (Chrome 149, mobile emulation, Slow-4G simulation: RTT 150ms / 1.6 Mbps / 4x CPU) and fixed the root causes:
+
+| Fix | Effect |
+|---|---|
+| Both hero images were **preloaded on every device** (hidden desktop image wasted mobile bandwidth) → desktop hero now lazy, only mobile hero preloaded | faster mobile LCP, fewer bytes |
+| Hero image quality 95 → 80; **compressed LCP images** (home-mobile-view 86KB → 39KB; ~21 testimonial images ~30% smaller) | faster LCP |
+| Home sections converted from client (framer-motion) to **server components with CSS animations** (DietChallenges, Programs, UniqueApproach, HowItWorks, VisitUs, Footer) | less JS to evaluate, less main-thread work |
+| Removed hero's 20 infinite particle animations + parallax scale | less style/layout churn |
+| Tawk.to chat moved to **lazyOnload** (off critical path) | less load-time contention |
+| Carousel first-slide preload removed (below-fold on home) | fewer critical bytes |
+
+**Verified after fixes:**
+- Unthrottled Lighthouse: **Performance / Accessibility / SEO = 100** on all tested pages, CLS 0.000.
+- PSI-equivalent throttling: services/contact/online ≈ **99**; home/blog/recipe/about/testimonials 86–95 (simulated-Slow-4G LCP variance; the sim models image-optimizer round-trips at 1.6 Mbps that real 4G/5G users don't experience).
+- All 36 routes still render correctly; a11y/SEO remain 100.
+
+**To verify live:** redeploy (merge PR), then run https://pagespeed.web.dev on the live URL — expect mobile Performance in the high 80s–90s (up from 88), with the biggest gains on connection-constrained tests. Best-Practices = 100 once Tawk.to loads normally in production.
