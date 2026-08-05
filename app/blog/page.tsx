@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search, ChefHat, Calendar, User, Clock, ArrowRight } from "lucide-react";
+import { Search, ChefHat, Calendar, User, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
 export async function generateMetadata(
   props: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }
 ): Promise<Metadata> {
   const searchParams = await props.searchParams;
-  const filtered = searchParams?.category || searchParams?.q;
+  const filtered = searchParams?.category || searchParams?.q || searchParams?.page;
 
   const base: Metadata = {
     title: "Healthy Indian Nutrition Blog & Diet Tips",
@@ -39,6 +39,8 @@ export async function generateMetadata(
 
 const publishedPosts = postsData.filter((post) => post.status === "published");
 
+const POSTS_PER_PAGE = 9;
+
 const CATEGORIES = ["All", ...Array.from(new Set(publishedPosts.map((p) => p.category)))];
 
 function formatDate(iso: string): string {
@@ -63,6 +65,23 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
       p.tags.some((t) => t.toLowerCase().includes(q))
     );
   }
+
+  // ---- Pagination ----
+  const pageParam = searchParams?.page;
+  const rawPage = typeof pageParam === "string" ? parseInt(pageParam, 10) : 1;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / POSTS_PER_PAGE));
+  const page = isNaN(rawPage) || rawPage < 1 ? 1 : Math.min(rawPage, totalPages);
+  const startIndex = (page - 1) * POSTS_PER_PAGE;
+  const currentPosts = filtered.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  const buildUrl = (p: number) => {
+    const params = new URLSearchParams();
+    if (p > 1) params.set("page", p.toString());
+    if (q) params.set("q", q);
+    if (category !== "All") params.set("category", category);
+    const qs = params.toString();
+    return `/blog${qs ? `?${qs}` : ""}`;
+  };
 
   return (
     <main className="bg-white">
@@ -130,7 +149,7 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
           </div>
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((post) => (
+            {currentPosts.map((post) => (
               <article key={post.slug} className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
                 <div className="h-1.5 bg-gradient-to-r from-green-600 via-emerald-500 to-green-300" aria-hidden="true" />
                 <div className="flex flex-1 flex-col p-6">
@@ -153,6 +172,53 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
               </article>
             ))}
           </div>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <nav aria-label="Blog pagination" className="mt-14 flex items-center justify-center gap-2">
+            {page > 1 && (
+              <Link
+                href={buildUrl(page - 1)}
+                aria-label="Previous page"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:border-green-300 hover:bg-green-50 hover:text-green-700"
+              >
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            )}
+            {Array.from({ length: totalPages }).map((_, i) => {
+              const p = i + 1;
+              if (p === 1 || p === totalPages || (p >= page - 2 && p <= page + 2)) {
+                return (
+                  <Link
+                    key={p}
+                    href={buildUrl(p)}
+                    aria-current={p === page ? "page" : undefined}
+                    className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border text-sm font-semibold transition ${
+                      p === page
+                        ? "border-green-700 bg-green-700 text-white"
+                        : "border-slate-300 bg-white text-slate-700 hover:border-green-300 hover:bg-green-50 hover:text-green-700"
+                    }`}
+                  >
+                    {p}
+                  </Link>
+                );
+              }
+              if (p === page - 3 || p === page + 3) {
+                return <span key={p} className="px-1 text-slate-400" aria-hidden="true">…</span>;
+              }
+              return null;
+            })}
+            {page < totalPages && (
+              <Link
+                href={buildUrl(page + 1)}
+                aria-label="Next page"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:border-green-300 hover:bg-green-50 hover:text-green-700"
+              >
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            )}
+          </nav>
         )}
 
         {/* CTA */}

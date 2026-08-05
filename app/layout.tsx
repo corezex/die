@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "DietFiniti | Personalised Dietitian & Nutrition Plans", description: "Practical, personalised nutrition support from Dietitian Tejal.", images: ["/image/homeimage.jpg"] },
   category: "Health",
+  verification: {
+    google: "JYQI0Eu61uvOcf2Ab3qEDom-BPKjAaW9Mudbe7H8u7A",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
