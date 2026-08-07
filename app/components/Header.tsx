@@ -190,11 +190,11 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
+    document.body.style.overflow = mobileMenuOpen || openMenu ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, openMenu]);
 
   const desktopLinkClass =
     "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-green-700";
@@ -294,7 +294,7 @@ export default function Header() {
             onClick={() => setOpenMenu(null)}
           />
           {openMenu === "services" ? (
-            <div className={`fixed left-1/2 z-[60] hidden w-[min(1120px,calc(100vw-32px))] max-h-[calc(100vh-104px)] -translate-x-1/2 overflow-y-auto rounded-3xl border border-green-100 bg-white p-6 shadow-2xl lg:block ${desktopTop}`}>
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(1120px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-6 shadow-2xl lg:block ${desktopTop}`}>
               <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
@@ -315,7 +315,7 @@ export default function Header() {
               </div>
             </div>
           ) : (
-            <div className={`fixed left-1/2 z-[60] hidden w-[min(380px,calc(100vw-32px))] -translate-x-1/2 rounded-3xl border border-green-100 bg-white p-5 shadow-2xl lg:block ${desktopTop}`}>
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(380px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-5 shadow-2xl lg:block ${desktopTop}`}>
               <div className="grid gap-3">
                 {resourcesLinks.map((item) => {
                   const Icon = item.icon;
@@ -345,7 +345,7 @@ export default function Header() {
       )}
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[70] overflow-y-auto bg-white lg:hidden">
+        <div className="fixed inset-0 z-[70] h-[100dvh] overflow-y-auto overscroll-contain bg-white lg:hidden">
           <div className="sticky top-0 z-10 border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center" onClick={closeAllMenus}>
