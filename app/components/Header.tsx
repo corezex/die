@@ -50,23 +50,23 @@ type OpenMenu = "services" | "resources" | null;
 const mainLinks: MenuLink[] = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: Users },
-  { name: "Blog", path: "/blog", icon: BookOpen },
+  { name: "Articles", path: "/blog", icon: BookOpen },
   { name: "Contact", path: "/contact", icon: PhoneCall },
 ];
 
 const servicesSections: MenuSection[] = [
   {
-    title: "Start here",
-    description: "Good starting points if you are choosing the right service or consultation format.",
+    title: "Get Started",
+    description: "Start here if you want an overview, online consultation or direct help choosing the right service.",
     items: [
-      { name: "All Services", path: "/services", icon: Utensils },
+      { name: "Services Overview", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
-      { name: "Contact DietFiniti", path: "/contact", icon: PhoneCall },
+      { name: "Talk to DietFiniti", path: "/contact", icon: PhoneCall },
     ],
   },
   {
-    title: "Core programmes",
-    description: "Main nutrition programmes for weight management, fitness and life-stage support.",
+    title: "Popular Programmes",
+    description: "Personalised nutrition plans for weight goals, performance and major life stages.",
     items: [
       { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
       { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
@@ -77,8 +77,8 @@ const servicesSections: MenuSection[] = [
     ],
   },
   {
-    title: "Condition support",
-    description: "Food guidance that works alongside routine medical care and health monitoring.",
+    title: "Condition-Based Nutrition",
+    description: "Practical food guidance that works alongside routine medical care and long-term health goals.",
     items: [
       { name: "Condition Nutrition Hub", path: "/services/condition-nutrition", icon: Stethoscope },
       { name: "PCOS Nutrition", path: "/services/pcos-nutrition", icon: Sparkles },
@@ -89,16 +89,16 @@ const servicesSections: MenuSection[] = [
     ],
   },
   {
-    title: "Family & workplace",
-    description: "Support for families, children and workplace nutrition needs.",
+    title: "Family & Workplace Nutrition",
+    description: "Support for children, families and teams who want better everyday eating habits.",
     items: [
       { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
       { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Briefcase },
     ],
   },
   {
-    title: "GLP-1 support",
-    description: "Medication-specific nutrition pages for people already taking GLP-1 treatment.",
+    title: "GLP-1 Medication Support",
+    description: "Dietitian support for people already taking GLP-1 medication and looking for practical meal guidance.",
     items: [
       { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
@@ -109,8 +109,8 @@ const servicesSections: MenuSection[] = [
     ],
   },
   {
-    title: "More GLP-1 pages",
-    description: "Additional GLP-1 medication pages available on the site.",
+    title: "More GLP-1 Pages",
+    description: "Additional medication-specific pages within the GLP-1 section.",
     items: [
       { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
@@ -134,13 +134,13 @@ const resourcesLinks: MenuLink[] = [
     name: "BMI Calculator",
     path: "/bmi-calculator",
     icon: Activity,
-    description: "A simple starting point for weight and health context.",
+    description: "A quick tool to understand your weight and health context.",
   },
   {
     name: "Testimonials",
     path: "/testimonials",
     icon: Star,
-    description: "Client experiences and feedback.",
+    description: "Read what clients say about their DietFiniti experience.",
   },
 ];
 
@@ -235,7 +235,7 @@ export default function Header() {
 
             <Link href="/blog" className={desktopLinkClass} onClick={() => setOpenMenu(null)}>
               <BookOpen className="mr-1.5 h-4 w-4" />
-              Blog
+              Articles
             </Link>
 
             <button
@@ -298,9 +298,9 @@ export default function Header() {
               <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
-                  <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore every DietFiniti service in one place</h2>
+                  <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore DietFiniti services in one place</h2>
                   <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                    Browse programmes by goal, condition, life stage and GLP-1 nutrition support. Every page listed below is live and accessible from this menu.
+                    Browse services by goal, health condition, life stage and GLP-1 medication support. Every page listed below is live and available from this menu.
                   </p>
                 </div>
                 <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
@@ -358,7 +358,7 @@ export default function Header() {
             </div>
             <div className="mt-4 rounded-2xl bg-green-50 p-3 ring-1 ring-green-100">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Website menu</p>
-              <p className="mt-1 text-sm leading-6 text-slate-700">Browse services, GLP-1 pages, blog and resources from one fully scrollable menu.</p>
+              <p className="mt-1 text-sm leading-6 text-slate-700">Browse services, GLP-1 pages, articles and resources from one full-screen menu.</p>
             </div>
           </div>
 
@@ -384,7 +384,7 @@ export default function Header() {
 
             <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Services</p>
-              <p className="mt-1 text-sm leading-6 text-slate-600">All services and GLP-1 medication pages are fully visible below for mobile, tablet portrait and tablet landscape.</p>
+              <p className="mt-1 text-sm leading-6 text-slate-600">All services and GLP-1 medication pages are visible below for phone, tablet portrait and tablet landscape layouts.</p>
               <div className="mt-4 space-y-4">
                 {servicesSections.map((section) => (
                   <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
