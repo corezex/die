@@ -158,7 +158,7 @@ export default async function MedicationPage({ params }: PageProps) {
               <Image src={medication.heroImage} alt={`${medication.brand} nutrition support and diet plan guidance`} className="aspect-[5/4] w-full rounded-[1.35rem] object-cover" priority />
             </div>
             <div className="mt-4 rounded-2xl bg-white p-4 text-slate-900 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm text-slate-500">Approved use summary</p>
+              <p className="text-sm text-slate-500">Usually prescribed for</p>
               <p className="mt-1 font-semibold text-[#262262]">{medication.usedFor}</p>
             </div>
           </div>
@@ -323,7 +323,7 @@ export default async function MedicationPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bx-6 lg:px-8 lg:py-20">
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between gap-6">
             <div>

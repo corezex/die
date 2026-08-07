@@ -47,6 +47,12 @@ export function GlpReviewPanel({
                   <p className="text-sm leading-6 text-slate-700">
                     DietFiniti does not prescribe or sell medication. Medication changes, investigations and treatment decisions stay with your doctor or prescribing clinician.
                   </p>
+                  <p className="mt-3 text-xs leading-5 text-slate-500">
+                    Useful official references:{" "}
+                    <a href="https://www.fda.gov/drugs/drug-safety-and-availability/update-fdas-ongoing-evaluation-reports-suicidal-thoughts-or-actions-patients-taking-certain-type" target="_blank" rel="noopener noreferrer" className="font-semibold text-green-700 hover:underline">FDA GLP-1 information</a>
+                    {" "}and{" "}
+                    <a href="https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity" target="_blank" rel="noopener noreferrer" className="font-semibold text-green-700 hover:underline">NIDDK weight-management guidance</a>.
+                  </p>
                 </div>
               </div>
             </div>

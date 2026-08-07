@@ -184,6 +184,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for chronic weight management and for reducing cardiovascular risk in certain adults with overweight or obesity and cardiovascular disease.",
     primaryKeyword: "Wegovy diet plan",
     secondaryKeywords: ["what to eat on Wegovy", "dietitian for Wegovy users", "Wegovy meal plan"],
+    cardDescription: "Support for appetite changes, meal comfort, protein and sustainable eating habits while taking Wegovy.",
     menuLabel: "Wegovy",
     metaTitle: "Wegovy Diet Plan: What to Eat on Wegovy",
     metaDescription:
@@ -240,6 +241,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved oral semaglutide for type 2 diabetes. It has specific timing instructions around the morning dose.",
     primaryKeyword: "Rybelsus diet plan",
     secondaryKeywords: ["what to eat on Rybelsus", "Rybelsus meal plan", "dietitian for Rybelsus users"],
+    cardDescription: "Support for breakfast, meal timing and a smoother morning routine while taking Rybelsus.",
     menuLabel: "Rybelsus",
     metaTitle: "Rybelsus Diet Plan: What to Eat on Rybelsus",
     metaDescription:
@@ -296,6 +298,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes. Some people also seek nutrition support while using it under physician guidance for weight management.",
     primaryKeyword: "Mounjaro diet plan",
     secondaryKeywords: ["what to eat on Mounjaro", "dietitian for Mounjaro users", "Mounjaro meal plan"],
+    cardDescription: "Support for low appetite, protein balance, digestion and steadier day-to-day food structure while taking Mounjaro.",
     menuLabel: "Mounjaro",
     metaTitle: "Mounjaro Diet Plan: What to Eat on Mounjaro",
     metaDescription:
@@ -352,6 +355,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for chronic weight management and for moderate to severe obstructive sleep apnea in adults with obesity.",
     primaryKeyword: "Zepbound diet plan",
     secondaryKeywords: ["what to eat on Zepbound", "dietitian for Zepbound users", "Zepbound meal plan"],
+    cardDescription: "Support for smaller meals, fluids, protein and practical weight-management routines while taking Zepbound.",
     menuLabel: "Zepbound",
     metaTitle: "Zepbound Diet Plan: What to Eat on Zepbound",
     metaDescription:
@@ -408,6 +412,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for chronic weight management in adults and in certain adolescents.",
     primaryKeyword: "Saxenda diet plan",
     secondaryKeywords: ["what to eat on Saxenda", "dietitian for Saxenda users", "Saxenda meal plan"],
+    cardDescription: "Support for a repeatable daily meal rhythm, protein planning and easier low-appetite food choices while taking Saxenda.",
     menuLabel: "Saxenda",
     metaTitle: "Saxenda Diet Plan: What to Eat on Saxenda",
     metaDescription:
@@ -520,6 +525,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes. Nutrition support often centres on blood-sugar-friendly meals, appetite changes and digestive comfort.",
     primaryKeyword: "Trulicity diet plan",
     secondaryKeywords: ["what to eat on Trulicity", "Trulicity meal plan", "dietitian for Trulicity users"],
+    cardDescription: "Support for regular meals, protein planning and practical diabetes-aware food structure while taking Trulicity.",
     metaTitle: "Trulicity Diet Plan: What to Eat on Trulicity",
     metaDescription:
       "Searching for a Trulicity diet plan? DietFiniti offers nutrition support for people taking Trulicity in Mumbai, Thane and online across India. We do not sell or prescribe medication.",
@@ -575,6 +581,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes. Nutrition questions often revolve around meal timing and digestion because the dosing schedule is more meal-linked than some newer weekly options.",
     primaryKeyword: "Byetta diet plan",
     secondaryKeywords: ["what to eat on Byetta", "Byetta meal plan", "dietitian for Byetta users"],
+    cardDescription: "Support for meal timing, balanced meals and more predictable food routines while taking Byetta.",
     metaTitle: "Byetta Diet Plan: What to Eat on Byetta",
     metaDescription:
       "Need a Byetta diet plan? DietFiniti supports people taking Byetta with practical nutrition guidance in Mumbai, Thane and online across India. We do not sell or prescribe medication.",
@@ -630,6 +637,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved weekly exenatide for type 2 diabetes. Nutrition support often focuses on blood-sugar-friendly meals plus appetite and digestive comfort.",
     primaryKeyword: "Bydureon diet plan",
     secondaryKeywords: ["Bydureon BCise meal plan", "what to eat on Bydureon", "dietitian for Bydureon users"],
+    cardDescription: "Support for balanced weekly routines, digestion-friendly meals and steadier food habits while taking Bydureon BCise.",
     metaTitle: "Bydureon Diet Plan: What to Eat on Bydureon BCise",
     metaDescription:
       "Searching for a Bydureon diet plan? DietFiniti supports people taking Bydureon BCise with practical nutrition guidance in Mumbai, Thane and online across India.",
@@ -685,6 +693,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes. Nutrition support often focuses on daily routine, digestive comfort and blood-sugar-friendly meals.",
     primaryKeyword: "Adlyxin diet plan",
     secondaryKeywords: ["what to eat on Adlyxin", "Adlyxin meal plan", "dietitian for Adlyxin users"],
+    cardDescription: "Support for consistent daily meals, balanced portions and blood-sugar-friendly routines while taking Adlyxin.",
     metaTitle: "Adlyxin Diet Plan: What to Eat on Adlyxin",
     metaDescription:
       "Get practical nutrition support for an Adlyxin diet plan from DietFiniti in Mumbai, Thane or online across India. We do not sell or prescribe medication.",
@@ -740,6 +749,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved once-daily oral GLP-1 medication for chronic weight management. FDA notes that it does not need to be taken on an empty stomach.",
     primaryKeyword: "Foundayo diet plan",
     secondaryKeywords: ["orforglipron diet plan", "what to eat on Foundayo", "dietitian for Foundayo users"],
+    cardDescription: "Support for flexible daily meals, protein intake, hydration and comfortable eating patterns while taking Foundayo.",
     menuLabel: "Foundayo",
     metaTitle: "Foundayo Diet Plan: What to Eat on Foundayo",
     metaDescription:
