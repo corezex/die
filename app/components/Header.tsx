@@ -43,7 +43,6 @@ type MenuSection = {
   title: string;
   description: string;
   items: MenuLink[];
-  columns?: 2 | 3;
 };
 
 type OpenMenu = "services" | "resources" | null;
@@ -62,7 +61,6 @@ const servicesSections: MenuSection[] = [
     items: [
       { name: "Services Overview", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
-      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Talk to DietFiniti", path: "/contact", icon: PhoneCall },
     ],
   },
@@ -101,21 +99,20 @@ const servicesSections: MenuSection[] = [
   {
     title: "GLP-1 Medication Support",
     description: "Popular GLP-1 pages for clients who want practical meal guidance while using these medications.",
-    columns: 3,
     items: [
+      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
       { name: "Wegovy", path: "/glp-1-medications/wegovy", icon: Pill },
       { name: "Rybelsus", path: "/glp-1-medications/rybelsus", icon: Pill },
       { name: "Mounjaro", path: "/glp-1-medications/mounjaro", icon: Pill },
       { name: "Zepbound", path: "/glp-1-medications/zepbound", icon: Pill },
-      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
     ],
   },
   {
     title: "Other GLP-1 Medications",
     description: "Additional medication pages for clients using other GLP-1 brands.",
-    columns: 3,
     items: [
+      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
       { name: "Trulicity", path: "/glp-1-medications/trulicity", icon: Pill },
       { name: "Byetta", path: "/glp-1-medications/byetta", icon: Pill },
@@ -148,13 +145,11 @@ const resourcesLinks: MenuLink[] = [
 ];
 
 function SectionCard({ section, onNavigate }: { section: MenuSection; onNavigate: () => void }) {
-  const gridClass = section.columns === 3 ? "mt-4 grid grid-cols-2 gap-2 md:grid-cols-3" : "mt-4 grid grid-cols-2 gap-2";
-
   return (
     <section className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
       <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
       <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
-      <div className={gridClass}>
+      <div className="mt-4 grid grid-cols-2 gap-2">
         {section.items.map((item) => {
           const Icon = item.icon;
           return (
@@ -280,7 +275,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen((open) => !open)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition hover:bg-slate-200"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700 transition hover:bg-green-100"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle menu"
             >
@@ -295,14 +290,11 @@ export default function Header() {
           <button
             type="button"
             aria-label="Close menu overlay"
-            className="fixed inset-0 z-[55] hidden bg-black/20 lg:block"
+            className="fixed inset-0 z-[55] hidden bg-green-100/70 lg:block"
             onClick={() => setOpenMenu(null)}
           />
-          <div className="fixed inset-0 z-[60] hidden overflow-y-auto overscroll-contain lg:block" style={{ WebkitOverflowScrolling: "touch" }}>
-            <div className="min-h-full px-4 py-4">
-              <div className={`mx-auto mt-[72px] w-[min(1120px,calc(100vw-32px))] ${openMenu === "resources" ? "max-w-[380px]" : ""}`}>
           {openMenu === "services" ? (
-            <div className="rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(1120px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-6 shadow-2xl lg:block ${desktopTop}`}>
               <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
@@ -323,7 +315,7 @@ export default function Header() {
               </div>
             </div>
           ) : (
-            <div className="rounded-3xl border border-green-100 bg-white p-5 shadow-2xl">
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(380px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-5 shadow-2xl lg:block ${desktopTop}`}>
               <div className="grid gap-3">
                 {resourcesLinks.map((item) => {
                   const Icon = item.icon;
@@ -349,21 +341,18 @@ export default function Header() {
               </div>
             </div>
           )}
-              </div>
-            </div>
-          </div>
         </>
       )}
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[70] flex h-[100dvh] flex-col bg-white lg:hidden">
-          <div className="flex-none border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
+        <div className="fixed inset-0 z-[70] h-[100dvh] overflow-y-auto overscroll-contain bg-white lg:hidden">
+          <div className="sticky top-0 z-10 border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center" onClick={closeAllMenus}>
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
                 <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
               </Link>
-              <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700" aria-label="Close menu">
+              <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700" aria-label="Close menu">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -373,8 +362,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto overscroll-contain px-4 pb-28 pt-4" style={{ WebkitOverflowScrolling: "touch" }}>
-            <div className="space-y-5">
+          <div className="space-y-5 px-4 pb-28 pt-4">
             <section className="grid grid-cols-2 gap-2">
               {mainLinks.map((item) => {
                 const Icon = item.icon;
@@ -431,7 +419,6 @@ export default function Header() {
               <a href="tel:+919321057899" className="block rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
                 Call Now: +91 93210 57899
               </a>
-            </div>
             </div>
           </div>
         </div>
