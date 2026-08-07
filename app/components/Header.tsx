@@ -43,6 +43,7 @@ type MenuSection = {
   title: string;
   description: string;
   items: MenuLink[];
+  columns?: 2 | 3;
 };
 
 type OpenMenu = "services" | "resources" | null;
@@ -61,6 +62,7 @@ const servicesSections: MenuSection[] = [
     items: [
       { name: "Services Overview", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
+      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Talk to DietFiniti", path: "/contact", icon: PhoneCall },
     ],
   },
@@ -99,20 +101,21 @@ const servicesSections: MenuSection[] = [
   {
     title: "GLP-1 Medication Support",
     description: "Popular GLP-1 pages for clients who want practical meal guidance while using these medications.",
+    columns: 3,
     items: [
-      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
       { name: "Wegovy", path: "/glp-1-medications/wegovy", icon: Pill },
       { name: "Rybelsus", path: "/glp-1-medications/rybelsus", icon: Pill },
       { name: "Mounjaro", path: "/glp-1-medications/mounjaro", icon: Pill },
       { name: "Zepbound", path: "/glp-1-medications/zepbound", icon: Pill },
+      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
     ],
   },
   {
     title: "Other GLP-1 Medications",
     description: "Additional medication pages for clients using other GLP-1 brands.",
+    columns: 3,
     items: [
-      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
       { name: "Trulicity", path: "/glp-1-medications/trulicity", icon: Pill },
       { name: "Byetta", path: "/glp-1-medications/byetta", icon: Pill },
@@ -145,11 +148,13 @@ const resourcesLinks: MenuLink[] = [
 ];
 
 function SectionCard({ section, onNavigate }: { section: MenuSection; onNavigate: () => void }) {
+  const gridClass = section.columns === 3 ? "mt-4 grid grid-cols-2 gap-2 md:grid-cols-3" : "mt-4 grid grid-cols-2 gap-2";
+
   return (
     <section className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
       <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
       <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
-      <div className="mt-4 grid grid-cols-2 gap-2">
+      <div className={gridClass}>
         {section.items.map((item) => {
           const Icon = item.icon;
           return (
