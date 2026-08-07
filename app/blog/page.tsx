@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Search, ChefHat, Calendar, User, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import postsData from "@/app/data/posts.json";
 
+const SITE_URL = "https://dietfiniti.com";
+
 export async function generateMetadata(
   props: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }
 ): Promise<Metadata> {
@@ -83,8 +85,42 @@ export default async function BlogListPage(props: { searchParams?: Promise<{ [ke
     return `/blog${qs ? `?${qs}` : ""}`;
   };
 
+  const listSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["CollectionPage", "Blog", "MedicalWebPage"],
+        "@id": `${SITE_URL}/blog#webpage`,
+        url: `${SITE_URL}/blog`,
+        name: "DietFiniti Nutrition Blog",
+        description:
+          "A collection of practical nutrition articles by Dietitian Tejal covering healthy Indian eating, PCOS, thyroid, diabetes, weight management and meal planning.",
+        inLanguage: "en-IN",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: currentPosts.map((post, index) => ({
+          "@type": "ListItem",
+          position: startIndex + index + 1,
+          url: `${SITE_URL}/blog/${post.slug}`,
+          name: post.title,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listSchema) }} />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-emerald-700 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

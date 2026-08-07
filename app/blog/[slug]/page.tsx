@@ -50,11 +50,13 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
       type: "article",
       url: `${SITE_URL}/blog/${post.slug}`,
       siteName: "DietFiniti",
+      images: [{ url: `${SITE_URL}/blog.png`, alt: post.title }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
+      images: [`${SITE_URL}/blog.png`],
     },
   };
 }

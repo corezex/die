@@ -36,6 +36,30 @@ const containerVariants: Variants = {
 };
 
 export default function TestimonialsPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["CollectionPage", "MedicalWebPage"],
+        "@id": "https://dietfiniti.com/testimonials#webpage",
+        url: "https://dietfiniti.com/testimonials",
+        name: "DietFiniti Client Stories",
+        description:
+          "A collection of client experiences and testimonials about DietFiniti's personalised nutrition support. Individual experiences and outcomes vary.",
+        inLanguage: "en-IN",
+        isPartOf: { "@id": "https://dietfiniti.com/#website" },
+        publisher: { "@id": "https://dietfiniti.com/#organization" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://dietfiniti.com" },
+          { "@type": "ListItem", position: 2, name: "Testimonials", item: "https://dietfiniti.com/testimonials" },
+        ],
+      },
+    ],
+  };
+
   const [mixedSlides] = useState<CarouselSlide[]>(() =>
     shuffleMixedTestimonialSlides(testimonialSlides)
   );
@@ -119,7 +143,9 @@ export default function TestimonialsPage() {
   const showApiLoading = loading && testimonials.length === 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-50">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-50">
 
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20 pb-10">
         <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 via-green-400/10 to-green-400/10"></div>
@@ -340,5 +366,6 @@ export default function TestimonialsPage() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

@@ -140,8 +140,42 @@ const process = [
 ];
 
 export default function ServicesPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["CollectionPage", "MedicalWebPage"],
+        "@id": "https://dietfiniti.com/services#webpage",
+        url: "https://dietfiniti.com/services",
+        name: "DietFiniti Services",
+        description:
+          "A collection of DietFiniti nutrition services covering weight management, pregnancy, sports nutrition, condition-based nutrition, kids nutrition and corporate wellness.",
+        inLanguage: "en-IN",
+        isPartOf: { "@id": "https://dietfiniti.com/#website" },
+        publisher: { "@id": "https://dietfiniti.com/#organization" },
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: services.map((service, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `https://dietfiniti.com${service.href}`,
+          name: service.title,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://dietfiniti.com" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://dietfiniti.com/services" },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="relative isolate bg-[#f5fbf6]">
         <div className="absolute inset-y-0 right-0 -z-10 hidden w-[42%] bg-[#e5f4e8] lg:block" />
         <div className="absolute -left-24 top-20 -z-10 h-72 w-72 rounded-full bg-green-200/40 blur-3xl" />

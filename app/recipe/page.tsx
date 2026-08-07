@@ -96,8 +96,42 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
     return `/recipe${queryString ? `?${queryString}` : ""}`;
   };
 
+  const listSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["CollectionPage", "MedicalWebPage"],
+        "@id": `${SITE_URL}/recipe#webpage`,
+        url: `${SITE_URL}/recipe`,
+        name: "Healthy Indian Recipes",
+        description:
+          "A collection of healthy Indian recipes from Dietitian Tejal, including breakfasts, dals, curries, grains, snacks and desserts.",
+        inLanguage: "en-IN",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: currentRecipes.map((recipe, index) => ({
+          "@type": "ListItem",
+          position: startIndex + index + 1,
+          url: `${SITE_URL}/recipe/${recipe.slug}`,
+          name: recipe.title,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Recipes", item: `${SITE_URL}/recipe` },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listSchema) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
