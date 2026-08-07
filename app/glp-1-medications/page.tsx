@@ -118,23 +118,23 @@ export default function GlpMedicationHubPage() {
     <main className="overflow-hidden bg-white text-slate-900">
       <StructuredData />
 
-      <section className="relative isolate bg-[#f4fbf5] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[42%] bg-[#e2f3e5] lg:block" />
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+      <section className="relative isolate bg-[#f4fbf5] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[40%] bg-[#e2f3e5] lg:block" />
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.05fr_.95fr] md:items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white px-4 py-2 text-sm font-semibold text-green-800 shadow-sm">
               <Pill className="h-4 w-4" /> Mumbai, Thane & online across India
             </div>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-[#262262] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl lg:text-5xl">
               GLP-1 medication diet plan and nutrition support
             </h1>
-            <div className="mt-6 rounded-2xl border border-green-200 bg-white p-5 text-base leading-7 text-slate-800 shadow-sm">
+            <div className="mt-5 rounded-2xl border border-green-200 bg-white p-4 text-sm leading-6 text-slate-800 shadow-sm sm:text-base">
               <strong>Quick answer:</strong> DietFiniti helps people who are already taking GLP-1 medications such as Ozempic, Wegovy, Rybelsus, Mounjaro and Zepbound make everyday food routines more practical. We do <strong>not</strong> sell or prescribe these medications. We provide dietitian support for protein intake, nausea-friendly meals, hydration, constipation support, meal timing and realistic Indian food choices.
             </div>
-            <p className="mt-6 text-lg leading-8 text-slate-700">
-              If you are searching for a GLP-1 diet plan, what to eat on Ozempic or Wegovy, or a dietician for Mounjaro or Zepbound support, you are usually looking for help with daily routines—not another generic food list copied from the internet.
+            <p className="mt-5 text-base leading-7 text-slate-700 sm:text-lg">
+              If eating feels different after starting GLP-1 medication, these pages are here to help with the day-to-day questions: what to eat, how to keep meals balanced, and how to make the routine feel more comfortable and sustainable.
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {[
                 ["Protein", "Keep protein visible even when appetite drops."],
                 ["Comfort", "Build gentler meals for nausea, reflux or fullness."],
@@ -147,22 +147,23 @@ export default function GlpMedicationHubPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 leading-8 text-slate-700">
-              These pages are built for people who want nutrition support while taking medication under medical supervision. The aim is to make food easier, more comfortable and more nourishing while your prescribing decisions remain with your doctor.
+            <p className="mt-4 text-base leading-7 text-slate-700">
+              Choose the medication page that matches your prescription and use it as a practical starting point before your consultation.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700">
                 <Stethoscope className="h-5 w-5" /> Speak to DietFiniti
               </Link>
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#262262] bg-white px-6 py-3 font-bold text-[#262262] transition hover:bg-[#262262] hover:text-white">
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#262262] bg-white px-5 py-3 font-bold text-[#262262] transition hover:bg-[#262262] hover:text-white">
                 <MessageCircle className="h-5 w-5" /> WhatsApp your question
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-xl">
-            <div className="absolute -inset-4 -z-10 rotate-2 rounded-[2rem] bg-green-200/70" />
-            <Image src={heroImage} alt="Dietitian nutrition support for people taking GLP-1 medication" className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-2xl" priority />
-            <div className="absolute -bottom-6 left-4 rounded-2xl bg-white p-4 shadow-xl sm:left-8 sm:p-5">
+          <div className="mx-auto w-full max-w-lg">
+            <div className="rounded-[1.75rem] bg-white p-3 shadow-xl ring-1 ring-green-100">
+              <Image src={heroImage} alt="Dietitian nutrition support for people taking GLP-1 medication" className="aspect-[5/4] w-full rounded-[1.35rem] object-cover" priority />
+            </div>
+            <div className="mt-4 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-green-100">
               <p className="text-sm text-slate-500">Focus areas</p>
               <p className="mt-1 font-bold text-[#262262]">Protein • Hydration • Meal structure • Comfort</p>
             </div>

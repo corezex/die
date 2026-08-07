@@ -113,17 +113,17 @@ export default async function MedicationPage({ params }: PageProps) {
     <main className="overflow-hidden bg-white text-slate-900">
       <MedicationStructuredData slug={slug} />
 
-      <section className={`${medication.accent.panel} px-4 py-16 sm:px-6 lg:px-8 lg:py-24`}>
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+      <section className={`${medication.accent.panel} px-4 py-12 sm:px-6 lg:px-8 lg:py-16`}>
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.05fr_.95fr] md:items-start">
           <div>
             <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm ${medication.accent.badge}`}>
               <Pill className="h-4 w-4" /> {medication.route} • Mumbai, Thane & online across India
             </div>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">{medication.heroTitle}</h1>
-            <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 p-5 text-base leading-7 text-slate-100 backdrop-blur-sm">
+            <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{medication.heroTitle}</h1>
+            <div className="mt-5 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm leading-6 text-slate-100 backdrop-blur-sm sm:text-base">
               <strong>Quick answer:</strong> {medication.quickAnswer}
             </div>
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {[
                 "Protein",
                 "Hydration",
@@ -135,30 +135,31 @@ export default async function MedicationPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-            <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            <div className="mt-5 grid gap-4 lg:grid-cols-2">
               {medication.intro.map((paragraph, index) => (
-                <article key={paragraph} className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-green-200">{index === 0 ? "Why people search this" : "How DietFiniti helps"}</p>
-                  <p className="mt-3 text-base leading-7 text-slate-100/95">{paragraph}</p>
+                <article key={paragraph} className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
+                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-green-200">{index === 0 ? "What often changes" : "Where support helps"}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-100/95 sm:text-base">{paragraph}</p>
                 </article>
               ))}
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-bold text-white transition ${medication.accent.button}`}>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-bold text-white transition ${medication.accent.button}`}>
                 <Stethoscope className="h-5 w-5" /> Book nutrition support
               </Link>
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 font-bold text-white transition hover:bg-white/20">
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-bold text-white transition hover:bg-white/20">
                 <MessageCircle className="h-5 w-5" /> WhatsApp DietFiniti
               </a>
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-xl">
-            <div className="absolute -inset-4 -z-10 rotate-2 rounded-[2rem] bg-white/15" />
-            <Image src={medication.heroImage} alt={`${medication.brand} nutrition support and diet plan guidance`} className="aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-2xl" priority />
-            <div className="absolute -bottom-6 left-4 rounded-2xl bg-white p-5 text-slate-900 shadow-xl sm:left-8">
+          <div className="mx-auto w-full max-w-lg">
+            <div className="rounded-[1.75rem] bg-white/10 p-3 shadow-xl ring-1 ring-white/15 backdrop-blur-sm">
+              <Image src={medication.heroImage} alt={`${medication.brand} nutrition support and diet plan guidance`} className="aspect-[5/4] w-full rounded-[1.35rem] object-cover" priority />
+            </div>
+            <div className="mt-4 rounded-2xl bg-white p-4 text-slate-900 shadow-sm ring-1 ring-slate-200">
               <p className="text-sm text-slate-500">Approved use summary</p>
-              <p className="mt-1 max-w-sm font-semibold text-[#262262]">{medication.usedFor}</p>
+              <p className="mt-1 font-semibold text-[#262262]">{medication.usedFor}</p>
             </div>
           </div>
         </div>
@@ -168,7 +169,7 @@ export default async function MedicationPage({ params }: PageProps) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-start">
             <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>What this page helps you with</p>
+              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Inside this page</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
                 Planning meals while taking {medication.brand}
               </h2>
@@ -176,13 +177,13 @@ export default async function MedicationPage({ params }: PageProps) {
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                   <h3 className="text-lg font-bold text-slate-900">Common concerns people have</h3>
                   <p className="mt-3 leading-7 text-slate-700">
-                    This guide is for the day-to-day questions people usually have on {medication.brand}: what to eat when appetite drops, how to keep meals balanced, and how to make protein, fluids and digestion easier to manage.
+                    This guide covers the day-to-day questions people usually have on {medication.brand}: what to eat when appetite drops, how to keep meals balanced, and how to make protein, fluids and digestion easier to manage.
                   </p>
                 </article>
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h3 className="text-lg font-bold text-slate-900">How to use this guide</h3>
+                  <h3 className="text-lg font-bold text-slate-900">What you will find here</h3>
                   <p className="mt-3 leading-7 text-slate-700">
-                    Use this page to understand food priorities, practical meal ideas and when to contact your prescriber. Medication changes, symptom escalation and dosing decisions still belong with your clinician.
+                    You will find food priorities, practical meal ideas and guidance on when to contact your prescriber. Medication changes, symptom escalation and dosing decisions still belong with your clinician.
                   </p>
                 </article>
               </div>
