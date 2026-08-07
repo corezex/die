@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/services/weight-loss", title: "Weight-loss nutrition support", text: "for people who want a practical plan built around everyday Indian food and routine." },
   { href: "/services/medical-weight-loss", title: "Nutrition support alongside medical care", text: "for people managing a health condition with their treating clinician." },
+  { href: "/glp-1-medications", title: "GLP-1 medication nutrition support", text: "for people taking Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound and related medications who need a more practical eating routine." },
   { href: "/services/pregnancy-diet", title: "Pregnancy and postpartum nutrition", text: "with guidance that can be tailored to each stage and individual needs." },
   { href: "/services/sports-nutrition", title: "Sports nutrition", text: "for training, performance and recovery goals." },
 ];

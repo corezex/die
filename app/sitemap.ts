@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import recipesData from "@/app/data/recipes.json";
+import { glpMedicationSlugs } from "@/app/glp-1-medications/medicationData";
 
 const siteUrl = "https://dietfiniti.com";
 
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["", "weekly", 1],
     ["/about", "monthly", 0.8],
     ["/services", "weekly", 0.9],
+    ["/glp-1-medications", "weekly", 0.9],
     ["/online-dietitian-consultation", "monthly", 0.9],
     ["/services/weight-loss", "monthly", 0.9],
     ["/services/medical-weight-loss", "monthly", 0.9],
@@ -35,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
+  const glpRoutes = glpMedicationSlugs.map((slug) => ({
+    url: `${siteUrl}/glp-1-medications/${slug}`,
+    lastModified,
+    changeFrequency: "monthly" as MetadataRoute.Sitemap[0]["changeFrequency"],
+    priority: 0.8,
+  }));
+
   const recipeRoutes = recipesData.map((recipe) => ({
     url: `${siteUrl}/recipe/${recipe.slug}`,
     lastModified,
@@ -42,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...recipeRoutes];
+  return [...staticRoutes, ...glpRoutes, ...recipeRoutes];
 }
