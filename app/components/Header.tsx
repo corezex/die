@@ -98,7 +98,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "GLP-1 Medication Support",
-    description: "Dietitian support for people already taking GLP-1 medication and looking for practical meal guidance.",
+    description: "Popular GLP-1 pages for clients who want practical meal guidance while using these medications.",
     items: [
       { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
@@ -109,8 +109,8 @@ const servicesSections: MenuSection[] = [
     ],
   },
   {
-    title: "More GLP-1 Pages",
-    description: "Additional medication-specific pages within the GLP-1 section.",
+    title: "Other GLP-1 Medications",
+    description: "Additional medication pages for clients using other GLP-1 brands.",
     items: [
       { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
