@@ -21,13 +21,11 @@ export async function generateMetadata(
       description: "Evidence-aware nutrition guidance for everyday Indian eating, written by Dietitian Tejal.",
       type: "website",
       url: "https://dietfiniti.com/blog",
-      images: [{ url: "https://dietfiniti.com/blog.png", alt: "DietFiniti nutrition blog" }],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: "Healthy Indian Nutrition Blog & Diet Tips | DietFiniti",
       description: "Evidence-aware nutrition guidance for everyday Indian eating, written by Dietitian Tejal.",
-      images: ["https://dietfiniti.com/blog.png"],
     },
   };
 
