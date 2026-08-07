@@ -1,6 +1,15 @@
 import type { StaticImageData } from "next/image";
-import heroImage from "@/public/image/MedicalWeightLoss1.jpg";
+import defaultHeroImage from "@/public/image/MedicalWeightLoss1.jpg";
 import supportImage from "@/public/image/Servicesimg1.jpg";
+import ozempicHero from "@/public/image/glp1-ozempic-hero.jpg";
+import wegovyHero from "@/public/image/glp1-wegovy-hero.jpg";
+import rybelsusHero from "@/public/image/glp1-rybelsus-hero.jpg";
+import mounjaroHero from "@/public/image/glp1-mounjaro-hero.jpg";
+import zepboundHero from "@/public/image/glp1-zepbound-hero.jpg";
+import saxendaHero from "@/public/image/glp1-saxenda-hero.jpg";
+import victozaHero from "@/public/image/glp1-victoza-hero.jpg";
+import trulicityHero from "@/public/image/glp1-trulicity-hero.jpg";
+import foundayoHero from "@/public/image/glp1-foundayo-hero.jpg";
 
 type AccentTheme = {
   panel: string;
@@ -146,7 +155,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I still eat Indian food on Ozempic?", answer: "Yes. Most people do better with practical Indian meals they can repeat consistently. The focus is usually on meal composition, comfort, portion fit and regularity—not on avoiding entire cuisines." },
       { question: "Is an Ozempic meal plan the same for everyone?", answer: "No. Someone taking Ozempic for type 2 diabetes, someone with shift work and someone with strong nausea will need different food structure, timing and support." },
     ],
-    heroImage,
+    heroImage: ozempicHero,
     supportImage,
     accent: semaglutideTheme,
   },
@@ -202,7 +211,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can a Wegovy diet plan include regular Indian meals?", answer: "Yes. Many people do best when the plan uses familiar foods such as dal, curd, eggs, paneer, rotis, rice, vegetables, fruit and simple snacks in portions that feel manageable." },
       { question: "Is Wegovy nutrition support only for people trying to lose more weight?", answer: "No. It can also be useful for preserving nourishment, improving meal quality and building sustainable eating habits while you are on the medication." },
     ],
-    heroImage,
+    heroImage: wegovyHero,
     supportImage,
     accent: semaglutideTheme,
   },
@@ -258,7 +267,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Rybelsus support only about breakfast?", answer: "No. Breakfast is a common starting point, but protein distribution, hydration, fibre, blood-sugar-friendly meals and side-effect management across the whole day also matter." },
       { question: "Can I still eat regular Indian breakfasts on Rybelsus?", answer: "Usually yes. The right option depends on appetite, glucose goals and the time available after the dose instructions have been followed." },
     ],
-    heroImage,
+    heroImage: rybelsusHero,
     supportImage,
     accent: oralTheme,
   },
@@ -314,7 +323,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I follow a vegetarian Mounjaro meal plan?", answer: "Yes. Vegetarian plans can still be built around protein and balanced meals; the right structure depends on your appetite, routine and food preferences." },
       { question: "Is a Mounjaro diet plan only for weight loss?", answer: "No. Many people also need support for comfort, blood sugar, strength, energy and making their intake more consistent." },
     ],
-    heroImage,
+    heroImage: mounjaroHero,
     supportImage,
     accent: tirzepatideTheme,
   },
@@ -370,7 +379,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can a Zepbound diet plan include regular Indian meals?", answer: "Yes. In many cases, familiar Indian meals with a few structure changes are more realistic than highly specialised diet menus." },
       { question: "Is Zepbound support the same as Wegovy support?", answer: "There are overlaps, but some people experience stronger appetite changes or have different treatment goals. The best plan depends on the medication, the person and their routine." },
     ],
-    heroImage,
+    heroImage: zepboundHero,
     supportImage,
     accent: tirzepatideTheme,
   },
@@ -426,7 +435,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat home food on Saxenda?", answer: "Yes. Most people do better when the plan is built around normal home food with practical adjustments rather than a separate set of “diet meals”." },
       { question: "Can Saxenda nutrition support help after the first few weeks?", answer: "Yes. Support is often most useful when it helps turn the early medication phase into a sustainable long-term routine." },
     ],
-    heroImage,
+    heroImage: saxendaHero,
     supportImage,
     accent: liraglutideTheme,
   },
@@ -481,7 +490,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat Indian home food on Victoza?", answer: "Yes. Most people do better with normal home meals adjusted for balance, portions and timing instead of a completely separate menu." },
       { question: "Is Victoza support only for weight loss?", answer: "No. It can also help with blood-sugar-friendly meal structure, appetite changes, protein intake and consistency." },
     ],
-    heroImage,
+    heroImage: victozaHero,
     supportImage,
     accent: liraglutideTheme,
   },
@@ -536,7 +545,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat regular Indian meals on Trulicity?", answer: "Yes. Most people are better served by improving balance, portioning and timing within familiar meals rather than abandoning them." },
       { question: "Is Trulicity support only about weight loss?", answer: "No. It can also help with glucose-aware meal structure, digestion, consistency and daily decision-making." },
     ],
-    heroImage,
+    heroImage: trulicityHero,
     supportImage,
     accent: classicTheme,
   },
@@ -591,7 +600,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat Indian meals on Byetta?", answer: "Yes. The key is usually how the meal is balanced and timed rather than switching to unfamiliar food." },
       { question: "Who benefits most from Byetta nutrition support?", answer: "People with unpredictable schedules, side effects, blood-sugar concerns or confusion about meal timing often benefit the most." },
     ],
-    heroImage,
+    heroImage: defaultHeroImage,
     supportImage,
     accent: classicTheme,
   },
@@ -646,7 +655,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat normal home food on Bydureon BCise?", answer: "Yes. Most plans work best when normal home food is adjusted for balance, portions and routine rather than replaced completely." },
       { question: "Is Bydureon BCise support different from Byetta support?", answer: "There is overlap, but weekly dosing changes the day-to-day routine, so meal timing may feel less rigid for some people." },
     ],
-    heroImage,
+    heroImage: defaultHeroImage,
     supportImage,
     accent: classicTheme,
   },
@@ -701,7 +710,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat home food on Adlyxin?", answer: "Yes. Most people do best with home food that is adjusted for balance, portions and timing rather than completely replaced." },
       { question: "Who benefits from Adlyxin dietitian support?", answer: "People with busy schedules, diabetes-related meal concerns, appetite changes or ongoing food confusion often benefit the most." },
     ],
-    heroImage,
+    heroImage: defaultHeroImage,
     supportImage,
     accent: classicTheme,
   },
@@ -757,7 +766,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat Indian meals on Foundayo?", answer: "Yes. Most people do best with familiar meals adapted to appetite, comfort and portion size rather than a completely separate meal style." },
       { question: "Is Foundayo support only about weight loss?", answer: "No. It is also about nourishment, comfort, routine, food quality and building habits that remain useful over time." },
     ],
-    heroImage,
+    heroImage: foundayoHero,
     supportImage,
     accent: oralTheme,
   },

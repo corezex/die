@@ -31,13 +31,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${medication.heroTitle} | DietFiniti`,
       description: medication.metaDescription,
       url: `${siteUrl}/glp-1-medications/${medication.slug}`,
-      images: [{ url: "/image/MedicalWeightLoss1.jpg", alt: `${medication.brand} diet plan and nutrition support` }],
+      images: [{ url: medication.heroImage.src, alt: `${medication.brand} diet plan and nutrition support` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${medication.heroTitle} | DietFiniti`,
       description: medication.metaDescription,
-      images: ["/image/MedicalWeightLoss1.jpg"],
+      images: [medication.heroImage.src],
     },
   };
 }

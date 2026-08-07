@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MessageCircle, Pill, ShieldCheck, Sparkles, Stethoscope, UtensilsCrossed } from "lucide-react";
-import heroImage from "@/public/image/Servicesimg1.jpg";
+import heroImage from "@/public/image/glp1-hub-hero.jpg";
 import { glpMedications } from "./medicationData";
 
 const siteUrl = "https://dietfiniti.com";
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     description:
       "Practical dietitian support for people taking GLP-1 medications such as Ozempic, Wegovy, Rybelsus, Mounjaro and Zepbound.",
     url: `${siteUrl}/glp-1-medications`,
-    images: [{ url: "/image/Servicesimg1.jpg", alt: "DietFiniti nutrition support for people taking GLP-1 medication" }],
+    images: [{ url: heroImage.src, alt: "DietFiniti nutrition support for people taking GLP-1 medication" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "GLP-1 Medication Nutrition Support | DietFiniti",
     description:
       "Dietitian-led nutrition support for people taking GLP-1 medication in Mumbai, Thane and online across India.",
-    images: ["/image/Servicesimg1.jpg"],
+    images: [heroImage.src],
   },
 };
 
