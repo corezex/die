@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Activity,
@@ -45,10 +45,19 @@ type MenuSection = {
   items: MenuLink[];
 };
 
+type OpenMenu = "services" | "resources" | null;
+
+const mainLinks: MenuLink[] = [
+  { name: "Home", path: "/", icon: Home },
+  { name: "About", path: "/about", icon: Users },
+  { name: "Blog", path: "/blog", icon: BookOpen },
+  { name: "Contact", path: "/contact", icon: PhoneCall },
+];
+
 const servicesSections: MenuSection[] = [
   {
     title: "Start here",
-    description: "Helpful first steps if you are choosing a service or consultation format.",
+    description: "Good starting points if you are choosing the right service or consultation format.",
     items: [
       { name: "All Services", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
@@ -57,7 +66,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "Core programmes",
-    description: "Main nutrition programmes for weight, lifestyle and performance goals.",
+    description: "Main nutrition programmes for weight management, fitness and life-stage support.",
     items: [
       { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
       { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
@@ -69,7 +78,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "Condition support",
-    description: "Practical food guidance that works alongside routine medical care.",
+    description: "Food guidance that works alongside routine medical care and health monitoring.",
     items: [
       { name: "Condition Nutrition Hub", path: "/services/condition-nutrition", icon: Stethoscope },
       { name: "PCOS Nutrition", path: "/services/pcos-nutrition", icon: Sparkles },
@@ -81,7 +90,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "Family & workplace",
-    description: "Support for children, families and workplace wellness programmes.",
+    description: "Support for families, children and workplace nutrition needs.",
     items: [
       { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
       { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Briefcase },
@@ -89,7 +98,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "GLP-1 support",
-    description: "Medication-specific diet support pages for people already using GLP-1 treatment.",
+    description: "Medication-specific nutrition pages for people already taking GLP-1 treatment.",
     items: [
       { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
@@ -101,7 +110,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "More GLP-1 pages",
-    description: "Additional medication pages available within the GLP-1 section.",
+    description: "Additional GLP-1 medication pages available on the site.",
     items: [
       { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
@@ -115,40 +124,61 @@ const servicesSections: MenuSection[] = [
 ];
 
 const resourcesLinks: MenuLink[] = [
-  { name: "Recipes", path: "/recipe", icon: ChefHat, description: "Healthy Indian recipes and meal ideas." },
-  { name: "BMI Calculator", path: "/bmi-calculator", icon: Activity, description: "A simple starting point for weight and health context." },
-  { name: "Testimonials", path: "/testimonials", icon: Star, description: "Client experiences and feedback." },
+  {
+    name: "Recipes",
+    path: "/recipe",
+    icon: ChefHat,
+    description: "Healthy Indian recipes and practical meal ideas.",
+  },
+  {
+    name: "BMI Calculator",
+    path: "/bmi-calculator",
+    icon: Activity,
+    description: "A simple starting point for weight and health context.",
+  },
+  {
+    name: "Testimonials",
+    path: "/testimonials",
+    icon: Star,
+    description: "Client experiences and feedback.",
+  },
 ];
 
-const primaryLinks: MenuLink[] = [
-  { name: "Home", path: "/", icon: Home },
-  { name: "About", path: "/about", icon: Users },
-  { name: "Blog", path: "/blog", icon: BookOpen },
-  { name: "Contact", path: "/contact", icon: PhoneCall },
-];
-
-type OpenDesktopMenu = "services" | "resources" | null;
+function SectionCard({ section, onNavigate }: { section: MenuSection; onNavigate: () => void }) {
+  return (
+    <section className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+      <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
+      <div className="mt-4 grid gap-2">
+        {section.items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.path}
+              href={item.path}
+              onClick={onNavigate}
+              className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                <Icon className="h-4 w-4" />
+              </span>
+              <span>{item.name}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
 
 export default function Header() {
-  const [openDesktopMenu, setOpenDesktopMenu] = useState<OpenDesktopMenu>(null);
+  const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const desktopMenuRef = useRef<HTMLDivElement>(null);
 
   const closeAllMenus = () => {
-    setOpenDesktopMenu(null);
+    setOpenMenu(null);
     setMobileMenuOpen(false);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node)) {
-        setOpenDesktopMenu(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -166,12 +196,10 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const toggleDesktopMenu = (menu: Exclude<OpenDesktopMenu, null>) => {
-    setOpenDesktopMenu((current) => (current === menu ? null : menu));
-  };
-
   const desktopLinkClass =
     "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-green-700";
+
+  const desktopTop = "top-[82px]";
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
@@ -182,134 +210,56 @@ export default function Header() {
             <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
           </Link>
 
-          <div ref={desktopMenuRef} className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center">
-            <nav className="flex items-center gap-1">
-              {primaryLinks.slice(0, 2).map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
-                    <Icon className="mr-1.5 h-4 w-4" />
-                    {item.name}
-                  </Link>
-                );
-              })}
+          <nav className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-1">
+            {mainLinks.slice(0, 2).map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenMenu(null)}>
+                  <Icon className="mr-1.5 h-4 w-4" />
+                  {item.name}
+                </Link>
+              );
+            })}
 
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => toggleDesktopMenu("services")}
-                  className={`${desktopLinkClass} bg-transparent`}
-                  aria-expanded={openDesktopMenu === "services"}
-                  aria-label="Toggle services menu"
-                >
-                  <Utensils className="mr-1.5 h-4 w-4" />
-                  Services
-                  <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openDesktopMenu === "services" ? "rotate-180" : ""}`} />
-                </button>
+            <button
+              type="button"
+              onClick={() => setOpenMenu((current) => (current === "services" ? null : "services"))}
+              className={`${desktopLinkClass} bg-transparent`}
+              aria-expanded={openMenu === "services"}
+              aria-label="Toggle services menu"
+            >
+              <Utensils className="mr-1.5 h-4 w-4" />
+              Services
+              <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openMenu === "services" ? "rotate-180" : ""}`} />
+            </button>
 
-                {openDesktopMenu === "services" && (
-                  <div className="absolute left-1/2 top-full mt-4 w-[1120px] max-w-[calc(100vw-3rem)] -translate-x-1/2 rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
-                    <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
-                        <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore every DietFiniti service in one place</h2>
-                        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                          Browse programmes by goal, condition, life stage and GLP-1 nutrition support. Every page listed below is live and available from this menu.
-                        </p>
-                      </div>
-                      <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
-                        View all services
-                      </Link>
-                    </div>
+            <Link href="/blog" className={desktopLinkClass} onClick={() => setOpenMenu(null)}>
+              <BookOpen className="mr-1.5 h-4 w-4" />
+              Blog
+            </Link>
 
-                    <div className="grid gap-5 xl:grid-cols-3">
-                      {servicesSections.map((section) => (
-                        <section key={section.title} className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
-                          <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
-                          <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
-                          <div className="mt-4 grid gap-2">
-                            {section.items.map((item) => {
-                              const Icon = item.icon;
-                              return (
-                                <Link
-                                  key={item.path}
-                                  href={item.path}
-                                  onClick={closeAllMenus}
-                                  className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
-                                >
-                                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                                    <Icon className="h-4 w-4" />
-                                  </span>
-                                  <span>{item.name}</span>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </section>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+            <button
+              type="button"
+              onClick={() => setOpenMenu((current) => (current === "resources" ? null : "resources"))}
+              className={`${desktopLinkClass} bg-transparent`}
+              aria-expanded={openMenu === "resources"}
+              aria-label="Toggle resources menu"
+            >
+              <BookOpen className="mr-1.5 h-4 w-4" />
+              Resources
+              <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openMenu === "resources" ? "rotate-180" : ""}`} />
+            </button>
 
-              <Link href="/blog" className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
-                <BookOpen className="mr-1.5 h-4 w-4" />
-                Blog
-              </Link>
-
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => toggleDesktopMenu("resources")}
-                  className={`${desktopLinkClass} bg-transparent`}
-                  aria-expanded={openDesktopMenu === "resources"}
-                  aria-label="Toggle resources menu"
-                >
-                  <BookOpen className="mr-1.5 h-4 w-4" />
-                  Resources
-                  <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openDesktopMenu === "resources" ? "rotate-180" : ""}`} />
-                </button>
-
-                {openDesktopMenu === "resources" && (
-                  <div className="absolute right-0 top-full mt-4 w-[380px] rounded-3xl border border-green-100 bg-white p-5 shadow-2xl">
-                    <div className="grid gap-3">
-                      {resourcesLinks.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            onClick={closeAllMenus}
-                            className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700 hover:ring-green-100"
-                          >
-                            <div className="flex items-start gap-3">
-                              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-700 ring-1 ring-green-100">
-                                <Icon className="h-4 w-4" />
-                              </span>
-                              <div>
-                                <p className="font-semibold text-slate-900">{item.name}</p>
-                                {item.description ? <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p> : null}
-                              </div>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {primaryLinks.slice(2).map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
-                    <Icon className="mr-1.5 h-4 w-4" />
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
+            {mainLinks.slice(3).map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenMenu(null)}>
+                  <Icon className="mr-1.5 h-4 w-4" />
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
 
           <div className="hidden lg:flex lg:items-center">
             <a href="tel:+919321057899" className="inline-flex items-center rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800" aria-label="Call DietFiniti">
@@ -335,9 +285,68 @@ export default function Header() {
         </div>
       </div>
 
+      {openMenu && (
+        <>
+          <button
+            type="button"
+            aria-label="Close menu overlay"
+            className="fixed inset-0 z-[55] hidden bg-black/20 lg:block"
+            onClick={() => setOpenMenu(null)}
+          />
+          {openMenu === "services" ? (
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(1120px,calc(100vw-32px))] max-h-[calc(100vh-104px)] -translate-x-1/2 overflow-y-auto rounded-3xl border border-green-100 bg-white p-6 shadow-2xl lg:block ${desktopTop}`}>
+              <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
+                  <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore every DietFiniti service in one place</h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                    Browse programmes by goal, condition, life stage and GLP-1 nutrition support. Every page listed below is live and accessible from this menu.
+                  </p>
+                </div>
+                <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
+                  View all services
+                </Link>
+              </div>
+
+              <div className="grid gap-5 xl:grid-cols-3">
+                {servicesSections.map((section) => (
+                  <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className={`fixed left-1/2 z-[60] hidden w-[min(380px,calc(100vw-32px))] -translate-x-1/2 rounded-3xl border border-green-100 bg-white p-5 shadow-2xl lg:block ${desktopTop}`}>
+              <div className="grid gap-3">
+                {resourcesLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      onClick={closeAllMenus}
+                      className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700 hover:ring-green-100"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-700 ring-1 ring-green-100">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <p className="font-semibold text-slate-900">{item.name}</p>
+                          {item.description ? <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p> : null}
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </>
+      )}
+
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-white lg:hidden">
-          <div className="border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
+        <div className="fixed inset-0 z-[70] overflow-y-auto bg-white lg:hidden">
+          <div className="sticky top-0 z-10 border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center" onClick={closeAllMenus}>
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
@@ -348,14 +357,14 @@ export default function Header() {
               </button>
             </div>
             <div className="mt-4 rounded-2xl bg-green-50 p-3 ring-1 ring-green-100">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Menu</p>
-              <p className="mt-1 text-sm leading-6 text-slate-700">Browse services, GLP-1 pages, recipes and other key sections of the website.</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Website menu</p>
+              <p className="mt-1 text-sm leading-6 text-slate-700">Browse services, GLP-1 pages, blog and resources from one fully scrollable menu.</p>
             </div>
           </div>
 
           <div className="space-y-5 px-4 pb-28 pt-4">
             <section className="grid gap-2">
-              {primaryLinks.map((item) => {
+              {mainLinks.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link
@@ -375,29 +384,10 @@ export default function Header() {
 
             <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Services</p>
-              <p className="mt-1 text-sm leading-6 text-slate-600">Every service page and GLP-1 support page is listed below for easier browsing on mobile and tablet.</p>
+              <p className="mt-1 text-sm leading-6 text-slate-600">All services and GLP-1 medication pages are fully visible below for mobile, tablet portrait and tablet landscape.</p>
               <div className="mt-4 space-y-4">
                 {servicesSections.map((section) => (
-                  <div key={section.title} className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">{section.title}</p>
-                    <p className="mt-1 text-xs leading-5 text-slate-500">{section.description}</p>
-                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                      {section.items.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            onClick={closeAllMenus}
-                            className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700"
-                          >
-                            <Icon className="h-4 w-4 text-green-700" />
-                            <span>{item.name}</span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
                 ))}
               </div>
             </section>
