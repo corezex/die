@@ -3730,7 +3730,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A stone-type-specific eating and hydration plan."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/kidney-stones-prevention.jpg"
   },
   {
     "slug": "bone-health-calcium-diet",
@@ -3817,7 +3818,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Weight management that protects bone — especially around menopause."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/bone-health-calcium-diet.jpg"
   },
   {
     "slug": "gout-and-uric-acid",
@@ -3904,7 +3906,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A gout-friendly Indian eating plan that fits your medication."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/gout-and-uric-acid.jpg"
   },
   {
     "slug": "insulin-resistance-diet",
@@ -3991,7 +3994,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised steady-blood-sugar Indian meal pattern."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/insulin-resistance-diet.jpg"
   },
   {
     "slug": "diabetes-festivals-india",
@@ -4078,7 +4082,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A festive-season blood-sugar plan personalised to you."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/diabetes-festivals-india.jpg"
   },
   {
     "slug": "diabetes-travel-guide",
@@ -4165,7 +4170,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personalised meal and snack planning for your trips."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/diabetes-travel-guide.jpg"
   },
   {
     "slug": "pcos-fertility-nutrition",
@@ -4252,7 +4258,8 @@
         "path": "/services/pregnancy-diet",
         "description": "Stage-by-stage nutrition for conception and pregnancy."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/pcos-fertility-nutrition.jpg"
   },
   {
     "slug": "sugar-diabetes-myths",
@@ -4339,7 +4346,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Learn how your body responds to sweets — with a personalised plan."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/sugar-diabetes-myths.jpg"
   },
   {
     "slug": "pms-nutrition-relief",
@@ -4426,7 +4434,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised plan for cravings, bloating and premenstrual symptoms."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/pms-nutrition-relief.jpg"
   },
   {
     "slug": "menopause-nutrition-guide",
@@ -4513,7 +4522,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised menopause nutrition plan from your blood results."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/menopause-nutrition-guide.jpg"
   },
   {
     "slug": "pregnancy-diet-essentials",
