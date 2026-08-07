@@ -1,5 +1,4 @@
 import type { StaticImageData } from "next/image";
-import defaultHeroImage from "@/public/image/MedicalWeightLoss1.jpg";
 import supportImage from "@/public/image/Servicesimg1.jpg";
 import ozempicHero from "@/public/image/glp1-ozempic-hero.jpg";
 import wegovyHero from "@/public/image/glp1-wegovy-hero.jpg";
@@ -9,7 +8,17 @@ import zepboundHero from "@/public/image/glp1-zepbound-hero.jpg";
 import saxendaHero from "@/public/image/glp1-saxenda-hero.jpg";
 import victozaHero from "@/public/image/glp1-victoza-hero.jpg";
 import trulicityHero from "@/public/image/glp1-trulicity-hero.jpg";
+import byettaHero from "@/public/image/glp1-byetta-hero.jpg";
+import bydureonHero from "@/public/image/glp1-bydureon-hero.jpg";
+import adlyxinHero from "@/public/image/glp1-adlyxin-hero.jpg";
 import foundayoHero from "@/public/image/glp1-foundayo-hero.jpg";
+import ozempicSupport from "@/public/image/glp1-ozempic-support.jpg";
+import wegovySupport from "@/public/image/glp1-wegovy-support.jpg";
+import rybelsusSupport from "@/public/image/glp1-rybelsus-support.jpg";
+import mounjaroSupport from "@/public/image/glp1-mounjaro-support.jpg";
+import zepboundSupport from "@/public/image/glp1-zepbound-support.jpg";
+import saxendaSupport from "@/public/image/glp1-saxenda-support.jpg";
+import foundayoSupport from "@/public/image/glp1-foundayo-support.jpg";
 
 type AccentTheme = {
   panel: string;
@@ -156,7 +165,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is an Ozempic meal plan the same for everyone?", answer: "No. Someone taking Ozempic for type 2 diabetes, someone with shift work and someone with strong nausea will need different food structure, timing and support." },
     ],
     heroImage: ozempicHero,
-    supportImage,
+    supportImage: ozempicSupport,
     accent: semaglutideTheme,
   },
   {
@@ -212,7 +221,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Wegovy nutrition support only for people trying to lose more weight?", answer: "No. It can also be useful for preserving nourishment, improving meal quality and building sustainable eating habits while you are on the medication." },
     ],
     heroImage: wegovyHero,
-    supportImage,
+    supportImage: wegovySupport,
     accent: semaglutideTheme,
   },
   {
@@ -268,7 +277,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I still eat regular Indian breakfasts on Rybelsus?", answer: "Usually yes. The right option depends on appetite, glucose goals and the time available after the dose instructions have been followed." },
     ],
     heroImage: rybelsusHero,
-    supportImage,
+    supportImage: rybelsusSupport,
     accent: oralTheme,
   },
   {
@@ -324,7 +333,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is a Mounjaro diet plan only for weight loss?", answer: "No. Many people also need support for comfort, blood sugar, strength, energy and making their intake more consistent." },
     ],
     heroImage: mounjaroHero,
-    supportImage,
+    supportImage: mounjaroSupport,
     accent: tirzepatideTheme,
   },
   {
@@ -380,7 +389,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Zepbound support the same as Wegovy support?", answer: "There are overlaps, but some people experience stronger appetite changes or have different treatment goals. The best plan depends on the medication, the person and their routine." },
     ],
     heroImage: zepboundHero,
-    supportImage,
+    supportImage: zepboundSupport,
     accent: tirzepatideTheme,
   },
   {
@@ -436,7 +445,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can Saxenda nutrition support help after the first few weeks?", answer: "Yes. Support is often most useful when it helps turn the early medication phase into a sustainable long-term routine." },
     ],
     heroImage: saxendaHero,
-    supportImage,
+    supportImage: saxendaSupport,
     accent: liraglutideTheme,
   },
   {
@@ -600,7 +609,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat Indian meals on Byetta?", answer: "Yes. The key is usually how the meal is balanced and timed rather than switching to unfamiliar food." },
       { question: "Who benefits most from Byetta nutrition support?", answer: "People with unpredictable schedules, side effects, blood-sugar concerns or confusion about meal timing often benefit the most." },
     ],
-    heroImage: defaultHeroImage,
+    heroImage: byettaHero,
     supportImage,
     accent: classicTheme,
   },
@@ -655,7 +664,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat normal home food on Bydureon BCise?", answer: "Yes. Most plans work best when normal home food is adjusted for balance, portions and routine rather than replaced completely." },
       { question: "Is Bydureon BCise support different from Byetta support?", answer: "There is overlap, but weekly dosing changes the day-to-day routine, so meal timing may feel less rigid for some people." },
     ],
-    heroImage: defaultHeroImage,
+    heroImage: bydureonHero,
     supportImage,
     accent: classicTheme,
   },
@@ -710,7 +719,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Can I eat home food on Adlyxin?", answer: "Yes. Most people do best with home food that is adjusted for balance, portions and timing rather than completely replaced." },
       { question: "Who benefits from Adlyxin dietitian support?", answer: "People with busy schedules, diabetes-related meal concerns, appetite changes or ongoing food confusion often benefit the most." },
     ],
-    heroImage: defaultHeroImage,
+    heroImage: adlyxinHero,
     supportImage,
     accent: classicTheme,
   },
@@ -767,7 +776,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Foundayo support only about weight loss?", answer: "No. It is also about nourishment, comfort, routine, food quality and building habits that remain useful over time." },
     ],
     heroImage: foundayoHero,
-    supportImage,
+    supportImage: foundayoSupport,
     accent: oralTheme,
   },
 ];
