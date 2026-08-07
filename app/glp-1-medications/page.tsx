@@ -7,16 +7,6 @@ import { glpMedications } from "./medicationData";
 
 const siteUrl = "https://dietfiniti.com";
 
-const keywords = [
-  "GLP-1 diet plan",
-  "what to eat on GLP-1 medication",
-  "dietitian for Ozempic users",
-  "Wegovy meal plan",
-  "Rybelsus diet plan",
-  "Mounjaro dietitian support",
-  "Zepbound nutrition support",
-];
-
 const faqs = [
   {
     question: "Can DietFiniti prescribe or sell GLP-1 medication?",
@@ -144,6 +134,19 @@ export default function GlpMedicationHubPage() {
             <p className="mt-6 text-lg leading-8 text-slate-700">
               If you are searching for a GLP-1 diet plan, what to eat on Ozempic or Wegovy, or a dietician for Mounjaro or Zepbound support, you are usually looking for help with daily routines—not another generic food list copied from the internet.
             </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {[
+                ["Protein", "Keep protein visible even when appetite drops."],
+                ["Comfort", "Build gentler meals for nausea, reflux or fullness."],
+                ["Hydration", "Prevent dehydration and constipation from low intake."],
+                ["Indian food", "Adapt real home meals instead of starting over."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-2xl border border-green-100 bg-white p-4 shadow-sm">
+                  <p className="text-sm font-bold uppercase tracking-wide text-green-700">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">{text}</p>
+                </div>
+              ))}
+            </div>
             <p className="mt-4 leading-8 text-slate-700">
               These pages are built for people who want nutrition support while taking medication under medical supervision. The aim is to make food easier, more comfortable and more nourishing while your prescribing decisions remain with your doctor.
             </p>
@@ -171,25 +174,38 @@ export default function GlpMedicationHubPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-start">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Why this content exists</p>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">What people usually need help with</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-                Direct answers for search, AI overviews and real client questions
+                When GLP-1 medication changes how eating feels
               </h2>
-              <div className="mt-5 space-y-4 text-lg leading-8 text-slate-700">
-                <p>
-                  People rarely search just for a medication name. They search for practical questions such as <em>what to eat on Wegovy</em>, <em>Ozempic diet plan</em>, <em>Rybelsus breakfast ideas</em> or <em>dietitian for Mounjaro users</em>. This hub and its subpages are designed to answer those questions clearly.
-                </p>
-                <p>
-                  Every medication page includes a quick answer, clear headings, visible FAQs, internal links and location context so the content is useful both to human readers and to search systems trying to understand who this service is for.
-                </p>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h3 className="text-lg font-bold text-slate-900">Common day-to-day problems</h3>
+                  <p className="mt-3 leading-7 text-slate-700">
+                    Many people feel too full for regular meals, forget protein, struggle with constipation or reflux, or become unsure how to eat normally at work, while travelling or at family events.
+                  </p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h3 className="text-lg font-bold text-slate-900">Where a dietitian can help</h3>
+                  <p className="mt-3 leading-7 text-slate-700">
+                    The goal is to make meals simpler and more nourishing with realistic Indian food, better hydration, easier side-effect management and a routine that still works in real life.
+                  </p>
+                </article>
               </div>
             </div>
             <aside className="rounded-3xl border border-green-100 bg-green-50 p-7">
-              <h3 className="text-xl font-bold text-slate-900">Keyword themes targeted on this hub</h3>
+              <h3 className="text-xl font-bold text-slate-900">Support topics covered on these pages</h3>
               <ul className="mt-5 grid gap-3 text-slate-700 sm:grid-cols-2">
-                {keywords.map((keyword) => (
-                  <li key={keyword} className="rounded-xl bg-white px-4 py-3 shadow-sm ring-1 ring-green-100">
-                    {keyword}
+                {[
+                  "What to eat when appetite is low",
+                  "Protein planning",
+                  "Hydration and constipation support",
+                  "Nausea and reflux-friendly meals",
+                  "Meal timing around medication routines",
+                  "Vegetarian and Indian home-food options",
+                ].map((topic) => (
+                  <li key={topic} className="rounded-xl bg-white px-4 py-3 shadow-sm ring-1 ring-green-100">
+                    {topic}
                   </li>
                 ))}
               </ul>
@@ -221,8 +237,17 @@ export default function GlpMedicationHubPage() {
                   </span>
                 </div>
                 <p className="mt-4 leading-7 text-slate-600">{item.metaDescription}</p>
-                <div className="mt-5 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">
-                  <strong>Primary keyword:</strong> {item.primaryKeyword}
+                <div className="mt-5 grid gap-3">
+                  <div className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">
+                    <strong>Best for:</strong> {item.usedFor}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {item.nutritionPriorities.slice(0, 2).map((priority) => (
+                      <span key={priority.title} className="rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-semibold text-green-800">
+                        {priority.title}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <Link href={`/glp-1-medications/${item.slug}`} className="mt-6 inline-flex items-center gap-2 font-bold text-green-700 transition hover:gap-3">
                   Explore {item.brand} support <ArrowRight className="h-4 w-4" />
@@ -281,8 +306,8 @@ export default function GlpMedicationHubPage() {
       <section className="bg-[#262262] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-300">Common searches answered</p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Questions people ask before they contact a dietitian</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-300">Before you book</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Questions people usually ask first</h2>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[

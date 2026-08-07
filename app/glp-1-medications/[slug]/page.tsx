@@ -123,9 +123,24 @@ export default async function MedicationPage({ params }: PageProps) {
             <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 p-5 text-base leading-7 text-slate-100 backdrop-blur-sm">
               <strong>Quick answer:</strong> {medication.quickAnswer}
             </div>
-            <div className="mt-6 space-y-4 text-lg leading-8 text-slate-100/95">
-              {medication.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {[
+                "Protein",
+                "Hydration",
+                medication.route.includes("oral") ? "Meal timing" : "Portion comfort",
+                "Indian food routines",
+              ].map((label) => (
+                <span key={label} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-slate-100">
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="mt-6 grid gap-4 lg:grid-cols-2">
+              {medication.intro.map((paragraph, index) => (
+                <article key={paragraph} className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
+                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-green-200">{index === 0 ? "Why people search this" : "How DietFiniti helps"}</p>
+                  <p className="mt-3 text-base leading-7 text-slate-100/95">{paragraph}</p>
+                </article>
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -153,17 +168,23 @@ export default async function MedicationPage({ params }: PageProps) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-start">
             <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Targeted search intent</p>
+              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>What this page helps you with</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-                Keywords this page answers: {medication.primaryKeyword} and related questions
+                Planning meals while taking {medication.brand}
               </h2>
-              <div className="mt-5 space-y-4 text-lg leading-8 text-slate-700">
-                <p>
-                  This page is written to answer search queries such as <strong>{medication.primaryKeyword}</strong>, {medication.secondaryKeywords.join(", ")}, and broader questions about food while taking {medication.brand}.
-                </p>
-                <p>
-                  It is also designed for AI summaries and answer engines by giving direct responses near the top of the page, visible FAQs later on and location context for DietFiniti’s consultations.
-                </p>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h3 className="text-lg font-bold text-slate-900">Common concerns people have</h3>
+                  <p className="mt-3 leading-7 text-slate-700">
+                    This guide is for the day-to-day questions people usually have on {medication.brand}: what to eat when appetite drops, how to keep meals balanced, and how to make protein, fluids and digestion easier to manage.
+                  </p>
+                </article>
+                <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h3 className="text-lg font-bold text-slate-900">How to use this guide</h3>
+                  <p className="mt-3 leading-7 text-slate-700">
+                    Use this page to understand food priorities, practical meal ideas and when to contact your prescriber. Medication changes, symptom escalation and dosing decisions still belong with your clinician.
+                  </p>
+                </article>
               </div>
             </div>
             <aside className={`rounded-3xl border p-7 ${medication.accent.subtle} ${medication.accent.border}`}>
@@ -208,7 +229,7 @@ export default async function MedicationPage({ params }: PageProps) {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
               How DietFiniti helps people taking {medication.brand}
             </h2>
-            <div className="mt-6 grid gap-5">
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
               {medication.dietitianSupport.map((item) => (
                 <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                   <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
