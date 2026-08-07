@@ -48,27 +48,30 @@ type MenuSection = {
 const servicesSections: MenuSection[] = [
   {
     title: "Start here",
-    description: "Choose a starting point if you are comparing services or consultation format.",
+    description: "Helpful first steps if you are choosing a service or consultation format.",
     items: [
       { name: "All Services", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
-      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
+      { name: "Contact DietFiniti", path: "/contact", icon: PhoneCall },
     ],
   },
   {
-    title: "Weight & body goals",
-    description: "Personalised nutrition for body-composition and weight-management goals.",
+    title: "Core programmes",
+    description: "Main nutrition programmes for weight, lifestyle and performance goals.",
     items: [
       { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
       { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
       { name: "Weight Gain Program", path: "/services/weight-gain", icon: Dumbbell },
+      { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
+      { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
+      { name: "Sports Nutrition", path: "/services/sports-nutrition", icon: Trophy },
     ],
   },
   {
     title: "Condition support",
-    description: "Food guidance that works alongside medical care and routine follow-up.",
+    description: "Practical food guidance that works alongside routine medical care.",
     items: [
-      { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: Stethoscope },
+      { name: "Condition Nutrition Hub", path: "/services/condition-nutrition", icon: Stethoscope },
       { name: "PCOS Nutrition", path: "/services/pcos-nutrition", icon: Sparkles },
       { name: "Thyroid Nutrition", path: "/services/thyroid-nutrition", icon: HeartPulse },
       { name: "Diabetes Nutrition", path: "/services/diabetes-nutrition", icon: Activity },
@@ -77,32 +80,30 @@ const servicesSections: MenuSection[] = [
     ],
   },
   {
-    title: "Family & specialist support",
-    description: "Nutrition support for life stage, performance and workplace needs.",
+    title: "Family & workplace",
+    description: "Support for children, families and workplace wellness programmes.",
     items: [
-      { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
-      { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
-      { name: "Sports Nutrition", path: "/services/sports-nutrition", icon: Trophy },
       { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
       { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Briefcase },
     ],
   },
   {
-    title: "GLP-1 support: commonly asked pages",
-    description: "Most-visited medication pages for people looking for practical diet support.",
+    title: "GLP-1 support",
+    description: "Medication-specific diet support pages for people already using GLP-1 treatment.",
     items: [
+      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
       { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
       { name: "Wegovy", path: "/glp-1-medications/wegovy", icon: Pill },
       { name: "Rybelsus", path: "/glp-1-medications/rybelsus", icon: Pill },
       { name: "Mounjaro", path: "/glp-1-medications/mounjaro", icon: Pill },
       { name: "Zepbound", path: "/glp-1-medications/zepbound", icon: Pill },
-      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
     ],
   },
   {
-    title: "GLP-1 support: complete medication list",
-    description: "Additional medication pages available in the GLP-1 section.",
+    title: "More GLP-1 pages",
+    description: "Additional medication pages available within the GLP-1 section.",
     items: [
+      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
       { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
       { name: "Trulicity", path: "/glp-1-medications/trulicity", icon: Pill },
       { name: "Byetta", path: "/glp-1-medications/byetta", icon: Pill },
@@ -113,25 +114,10 @@ const servicesSections: MenuSection[] = [
   },
 ];
 
-const resourceLinks: MenuLink[] = [
-  {
-    name: "Recipes",
-    path: "/recipe",
-    icon: ChefHat,
-    description: "Healthy Indian recipes and practical meal ideas.",
-  },
-  {
-    name: "BMI Calculator",
-    path: "/bmi-calculator",
-    icon: Activity,
-    description: "A simple tool for weight and health context.",
-  },
-  {
-    name: "Testimonials",
-    path: "/testimonials",
-    icon: Star,
-    description: "Client experiences and feedback.",
-  },
+const resourcesLinks: MenuLink[] = [
+  { name: "Recipes", path: "/recipe", icon: ChefHat, description: "Healthy Indian recipes and meal ideas." },
+  { name: "BMI Calculator", path: "/bmi-calculator", icon: Activity, description: "A simple starting point for weight and health context." },
+  { name: "Testimonials", path: "/testimonials", icon: Star, description: "Client experiences and feedback." },
 ];
 
 const primaryLinks: MenuLink[] = [
@@ -146,23 +132,17 @@ type OpenDesktopMenu = "services" | "resources" | null;
 export default function Header() {
   const [openDesktopMenu, setOpenDesktopMenu] = useState<OpenDesktopMenu>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
-  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const desktopMenuRef = useRef<HTMLDivElement>(null);
-
-  const closeDesktopMenus = () => setOpenDesktopMenu(null);
 
   const closeAllMenus = () => {
     setOpenDesktopMenu(null);
     setMobileMenuOpen(false);
-    setMobileServicesOpen(false);
-    setMobileResourcesOpen(false);
   };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node)) {
-        closeDesktopMenus();
+        setOpenDesktopMenu(null);
       }
     };
 
@@ -191,7 +171,7 @@ export default function Header() {
   };
 
   const desktopLinkClass =
-    "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition duration-300 hover:text-green-700";
+    "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-green-700";
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
@@ -207,7 +187,7 @@ export default function Header() {
               {primaryLinks.slice(0, 2).map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={closeDesktopMenus}>
+                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
                     <Icon className="mr-1.5 h-4 w-4" />
                     {item.name}
                   </Link>
@@ -215,24 +195,33 @@ export default function Header() {
               })}
 
               <div className="relative">
-                <div className="flex items-center">
-                  <Link href="/services" className={desktopLinkClass} onClick={closeDesktopMenus}>
-                    <Utensils className="mr-1.5 h-4 w-4" />
-                    Services
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => toggleDesktopMenu("services")}
-                    className="rounded-lg p-2 text-gray-500 transition hover:text-green-700"
-                    aria-expanded={openDesktopMenu === "services"}
-                    aria-label="Toggle services menu"
-                  >
-                    <ChevronDown className={`h-4 w-4 transition-transform ${openDesktopMenu === "services" ? "rotate-180" : ""}`} />
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => toggleDesktopMenu("services")}
+                  className={`${desktopLinkClass} bg-transparent`}
+                  aria-expanded={openDesktopMenu === "services"}
+                  aria-label="Toggle services menu"
+                >
+                  <Utensils className="mr-1.5 h-4 w-4" />
+                  Services
+                  <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openDesktopMenu === "services" ? "rotate-180" : ""}`} />
+                </button>
 
                 {openDesktopMenu === "services" && (
-                  <div className="absolute left-1/2 top-full mt-4 max-h-[72vh] w-[1080px] -translate-x-1/2 overflow-y-auto rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+                  <div className="absolute left-1/2 top-full mt-4 w-[1120px] max-w-[calc(100vw-3rem)] -translate-x-1/2 rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+                    <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
+                        <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore every DietFiniti service in one place</h2>
+                        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                          Browse programmes by goal, condition, life stage and GLP-1 nutrition support. Every page listed below is live and available from this menu.
+                        </p>
+                      </div>
+                      <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
+                        View all services
+                      </Link>
+                    </div>
+
                     <div className="grid gap-5 xl:grid-cols-3">
                       {servicesSections.map((section) => (
                         <section key={section.title} className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
@@ -263,7 +252,7 @@ export default function Header() {
                 )}
               </div>
 
-              <Link href="/blog" className={desktopLinkClass} onClick={closeDesktopMenus}>
+              <Link href="/blog" className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
                 <BookOpen className="mr-1.5 h-4 w-4" />
                 Blog
               </Link>
@@ -272,7 +261,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => toggleDesktopMenu("resources")}
-                  className={desktopLinkClass}
+                  className={`${desktopLinkClass} bg-transparent`}
                   aria-expanded={openDesktopMenu === "resources"}
                   aria-label="Toggle resources menu"
                 >
@@ -284,7 +273,7 @@ export default function Header() {
                 {openDesktopMenu === "resources" && (
                   <div className="absolute right-0 top-full mt-4 w-[380px] rounded-3xl border border-green-100 bg-white p-5 shadow-2xl">
                     <div className="grid gap-3">
-                      {resourceLinks.map((item) => {
+                      {resourcesLinks.map((item) => {
                         const Icon = item.icon;
                         return (
                           <Link
@@ -310,10 +299,15 @@ export default function Header() {
                 )}
               </div>
 
-              <Link href="/contact" className={desktopLinkClass} onClick={closeDesktopMenus}>
-                <PhoneCall className="mr-1.5 h-4 w-4" />
-                Contact
-              </Link>
+              {primaryLinks.slice(2).map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={() => setOpenDesktopMenu(null)}>
+                    <Icon className="mr-1.5 h-4 w-4" />
+                    {item.name}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
 
@@ -354,13 +348,13 @@ export default function Header() {
               </button>
             </div>
             <div className="mt-4 rounded-2xl bg-green-50 p-3 ring-1 ring-green-100">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">DietFiniti</p>
-              <p className="mt-1 text-sm leading-6 text-slate-700">Personalised nutrition support in Mumbai, Thane and online across India.</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Menu</p>
+              <p className="mt-1 text-sm leading-6 text-slate-700">Browse services, GLP-1 pages, recipes and other key sections of the website.</p>
             </div>
           </div>
 
-          <div className="px-4 pb-28 pt-4">
-            <nav className="space-y-2">
+          <div className="space-y-5 px-4 pb-28 pt-4">
+            <section className="grid gap-2">
               {primaryLinks.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -377,102 +371,61 @@ export default function Header() {
                   </Link>
                 );
               })}
+            </section>
 
-              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-                <button
-                  type="button"
-                  onClick={() => setMobileServicesOpen((open) => !open)}
-                  className="flex w-full items-center justify-between px-4 py-4 text-left"
-                  aria-expanded={mobileServicesOpen}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                      <Utensils className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">Services</p>
-                      <p className="text-xs text-slate-500">All programmes and GLP-1 pages</p>
-                    </div>
-                  </div>
-                  <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                </button>
-
-                {mobileServicesOpen && (
-                  <div className="border-t border-slate-200 bg-slate-50 p-3">
-                    <div className="space-y-3">
-                      {servicesSections.map((section) => (
-                        <section key={section.title} className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
-                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">{section.title}</p>
-                          <p className="mt-1 text-xs leading-5 text-slate-500">{section.description}</p>
-                          <div className="mt-3 grid gap-2">
-                            {section.items.map((item) => {
-                              const Icon = item.icon;
-                              return (
-                                <Link
-                                  key={item.path}
-                                  href={item.path}
-                                  onClick={closeAllMenus}
-                                  className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-green-50 hover:text-green-700"
-                                >
-                                  <Icon className="h-4 w-4 text-green-700" />
-                                  <span>{item.name}</span>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </section>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-                <button
-                  type="button"
-                  onClick={() => setMobileResourcesOpen((open) => !open)}
-                  className="flex w-full items-center justify-between px-4 py-4 text-left"
-                  aria-expanded={mobileResourcesOpen}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                      <BookOpen className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">Resources</p>
-                      <p className="text-xs text-slate-500">Recipes, BMI calculator and testimonials</p>
-                    </div>
-                  </div>
-                  <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${mobileResourcesOpen ? "rotate-180" : ""}`} />
-                </button>
-
-                {mobileResourcesOpen && (
-                  <div className="border-t border-slate-200 bg-slate-50 p-3">
-                    <div className="grid gap-2">
-                      {resourceLinks.map((item) => {
+            <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Services</p>
+              <p className="mt-1 text-sm leading-6 text-slate-600">Every service page and GLP-1 support page is listed below for easier browsing on mobile and tablet.</p>
+              <div className="mt-4 space-y-4">
+                {servicesSections.map((section) => (
+                  <div key={section.title} className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">{section.title}</p>
+                    <p className="mt-1 text-xs leading-5 text-slate-500">{section.description}</p>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                      {section.items.map((item) => {
                         const Icon = item.icon;
                         return (
                           <Link
                             key={item.path}
                             href={item.path}
                             onClick={closeAllMenus}
-                            className="flex items-start gap-3 rounded-2xl bg-white px-4 py-3 ring-1 ring-slate-200 transition hover:bg-green-50"
+                            className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-medium text-slate-700 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700"
                           >
-                            <Icon className="mt-0.5 h-4 w-4 text-green-700" />
-                            <div>
-                              <p className="text-sm font-semibold text-slate-900">{item.name}</p>
-                              {item.description ? <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p> : null}
-                            </div>
+                            <Icon className="h-4 w-4 text-green-700" />
+                            <span>{item.name}</span>
                           </Link>
                         );
                       })}
                     </div>
                   </div>
-                )}
+                ))}
               </div>
-            </nav>
+            </section>
 
-            <div className="mt-6">
+            <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Resources</p>
+              <div className="mt-3 grid gap-2">
+                {resourcesLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      onClick={closeAllMenus}
+                      className="flex items-start gap-3 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200 transition hover:bg-green-50"
+                    >
+                      <Icon className="mt-0.5 h-4 w-4 text-green-700" />
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                        {item.description ? <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p> : null}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+
+            <div>
               <a href="tel:+919321057899" className="block rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
                 Call Now: +91 93210 57899
               </a>
