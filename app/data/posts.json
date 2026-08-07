@@ -6390,7 +6390,8 @@
         "path": "/services/sports-nutrition",
         "description": "Vegan performance nutrition for active lifestyles."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/vegan-diet-india-guide.jpg"
   },
   {
     "slug": "mediterranean-diet-indian-style",
@@ -6477,7 +6478,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Adapt the pattern to your kitchen, budget and health goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/mediterranean-diet-indian-style.jpg"
   },
   {
     "slug": "millets-nutrition-guide",
@@ -6564,7 +6566,8 @@
         "path": "/recipe",
         "description": "Ragi, jowar and bajra recipes across the 500+ collection."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/millets-nutrition-guide.jpg"
   },
   {
     "slug": "dairy-and-ghee-myths",
@@ -6651,7 +6654,8 @@
         "path": "/services/weight-loss",
         "description": "Dairy and ghee portions that fit your calorie targets."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/dairy-and-ghee-myths.jpg"
   },
   {
     "slug": "gluten-free-myths",
@@ -6738,7 +6742,8 @@
         "path": "/recipe",
         "description": "Naturally gluten-free Indian recipes from the 500+ collection."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/gluten-free-myths.jpg"
   },
   {
     "slug": "low-carb-diet-explained",
@@ -6825,7 +6830,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Is low-carb right for you? Get a structured answer and plan."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/low-carb-diet-explained.jpg"
   },
   {
     "slug": "sleep-and-weight-loss",
@@ -6912,7 +6918,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Fix the levers — sleep, stress, food — that hold your weight back."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/sleep-and-weight-loss.jpg"
   },
   {
     "slug": "stress-eating-guide",
@@ -6999,7 +7006,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personal plan for cravings, stress and sustainable change."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/stress-eating-guide.jpg"
   },
   {
     "slug": "gut-health-probiotics",
@@ -7091,7 +7099,8 @@
         "path": "/services/gut-health-nutrition",
         "description": "Practical gut-friendly eating, personalised."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/gut-health-probiotics.jpg"
   },
   {
     "slug": "detox-diet-myths",
@@ -7178,7 +7187,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Replace cleanse cycles with a plan you can maintain."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/detox-diet-myths.jpg"
   },
   {
     "slug": "food-and-mood",
