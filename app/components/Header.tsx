@@ -57,7 +57,7 @@ const mainLinks: MenuLink[] = [
 const servicesSections: MenuSection[] = [
   {
     title: "Get Started",
-    description: "Start here if you want an overview, online consultation or direct help choosing the right service.",
+    description: "Start here if you want an overview, an online consultation or help choosing the right service.",
     items: [
       { name: "Services Overview", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
@@ -66,7 +66,7 @@ const servicesSections: MenuSection[] = [
   },
   {
     title: "Popular Programmes",
-    description: "Personalised nutrition plans for weight goals, performance and major life stages.",
+    description: "Personalised plans for weight goals, performance and major life stages.",
     items: [
       { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
       { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
@@ -199,8 +199,6 @@ export default function Header() {
   const desktopLinkClass =
     "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-green-700";
 
-  const desktopTop = "top-[82px]";
-
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6">
@@ -223,7 +221,10 @@ export default function Header() {
 
             <button
               type="button"
-              onClick={() => setOpenMenu((current) => (current === "services" ? null : "services"))}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setOpenMenu((current) => (current === "services" ? null : "services"));
+              }}
               className={`${desktopLinkClass} bg-transparent`}
               aria-expanded={openMenu === "services"}
               aria-label="Toggle services menu"
@@ -240,7 +241,10 @@ export default function Header() {
 
             <button
               type="button"
-              onClick={() => setOpenMenu((current) => (current === "resources" ? null : "resources"))}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setOpenMenu((current) => (current === "resources" ? null : "resources"));
+              }}
               className={`${desktopLinkClass} bg-transparent`}
               aria-expanded={openMenu === "resources"}
               aria-label="Toggle resources menu"
@@ -274,7 +278,10 @@ export default function Header() {
             </a>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen((open) => !open)}
+              onClick={() => {
+                setOpenMenu(null);
+                setMobileMenuOpen((open) => !open);
+              }}
               className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700 transition hover:bg-green-100"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle menu"
@@ -286,67 +293,71 @@ export default function Header() {
       </div>
 
       {openMenu && (
-        <>
+        <div className="fixed inset-0 z-[60] hidden lg:block">
           <button
             type="button"
             aria-label="Close menu overlay"
-            className="fixed inset-0 z-[55] hidden bg-green-100/70 lg:block"
+            className="absolute inset-0 bg-green-100/70"
             onClick={() => setOpenMenu(null)}
           />
-          {openMenu === "services" ? (
-            <div className={`fixed left-1/2 z-[60] hidden w-[min(1120px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-6 shadow-2xl lg:block ${desktopTop}`}>
-              <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
-                  <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore DietFiniti services in one place</h2>
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                    Browse services by goal, health condition, life stage and GLP-1 medication support. Every page listed below is live and available from this menu.
-                  </p>
-                </div>
-                <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
-                  View all services
-                </Link>
-              </div>
-
-              <div className="grid gap-5 xl:grid-cols-3">
-                {servicesSections.map((section) => (
-                  <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className={`fixed left-1/2 z-[60] hidden w-[min(380px,calc(100vw-32px))] max-h-[calc(100dvh-104px)] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-3xl border border-green-100 bg-white p-5 shadow-2xl lg:block ${desktopTop}`}>
-              <div className="grid gap-3">
-                {resourcesLinks.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.path}
-                      href={item.path}
-                      onClick={closeAllMenus}
-                      className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700 hover:ring-green-100"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-700 ring-1 ring-green-100">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <div>
-                          <p className="font-semibold text-slate-900">{item.name}</p>
-                          {item.description ? <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p> : null}
-                        </div>
-                      </div>
+          <div className="absolute inset-x-0 top-[72px] bottom-0 overflow-y-auto px-4 py-4" style={{ WebkitOverflowScrolling: "touch" }}>
+            <div className="mx-auto max-w-7xl">
+              {openMenu === "services" ? (
+                <div className="rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+                  <div className="mb-5 flex items-start justify-between gap-6 border-b border-slate-200 pb-5">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.24em] text-green-700">Services menu</p>
+                      <h2 className="mt-2 text-2xl font-bold text-[#262262]">Explore DietFiniti services in one place</h2>
+                      <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                        Browse services by goal, health condition, life stage and GLP-1 medication support. Every page listed below is live and available from this menu.
+                      </p>
+                    </div>
+                    <Link href="/services" onClick={closeAllMenus} className="shrink-0 rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
+                      View all services
                     </Link>
-                  );
-                })}
-              </div>
+                  </div>
+
+                  <div className="grid gap-5 xl:grid-cols-3">
+                    {servicesSections.map((section) => (
+                      <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="ml-auto w-full max-w-[380px] rounded-3xl border border-green-100 bg-white p-5 shadow-2xl">
+                  <div className="grid gap-3">
+                    {resourcesLinks.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          href={item.path}
+                          onClick={closeAllMenus}
+                          className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700 hover:ring-green-100"
+                        >
+                          <div className="flex items-start gap-3">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-700 ring-1 ring-green-100">
+                              <Icon className="h-4 w-4" />
+                            </span>
+                            <div>
+                              <p className="font-semibold text-slate-900">{item.name}</p>
+                              {item.description ? <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p> : null}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </>
+          </div>
+        </div>
       )}
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[70] h-[100dvh] overflow-y-auto overscroll-contain bg-white lg:hidden">
-          <div className="sticky top-0 z-10 border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
+        <div className="fixed inset-0 z-[70] flex h-[100dvh] flex-col bg-white lg:hidden">
+          <div className="flex-none border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center" onClick={closeAllMenus}>
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
@@ -362,63 +373,65 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="space-y-5 px-4 pb-28 pt-4">
-            <section className="grid grid-cols-2 gap-2">
-              {mainLinks.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    onClick={closeAllMenus}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
-                  >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                      <Icon className="h-4 w-4" />
-                    </span>
-                    <span>{item.name}</span>
-                  </Link>
-                );
-              })}
-            </section>
-
-            <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Services</p>
-              <p className="mt-1 text-sm leading-6 text-slate-600">All services and GLP-1 medication pages are visible below for phone, tablet portrait and tablet landscape layouts.</p>
-              <div className="mt-4 space-y-4">
-                {servicesSections.map((section) => (
-                  <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
-                ))}
-              </div>
-            </section>
-
-            <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Resources</p>
-              <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                {resourcesLinks.map((item) => {
+          <div className="flex-1 overflow-y-auto overscroll-contain px-4 pb-28 pt-4" style={{ WebkitOverflowScrolling: "touch" }}>
+            <div className="space-y-5">
+              <section className="grid grid-cols-2 gap-2">
+                {mainLinks.map((item) => {
                   const Icon = item.icon;
                   return (
                     <Link
                       key={item.path}
                       href={item.path}
                       onClick={closeAllMenus}
-                      className="flex items-start gap-3 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200 transition hover:bg-green-50"
+                      className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
                     >
-                      <Icon className="mt-0.5 h-4 w-4 text-green-700" />
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">{item.name}</p>
-                        {item.description ? <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p> : null}
-                      </div>
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                        <Icon className="h-4 w-4" />
+                      </span>
+                      <span>{item.name}</span>
                     </Link>
                   );
                 })}
-              </div>
-            </section>
+              </section>
 
-            <div>
-              <a href="tel:+919321057899" className="block rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
-                Call Now: +91 93210 57899
-              </a>
+              <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Services</p>
+                <p className="mt-1 text-sm leading-6 text-slate-600">All services and GLP-1 medication pages are visible below for phone, tablet portrait and tablet landscape.</p>
+                <div className="mt-4 space-y-4">
+                  {servicesSections.map((section) => (
+                    <SectionCard key={section.title} section={section} onNavigate={closeAllMenus} />
+                  ))}
+                </div>
+              </section>
+
+              <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Resources</p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {resourcesLinks.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.path}
+                        href={item.path}
+                        onClick={closeAllMenus}
+                        className="flex items-start gap-3 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200 transition hover:bg-green-50"
+                      >
+                        <Icon className="mt-0.5 h-4 w-4 text-green-700" />
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                          {item.description ? <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p> : null}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+
+              <div>
+                <a href="tel:+919321057899" className="block rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
+                  Call Now: +91 93210 57899
+                </a>
+              </div>
             </div>
           </div>
         </div>
