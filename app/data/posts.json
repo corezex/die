@@ -5510,7 +5510,8 @@
         "path": "/services/kids-nutrition",
         "description": "Tiffin ideas children actually eat."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-lunch-box-ideas.jpg"
   },
   {
     "slug": "family-weekly-meal-planning",
@@ -5597,7 +5598,8 @@
         "path": "/services/weight-loss",
         "description": "Family-friendly weekly plans that keep everyone healthy, together."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/family-weekly-meal-planning.jpg"
   },
   {
     "slug": "senior-nutrition-guide",
@@ -5684,7 +5686,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Nutrition support that respects chronic conditions in later life."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/senior-nutrition-guide.jpg"
   },
   {
     "slug": "pre-workout-post-workout-nutrition",
@@ -5771,7 +5774,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal pre- and post-workout fuel plans for your routine."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/pre-workout-post-workout-nutrition.jpg"
   },
   {
     "slug": "sports-hydration-guide",
@@ -5858,7 +5862,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal training-day hydration strategies."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/sports-hydration-guide.jpg"
   },
   {
     "slug": "vegetarian-sports-nutrition",
@@ -5945,7 +5950,8 @@
         "path": "/services/weight-gain",
         "description": "Energy-dense vegetarian plans for athletes trying to gain."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/vegetarian-sports-nutrition.jpg"
   },
   {
     "slug": "recovery-nutrition",
@@ -6032,7 +6038,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Daily protein and recovery guidance for your sport."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/recovery-nutrition.jpg"
   },
   {
     "slug": "protein-timing-myths",
@@ -6119,7 +6126,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Your personal protein target and how to hit it with real food."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/protein-timing-myths.jpg"
   },
   {
     "slug": "running-nutrition-guide",
@@ -6206,7 +6214,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personal runner's diet — carbs, iron and hydration."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/running-nutrition-guide.jpg"
   },
   {
     "slug": "plant-based-diet-guide",
@@ -6293,7 +6302,8 @@
         "path": "/services/weight-loss",
         "description": "Plant-forward weight-loss patterns built on dal, millets and vegetables."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/plant-based-diet-guide.jpg"
   },
   {
     "slug": "vegan-diet-india-guide",
