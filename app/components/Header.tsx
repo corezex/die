@@ -22,6 +22,7 @@ import {
   Scale,
   Sparkles,
   Star,
+  Stethoscope,
   Trophy,
   Users,
   Utensils,
@@ -44,18 +45,19 @@ type MenuSection = {
   items: MenuLink[];
 };
 
-const serviceSections: MenuSection[] = [
+const servicesSections: MenuSection[] = [
   {
     title: "Start here",
-    description: "Use these first if you are choosing a programme or consultation format.",
+    description: "Choose a starting point if you are comparing services or consultation format.",
     items: [
       { name: "All Services", path: "/services", icon: Utensils },
       { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
+      { name: "GLP-1 Nutrition Hub", path: "/glp-1-medications", icon: Pill },
     ],
   },
   {
     title: "Weight & body goals",
-    description: "Personalised plans for fat loss, weight gain and medically informed support.",
+    description: "Personalised nutrition for body-composition and weight-management goals.",
     items: [
       { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
       { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
@@ -64,9 +66,9 @@ const serviceSections: MenuSection[] = [
   },
   {
     title: "Condition support",
-    description: "Condition-led nutrition pages that work alongside your doctor’s care.",
+    description: "Food guidance that works alongside medical care and routine follow-up.",
     items: [
-      { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: HeartPulse },
+      { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: Stethoscope },
       { name: "PCOS Nutrition", path: "/services/pcos-nutrition", icon: Sparkles },
       { name: "Thyroid Nutrition", path: "/services/thyroid-nutrition", icon: HeartPulse },
       { name: "Diabetes Nutrition", path: "/services/diabetes-nutrition", icon: Activity },
@@ -76,13 +78,37 @@ const serviceSections: MenuSection[] = [
   },
   {
     title: "Family & specialist support",
-    description: "Life-stage, performance and workplace nutrition guidance.",
+    description: "Nutrition support for life stage, performance and workplace needs.",
     items: [
       { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
       { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
       { name: "Sports Nutrition", path: "/services/sports-nutrition", icon: Trophy },
       { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
       { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Briefcase },
+    ],
+  },
+  {
+    title: "GLP-1 support: commonly asked pages",
+    description: "Most-visited medication pages for people looking for practical diet support.",
+    items: [
+      { name: "Ozempic", path: "/glp-1-medications/ozempic", icon: Pill },
+      { name: "Wegovy", path: "/glp-1-medications/wegovy", icon: Pill },
+      { name: "Rybelsus", path: "/glp-1-medications/rybelsus", icon: Pill },
+      { name: "Mounjaro", path: "/glp-1-medications/mounjaro", icon: Pill },
+      { name: "Zepbound", path: "/glp-1-medications/zepbound", icon: Pill },
+      { name: "Saxenda", path: "/glp-1-medications/saxenda", icon: Pill },
+    ],
+  },
+  {
+    title: "GLP-1 support: complete medication list",
+    description: "Additional medication pages available in the GLP-1 section.",
+    items: [
+      { name: "Victoza", path: "/glp-1-medications/victoza", icon: Pill },
+      { name: "Trulicity", path: "/glp-1-medications/trulicity", icon: Pill },
+      { name: "Byetta", path: "/glp-1-medications/byetta", icon: Pill },
+      { name: "Bydureon BCise", path: "/glp-1-medications/bydureon-bcise", icon: Pill },
+      { name: "Adlyxin", path: "/glp-1-medications/adlyxin", icon: Pill },
+      { name: "Foundayo", path: "/glp-1-medications/foundayo", icon: Pill },
     ],
   },
 ];
@@ -92,13 +118,13 @@ const resourceLinks: MenuLink[] = [
     name: "Recipes",
     path: "/recipe",
     icon: ChefHat,
-    description: "Healthy Indian recipes and meal ideas.",
+    description: "Healthy Indian recipes and practical meal ideas.",
   },
   {
     name: "BMI Calculator",
     path: "/bmi-calculator",
     icon: Activity,
-    description: "A simple starting point for weight and health context.",
+    description: "A simple tool for weight and health context.",
   },
   {
     name: "Testimonials",
@@ -111,6 +137,8 @@ const resourceLinks: MenuLink[] = [
 const primaryLinks: MenuLink[] = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: Users },
+  { name: "Blog", path: "/blog", icon: BookOpen },
+  { name: "Contact", path: "/contact", icon: PhoneCall },
 ];
 
 type OpenDesktopMenu = "services" | "resources" | null;
@@ -120,8 +148,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
-
   const desktopMenuRef = useRef<HTMLDivElement>(null);
+
+  const closeDesktopMenus = () => setOpenDesktopMenu(null);
 
   const closeAllMenus = () => {
     setOpenDesktopMenu(null);
@@ -133,7 +162,7 @@ export default function Header() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node)) {
-        setOpenDesktopMenu(null);
+        closeDesktopMenus();
       }
     };
 
@@ -162,17 +191,13 @@ export default function Header() {
   };
 
   const desktopLinkClass =
-    "text-gray-700 hover:text-green-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300 flex items-center group";
+    "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition duration-300 hover:text-green-700";
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between gap-3 lg:h-[72px]">
-          <Link
-            href="/"
-            className="flex shrink-0 items-center text-xl font-bold text-green-700 transition hover:text-green-800"
-            onClick={closeAllMenus}
-          >
+          <Link href="/" className="flex shrink-0 items-center text-green-700 transition hover:text-green-800" onClick={closeAllMenus}>
             <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
             <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
           </Link>
@@ -182,8 +207,8 @@ export default function Header() {
               {primaryLinks.slice(0, 2).map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Link key={item.name} href={item.path} className={desktopLinkClass}>
-                    <Icon className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <Link key={item.path} href={item.path} className={desktopLinkClass} onClick={closeDesktopMenus}>
+                    <Icon className="mr-1.5 h-4 w-4" />
                     {item.name}
                   </Link>
                 );
@@ -191,8 +216,8 @@ export default function Header() {
 
               <div className="relative">
                 <div className="flex items-center">
-                  <Link href="/services" className={desktopLinkClass}>
-                    <Utensils className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <Link href="/services" className={desktopLinkClass} onClick={closeDesktopMenus}>
+                    <Utensils className="mr-1.5 h-4 w-4" />
                     Services
                   </Link>
                   <button
@@ -207,13 +232,13 @@ export default function Header() {
                 </div>
 
                 {openDesktopMenu === "services" && (
-                  <div className="absolute left-0 top-full mt-4 w-[920px] rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
-                    <div className="grid gap-5 xl:grid-cols-2">
-                      {serviceSections.map((section) => (
+                  <div className="absolute left-1/2 top-full mt-4 max-h-[72vh] w-[1080px] -translate-x-1/2 overflow-y-auto rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+                    <div className="grid gap-5 xl:grid-cols-3">
+                      {servicesSections.map((section) => (
                         <section key={section.title} className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
                           <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
                           <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
-                          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                          <div className="mt-4 grid gap-2">
                             {section.items.map((item) => {
                               const Icon = item.icon;
                               return (
@@ -221,7 +246,7 @@ export default function Header() {
                                   key={item.path}
                                   href={item.path}
                                   onClick={closeAllMenus}
-                                  className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 transition hover:border-green-200 hover:bg-green-50 hover:text-green-700"
+                                  className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
                                 >
                                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
                                     <Icon className="h-4 w-4" />
@@ -234,34 +259,12 @@ export default function Header() {
                         </section>
                       ))}
                     </div>
-
-                    <div className="mt-5 flex items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-green-50 to-white p-5 ring-1 ring-green-100">
-                      <div>
-                        <p className="text-sm font-bold text-[#262262]">Not sure which service fits best?</p>
-                        <p className="mt-1 text-sm leading-6 text-slate-600">
-                          Start with a consultation and DietFiniti can guide you to the right programme for your goal, health history and routine.
-                        </p>
-                      </div>
-                      <div className="flex shrink-0 gap-2">
-                        <Link href="/services" onClick={closeAllMenus} className="rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
-                          View all services
-                        </Link>
-                        <Link href="/contact" onClick={closeAllMenus} className="rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
-                          Contact DietFiniti
-                        </Link>
-                      </div>
-                    </div>
                   </div>
                 )}
               </div>
 
-              <Link href="/glp-1-medications" className={desktopLinkClass}>
-                <Pill className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
-                GLP-1 Medications
-              </Link>
-
-              <Link href="/blog" className={desktopLinkClass}>
-                <BookOpen className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+              <Link href="/blog" className={desktopLinkClass} onClick={closeDesktopMenus}>
+                <BookOpen className="mr-1.5 h-4 w-4" />
                 Blog
               </Link>
 
@@ -273,7 +276,7 @@ export default function Header() {
                   aria-expanded={openDesktopMenu === "resources"}
                   aria-label="Toggle resources menu"
                 >
-                  <BookOpen className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <BookOpen className="mr-1.5 h-4 w-4" />
                   Resources
                   <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openDesktopMenu === "resources" ? "rotate-180" : ""}`} />
                 </button>
@@ -307,36 +310,22 @@ export default function Header() {
                 )}
               </div>
 
-              <Link href="/contact" className={desktopLinkClass}>
-                <PhoneCall className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+              <Link href="/contact" className={desktopLinkClass} onClick={closeDesktopMenus}>
+                <PhoneCall className="mr-1.5 h-4 w-4" />
                 Contact
               </Link>
             </nav>
           </div>
 
-          <div className="hidden lg:flex lg:items-center lg:gap-2">
-            <Link
-              href="/online-dietitian-consultation"
-              className="rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50"
-            >
-              Online Consultation
-            </Link>
-            <a
-              href="tel:+919321057899"
-              className="inline-flex items-center rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800"
-              aria-label="Call DietFiniti"
-            >
+          <div className="hidden lg:flex lg:items-center">
+            <a href="tel:+919321057899" className="inline-flex items-center rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800" aria-label="Call DietFiniti">
               <Phone className="mr-2 h-4 w-4" />
               Call Now
             </a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href="tel:+919321057899"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700 transition hover:bg-green-200"
-              aria-label="Call DietFiniti"
-            >
+            <a href="tel:+919321057899" className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700 transition hover:bg-green-200" aria-label="Call DietFiniti">
               <Phone className="h-4 w-4" />
             </a>
             <button
@@ -360,12 +349,7 @@ export default function Header() {
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
                 <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
               </Link>
-              <button
-                type="button"
-                onClick={closeAllMenus}
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700"
-                aria-label="Close menu"
-              >
+              <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700" aria-label="Close menu">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -407,7 +391,7 @@ export default function Header() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-slate-900">Services</p>
-                      <p className="text-xs text-slate-500">All programmes and condition-support pages</p>
+                      <p className="text-xs text-slate-500">All programmes and GLP-1 pages</p>
                     </div>
                   </div>
                   <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
@@ -416,7 +400,7 @@ export default function Header() {
                 {mobileServicesOpen && (
                   <div className="border-t border-slate-200 bg-slate-50 p-3">
                     <div className="space-y-3">
-                      {serviceSections.map((section) => (
+                      {servicesSections.map((section) => (
                         <section key={section.title} className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
                           <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">{section.title}</p>
                           <p className="mt-1 text-xs leading-5 text-slate-500">{section.description}</p>
@@ -442,39 +426,6 @@ export default function Header() {
                   </div>
                 )}
               </div>
-
-              <Link
-                href="/glp-1-medications"
-                onClick={closeAllMenus}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                  <Pill className="h-4 w-4" />
-                </span>
-                <span>GLP-1 Medications</span>
-              </Link>
-
-              <Link
-                href="/blog"
-                onClick={closeAllMenus}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                  <BookOpen className="h-4 w-4" />
-                </span>
-                <span>Blog</span>
-              </Link>
-
-              <Link
-                href="/contact"
-                onClick={closeAllMenus}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
-                  <PhoneCall className="h-4 w-4" />
-                </span>
-                <span>Contact</span>
-              </Link>
 
               <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
                 <button
@@ -521,15 +472,8 @@ export default function Header() {
               </div>
             </nav>
 
-            <div className="mt-6 grid gap-3">
-              <Link
-                href="/online-dietitian-consultation"
-                onClick={closeAllMenus}
-                className="rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-semibold text-green-800"
-              >
-                Online Consultation
-              </Link>
-              <a href="tel:+919321057899" className="rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
+            <div className="mt-6">
+              <a href="tel:+919321057899" className="block rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
                 Call Now: +91 93210 57899
               </a>
             </div>
