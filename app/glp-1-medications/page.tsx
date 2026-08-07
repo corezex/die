@@ -4,21 +4,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MessageCircle, Pill, ShieldCheck, Sparkles, Stethoscope, UtensilsCrossed } from "lucide-react";
 import heroImage from "@/public/image/glp1-hub-hero.jpg";
 import { glpMedications } from "./medicationData";
-
-const cardDescriptions: Record<string, string> = {
-  ozempic: "Support for smaller meals, protein intake, hydration and blood-sugar-friendly food choices while taking Ozempic.",
-  wegovy: "Support for appetite changes, meal comfort, protein and sustainable eating habits while taking Wegovy.",
-  rybelsus: "Support for breakfast, meal timing and a smoother morning routine while taking Rybelsus.",
-  mounjaro: "Support for low appetite, protein balance, digestion and steadier day-to-day food structure while taking Mounjaro.",
-  zepbound: "Support for smaller meals, fluids, protein and practical weight-management routines while taking Zepbound.",
-  saxenda: "Support for a repeatable daily meal rhythm, protein planning and easier low-appetite food choices while taking Saxenda.",
-  victoza: "Support for blood-sugar-friendly meals, meal timing and balanced everyday eating while taking Victoza.",
-  trulicity: "Support for regular meals, protein planning and practical diabetes-aware food structure while taking Trulicity.",
-  byetta: "Support for meal timing, balanced meals and more predictable food routines while taking Byetta.",
-  "bydureon-bcise": "Support for balanced weekly routines, digestion-friendly meals and steadier food habits while taking Bydureon BCise.",
-  adlyxin: "Support for consistent daily meals, balanced portions and blood-sugar-friendly routines while taking Adlyxin.",
-  foundayo: "Support for flexible daily meals, protein intake, hydration and comfortable eating patterns while taking Foundayo.",
-};
+import { GlpReviewPanel } from "./GlpReviewPanel";
+import { GLP_REVIEW_DATE_ISO, GLP_REVIEWER } from "./reviewMeta";
 
 const siteUrl = "https://dietfiniti.com";
 
@@ -76,7 +63,7 @@ function StructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CollectionPage",
+        "@type": ["CollectionPage", "MedicalWebPage"],
         "@id": `${siteUrl}/glp-1-medications#webpage`,
         url: `${siteUrl}/glp-1-medications`,
         name: "GLP-1 Medication Diet Plan and Nutrition Support",
@@ -84,6 +71,14 @@ function StructuredData() {
           "Dietitian-led nutrition support for people taking GLP-1 medication such as Ozempic, Wegovy, Rybelsus, Mounjaro and Zepbound.",
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@type": "Thing", name: "GLP-1 medication nutrition support" },
+        inLanguage: "en-IN",
+        dateModified: GLP_REVIEW_DATE_ISO,
+        author: {
+          "@type": "Person",
+          name: GLP_REVIEWER.name,
+          jobTitle: GLP_REVIEWER.jobTitle,
+        },
+        publisher: { "@id": `${siteUrl}/#organization` },
       },
       {
         "@type": "Service",
@@ -91,6 +86,8 @@ function StructuredData() {
         name: "Nutrition support for people taking GLP-1 medication",
         serviceType: "Dietitian consultation",
         url: `${siteUrl}/glp-1-medications`,
+        description:
+          "Practical dietitian support for people taking GLP-1 medication who need help with meals, appetite changes, protein intake, hydration and everyday food routines.",
         provider: { "@id": `${siteUrl}/#organization` },
         areaServed: [
           { "@type": "City", name: "Mumbai" },
@@ -170,6 +167,8 @@ export default function GlpMedicationHubPage() {
         </div>
       </section>
 
+      <GlpReviewPanel title="Reviewed for practical nutrition support while using GLP-1 medication" compact />
+
       <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-start">
@@ -236,7 +235,7 @@ export default function GlpMedicationHubPage() {
                     {item.route}
                   </span>
                 </div>
-                <p className="mt-4 leading-7 text-slate-600">{cardDescriptions[item.slug]}</p>
+                <p className="mt-4 leading-7 text-slate-600">{item.cardDescription ?? item.intro[0]}</p>
                 <div className="mt-5 grid gap-3">
                   <div className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">
                     <strong>Usually prescribed for:</strong> {item.usedFor}

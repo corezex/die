@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, MessageCircle, Pill, ShieldAlert, Stethoscope } from "lucide-react";
 import { getMedicationBySlug, glpMedicationSlugs, glpMedications } from "../medicationData";
+import { GlpReviewPanel } from "../GlpReviewPanel";
+import { GLP_REVIEW_DATE_ISO, GLP_REVIEWER } from "../reviewMeta";
 
 const siteUrl = "https://dietfiniti.com";
 
@@ -50,23 +52,28 @@ function MedicationStructuredData({ slug }: { slug: string }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": ["WebPage", "MedicalWebPage"],
         "@id": `${siteUrl}/glp-1-medications/${medication.slug}#webpage`,
         url: `${siteUrl}/glp-1-medications/${medication.slug}`,
         name: medication.metaTitle,
         description: medication.metaDescription,
         isPartOf: { "@id": `${siteUrl}/#website` },
-        about: [
-          { "@type": "Drug", name: medication.brand, nonProprietaryName: medication.generic },
-          { "@type": "Thing", name: medication.primaryKeyword },
-        ],
+        inLanguage: "en-IN",
+        dateModified: GLP_REVIEW_DATE_ISO,
+        about: [{ "@type": "Drug", name: medication.brand, nonProprietaryName: medication.generic }],
+        author: {
+          "@type": "Person",
+          name: GLP_REVIEWER.name,
+          jobTitle: GLP_REVIEWER.jobTitle,
+        },
+        publisher: { "@id": `${siteUrl}/#organization` },
       },
       {
         "@type": "Service",
         "@id": `${siteUrl}/glp-1-medications/${medication.slug}#service`,
         name: `${medication.brand} nutrition support consultation`,
         serviceType: "Dietitian consultation",
-        description: medication.metaDescription,
+        description: medication.cardDescription ?? medication.intro[0],
         url: `${siteUrl}/glp-1-medications/${medication.slug}`,
         provider: { "@id": `${siteUrl}/#organization` },
         areaServed: [
@@ -158,11 +165,13 @@ export default async function MedicationPage({ params }: PageProps) {
         </div>
       </section>
 
+      <GlpReviewPanel title={`Reviewed for practical ${medication.brand} nutrition support`} compact />
+
       <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-start">
             <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>How support usually helps</p>
+              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>What diet support usually focuses on</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
                 Everyday food guidance while taking {medication.brand}
               </h2>
@@ -182,7 +191,7 @@ export default async function MedicationPage({ params }: PageProps) {
               </div>
             </div>
             <aside className={`rounded-3xl border p-7 ${medication.accent.subtle} ${medication.accent.border}`}>
-              <h3 className="text-xl font-bold text-slate-900">A quick reminder</h3>
+              <h3 className="text-xl font-bold text-slate-900">Working alongside your prescriber</h3>
               <p className="mt-4 leading-7 text-slate-700">{medication.intro[1]}</p>
               <div className="mt-5 rounded-2xl bg-white/70 p-4 text-sm leading-6 text-slate-700 ring-1 ring-white/60">
                 <strong>Usually prescribed for:</strong> {medication.usedFor}
@@ -195,7 +204,7 @@ export default async function MedicationPage({ params }: PageProps) {
       <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Core nutrition themes</p>
+            <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>What to focus on with food</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
               Food priorities many {medication.brand} users ask about
             </h2>
@@ -236,9 +245,9 @@ export default async function MedicationPage({ params }: PageProps) {
       <section className={`${medication.accent.subtle} px-4 py-16 sm:px-6 lg:px-8 lg:py-20`}>
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Direct answers</p>
+            <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Common food questions</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-              Quick search answers for {medication.brand} users
+              Common food questions about {medication.brand}
             </h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -314,12 +323,12 @@ export default async function MedicationPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <section className="bx-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Related pages</p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#262262]">Explore other GLP-1 medication pages</h2>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#262262]">Other GLP-1 medication pages</h2>
             </div>
             <Link href="/glp-1-medications" className={`hidden items-center gap-2 font-bold ${medication.accent.text} md:inline-flex`}>
               View all medication pages <ArrowRight className="h-4 w-4" />
@@ -330,7 +339,7 @@ export default async function MedicationPage({ params }: PageProps) {
               <article key={item.slug} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">{item.family}</p>
                 <h3 className="mt-1 text-2xl font-bold text-[#262262]">{item.brand}</h3>
-                <p className="mt-3 leading-7 text-slate-700">{item.metaDescription}</p>
+                <p className="mt-3 leading-7 text-slate-700">{item.cardDescription ?? item.intro[0]}</p>
                 <Link href={`/glp-1-medications/${item.slug}`} className={`mt-5 inline-flex items-center gap-2 font-bold ${medication.accent.text}`}>
                   Explore {item.brand} <ArrowRight className="h-4 w-4" />
                 </Link>

@@ -107,20 +107,6 @@ export function SiteStructuredData() {
           "https://www.instagram.com/dieticiantejal/",
           "https://www.pinterest.com/dieticiantejal/",
         ],
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5",
-          bestRating: "5",
-          ratingCount: "250",
-        },
-        award: [
-          {
-            "@type": "Award",
-            name: "India 2000 Best MSME Awards",
-            awardedBy: { "@type": "Organization", name: "India 2000 MSME Awards" },
-            year: "2021",
-          },
-        ],
         makesOffer: [
           { "@type": "Offer", name: "Personalised Weight-Loss Program", url: `${SITE_URL}/services/weight-loss` },
           { "@type": "Offer", name: "Medical Weight-Loss Program", url: `${SITE_URL}/services/medical-weight-loss` },

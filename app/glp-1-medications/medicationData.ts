@@ -53,6 +53,7 @@ export type GlpMedicationPage = {
   usedFor: string;
   primaryKeyword: string;
   secondaryKeywords: string[];
+  cardDescription?: string;
   menuLabel?: string;
   metaTitle: string;
   metaDescription: string;
@@ -126,6 +127,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes; some people also ask about nutrition support while using it for physician-guided weight management.",
     primaryKeyword: "Ozempic diet plan",
     secondaryKeywords: ["what to eat on Ozempic", "dietitian for Ozempic users", "Ozempic meal plan"],
+    cardDescription: "Support for smaller meals, protein intake, hydration and blood-sugar-friendly food choices while taking Ozempic.",
     menuLabel: "Ozempic",
     metaTitle: "Ozempic Diet Plan: What to Eat on Ozempic",
     metaDescription:
@@ -190,7 +192,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A useful Wegovy diet plan usually focuses on smaller balanced meals, enough protein, enough fluid and a routine you can keep up even when appetite is low. The aim is not to live on almost nothing; it is to create a safer and more sustainable pattern while using the medication.",
     intro: [
-      "People taking Wegovy often want help with day-to-day questions: how much to eat when fullness kicks in quickly, whether protein matters more while losing weight, how to handle social meals, and what to do when constipation or heartburn starts showing up.",
+      "On Wegovy, people often need help balancing reduced appetite with enough nourishment. The practical questions are usually about smaller meals, protein, hydration and how to eat normally around work, travel and family food.",
       "DietFiniti supports people who are already taking Wegovy and want practical dietitian guidance in Mumbai, Thane or online across India. We do not sell Wegovy and we do not advise on dosing. We help you build an eating pattern around real food and real routines.",
     ],
     nutritionPriorities: [
@@ -246,7 +248,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "With Rybelsus, food questions are often about timing as much as ingredients. Because it is an oral GLP-1 medication, many people need help creating a morning routine that fits the tablet instructions and still leads into a comfortable, balanced breakfast later.",
     intro: [
-      "Rybelsus users commonly ask what breakfast should look like after the waiting period, whether coffee affects the routine, and how to manage nausea or reduced appetite when the day starts awkwardly. The answer is usually not a perfect ‘food list’; it is a routine that works around how the medicine is taken.",
+      "With Rybelsus, food planning often revolves around the morning routine. Many people need a breakfast pattern that feels comfortable, fits the medication timing and still supports a steady day.",
       "DietFiniti offers nutrition support for people taking Rybelsus in Mumbai, Thane and online across India. We do not prescribe or sell Rybelsus. We help you build a food routine that matches your prescriber’s instructions and your real mornings.",
     ],
     nutritionPriorities: [
@@ -358,7 +360,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A helpful Zepbound diet plan usually means enough protein, enough fluid and a manageable portion pattern—not skipping food all day. When appetite falls quickly, dietitian support can help you keep the routine nourishing, comfortable and more sustainable.",
     intro: [
-      "People looking for a Zepbound meal plan often want help with how to eat less without feeling awful, what to do with nausea or reflux, how to stop constipation and how to keep weight loss efforts practical rather than obsessive.",
+      "With Zepbound, many people need a more comfortable structure for smaller meals, fluids and protein. The goal is not simply eating less; it is eating in a way that still feels nourishing and manageable.",
       "DietFiniti works with people already taking Zepbound in Mumbai, Thane and online across India. We do not sell or prescribe Zepbound. We provide practical food guidance that sits alongside the medication and your prescriber’s care.",
     ],
     nutritionPriorities: [
@@ -386,7 +388,7 @@ export const glpMedications: GlpMedicationPage[] = [
     ],
     ctaTitle: "Need a more practical Zepbound eating plan?",
     ctaText:
-      "DietFiniti can help you simplify meals, keep protein and fluids more consistent and build a routine that supports both comfort and long-term habits while taking Zepbound.",
+      "DietFiniti can help you simplify meals, keep protein and fluids more consistent and build a routine ttent and build a routine that supports both comfort and long-term habits while taking Zepbound.",
     faqs: [
       { question: "Can DietFiniti provide Zepbound?", answer: "No. DietFiniti does not prescribe, sell or supply Zepbound. We support people who are already taking it under medical supervision." },
       { question: "What do people usually ask about on Zepbound?", answer: "Common questions are about low appetite, protein intake, nausea, constipation, reflux, what to eat on travel days and how to keep weight loss from becoming too restrictive." },
@@ -462,6 +464,7 @@ export const glpMedications: GlpMedicationPage[] = [
     usedFor: "FDA-approved for type 2 diabetes; nutrition support often focuses on blood-sugar-friendly routines plus reduced appetite or digestive side effects.",
     primaryKeyword: "Victoza diet plan",
     secondaryKeywords: ["what to eat on Victoza", "dietitian for Victoza users", "Victoza meal plan"],
+    cardDescription: "Support for blood-sugar-friendly meals, meal timing and balanced everyday eating while taking Victoza.",
     metaTitle: "Victoza Diet Plan: What to Eat on Victoza",
     metaDescription:
       "Get practical dietitian guidance for a Victoza diet plan in Mumbai, Thane or online across India. DietFiniti supports people taking Victoza but does not sell or prescribe medication.",
@@ -469,7 +472,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Victoza diet plan usually needs to support both comfort and blood-sugar-friendly eating. Balanced meals, steady timing and enough protein can matter just as much as avoiding obvious sugar-heavy choices.",
     intro: [
-      "People taking Victoza often want help with how to combine diabetes-friendly eating with a medication that may also reduce appetite or affect digestion. The best plan is rarely the strictest one; it is the one that fits your glucose routine and everyday life.",
+      "With Victoza, the food routine often needs to support both digestion and blood-sugar-friendly eating. Most people do best with simpler, more regular meals rather than overthinking every food choice.",
       "DietFiniti provides nutrition support for Victoza users in Mumbai, Thane and online across India. We do not prescribe or sell Victoza. Our role is to help make the food pattern clearer and more practical.",
     ],
     nutritionPriorities: [
@@ -579,7 +582,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Byetta diet plan often needs more attention to timing because the medication schedule is built around meals. A useful food routine can help you avoid rushed choices, support blood-sugar-friendly eating and make side effects easier to handle.",
     intro: [
-      "Compared with some of the newer weekly GLP-1 medications, Byetta can make people think more actively about when meals happen. That makes dietitian support especially useful for people whose workday, commute or family schedule is irregular.",
+      "Byetta often makes meal timing more important than people expect. A practical routine can help meals feel less rushed and more supportive of blood sugar and digestion.",
       "DietFiniti provides nutrition support for people already taking Byetta in Mumbai, Thane and online across India. We do not supply or prescribe Byetta. We help you build a practical eating routine around it.",
     ],
     nutritionPriorities: [
@@ -634,7 +637,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Bydureon diet plan usually works best when it keeps meals simple, balanced and blood-sugar-aware. Weekly dosing may feel more convenient than twice-daily medication, but food structure still matters for comfort and consistency.",
     intro: [
-      "People taking Bydureon BCise often need less help with meal-linked dosing than Byetta users, but they still ask what to eat when appetite changes, how to manage constipation or fullness, and how to keep diabetes-friendly meals practical.",
+      "With Bydureon BCise, the questions are usually about keeping meals balanced, digestion comfortable and the routine steady across the week.",
       "DietFiniti provides nutrition support for Bydureon BCise users in Mumbai, Thane and online across India. We do not prescribe or sell the medication. We focus on sustainable food routines.",
     ],
     nutritionPriorities: [
@@ -745,7 +748,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Foundayo diet plan usually focuses on everyday structure: how to keep protein in the day, what to do when appetite is low, and how to avoid turning a once-daily oral GLP-1 into an under-eating pattern that feels hard to sustain.",
     intro: [
-      "Because Foundayo is an oral GLP-1 medication for weight management, people often look for guidance that feels more flexible than the older oral semaglutide routines. They still need help, though, with nausea-friendly choices, smaller meal structure and staying adequately nourished.",
+      "With Foundayo, appetite may be lower even though the tablet routine feels simple. The important part is building meals that still support protein, energy, hydration and comfort.",
       "DietFiniti supports people taking Foundayo in Mumbai, Thane and online across India. We do not prescribe or sell Foundayo. We help with meal planning, protein, hydration and realistic Indian food routines while you continue medical care with your prescriber.",
     ],
     nutritionPriorities: [
@@ -793,4 +796,3 @@ export const glpMedicationSlugs = glpMedications.map((item) => item.slug);
 export function getMedicationBySlug(slug: string) {
   return glpMedications.find((item) => item.slug === slug);
 }
-
