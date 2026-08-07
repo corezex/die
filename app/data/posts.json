@@ -4610,7 +4610,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal pregnancy nutrition from anywhere in India."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/pregnancy-diet-essentials.jpg"
   },
   {
     "slug": "morning-sickness-nutrition",
@@ -4697,7 +4698,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Practical eating strategies for the toughest weeks of pregnancy."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/morning-sickness-nutrition.jpg"
   },
   {
     "slug": "breastfeeding-milk-supply",
@@ -4784,7 +4786,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal guidance on breastfeeding nutrition and your energy."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/breastfeeding-milk-supply.jpg"
   },
   {
     "slug": "postpartum-weight-loss-timeline",
@@ -4871,7 +4874,8 @@
         "path": "/services/pregnancy-diet",
         "description": "Nutrition support from pregnancy through the postpartum year."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/postpartum-weight-loss-timeline.jpg"
   },
   {
     "slug": "male-fertility-nutrition",
@@ -4958,7 +4962,8 @@
         "path": "/services/weight-loss",
         "description": "Weight support that also supports hormonal and fertility health."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/male-fertility-nutrition.jpg"
   },
   {
     "slug": "muscle-building-vegetarian",
@@ -5045,7 +5050,8 @@
         "path": "/services/weight-gain",
         "description": "Muscle-first weight gain with Indian food and training support."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/muscle-building-vegetarian.jpg"
   },
   {
     "slug": "testosterone-diet-myths",
@@ -5132,7 +5138,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Test your T, fix the levers — a plan from your blood results."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/testosterone-diet-myths.jpg"
   },
   {
     "slug": "kids-healthy-eating-india",
@@ -5224,7 +5231,8 @@
         "path": "/services/kids-nutrition",
         "description": "Family-friendly guidance for healthy eaters."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/kids-healthy-eating-india.jpg"
   },
   {
     "slug": "fussy-eaters-toddlers",
@@ -5316,7 +5324,8 @@
         "path": "/services/kids-nutrition",
         "description": "Pressure-free strategies for food refusal."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/fussy-eaters-toddlers.jpg"
   },
   {
     "slug": "teen-nutrition-guide",
@@ -5408,7 +5417,8 @@
         "path": "/services/kids-nutrition",
         "description": "Teen nutrition for growth, energy and study."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/teen-nutrition-guide.jpg"
   },
   {
     "slug": "healthy-lunch-box-ideas",
