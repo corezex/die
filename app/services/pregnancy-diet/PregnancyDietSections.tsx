@@ -60,9 +60,9 @@ export const PregnancyDietSections = () => {
       weeks: "Weeks 13-26",
       icon: "🌿",
       title: "Growth & Development",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Rapid baby growth & development",
       nutrients: [
         {
@@ -101,9 +101,9 @@ export const PregnancyDietSections = () => {
       weeks: "Weeks 27-40",
       icon: "🌾",
       title: "Final Growth & Preparation",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200",
+      color: "from-green-500 to-green-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Final growth & labor preparation",
       nutrients: [
         {
@@ -427,7 +427,7 @@ export const PregnancyDietSections = () => {
       </section>
 
       {/* Program Features Section */}
-      <section className="py-5 bg-gradient-to-b from-white to-pink-50/30">
+      <section className="py-5 bg-gradient-to-b from-white to-green-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Heading - Centered */}
           <motion.div
@@ -493,10 +493,10 @@ export const PregnancyDietSections = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-pink-100 group cursor-pointer"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-green-100 group cursor-pointer"
               >
                 <div className="text-3xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-pink-700 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
@@ -535,7 +535,7 @@ export const PregnancyDietSections = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 border border-pink-200 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-green-50 to-green-50 rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-2xl mb-3">{nutrient.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-2">
@@ -554,7 +554,7 @@ export const PregnancyDietSections = () => {
       </section>
 
       {/* Postpartum Support Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -580,7 +580,7 @@ export const PregnancyDietSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {support.title}
@@ -631,21 +631,21 @@ export const PregnancyDietSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-3xl p-8 text-white"
+                className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 text-white"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold">{story.name}</h3>
-                    <p className="text-pink-200">{story.age}</p>
+                    <p className="text-green-200">{story.age}</p>
                   </div>
                   <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">
                     {story.outcome}
                   </div>
                 </div>
-                <p className="text-pink-100 leading-relaxed mb-4">
+                <p className="text-green-100 leading-relaxed mb-4">
                   {story.testimonial}
                 </p>
-                <div className="flex items-center space-x-1 text-pink-200">
+                <div className="flex items-center space-x-1 text-green-200">
                   <Star className="w-4 h-4 fill-current" />
                   <Star className="w-4 h-4 fill-current" />
                   <Star className="w-4 h-4 fill-current" />
@@ -659,7 +659,7 @@ export const PregnancyDietSections = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-pink-500 to-purple-600 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-green-500 to-green-600 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
 
@@ -674,14 +674,14 @@ export const PregnancyDietSections = () => {
               Start Your Healthy Pregnancy Journey Today
             </h2>
 
-            <p className="text-xl text-pink-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Give your baby the best start with science-backed nutrition
               guidance and continuous support throughout your pregnancy and
               beyond.
             </p>
 
             <ServiceCtaButtons
-              contactColorClass="text-pink-600"
+              contactColorClass="text-green-600"
               variant="section"
             />
 
@@ -693,29 +693,29 @@ export const PregnancyDietSections = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto"
             >
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-pink-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Users className="w-5 h-5" />
                   <span className="text-lg font-semibold">2,000+</span>
                 </div>
-                <div className="text-pink-100 text-sm mt-1">Happy Mothers</div>
+                <div className="text-green-100 text-sm mt-1">Happy Mothers</div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-pink-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Star className="w-5 h-5" fill="currentColor" />
                   <span className="text-lg font-semibold">5/5</span>
                 </div>
-                <div className="text-pink-100 text-sm mt-1">
+                <div className="text-green-100 text-sm mt-1">
                   Satisfaction Rating
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-pink-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Baby className="w-5 h-5" />
                   <span className="text-lg font-semibold">99%</span>
                 </div>
-                <div className="text-pink-100 text-sm mt-1">
+                <div className="text-green-100 text-sm mt-1">
                   Healthy Outcomes
                 </div>
               </div>

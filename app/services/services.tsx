@@ -13,6 +13,8 @@ import {
   Trophy,
   Utensils,
   Video,
+  Salad,
+  Briefcase,
 } from "lucide-react";
 
 import hero from "@/public/image/Servicesimg1.jpg";
@@ -22,6 +24,9 @@ import pregnancy from "@/public/image/pregnancy-diet-img1.jpg";
 import weightGain from "@/public/image/weightgainimg1.jpg";
 import sports from "@/public/image/sports-nutritionimg1.jpg";
 import bridal from "@/public/image/bridal-dietimg1.jpg";
+import conditionImg from "@/public/image/MedicalWeightLoss1.jpg";
+import kidsImg from "@/public/image/Servicesimg1.jpg";
+import corpImg from "@/public/image/Servicesimg2.png";
 
 type Service = {
   title: string;
@@ -53,7 +58,7 @@ const services: Service[] = [
     imageAlt: "Nutrition support alongside medical weight management care",
     icon: HeartPulse,
     features: ["Health-aware planning", "Supports clinical care"],
-    accent: "bg-rose-600",
+    accent: "bg-green-600",
   },
   {
     title: "Pregnancy Diet Plan",
@@ -63,7 +68,7 @@ const services: Service[] = [
     imageAlt: "Nutritious food for pregnancy diet planning",
     icon: Baby,
     features: ["Trimester-aware guidance", "Practical everyday meals"],
-    accent: "bg-pink-600",
+    accent: "bg-green-600",
   },
   {
     title: "Weight Gain Program",
@@ -73,7 +78,7 @@ const services: Service[] = [
     imageAlt: "Healthy meal for a personalised weight gain programme",
     icon: Dumbbell,
     features: ["Balanced calorie planning", "Strength-focused nutrition"],
-    accent: "bg-amber-600",
+    accent: "bg-green-600",
   },
   {
     title: "Sports Nutrition Plan",
@@ -83,7 +88,7 @@ const services: Service[] = [
     imageAlt: "Sports nutrition meal planning for performance and recovery",
     icon: Trophy,
     features: ["Training-day nutrition", "Recovery and hydration"],
-    accent: "bg-blue-600",
+    accent: "bg-green-600",
   },
   {
     title: "Bridal Diet Plan",
@@ -94,6 +99,36 @@ const services: Service[] = [
     icon: Sparkles,
     features: ["Timeline-based planning", "Energy and wellbeing focus"],
     accent: "bg-violet-600",
+  },
+  {
+    title: "Condition Nutrition",
+    description: "Practical nutrition support for PCOS, thyroid, diabetes, fatty liver and gut health — designed to work alongside your doctor's care.",
+    href: "/services/condition-nutrition",
+    image: conditionImg,
+    imageAlt: "Condition-specific nutrition planning with balanced food",
+    icon: HeartPulse,
+    features: ["PCOS, thyroid, diabetes & more", "Works alongside medical care"],
+    accent: "bg-green-600",
+  },
+  {
+    title: "Kids Nutrition",
+    description: "Pressure-free support for fussy eating, lunch boxes, teen nutrition and family meals that actually work.",
+    href: "/services/kids-nutrition",
+    image: kidsImg,
+    imageAlt: "Healthy family meals for kids nutrition",
+    icon: Salad,
+    features: ["Fussy eating & lunch boxes", "Family meal planning"],
+    accent: "bg-green-600",
+  },
+  {
+    title: "Corporate Wellness",
+    description: "Practical nutrition workshops and webinars for teams — desk-day eating, sugar awareness and sustainable habits.",
+    href: "/services/corporate-wellness",
+    image: corpImg,
+    imageAlt: "Corporate wellness nutrition program",
+    icon: Briefcase,
+    features: ["Team workshops & webinars", "Online or in Mumbai/Thane"],
+    accent: "bg-green-600",
   },
 ];
 
@@ -116,13 +151,13 @@ export default function ServicesPage() {
               <Utensils className="h-4 w-4" /> Mumbai, Thane & online across India
             </div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-[#262262] sm:text-5xl lg:text-6xl">
-              Nutrition support designed around <span className="text-green-600">your real life</span>
+              Nutrition support designed around <span className="text-green-700">your real life</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
               Your body, schedule and food preferences are personal. Choose a DietFiniti programme that starts with your context and helps turn nutrition advice into realistic everyday action.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700">
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-6 py-3.5 font-bold text-white shadow-lg shadow-green-700/20 transition hover:bg-green-800">
                 <MessageCircle className="h-5 w-5" /> Find my programme
               </a>
               <Link href="/online-dietitian-consultation" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#262262] bg-white px-6 py-3 font-bold text-[#262262] transition hover:bg-[#262262] hover:text-white">
@@ -147,7 +182,7 @@ export default function ServicesPage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-600">Our specialised programmes</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Our specialised programmes</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">Choose support for your health goal</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">Every programme begins with a conversation. Explore what each service covers and find the right starting point for you.</p>
           </div>
@@ -168,7 +203,7 @@ export default function ServicesPage() {
                     <ul className="mt-5 space-y-2 border-t border-slate-100 pt-5 text-sm font-medium text-slate-700">
                       {service.features.map((feature) => <li key={feature} className="flex items-center gap-2"><Check className="h-4 w-4 text-green-600" />{feature}</li>)}
                     </ul>
-                    <Link href={service.href} className="mt-6 inline-flex items-center gap-2 font-bold text-green-700 transition group-hover:gap-3" aria-label={`Learn more about ${service.title}`}>
+                    <Link href={service.href} className="mt-6 inline-flex items-center gap-2 font-bold text-green-700 transition group-hover:gap-3" aria-label={service.title}>
                       Explore programme <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -184,14 +219,14 @@ export default function ServicesPage() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-300">One clear process</p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">How your DietFiniti journey works</h2>
-            <p className="mt-5 max-w-xl leading-8 text-indigo-100">No confusing rules and no one-size-fits-all charts. We begin by understanding what is realistic for you.</p>
+            <p className="mt-5 max-w-xl leading-8 text-green-100">No confusing rules and no one-size-fits-all charts. We begin by understanding what is realistic for you.</p>
           </div>
           <ol className="grid gap-4 sm:grid-cols-2">
             {process.map(([number, title, description]) => (
               <li key={number} className="rounded-2xl border border-white/15 bg-white/10 p-5">
                 <div className="flex gap-4">
                   <span className="text-2xl font-black text-green-300">{number}</span>
-                  <div><h3 className="text-lg font-bold text-white">{title}</h3><p className="mt-2 leading-6 text-indigo-100">{description}</p></div>
+                  <div><h3 className="text-lg font-bold text-white">{title}</h3><p className="mt-2 leading-6 text-green-100">{description}</p></div>
                 </div>
               </li>
             ))}
@@ -214,7 +249,7 @@ export default function ServicesPage() {
               <p className="flex gap-3"><Check className="mt-1 h-5 w-5 shrink-0 text-green-600" />Understand the next steps, availability and suitability.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-bold text-white hover:bg-green-700"><MessageCircle className="h-5 w-5" /> WhatsApp DietFiniti</a>
+              <a href="https://wa.me/919321057899" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-green-700 px-6 py-3.5 font-bold text-white hover:bg-green-800"><MessageCircle className="h-5 w-5" /> WhatsApp DietFiniti</a>
               <Link href="/contact" className="inline-flex items-center rounded-xl border border-slate-300 px-6 py-3.5 font-bold text-[#262262] hover:border-[#262262]">Visit our clinics</Link>
             </div>
             <p className="mt-6 text-xs leading-5 text-slate-500">Nutrition guidance does not replace medical diagnosis, treatment or medication. Continue to work with your treating clinician where relevant.</p>

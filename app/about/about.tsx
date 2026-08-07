@@ -257,7 +257,7 @@ const AboutPage = () => {
       number: "12+",
       label: "Years Experience",
       icon: Award,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-green-500 to-emerald-500",
     },
     {
       number: "250+",
@@ -269,13 +269,13 @@ const AboutPage = () => {
       number: "2",
       label: "Clinics",
       icon: Home,
-      color: "from-purple-500 to-violet-500",
+      color: "from-green-500 to-violet-500",
     },
     {
       number: "2000+",
       label: "Lives Transformed",
       icon: Users,
-      color: "from-orange-500 to-amber-500",
+      color: "from-green-500 to-green-500",
     },
   ];
 
@@ -344,10 +344,10 @@ const AboutPage = () => {
     { bg: string; light: string; text: string; border: string }
   > = {
     blue: {
-      bg: "from-blue-500 to-cyan-500",
-      light: "bg-blue-50",
-      text: "text-blue-600",
-      border: "border-blue-200",
+      bg: "from-green-500 to-emerald-500",
+      light: "bg-green-50",
+      text: "text-green-600",
+      border: "border-green-200",
     },
     green: {
       bg: "from-green-500 to-emerald-500",
@@ -356,23 +356,23 @@ const AboutPage = () => {
       border: "border-green-200",
     },
     purple: {
-      bg: "from-purple-500 to-violet-500",
-      light: "bg-purple-50",
-      text: "text-purple-600",
-      border: "border-purple-200",
+      bg: "from-green-500 to-violet-500",
+      light: "bg-green-50",
+      text: "text-green-600",
+      border: "border-green-200",
     },
     pink: {
-      bg: "from-pink-500 to-rose-500",
-      light: "bg-pink-50",
-      text: "text-pink-600",
-      border: "border-pink-200",
+      bg: "from-green-500 to-green-500",
+      light: "bg-green-50",
+      text: "text-green-600",
+      border: "border-green-200",
     },
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Enhanced Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 via-sky-500 to-cyan-500 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-500 via-sky-500 to-emerald-500 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <motion.div
@@ -399,7 +399,7 @@ const AboutPage = () => {
             <Sprout className="w-10 h-10 text-white/25" />
           </motion.div>
 
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/20 via-sky-500/15 to-cyan-600/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-600/20 via-sky-500/15 to-emerald-600/10"></div>
         </div>
 
         {/* Floating Elements */}
@@ -549,7 +549,7 @@ const AboutPage = () => {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Why Dietfiniti was created
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto rounded-full"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-green-500 mx-auto rounded-full"></div>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -593,7 +593,7 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100"
+                  className="p-6 bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl border border-emerald-100"
                 >
                   <p className="text-gray-900 font-semibold text-lg">
                     The problem wasn&apos;t effort or intention.
@@ -630,7 +630,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Decorative Element */}
-                <div className="absolute -z-10 top-6 -right-6 w-full h-full rounded-2xl bg-gradient-to-br from-emerald-200 to-teal-200 opacity-30"></div>
+                <div className="absolute -z-10 top-6 -right-6 w-full h-full rounded-2xl bg-gradient-to-br from-emerald-200 to-green-200 opacity-30"></div>
               </motion.div>
             </div>
 
@@ -778,13 +778,13 @@ const AboutPage = () => {
                 <motion.div
                   variants={floatingVariants}
                   animate="float"
-                  className="absolute -top-4 -left-4 w-8 h-8 bg-amber-400 rounded-full shadow-lg"
+                  className="absolute -top-4 -left-4 w-8 h-8 bg-green-400 rounded-full shadow-lg"
                 />
                 <motion.div
                   variants={floatingVariants}
                   animate="float"
                   transition={{ delay: 1 }}
-                  className="absolute -bottom-4 -right-4 w-6 h-6 bg-teal-400 rounded-full shadow-lg"
+                  className="absolute -bottom-4 -right-4 w-6 h-6 bg-green-400 rounded-full shadow-lg"
                 />
               </div>
 
@@ -806,9 +806,9 @@ const AboutPage = () => {
                     temporary goal.&quot;
                   </p>
                 </div>
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200 mt-6">
+                    <div className="bg-gradient-to-r from-green-50 to-green-50 rounded-xl p-6 border border-green-200 mt-6">
                 <div className="flex items-center mb-3">
-                  <Award className="w-5 h-5 text-blue-600 mr-2" />
+                  <Award className="w-5 h-5 text-green-600 mr-2" />
                   <h4 className="font-bold text-gray-900 text-lg">
                     National Recognition
                   </h4>
@@ -825,7 +825,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-10 lg:py-10 bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
+      <section className="py-10 lg:py-10 bg-gradient-to-br from-green-50 to-green-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -839,14 +839,14 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <GraduationCap className="w-4 h-4 mr-2" />
               Qualifications & Credentials
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-[#262262] mb-6">
-              Expert <span className="text-blue-600">Qualifications</span>
+              Expert <span className="text-green-600">Qualifications</span>
             </h2>
           </motion.div>
 
@@ -857,7 +857,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-blue-100"
+              className="bg-white rounded-3xl p-8 shadow-lg border border-green-100"
             >
               <div className="text-3xl mb-4">🎓</div>
               <h3 className="text-2xl font-bold text-[#262262] mb-4">
@@ -894,7 +894,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-blue-100"
+              className="bg-white rounded-3xl p-8 shadow-lg border border-green-100"
             >
               <div className="text-3xl mb-4">🏥</div>
               <h3 className="text-2xl font-bold text-[#262262] mb-4">
@@ -940,7 +940,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-amber-50 text-amber-700 text-sm font-medium mb-4 border border-amber-200"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-4 border border-green-200"
               >
                 <Award className="w-4 h-4 mr-2" />
                 Official Certification
@@ -1003,8 +1003,8 @@ const AboutPage = () => {
                     onClick={() => setCertIndex(i)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       i === certIndex
-                        ? "w-8 bg-amber-500"
-                        : "w-2 bg-gray-300 hover:bg-amber-300"
+                        ? "w-8 bg-green-500"
+                        : "w-2 bg-gray-300 hover:bg-green-300"
                     }`}
                     aria-label={`Go to certificate ${i + 1}`}
                   />
@@ -1019,7 +1019,7 @@ const AboutPage = () => {
         </div>
       </section>
       {/* Enhanced Philosophy Section */}
-      <section className="py-10 lg:py-10 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
+      <section className="py-10 lg:py-10 bg-gradient-to-br from-green-50 via-emerald-50 to-green-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.02)_1px,transparent_0)] bg-[size:60px_60px]"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1139,7 +1139,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6 border border-blue-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <Stethoscope className="w-4 h-4 mr-2" />
               Areas of Specialization
@@ -1147,7 +1147,7 @@ const AboutPage = () => {
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Comprehensive{" "}
-              <span className="text-blue-600">Nutrition Care</span>
+              <span className="text-green-600">Nutrition Care</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Expert guidance for all your health and wellness needs
@@ -1196,20 +1196,20 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-medium mb-6 border border-purple-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <Award className="w-4 h-4 mr-2" />
               Professional Journey
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              15+ Years of <span className="text-purple-600">Excellence</span>
+              15+ Years of <span className="text-green-600">Excellence</span>
             </h2>
           </motion.div>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-purple-200 h-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-green-200 h-full"></div>
 
             <div className="space-y-12">
               {experienceTimeline.map((item, index) => (
@@ -1225,14 +1225,14 @@ const AboutPage = () => {
                 >
                   {/* Content */}
                   <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-100">
-                      <div className="text-sm text-purple-600 font-semibold mb-2">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+                      <div className="text-sm text-green-600 font-semibold mb-2">
                         {item.year}
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-purple-600 font-medium mb-2">
+                      <p className="text-green-600 font-medium mb-2">
                         {item.institution}
                       </p>
                       <p className="text-gray-600">{item.description}</p>
@@ -1240,7 +1240,7 @@ const AboutPage = () => {
                   </div>
 
                   {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg"></div>
 
                   {/* Year indicator */}
                   <div className={`w-1/2 ${index % 2 === 0 ? "pl-8" : "pr-8"}`}>
@@ -1260,7 +1260,7 @@ const AboutPage = () => {
       </section>
 
       {/* Clinic Locations */}
-      <section className="py-10 lg:py-10 bg-gradient-to-br from-teal-50 to-cyan-50 relative overflow-hidden">
+      <section className="py-10 lg:py-10 bg-gradient-to-br from-green-50 to-emerald-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1274,14 +1274,14 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-6 border border-teal-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <MapPin className="w-4 h-4 mr-2" />
               Our Clinics
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Visit Us in <span className="text-teal-600">Mumbai & Thane</span>
+              Visit Us in <span className="text-green-600">Mumbai & Thane</span>
             </h2>
           </motion.div>
 
@@ -1291,17 +1291,17 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-teal-100"
+              className="bg-white rounded-3xl p-8 shadow-lg border border-green-100"
             >
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mr-4">
-                  <Home className="w-6 h-6 text-teal-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                  <Home className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
                     Lower Parel Clinic
                   </h3>
-                  <p className="text-teal-600 font-medium">Since 2019</p>
+                  <p className="text-green-600 font-medium">Since 2019</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-4">
@@ -1320,22 +1320,22 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-teal-100 relative overflow-hidden"
+              className="bg-white rounded-3xl p-8 shadow-lg border border-green-100 relative overflow-hidden"
             >
               <div className="absolute top-4 right-4">
-                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   New
                 </span>
               </div>
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
-                  <Home className="w-6 h-6 text-orange-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                  <Home className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
                     Thane Clinic
                   </h3>
-                  <p className="text-orange-600 font-medium">New in 2025</p>
+                  <p className="text-green-600 font-medium">New in 2025</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-4">
@@ -1363,7 +1363,7 @@ const AboutPage = () => {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center px-6 py-3 text-white bg-teal-500 rounded-xl hover:bg-teal-600 transition-colors duration-300 font-semibold"
+              className="inline-flex items-center px-6 py-3 text-white bg-green-500 rounded-xl hover:bg-green-600 transition-colors duration-300 font-semibold"
             >
               <MapPin className="w-4 h-4 mr-2" />
               Get Directions & Contact Info
@@ -1387,14 +1387,14 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-pink-50 text-pink-700 text-sm font-medium mb-6 border border-pink-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <HeartHandshake className="w-4 h-4 mr-2" />
               Community Outreach
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Giving Back to <span className="text-pink-600">Society</span>
+              Giving Back to <span className="text-green-600">Society</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Beyond the clinic - nurturing health awareness in the community
@@ -1444,7 +1444,7 @@ const AboutPage = () => {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-10 lg:py-10 bg-gradient-to-br from-amber-50 to-orange-50 relative overflow-hidden">
+      <section className="py-10 lg:py-10 bg-gradient-to-br from-green-50 to-green-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1458,14 +1458,14 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-6 border border-amber-200"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6 border border-green-200"
             >
               <Crown className="w-4 h-4 mr-2" />
               Why Choose DietFiniti
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Beyond <span className="text-amber-600">Ordinary</span> Nutrition
+              Beyond <span className="text-green-600">Ordinary</span> Nutrition
             </h2>
           </motion.div>
 
@@ -1481,7 +1481,7 @@ const AboutPage = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover="hover"
-                className="group relative bg-white rounded-2xl p-6 shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-white rounded-2xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300"
               >
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -1494,7 +1494,7 @@ const AboutPage = () => {
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   whileHover={{ opacity: 1, x: 0 }}
-                  className="absolute top-6 right-6 text-gray-400 group-hover:text-amber-500 transition-colors duration-300"
+                  className="absolute top-6 right-6 text-gray-400 group-hover:text-green-500 transition-colors duration-300"
                 >
                   <ArrowRight className="w-5 h-5" />
                 </motion.div>
@@ -1528,7 +1528,7 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center p-6 bg-white rounded-2xl border border-amber-200 shadow-lg"
+                  className="text-center p-6 bg-white rounded-2xl border border-green-200 shadow-lg"
                 >
                   <div className="text-4xl mb-4">{method.icon}</div>
                   <h4 className="font-bold text-gray-900 mb-2 text-lg">
@@ -1548,7 +1548,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-amber-200 max-w-2xl mx-auto">
+            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-green-200 max-w-2xl mx-auto">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Ready to Transform Your Health?
               </h3>
@@ -1558,7 +1558,7 @@ const AboutPage = () => {
               </p> */}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-green-500 rounded-2xl hover:from-green-600 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your Consultation

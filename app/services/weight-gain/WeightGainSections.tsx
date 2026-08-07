@@ -71,9 +71,9 @@ export const WeightGainSections = () => {
       duration: "2 weeks",
       weightGain: "Minimal",
       focus: "Body adaptation",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       highlights: [
         "Body adjusts to increased food intake",
         "Frequent meal schedule establishment",
@@ -109,9 +109,9 @@ export const WeightGainSections = () => {
       duration: "2 months",
       weightGain: "Consolidation phase",
       focus: "Steady routine",
-      color: "from-purple-500 to-violet-500",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200",
+      color: "from-green-500 to-violet-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       highlights: [
         "Consistent weight gain established",
         "Clothes fit better",
@@ -128,9 +128,9 @@ export const WeightGainSections = () => {
       duration: "Ongoing",
       weightGain: "Maintenance phase",
       focus: "Long-term habits",
-      color: "from-amber-500 to-orange-500",
-      bgColor: "bg-amber-50",
-      borderColor: "border-amber-200",
+      color: "from-green-500 to-green-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       highlights: [
         "Significant healthy weight gained",
         "Improved body composition",
@@ -184,7 +184,7 @@ export const WeightGainSections = () => {
   return (
     <>
       {/* Program Features Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-white to-amber-50/30 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-white to-green-50/30 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -210,10 +210,10 @@ export const WeightGainSections = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-amber-100 group cursor-pointer w-full"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-green-100 group cursor-pointer w-full"
               >
                 <div className="text-2xl md:text-3xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-amber-700 transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-green-700 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-xs md:text-sm">
@@ -359,7 +359,7 @@ export const WeightGainSections = () => {
       </section>
 
       {/* Success Stories & Results */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 to-orange-50 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-green-50 to-green-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Success Stories */}
@@ -385,7 +385,7 @@ export const WeightGainSections = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300 w-full"
+                    className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300 w-full"
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div>
@@ -396,7 +396,7 @@ export const WeightGainSections = () => {
                           {story.age}
                         </span>
                       </div>
-                      <span className="bg-amber-100 text-amber-800 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-semibold">
+                      <span className="bg-green-100 text-green-800 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-semibold">
                         {story.gain}
                       </span>
                     </div>
@@ -419,11 +419,11 @@ export const WeightGainSections = () => {
               viewport={{ once: true }}
               className="w-full"
             >
-              <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-6 md:p-8 text-white h-full w-full">
+              <div className="bg-gradient-to-r from-green-500 to-green-500 rounded-3xl p-6 md:p-8 text-white h-full w-full">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                   Overall Program Results
                 </h3>
-                <p className="text-amber-100 text-sm md:text-base mb-6 md:mb-8">
+                <p className="text-green-100 text-sm md:text-base mb-6 md:mb-8">
                   What you&apos;ll achieve by completing your weight gain
                   journey
                 </p>
@@ -442,7 +442,7 @@ export const WeightGainSections = () => {
                         <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-xl flex items-center justify-center">
                           {result.icon}
                         </div>
-                        <p className="text-amber-50 font-medium text-sm md:text-base">
+                        <p className="text-green-50 font-medium text-sm md:text-base">
                           {result.text}
                         </p>
                       </div>
@@ -456,7 +456,7 @@ export const WeightGainSections = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-amber-600 to-orange-600 relative overflow-hidden w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-green-600 to-green-600 relative overflow-hidden w-full">
         <div className="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-white/10 rounded-full blur-xl"></div>
 
@@ -471,14 +471,14 @@ export const WeightGainSections = () => {
               Ready to Start Your Weight Gain Journey?
             </h2>
 
-            <p className="text-lg md:text-xl text-amber-100 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-green-100 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
               Join hundreds of clients who have successfully gained healthy
               weight and transformed their confidence with our personalized
               approach.
             </p>
 
             <ServiceCtaButtons
-              contactColorClass="text-amber-600"
+              contactColorClass="text-green-600"
               variant="section"
             />
 
@@ -490,37 +490,37 @@ export const WeightGainSections = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto"
             >
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-amber-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Users className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
                     2,000+
                   </span>
                 </div>
-                <div className="text-amber-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Clients Gained Weight
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-amber-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Star className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" />
                   <span className="text-base md:text-lg font-semibold">
                     5/5
                   </span>
                 </div>
-                <div className="text-amber-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Client Rating
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-amber-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Check className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
                     99%
                   </span>
                 </div>
-                <div className="text-amber-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Success Rate
                 </div>
               </div>

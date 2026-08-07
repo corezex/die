@@ -44,6 +44,44 @@ export function SiteStructuredData() {
           latitude: 18.994891,
           longitude: 72.831515,
         },
+        // Both clinics are listed visibly on the contact page and footer;
+        // link them into the entity graph for consistent local SEO signals.
+        location: [
+          {
+            "@type": "MedicalClinic",
+            "@id": `${SITE_URL}/#clinic-lower-parel`,
+            name: "DietFiniti — Lower Parel Clinic",
+            url: `${SITE_URL}/contact`,
+            telephone: "+91-93210-57899",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "Mansi Maternity Home, Ambavat Bhawan, NM Joshi Marg, opposite Marathon Futurex, Lower Parel East",
+              addressLocality: "Mumbai",
+              addressRegion: "Maharashtra",
+              postalCode: "400013",
+              addressCountry: "IN",
+            },
+            geo: { "@type": "GeoCoordinates", latitude: 18.994891, longitude: 72.831515 },
+          },
+          {
+            "@type": "MedicalClinic",
+            "@id": `${SITE_URL}/#clinic-thane`,
+            name: "DietFiniti — Thane Clinic",
+            url: `${SITE_URL}/contact`,
+            telephone: "+91-93210-57899",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "1st Floor, Oswal Business Plaza, 109/A, Kolshet Road, above MR D.I.Y, near Kalpataru ParkCity, Dhokali, Thane West",
+              addressLocality: "Thane",
+              addressRegion: "Maharashtra",
+              postalCode: "400607",
+              addressCountry: "IN",
+            },
+            geo: { "@type": "GeoCoordinates", latitude: 19.22986, longitude: 72.985099 },
+          },
+        ],
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -86,6 +124,7 @@ export function SiteStructuredData() {
         makesOffer: [
           { "@type": "Offer", name: "Personalised Weight-Loss Program", url: `${SITE_URL}/services/weight-loss` },
           { "@type": "Offer", name: "Medical Weight-Loss Program", url: `${SITE_URL}/services/medical-weight-loss` },
+          { "@type": "Offer", name: "GLP-1 Medication Nutrition Support", url: `${SITE_URL}/glp-1-medications` },
           { "@type": "Offer", name: "Weight-Gain Program", url: `${SITE_URL}/services/weight-gain` },
           { "@type": "Offer", name: "Pregnancy Diet Plan", url: `${SITE_URL}/services/pregnancy-diet` },
           { "@type": "Offer", name: "Bridal Diet Plan", url: `${SITE_URL}/services/bridal-diet` },

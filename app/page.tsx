@@ -12,7 +12,7 @@ import HomeSearchAnswers from "@/app/components/HomeSearchAnswers";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  title: "Personalised Dietitian & Nutrition Plans",
+  title: "Dietitian in Mumbai | Nutrition & Weight Loss Plans",
   description: "Personalised diet plans and nutrition consultations from Dietitian Tejal. Practical Indian meal guidance for clients in Mumbai, Thane and online across India.",
 };
 

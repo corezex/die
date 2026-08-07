@@ -48,9 +48,9 @@ export const SportsNutritionSections = () => {
       category: "Strength Sports",
       sports: "Weightlifting, powerlifting, bodybuilding",
       icon: "🏋️",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Muscle building & recovery",
       strategies: [
         "High protein intake (1.6-2.2g/kg body weight)",
@@ -66,9 +66,9 @@ export const SportsNutritionSections = () => {
       category: "Team Sports",
       sports: "Cricket, football, basketball, hockey",
       icon: "⚽",
-      color: "from-orange-500 to-amber-500",
-      bgColor: "bg-orange-50",
-      borderColor: "border-orange-200",
+      color: "from-green-500 to-green-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
       focus: "Balanced energy & quick recovery",
       strategies: [
         "Balanced macronutrient intake",
@@ -84,7 +84,7 @@ export const SportsNutritionSections = () => {
       category: "Combat Sports",
       sports: "Boxing, MMA, martial arts, wrestling",
       icon: "🥊",
-      color: "from-red-500 to-rose-500",
+      color: "from-red-500 to-green-500",
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
       focus: "Weight management & explosive power",
@@ -160,7 +160,7 @@ export const SportsNutritionSections = () => {
       timing: "During training session",
       icon: <Activity className="w-5 h-5 md:w-6 md:h-6" />,
       focus: "Sustained Performance",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-green-500 to-emerald-500",
       strategies: [
         "<60 min: Water only usually needed",
         "60-90 min: Water + electrolytes, small carbs",
@@ -174,7 +174,7 @@ export const SportsNutritionSections = () => {
       timing: "Within 30-60 minutes + 2-3 hours",
       icon: <Heart className="w-5 h-5 md:w-6 md:h-6" />,
       focus: "Recovery & Repair",
-      color: "from-purple-500 to-pink-500",
+      color: "from-green-500 to-green-500",
       strategies: [
         "30-60 min: Protein (20-25g) + carbs (3:1 ratio)",
         "2-3 hours: Complete balanced meal",
@@ -323,7 +323,7 @@ export const SportsNutritionSections = () => {
       </section>
 
       {/* Program Features Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-white to-blue-50/30 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-white to-green-50/30 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -350,10 +350,10 @@ export const SportsNutritionSections = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-blue-100 group cursor-pointer w-full"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-green-100 group cursor-pointer w-full"
               >
                 <div className="text-2xl md:text-3xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-green-700 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-xs md:text-sm">
@@ -395,7 +395,7 @@ export const SportsNutritionSections = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-4 md:p-6 border border-blue-200 hover:shadow-lg transition-all duration-300 w-full"
+                  className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 md:p-6 border border-green-200 hover:shadow-lg transition-all duration-300 w-full"
                 >
                   <div
                     className={`w-auto px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r ${phase.color} rounded-2xl flex items-center gap-2 mb-3 md:mb-4`}
@@ -408,7 +408,7 @@ export const SportsNutritionSections = () => {
                     </div>
                   </div>
 
-                  <div className="text-xs md:text-sm text-blue-600 font-medium mb-3 md:mb-4">
+                  <div className="text-xs md:text-sm text-green-600 font-medium mb-3 md:mb-4">
                     {phase.timing}
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">
@@ -449,7 +449,7 @@ export const SportsNutritionSections = () => {
       </section>
 
       {/* Body Type Considerations */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-green-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Heading */}
           <motion.div
@@ -509,7 +509,7 @@ export const SportsNutritionSections = () => {
                         key={idx}
                         className="flex items-center text-xs md:text-sm text-gray-700"
                       >
-                        <Target className="w-3 h-3 md:w-4 md:h-4 text-blue-500 mr-2" />
+                        <Target className="w-3 h-3 md:w-4 md:h-4 text-green-500 mr-2" />
                         {strategy}
                       </div>
                     ))}
@@ -547,14 +547,14 @@ export const SportsNutritionSections = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl p-6 md:p-8 text-white w-full"
+                className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl p-6 md:p-8 text-white w-full"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="text-lg md:text-xl font-bold">
                       {story.name}
                     </h3>
-                    <p className="text-blue-200 text-sm md:text-base">
+                    <p className="text-green-200 text-sm md:text-base">
                       Age {story.age} | {story.sport}
                     </p>
                   </div>
@@ -562,7 +562,7 @@ export const SportsNutritionSections = () => {
                     {story.outcome}
                   </div>
                 </div>
-                <p className="text-blue-100 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
+                <p className="text-green-100 leading-relaxed text-xs md:text-sm mb-3 md:mb-4">
                   {story.testimonial}
                 </p>
                 <div className="flex items-center space-x-1">
@@ -579,7 +579,7 @@ export const SportsNutritionSections = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-cyan-600 relative overflow-hidden w-full">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-green-600 to-emerald-600 relative overflow-hidden w-full">
         <div className="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-white/10 rounded-full blur-xl"></div>
 
@@ -594,13 +594,13 @@ export const SportsNutritionSections = () => {
               Elevate Your Athletic Performance
             </h2>
 
-            <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-green-100 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
               Achieve your peak performance with science-backed nutrition
               strategies tailored to your sport, goals, and training regimen.
             </p>
 
             <ServiceCtaButtons
-              contactColorClass="text-blue-600"
+              contactColorClass="text-green-600"
               variant="section"
             />
 
@@ -612,37 +612,37 @@ export const SportsNutritionSections = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto"
             >
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-blue-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Users className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
                     2,00+
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Athletes Supported
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-blue-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <TrendingUp className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
                     99%
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Performance Improvement
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-2 text-blue-200">
+                <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Activity className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
                     99%
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs md:text-sm mt-1">
+                <div className="text-green-100 text-xs md:text-sm mt-1">
                   Faster Recovery
                 </div>
               </div>

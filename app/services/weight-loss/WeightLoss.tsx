@@ -21,6 +21,7 @@ export default function WeightLossProgram() {
         <div>
           <p className="mb-4 font-semibold uppercase tracking-[0.18em] text-emerald-100 text-sm">Mumbai, Thane & online across India</p>
           <h1 className="text-4xl font-bold tracking-tight md:text-6xl">Personalised weight-loss nutrition support that fits your life</h1>
+      <p className="mt-4 max-w-3xl text-lg leading-8 text-emerald-50/90">Looking for a <strong>dietitian for weight loss</strong> in Mumbai, Thane or online? A personalised <strong>weight loss diet plan</strong> built around your routine and Indian food — not a generic chart.</p>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-emerald-50 md:text-xl">Work with DietFiniti to build practical eating habits around your routine, food preferences, goals and relevant health history. There are no generic meal charts and no promised outcomes—just a thoughtful starting point and ongoing guidance where appropriate.</p>
           <div className="mt-9"><ServiceCtaButtons contactColorClass="text-emerald-800" /></div>
         </div>

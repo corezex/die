@@ -4,13 +4,41 @@ import { ChevronLeft, ChevronRight, Clock, ChefHat, Search, Filter } from "lucid
 import recipesData from "@/app/data/recipes.json";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "500+ Healthy Indian Recipes & Diet Food Ideas",
-  description: "Browse our comprehensive collection of 500+ healthy Indian recipes. From low-calorie breakfasts to protein-packed dinners and guilt-free snacks, designed by a nutritionist.",
-  alternates: {
-    canonical: "https://dietfiniti.com/recipe"
+const SITE_URL = "https://dietfiniti.com";
+
+export async function generateMetadata(
+  props: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }
+): Promise<Metadata> {
+  const searchParams = await props.searchParams;
+  const filtered = searchParams?.page || searchParams?.category || searchParams?.q;
+
+  const base: Metadata = {
+    title: "500+ Healthy Indian Recipes",
+    description: "Browse 500+ healthy Indian recipes by Dietitian Tejal — low-calorie breakfasts, high-protein dinners, millets, dals, snacks and desserts.",
+    alternates: { canonical: `${SITE_URL}/recipe` },
+    openGraph: {
+      title: "500+ Healthy Indian Recipes & Diet Food Ideas | DietFiniti",
+      description: "Low-calorie breakfasts, protein-packed dinners, dals, millets and snacks — 500+ healthy Indian recipes by Dietitian Tejal.",
+      type: "website",
+      url: `${SITE_URL}/recipe`,
+      siteName: "DietFiniti",
+      images: [{ url: `${SITE_URL}/recipes.png`, alt: "Healthy Indian recipes collection" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "500+ Healthy Indian Recipes | DietFiniti",
+      description: "500+ healthy Indian recipes by Dietitian Tejal.",
+      images: [`${SITE_URL}/recipes.png`],
+    },
+  };
+
+  // Filtered/paginated states are thin duplicates of the main listing —
+  // keep them crawlable but out of the index, canonical pointing to /recipe.
+  if (filtered) {
+    return { ...base, robots: { index: false, follow: true }, alternates: { canonical: `${SITE_URL}/recipe` } };
   }
-};
+  return base;
+}
 
 const RECIPES_PER_PAGE = 24;
 const CATEGORIES = [
@@ -78,7 +106,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
             500+ Healthy Indian Recipes
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Looking for <strong>healthy Indian food options</strong>? We've compiled 500+ nutritious, low-calorie, and high-protein recipes. 
+            Looking for <strong>healthy Indian food options</strong>? We&apos;ve compiled 500+ nutritious, low-calorie, and high-protein recipes. 
             Filter below to find weight loss diet plans, diabetic-friendly meals, or wholesome family food.
           </p>
         </div>
@@ -107,6 +135,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
               </div>
               <select
                 name="category"
+                aria-label="Filter recipes by category"
                 defaultValue={category}
                 className="block w-full pl-11 pr-10 py-3 border border-gray-200 rounded-xl leading-5 bg-gray-50 focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-green-500 appearance-none transition-colors"
               >
@@ -119,7 +148,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-green-600 text-white py-3 px-8 rounded-xl font-medium hover:bg-green-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              className="bg-green-700 text-white py-3 px-8 rounded-xl font-medium hover:bg-green-800 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
               Search
             </button>
@@ -142,7 +171,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                   href={href}
                   className={`text-xs px-4 py-2 rounded-full font-medium transition-all duration-200 ${
                     isSelected 
-                      ? "bg-green-600 text-white shadow-sm" 
+                      ? "bg-green-700 text-white shadow-sm" 
                       : "bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-800"
                   }`}
                 >
@@ -160,10 +189,10 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
               <Search className="w-8 h-8 text-green-500" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">No recipes found</h3>
-            <p className="text-gray-500 mb-6">We couldn't find any recipes matching your criteria.</p>
+            <p className="text-gray-500 mb-6">We couldn&apos;t find any recipes matching your criteria.</p>
             <Link 
               href="/recipe" 
-              className="inline-block bg-green-600 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-green-700 transition-colors"
+              className="inline-block bg-green-700 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-green-800 transition-colors"
             >
               Clear Filters
             </Link>
@@ -198,7 +227,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                   
                   <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1.5 text-orange-500" />
+                      <Clock className="w-4 h-4 mr-1.5 text-green-500" />
                       <span>{recipe.total_time} mins</span>
                     </div>
                     <div className="flex items-center">
@@ -240,7 +269,7 @@ export default async function RecipeListPage(props: { searchParams?: Promise<{ [
                       href={buildUrl(pageNum)}
                       className={`w-10 h-10 flex items-center justify-center rounded-lg border transition-colors ${
                         validPage === pageNum
-                          ? "bg-green-600 text-white border-green-600 font-semibold"
+                          ? "bg-green-700 text-white border-green-700 font-semibold"
                           : "bg-white text-gray-700 border-gray-300 hover:bg-green-50 hover:text-green-700 hover:border-green-300"
                       }`}
                     >
