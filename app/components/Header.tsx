@@ -149,7 +149,7 @@ function SectionCard({ section, onNavigate }: { section: MenuSection; onNavigate
     <section className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
       <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
       <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
-      <div className="mt-4 grid gap-2">
+      <div className="mt-4 grid grid-cols-2 gap-2">
         {section.items.map((item) => {
           const Icon = item.icon;
           return (
@@ -363,7 +363,7 @@ export default function Header() {
           </div>
 
           <div className="space-y-5 px-4 pb-28 pt-4">
-            <section className="grid gap-2">
+            <section className="grid grid-cols-2 gap-2">
               {mainLinks.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -394,7 +394,7 @@ export default function Header() {
 
             <section className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Resources</p>
-              <div className="mt-3 grid gap-2">
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 {resourcesLinks.map((item) => {
                   const Icon = item.icon;
                   return (
