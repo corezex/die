@@ -1,419 +1,541 @@
-// components/Header.tsx
 "use client";
-import Image from "next/image";
-import logo2 from "@/public/image/logo.png";
-import logo1 from "@/public/image/logo2.png";
 
-import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  Phone, 
-  Scale, 
-  HeartPulse, 
-  Dumbbell, 
-  Baby, 
-  Sparkles, 
-  Trophy,
-  Utensils,
-  Home,
-  Users,
-  Star,
-  PhoneCall,
-  ChefHat,
+import { useEffect, useRef, useState } from "react";
+import type { LucideIcon } from "lucide-react";
+import {
   Activity,
+  Baby,
+  BookOpen,
+  Briefcase,
+  ChefHat,
+  ChevronDown,
+  Dumbbell,
+  HeartPulse,
+  Home,
+  Menu,
+  Phone,
+  PhoneCall,
   Pill,
-  BookOpen
+  Salad,
+  Scale,
+  Sparkles,
+  Star,
+  Trophy,
+  Users,
+  Utensils,
+  X,
 } from "lucide-react";
 
-// Define servicesItems first since navigationItems depends on it
-const servicesItems = [
-  { name: "Our Services", path: "/services", icon: Utensils },
-  { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
-  { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
-  { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
-  { name: "Weight Gain Program", path: "/services/weight-gain", icon: Dumbbell },
-  { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
-  { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
-  { name: "Sports Nutrition Plan", path: "/services/sports-nutrition", icon: Trophy },
-  { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: HeartPulse },
-  { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
-  { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Users },
+import logoMark from "@/public/image/logo2.png";
+import logoWordmark from "@/public/image/logo.png";
+
+type MenuLink = {
+  name: string;
+  path: string;
+  icon: LucideIcon;
+  description?: string;
+};
+
+type MenuSection = {
+  title: string;
+  description: string;
+  items: MenuLink[];
+};
+
+const serviceSections: MenuSection[] = [
+  {
+    title: "Start here",
+    description: "Use these first if you are choosing a programme or consultation format.",
+    items: [
+      { name: "All Services", path: "/services", icon: Utensils },
+      { name: "Online Consultation", path: "/online-dietitian-consultation", icon: PhoneCall },
+    ],
+  },
+  {
+    title: "Weight & body goals",
+    description: "Personalised plans for fat loss, weight gain and medically informed support.",
+    items: [
+      { name: "Weight Loss Program", path: "/services/weight-loss", icon: Scale },
+      { name: "Medical Weight Loss", path: "/services/medical-weight-loss", icon: HeartPulse },
+      { name: "Weight Gain Program", path: "/services/weight-gain", icon: Dumbbell },
+    ],
+  },
+  {
+    title: "Condition support",
+    description: "Condition-led nutrition pages that work alongside your doctor’s care.",
+    items: [
+      { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: HeartPulse },
+      { name: "PCOS Nutrition", path: "/services/pcos-nutrition", icon: Sparkles },
+      { name: "Thyroid Nutrition", path: "/services/thyroid-nutrition", icon: HeartPulse },
+      { name: "Diabetes Nutrition", path: "/services/diabetes-nutrition", icon: Activity },
+      { name: "Fatty Liver Nutrition", path: "/services/fatty-liver-nutrition", icon: HeartPulse },
+      { name: "Gut Health & IBS", path: "/services/gut-health-nutrition", icon: Salad },
+    ],
+  },
+  {
+    title: "Family & specialist support",
+    description: "Life-stage, performance and workplace nutrition guidance.",
+    items: [
+      { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
+      { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
+      { name: "Sports Nutrition", path: "/services/sports-nutrition", icon: Trophy },
+      { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
+      { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Briefcase },
+    ],
+  },
 ];
 
-const navigationItems = [
+const resourceLinks: MenuLink[] = [
+  {
+    name: "Recipes",
+    path: "/recipe",
+    icon: ChefHat,
+    description: "Healthy Indian recipes and meal ideas.",
+  },
+  {
+    name: "BMI Calculator",
+    path: "/bmi-calculator",
+    icon: Activity,
+    description: "A simple starting point for weight and health context.",
+  },
+  {
+    name: "Testimonials",
+    path: "/testimonials",
+    icon: Star,
+    description: "Client experiences and feedback.",
+  },
+];
+
+const primaryLinks: MenuLink[] = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: Users },
-  { name: "Services", path: "/services", icon: Utensils, submenu: servicesItems },
-  { name: "Recipes", path: "/recipe", icon: ChefHat },
-  { name: "GLP-1 Medications", path: "/glp-1-medications", icon: Pill },
-  { name: "Blog", path: "/blog", icon: BookOpen },
-  { name: "Testimonials", path: "/testimonials", icon: Star },
-  { name: "BMI", path: "/bmi-calculator", icon: Activity },
-  { name: "Contact", path: "/contact", icon: PhoneCall },
 ];
 
-const Header = () => {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
-  const mobileServicesDropdownRef = useRef<HTMLDivElement>(null);
-  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+type OpenDesktopMenu = "services" | "resources" | null;
 
-  // Declare functions first before using them in useEffect
+export default function Header() {
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<OpenDesktopMenu>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+
+  const desktopMenuRef = useRef<HTMLDivElement>(null);
+
   const closeAllMenus = () => {
-    setIsServicesOpen(false);
-    setIsMobileMenuOpen(false);
-    setIsMobileServicesOpen(false);
+    setOpenDesktopMenu(null);
+    setMobileMenuOpen(false);
+    setMobileServicesOpen(false);
+    setMobileResourcesOpen(false);
   };
 
-  const handleServicesClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsServicesOpen(!isServicesOpen);
-  };
-
-  const handleMobileServicesClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsMobileServicesOpen(!isMobileServicesOpen);
-  };
-
-  const handleMobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleNavItemClick = () => {
-    closeAllMenus();
-  };
-
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false);
-      }
-      if (mobileServicesDropdownRef.current && !mobileServicesDropdownRef.current.contains(event.target as Node)) {
-        setIsMobileServicesOpen(false);
+      if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node)) {
+        setOpenDesktopMenu(null);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close mobile menu when pressing escape key
   useEffect(() => {
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        closeAllMenus();
-      }
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeAllMenus();
     };
 
-    document.addEventListener('keydown', handleEscapeKey);
-    return () => {
-      document.removeEventListener('keydown', handleEscapeKey);
-    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
-  }, [isMobileMenuOpen]);
+  }, [mobileMenuOpen]);
+
+  const toggleDesktopMenu = (menu: Exclude<OpenDesktopMenu, null>) => {
+    setOpenDesktopMenu((current) => (current === menu ? null : menu));
+  };
+
+  const desktopLinkClass =
+    "text-gray-700 hover:text-green-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300 flex items-center group";
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex justify-between items-center h-14 sm:h-16">
-          {/* Combined Logo Container */}
-          <div className="flex-shrink-0 flex items-center">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6">
+        <div className="flex h-16 items-center justify-between gap-3 lg:h-[72px]">
           <Link
-              href="/"
-              className="text-xl font-bold text-green-600 flex items-center hover:text-green-700 transition duration-300"
-              onClick={handleNavItemClick}
-            >
-              <Image
-                src={logo1}
-                alt="Dietfiniti Logo"
-                width={40}
-                height={40}
-                className="object-contain gap-5 mr-2"
-                priority
-              />
-              <Image
-                src={logo2}
-                alt="Dietfiniti Logo"
-                width={120}
-                height={40}
-                className="object-contain"
-                priority
-              />
-            </Link>
-          </div>
+            href="/"
+            className="flex shrink-0 items-center text-xl font-bold text-green-700 transition hover:text-green-800"
+            onClick={closeAllMenus}
+          >
+            <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
+            <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+          </Link>
 
-          {/* Desktop Navigation - Compact */}
-          <nav className="hidden lg:flex items-center space-x-0">
-            {navigationItems.map((item) => (
-              <div key={item.name} className="relative">
-                {item.submenu ? (
-                  <div 
-                    className="relative" 
-                    ref={item.name === "Services" ? servicesDropdownRef : null}
-                  >
-                    <div className="flex items-center">
-                      <Link
-                        href={item.path}
-                        className="text-gray-700 hover:text-green-600 px-3 py-1.5 rounded text-xs font-medium transition duration-300 flex items-center group"
-                      >
-                        <item.icon className="w-3.5 h-3.5 mr-1.5 group-hover:scale-110 transition-transform" />
-                        {item.name}
-                      </Link>
-                      <button
-                        onClick={handleServicesClick}
-                        className="text-gray-500 hover:text-green-600 p-0.5 rounded transition duration-300 flex items-center"
-                        aria-label={`Toggle ${item.name.toLowerCase()} dropdown`}
-                        aria-expanded={isServicesOpen}
-                      >
-                        <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            isServicesOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    </div>
-
-                    {isServicesOpen && (
-                      <div className="absolute left-0 mt-1 w-56 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-100 text-xs">
-                        {item.submenu.map((subItem, index) => (
-                          <Link
-                            key={index}
-                            href={subItem.path}
-                            className="flex items-center px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition duration-150 group"
-                            onClick={handleNavItemClick}
-                          >
-                            <subItem.icon className="w-3.5 h-3.5 mr-2.5 text-green-500 group-hover:scale-110 transition-transform" />
-                            <span className="font-medium">{subItem.name}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    href={item.path}
-                    className="text-gray-700 hover:text-green-600 px-3 py-1.5 rounded text-xs font-medium transition duration-300 flex items-center group"
-                  >
-                    <item.icon className="w-3.5 h-3.5 mr-1.5 group-hover:scale-110 transition-transform" />
+          <div ref={desktopMenuRef} className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center">
+            <nav className="flex items-center gap-1">
+              {primaryLinks.slice(0, 2).map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.name} href={item.path} className={desktopLinkClass}>
+                    <Icon className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
                     {item.name}
                   </Link>
+                );
+              })}
+
+              <div className="relative">
+                <div className="flex items-center">
+                  <Link href="/services" className={desktopLinkClass}>
+                    <Utensils className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                    Services
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => toggleDesktopMenu("services")}
+                    className="rounded-lg p-2 text-gray-500 transition hover:text-green-700"
+                    aria-expanded={openDesktopMenu === "services"}
+                    aria-label="Toggle services menu"
+                  >
+                    <ChevronDown className={`h-4 w-4 transition-transform ${openDesktopMenu === "services" ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
+
+                {openDesktopMenu === "services" && (
+                  <div className="absolute left-0 top-full mt-4 w-[920px] rounded-3xl border border-green-100 bg-white p-6 shadow-2xl">
+                    <div className="grid gap-5 xl:grid-cols-2">
+                      {serviceSections.map((section) => (
+                        <section key={section.title} className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
+                          <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">{section.title}</p>
+                          <p className="mt-2 text-sm leading-6 text-slate-600">{section.description}</p>
+                          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                            {section.items.map((item) => {
+                              const Icon = item.icon;
+                              return (
+                                <Link
+                                  key={item.path}
+                                  href={item.path}
+                                  onClick={closeAllMenus}
+                                  className="flex items-center gap-3 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-slate-800 transition hover:border-green-200 hover:bg-green-50 hover:text-green-700"
+                                >
+                                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                                    <Icon className="h-4 w-4" />
+                                  </span>
+                                  <span>{item.name}</span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </section>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 flex items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-green-50 to-white p-5 ring-1 ring-green-100">
+                      <div>
+                        <p className="text-sm font-bold text-[#262262]">Not sure which service fits best?</p>
+                        <p className="mt-1 text-sm leading-6 text-slate-600">
+                          Start with a consultation and DietFiniti can guide you to the right programme for your goal, health history and routine.
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 gap-2">
+                        <Link href="/services" onClick={closeAllMenus} className="rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50">
+                          View all services
+                        </Link>
+                        <Link href="/contact" onClick={closeAllMenus} className="rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
+                          Contact DietFiniti
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
-            ))}
-          </nav>
 
-          {/* Contact Button - Desktop - Compact */}
-          <div className="hidden lg:flex items-center">
+              <Link href="/glp-1-medications" className={desktopLinkClass}>
+                <Pill className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                GLP-1 Medications
+              </Link>
+
+              <Link href="/blog" className={desktopLinkClass}>
+                <BookOpen className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                Blog
+              </Link>
+
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => toggleDesktopMenu("resources")}
+                  className={desktopLinkClass}
+                  aria-expanded={openDesktopMenu === "resources"}
+                  aria-label="Toggle resources menu"
+                >
+                  <BookOpen className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Resources
+                  <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${openDesktopMenu === "resources" ? "rotate-180" : ""}`} />
+                </button>
+
+                {openDesktopMenu === "resources" && (
+                  <div className="absolute right-0 top-full mt-4 w-[380px] rounded-3xl border border-green-100 bg-white p-5 shadow-2xl">
+                    <div className="grid gap-3">
+                      {resourceLinks.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            onClick={closeAllMenus}
+                            className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 transition hover:bg-green-50 hover:text-green-700 hover:ring-green-100"
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-700 ring-1 ring-green-100">
+                                <Icon className="h-4 w-4" />
+                              </span>
+                              <div>
+                                <p className="font-semibold text-slate-900">{item.name}</p>
+                                {item.description ? <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p> : null}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <Link href="/contact" className={desktopLinkClass}>
+                <PhoneCall className="mr-1.5 h-4 w-4 group-hover:scale-110 transition-transform" />
+                Contact
+              </Link>
+            </nav>
+          </div>
+
+          <div className="hidden lg:flex lg:items-center lg:gap-2">
+            <Link
+              href="/online-dietitian-consultation"
+              className="rounded-xl border border-green-200 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50"
+            >
+              Online Consultation
+            </Link>
             <a
               href="tel:+919321057899"
-              className="bg-green-600 text-white px-3 py-1.5 rounded-md hover:bg-green-700 transition duration-300 flex items-center shadow-sm hover:shadow text-xs"
-              aria-label="Call us"
+              className="inline-flex items-center rounded-xl bg-green-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800"
+              aria-label="Call DietFiniti"
             >
-              <Phone className="w-3 h-3 mr-1.5" />
-              <span className="font-semibold">Call Now</span>
+              <Phone className="mr-2 h-4 w-4" />
+              Call Now
             </a>
           </div>
 
-          {/* Mobile Header Right Section */}
-          <div className="lg:hidden flex items-center space-x-2">
-            {/* Phone link - Smaller */}
+          <div className="flex items-center gap-2 lg:hidden">
             <a
               href="tel:+919321057899"
-              className="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200 transition duration-300 flex items-center justify-center"
-              aria-label="Call us"
-              style={{ minWidth: '36px', minHeight: '36px' }}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700 transition hover:bg-green-200"
+              aria-label="Call DietFiniti"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="h-4 w-4" />
             </a>
-            
-            {/* Menu button - Smaller */}
             <button
-              ref={mobileMenuButtonRef}
-              onClick={handleMobileMenuToggle}
-              className="text-gray-700 hover:text-green-600 p-2 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 relative z-60 bg-gray-50 hover:bg-gray-100 transition duration-300 flex items-center justify-center"
-              style={{ minWidth: '36px', minHeight: '36px' }}
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition hover:bg-slate-200"
+              aria-expanded={mobileMenuOpen}
+              aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Navigation - Compact */}
-        {isMobileMenuOpen && (
-          <div 
-            className="lg:hidden fixed inset-0 z-50 bg-white"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation menu"
-          >
-            {/* Mobile Header with Combined Logos */}
-            <div className="bg-white border-b border-gray-200 p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="relative w-16 h-8">
-                    <Image
-                      src={logo1}
-                      alt="Dietfiniti Logo 1"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                  <div className="relative w-16 h-8">
-                    <Image
-                      src={logo2}
-                      alt="Dietfiniti Logo 2"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
-                <button
-                  onClick={closeAllMenus}
-                  className="text-gray-600 p-1.5 rounded-full hover:bg-gray-100 transition duration-300 flex items-center justify-center"
-                  aria-label="Close menu"
-                  style={{ minWidth: '36px', minHeight: '36px' }}
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              
-              <div className="space-y-2 text-xs">
-                <div className="flex items-center bg-gray-50 border border-gray-100 p-2 rounded-md">
-                  <Phone className="w-4 h-4 mr-2 text-green-600" />
-                  <a 
-                    href="tel:+919321057899" 
-                    className="text-sm font-semibold text-gray-800 hover:text-green-700 hover:underline"
-                  >
-                    +91 93210 57899
-                  </a>
-                </div>
-                <p className="text-gray-500 text-xs italic">
-                  Your Health, Our Priority
-                </p>
-              </div>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-white lg:hidden">
+          <div className="border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <Link href="/" className="flex items-center" onClick={closeAllMenus}>
+                <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
+                <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+              </Link>
+              <button
+                type="button"
+                onClick={closeAllMenus}
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
-
-            {/* Mobile Navigation Items - Compact */}
-            <div className="h-full overflow-y-auto pb-24 px-4">
-              <nav className="py-4">
-                {navigationItems.map((item) => (
-                  <div key={item.name}>
-                    {item.submenu ? (
-                      <div 
-                        className="border-b border-gray-100" 
-                        ref={mobileServicesDropdownRef}
-                      >
-                        <button
-                          onClick={handleMobileServicesClick}
-                          className="flex items-center justify-between w-full px-3 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition duration-200 text-sm"
-                          aria-label={`Toggle ${item.name.toLowerCase()} dropdown`}
-                          aria-expanded={isMobileServicesOpen}
-                        >
-                          <div className="flex items-center">
-                            <div className="w-8 h-8 bg-green-50 rounded-md flex items-center justify-center mr-2">
-                              <item.icon className="w-4 h-4 text-green-600" />
-                            </div>
-                            <span className="font-medium">{item.name}</span>
-                          </div>
-                          <ChevronDown
-                            className={`w-4 h-4 transition-transform duration-200 ${
-                              isMobileServicesOpen ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-
-                        {isMobileServicesOpen && (
-                          <div className="bg-gray-50 py-2 rounded-md mx-2 mb-2">
-                            {item.submenu.map((subItem, index) => (
-                              <Link
-                                key={index}
-                                href={subItem.path}
-                                className="flex items-center px-4 py-2.5 text-gray-600 hover:text-green-700 hover:bg-white transition duration-150 text-sm border-b border-gray-100 last:border-b-0"
-                                onClick={handleNavItemClick}
-                              >
-                                <div className="w-7 h-7 bg-green-50 rounded-full flex items-center justify-center mr-2">
-                                  <subItem.icon className="w-3.5 h-3.5 text-green-600" />
-                                </div>
-                                <span>{subItem.name}</span>
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.path}
-                        className="flex items-center px-3 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 border-b border-gray-100 transition duration-200 text-sm"
-                        onClick={handleNavItemClick}
-                      >
-                        <div className="w-8 h-8 bg-green-50 rounded-md flex items-center justify-center mr-2">
-                          <item.icon className="w-4 h-4 text-green-600" />
-                        </div>
-                        <span className="font-medium">{item.name}</span>
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </nav>
-
-              {/* Mobile CTA Section - Compact */}
-              <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3">
-                <a
-                  href="tel:+919321057899"
-                  className="block w-full bg-green-600 text-white text-center py-2.5 rounded-lg hover:bg-green-700 transition duration-300 font-semibold text-sm shadow"
-                  onClick={handleNavItemClick}
-                >
-                  <Phone className="w-3.5 h-3.5 inline mr-1.5" />
-                  Call Now: +91 93210 57899
-                </a>
-                <p className="text-center text-gray-500 text-xs mt-1.5">
-                  Available 24/7 for consultations
-                </p>
-              </div>
+            <div className="mt-4 rounded-2xl bg-green-50 p-3 ring-1 ring-green-100">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">DietFiniti</p>
+              <p className="mt-1 text-sm leading-6 text-slate-700">Personalised nutrition support in Mumbai, Thane and online across India.</p>
             </div>
           </div>
-        )}
 
-        {/* Overlay - Only show when mobile menu is open */}
-        {isMobileMenuOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-sm lg:hidden"
-            onClick={closeAllMenus}
-            aria-hidden="true"
-          />
-        )}
-      </div>
+          <div className="px-4 pb-28 pt-4">
+            <nav className="space-y-2">
+              {primaryLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    onClick={closeAllMenus}
+                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span>{item.name}</span>
+                  </Link>
+                );
+              })}
+
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+                <button
+                  type="button"
+                  onClick={() => setMobileServicesOpen((open) => !open)}
+                  className="flex w-full items-center justify-between px-4 py-4 text-left"
+                  aria-expanded={mobileServicesOpen}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                      <Utensils className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">Services</p>
+                      <p className="text-xs text-slate-500">All programmes and condition-support pages</p>
+                    </div>
+                  </div>
+                  <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {mobileServicesOpen && (
+                  <div className="border-t border-slate-200 bg-slate-50 p-3">
+                    <div className="space-y-3">
+                      {serviceSections.map((section) => (
+                        <section key={section.title} className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">{section.title}</p>
+                          <p className="mt-1 text-xs leading-5 text-slate-500">{section.description}</p>
+                          <div className="mt-3 grid gap-2">
+                            {section.items.map((item) => {
+                              const Icon = item.icon;
+                              return (
+                                <Link
+                                  key={item.path}
+                                  href={item.path}
+                                  onClick={closeAllMenus}
+                                  className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-green-50 hover:text-green-700"
+                                >
+                                  <Icon className="h-4 w-4 text-green-700" />
+                                  <span>{item.name}</span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </section>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/glp-1-medications"
+                onClick={closeAllMenus}
+                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                  <Pill className="h-4 w-4" />
+                </span>
+                <span>GLP-1 Medications</span>
+              </Link>
+
+              <Link
+                href="/blog"
+                onClick={closeAllMenus}
+                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                  <BookOpen className="h-4 w-4" />
+                </span>
+                <span>Blog</span>
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={closeAllMenus}
+                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:bg-green-50 hover:text-green-700"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                  <PhoneCall className="h-4 w-4" />
+                </span>
+                <span>Contact</span>
+              </Link>
+
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+                <button
+                  type="button"
+                  onClick={() => setMobileResourcesOpen((open) => !open)}
+                  className="flex w-full items-center justify-between px-4 py-4 text-left"
+                  aria-expanded={mobileResourcesOpen}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100">
+                      <BookOpen className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">Resources</p>
+                      <p className="text-xs text-slate-500">Recipes, BMI calculator and testimonials</p>
+                    </div>
+                  </div>
+                  <ChevronDown className={`h-5 w-5 text-slate-500 transition-transform ${mobileResourcesOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {mobileResourcesOpen && (
+                  <div className="border-t border-slate-200 bg-slate-50 p-3">
+                    <div className="grid gap-2">
+                      {resourceLinks.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            onClick={closeAllMenus}
+                            className="flex items-start gap-3 rounded-2xl bg-white px-4 py-3 ring-1 ring-slate-200 transition hover:bg-green-50"
+                          >
+                            <Icon className="mt-0.5 h-4 w-4 text-green-700" />
+                            <div>
+                              <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                              {item.description ? <p className="mt-1 text-xs leading-5 text-slate-500">{item.description}</p> : null}
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </nav>
+
+            <div className="mt-6 grid gap-3">
+              <Link
+                href="/online-dietitian-consultation"
+                onClick={closeAllMenus}
+                className="rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-semibold text-green-800"
+              >
+                Online Consultation
+              </Link>
+              <a href="tel:+919321057899" className="rounded-2xl bg-green-700 px-4 py-3 text-center text-sm font-semibold text-white">
+                Call Now: +91 93210 57899
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}
