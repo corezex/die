@@ -135,14 +135,7 @@ export default async function MedicationPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-            <div className="mt-5 grid gap-4 lg:grid-cols-2">
-              {medication.intro.map((paragraph, index) => (
-                <article key={paragraph} className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-green-200">{index === 0 ? "What often changes" : "Where support helps"}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-100/95 sm:text-base">{paragraph}</p>
-                </article>
-              ))}
-            </div>
+            <p className="mt-5 text-base leading-7 text-slate-100/95 sm:text-lg">{medication.intro[0]}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-bold text-white transition ${medication.accent.button}`}>
                 <Stethoscope className="h-5 w-5" /> Book nutrition support
@@ -169,33 +162,31 @@ export default async function MedicationPage({ params }: PageProps) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-start">
             <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>Inside this page</p>
+              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${medication.accent.text}`}>How support usually helps</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-                Planning meals while taking {medication.brand}
+                Everyday food guidance while taking {medication.brand}
               </h2>
               <div className="mt-5 grid gap-4 md:grid-cols-2">
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                   <h3 className="text-lg font-bold text-slate-900">Common concerns people have</h3>
                   <p className="mt-3 leading-7 text-slate-700">
-                    This guide covers the day-to-day questions people usually have on {medication.brand}: what to eat when appetite drops, how to keep meals balanced, and how to make protein, fluids and digestion easier to manage.
+                    Many people want help with appetite changes, protein intake, fluids, digestion and knowing how to make normal meals work again.
                   </p>
                 </article>
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h3 className="text-lg font-bold text-slate-900">What you will find here</h3>
+                  <h3 className="text-lg font-bold text-slate-900">What nutrition support usually involves</h3>
                   <p className="mt-3 leading-7 text-slate-700">
-                    You will find food priorities, practical meal ideas and guidance on when to contact your prescriber. Medication changes, symptom escalation and dosing decisions still belong with your clinician.
+                    The focus is usually on food priorities, practical meal ideas, a more comfortable daily routine and knowing when symptoms need a prescriber review.
                   </p>
                 </article>
               </div>
             </div>
             <aside className={`rounded-3xl border p-7 ${medication.accent.subtle} ${medication.accent.border}`}>
-              <h3 className="text-xl font-bold text-slate-900">What DietFiniti does and does not do</h3>
-              <ul className="mt-5 space-y-3 leading-7 text-slate-700">
-                <li>• We support people who are already taking {medication.brand}.</li>
-                <li>• We do not sell or prescribe {medication.brand}.</li>
-                <li>• We do not change medication dose, frequency or prescribing decisions.</li>
-                <li>• We help with meal structure, protein, hydration, digestion and realistic food habits.</li>
-              </ul>
+              <h3 className="text-xl font-bold text-slate-900">A quick reminder</h3>
+              <p className="mt-4 leading-7 text-slate-700">{medication.intro[1]}</p>
+              <div className="mt-5 rounded-2xl bg-white/70 p-4 text-sm leading-6 text-slate-700 ring-1 ring-white/60">
+                <strong>Usually prescribed for:</strong> {medication.usedFor}
+              </div>
             </aside>
           </div>
         </div>

@@ -5,6 +5,21 @@ import { ArrowRight, CheckCircle2, MessageCircle, Pill, ShieldCheck, Sparkles, S
 import heroImage from "@/public/image/glp1-hub-hero.jpg";
 import { glpMedications } from "./medicationData";
 
+const cardDescriptions: Record<string, string> = {
+  ozempic: "Support for smaller meals, protein intake, hydration and blood-sugar-friendly food choices while taking Ozempic.",
+  wegovy: "Support for appetite changes, meal comfort, protein and sustainable eating habits while taking Wegovy.",
+  rybelsus: "Support for breakfast, meal timing and a smoother morning routine while taking Rybelsus.",
+  mounjaro: "Support for low appetite, protein balance, digestion and steadier day-to-day food structure while taking Mounjaro.",
+  zepbound: "Support for smaller meals, fluids, protein and practical weight-management routines while taking Zepbound.",
+  saxenda: "Support for a repeatable daily meal rhythm, protein planning and easier low-appetite food choices while taking Saxenda.",
+  victoza: "Support for blood-sugar-friendly meals, meal timing and balanced everyday eating while taking Victoza.",
+  trulicity: "Support for regular meals, protein planning and practical diabetes-aware food structure while taking Trulicity.",
+  byetta: "Support for meal timing, balanced meals and more predictable food routines while taking Byetta.",
+  "bydureon-bcise": "Support for balanced weekly routines, digestion-friendly meals and steadier food habits while taking Bydureon BCise.",
+  adlyxin: "Support for consistent daily meals, balanced portions and blood-sugar-friendly routines while taking Adlyxin.",
+  foundayo: "Support for flexible daily meals, protein intake, hydration and comfortable eating patterns while taking Foundayo.",
+};
+
 const siteUrl = "https://dietfiniti.com";
 
 const faqs = [
@@ -132,23 +147,7 @@ export default function GlpMedicationHubPage() {
               <strong>Quick answer:</strong> DietFiniti helps people who are already taking GLP-1 medications such as Ozempic, Wegovy, Rybelsus, Mounjaro and Zepbound make everyday food routines more practical. We do <strong>not</strong> sell or prescribe these medications. We provide dietitian support for protein intake, nausea-friendly meals, hydration, constipation support, meal timing and realistic Indian food choices.
             </div>
             <p className="mt-5 text-base leading-7 text-slate-700 sm:text-lg">
-              If eating feels different after starting GLP-1 medication, these pages are here to help with the day-to-day questions: what to eat, how to keep meals balanced, and how to make the routine feel more comfortable and sustainable.
-            </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              {[
-                ["Protein", "Keep protein visible even when appetite drops."],
-                ["Comfort", "Build gentler meals for nausea, reflux or fullness."],
-                ["Hydration", "Prevent dehydration and constipation from low intake."],
-                ["Indian food", "Adapt real home meals instead of starting over."],
-              ].map(([title, text]) => (
-                <div key={title} className="rounded-2xl border border-green-100 bg-white p-4 shadow-sm">
-                  <p className="text-sm font-bold uppercase tracking-wide text-green-700">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">{text}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-base leading-7 text-slate-700">
-              Choose the medication page that matches your prescription and use it as a practical starting point before your consultation.
+              If eating feels different after starting GLP-1 medication, DietFiniti can help you make meals more comfortable, balanced and realistic for everyday life.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700">
@@ -175,33 +174,33 @@ export default function GlpMedicationHubPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-start">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">What people usually need help with</p>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">How DietFiniti supports clients on GLP-1 medication</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-                When GLP-1 medication changes how eating feels
+                Practical nutrition support for everyday eating
               </h2>
               <div className="mt-5 grid gap-4 md:grid-cols-2">
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h3 className="text-lg font-bold text-slate-900">Common day-to-day problems</h3>
+                  <h3 className="text-lg font-bold text-slate-900">When appetite becomes unpredictable</h3>
                   <p className="mt-3 leading-7 text-slate-700">
                     Many people feel too full for regular meals, forget protein, struggle with constipation or reflux, or become unsure how to eat normally at work, while travelling or at family events.
                   </p>
                 </article>
                 <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h3 className="text-lg font-bold text-slate-900">Where a dietitian can help</h3>
+                  <h3 className="text-lg font-bold text-slate-900">What nutrition support usually focuses on</h3>
                   <p className="mt-3 leading-7 text-slate-700">
-                    The goal is to make meals simpler and more nourishing with realistic Indian food, better hydration, easier side-effect management and a routine that still works in real life.
+                    The focus is usually on making meals simpler and more nourishing with realistic Indian food, better hydration, easier side-effect management and a routine that still works in real life.
                   </p>
                 </article>
               </div>
             </div>
             <aside className="rounded-3xl border border-green-100 bg-green-50 p-7">
-              <h3 className="text-xl font-bold text-slate-900">Support topics covered on these pages</h3>
+              <h3 className="text-xl font-bold text-slate-900">Common areas we work on in consultation</h3>
               <ul className="mt-5 grid gap-3 text-slate-700 sm:grid-cols-2">
                 {[
-                  "What to eat when appetite is low",
+                  "Eating well when appetite is low",
                   "Protein planning",
                   "Hydration and constipation support",
-                  "Nausea and reflux-friendly meals",
+                  "Meals that feel easier with nausea or reflux",
                   "Meal timing around medication routines",
                   "Vegetarian and Indian home-food options",
                 ].map((topic) => (
@@ -218,10 +217,10 @@ export default function GlpMedicationHubPage() {
       <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Medication pages</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">Explore the GLP-1 medication page that matches your prescription</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Medications we support</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">Find guidance for your prescribed GLP-1 medication</h2>
             <p className="mt-4 text-lg leading-8 text-slate-600">
-              These pages are written for people who are already using the medication and want food guidance that is more practical than generic “GLP-1 rules”.
+              Browse the medication-specific pages below for practical meal guidance, common food concerns and realistic support that fits your routine.
             </p>
           </div>
 
@@ -237,10 +236,10 @@ export default function GlpMedicationHubPage() {
                     {item.route}
                   </span>
                 </div>
-                <p className="mt-4 leading-7 text-slate-600">{item.metaDescription}</p>
+                <p className="mt-4 leading-7 text-slate-600">{cardDescriptions[item.slug]}</p>
                 <div className="mt-5 grid gap-3">
                   <div className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">
-                    <strong>Best for:</strong> {item.usedFor}
+                    <strong>Usually prescribed for:</strong> {item.usedFor}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {item.nutritionPriorities.slice(0, 2).map((priority) => (

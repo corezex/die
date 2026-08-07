@@ -134,7 +134,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "If you are taking Ozempic, the nutrition goal is usually not to eat less and less. The goal is to eat comfortably, keep protein and hydration consistent, support blood-sugar-friendly choices and avoid a pattern where nausea, constipation or very low intake make the routine harder to sustain.",
     intro: [
-      "Many people searching for an Ozempic diet plan are trying to work out what to eat when appetite drops, whether smaller meals are better, and how to avoid relying on tea, coffee or random snacks all day. A structured routine matters more than a strict list of “allowed” foods.",
+      "On Ozempic, many people notice earlier fullness, smaller appetite and less interest in larger meals. The challenge is usually learning how to keep meals comfortable, balanced and regular without drifting into very low intake.",
       "DietFiniti provides dietitian support for people already taking Ozempic under medical supervision in Mumbai, Thane and online across India. We do not sell medication and we do not change prescribed doses. The focus is practical nutrition you can actually follow.",
     ],
     nutritionPriorities: [
@@ -302,7 +302,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Mounjaro diet plan usually works best when it focuses on meal quality and consistency rather than chasing the smallest possible intake. Because appetite can drop sharply for some people, planned protein, fluids and side-effect-friendly meals become especially important.",
     intro: [
-      "People taking Mounjaro often search for help with reduced appetite, nausea, not finishing meals, and working out whether their intake is now too low. Others want to know how to build a routine that still supports blood sugar, work performance and exercise.",
+      "On Mounjaro, appetite can drop sharply for some people. The challenge is often making sure meals still support energy, protein intake, blood sugar and day-to-day functioning.",
       "DietFiniti supports people already taking Mounjaro in Mumbai, Thane and online across India. We do not supply or prescribe Mounjaro. Our role is nutrition support that fits around the medication and the care plan set by your doctor.",
     ],
     nutritionPriorities: [
@@ -414,7 +414,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "Because Saxenda is a daily GLP-1 injection, people often need support building a routine that is steady enough to repeat every day. Smaller meals, protein planning and side-effect-friendly food choices can make the experience easier and more sustainable.",
     intro: [
-      "A Saxenda meal plan is often less about exotic foods and more about repetition: what can you eat daily without nausea, how do you avoid grazing just because appetite is unpredictable, and how do you keep meals balanced when the body feels different from day to day?",
+      "Because Saxenda is used daily, routine matters. Many people need food ideas they can repeat comfortably day after day, especially when appetite or digestion feels different.",
       "DietFiniti works with people already taking Saxenda in Mumbai, Thane and online across India. We do not sell or prescribe the medication. We help you build a structured routine around your goals, food preferences and side effects.",
     ],
     nutritionPriorities: [
@@ -505,7 +505,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Victoza support only for weight loss?", answer: "No. It can also help with blood-sugar-friendly meal structure, appetite changes, protein intake and consistency." },
     ],
     heroImage: victozaHero,
-    supportImage,
+    supportImage: victozaSupport,
     accent: liraglutideTheme,
   },
   {
@@ -524,7 +524,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "A Trulicity diet plan is usually about regular balanced meals, not perfection. People often need help organising protein, meal timing and blood-sugar-friendly choices while also managing fullness or mild digestive side effects.",
     intro: [
-      "People looking for what to eat on Trulicity are often trying to make sense of two things at once: diabetes-friendly food structure and the way the medication can change appetite or digestion. The best plan is usually simple, balanced and repeatable.",
+      "People using Trulicity often need help with regular meal timing, protein balance and simpler food decisions. A repeatable routine usually works better than strict food rules.",
       "DietFiniti offers dietitian support for Trulicity users in Mumbai, Thane and online across India. We do not prescribe or sell Trulicity. We focus on food decisions, eating patterns and realistic routines.",
     ],
     nutritionPriorities: [
@@ -615,7 +615,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Who benefits most from Byetta nutrition support?", answer: "People with unpredictable schedules, side effects, blood-sugar concerns or confusion about meal timing often benefit the most." },
     ],
     heroImage: byettaHero,
-    supportImage,
+    supportImage: byettaSupport,
     accent: classicTheme,
   },
   {
@@ -670,7 +670,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Bydureon BCise support different from Byetta support?", answer: "There is overlap, but weekly dosing changes the day-to-day routine, so meal timing may feel less rigid for some people." },
     ],
     heroImage: bydureonHero,
-    supportImage,
+    supportImage: bydureonSupport,
     accent: classicTheme,
   },
   {
@@ -689,7 +689,7 @@ export const glpMedications: GlpMedicationPage[] = [
     quickAnswer:
       "An Adlyxin diet plan usually needs to be practical enough for everyday repetition. Balanced meals, steady timing and side-effect-aware food choices can help people manage both comfort and blood-sugar-related goals while taking the medication.",
     intro: [
-      "People taking Adlyxin often search for simple answers: should they eat smaller meals, how do they stop skipping food, what works when nausea appears, and how can daily meals still support diabetes care?",
+      "On Adlyxin, many people benefit from a more regular daily food pattern. The focus is usually on balanced meals, comfortable portions and fewer long gaps without eating.",
       "DietFiniti provides nutrition support for Adlyxin users in Mumbai, Thane and online across India. We do not prescribe or sell Adlyxin. We focus on the meal structure around it.",
     ],
     nutritionPriorities: [
@@ -725,7 +725,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Who benefits from Adlyxin dietitian support?", answer: "People with busy schedules, diabetes-related meal concerns, appetite changes or ongoing food confusion often benefit the most." },
     ],
     heroImage: adlyxinHero,
-    supportImage,
+    supportImage: adlyxinSupport,
     accent: classicTheme,
   },
   {
@@ -793,3 +793,4 @@ export const glpMedicationSlugs = glpMedications.map((item) => item.slug);
 export function getMedicationBySlug(slug: string) {
   return glpMedications.find((item) => item.slug === slug);
 }
+
