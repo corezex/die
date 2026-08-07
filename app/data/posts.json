@@ -1055,7 +1055,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Blood-sugar-friendly eating for prediabetes, diabetes and weight goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/hidden-sugar-indian-foods.jpg"
   },
   {
     "slug": "high-fibre-indian-foods",
@@ -1142,7 +1143,8 @@
         "path": "/recipe",
         "description": "500+ recipes built on dal, millets and vegetables — naturally fibre-rich."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/high-fibre-indian-foods.jpg"
   },
   {
     "slug": "vegetarian-protein-guide",
@@ -1229,7 +1231,8 @@
         "path": "/services/sports-nutrition",
         "description": "Protein targets and timing for vegetarian and non-vegetarian athletes."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/vegetarian-protein-guide.jpg"
   },
   {
     "slug": "hydration-how-much-water",
@@ -1316,7 +1319,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Practical hydration guidance within medical limits, when relevant."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/hydration-how-much-water.jpg"
   },
   {
     "slug": "portion-control-thali-method",
@@ -1403,7 +1407,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Learn the portions that fit your body, activity and goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/portion-control-thali-method.jpg"
   },
   {
     "slug": "healthy-indian-snacks",
@@ -1490,7 +1495,8 @@
         "path": "/recipe",
         "description": "Snack recipes categorised by health goal — browse the Snacks & Soups section."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-indian-snacks.jpg"
   },
   {
     "slug": "eating-out-without-derailing",
@@ -1577,7 +1583,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personalised guidance for eating out and staying on track."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/eating-out-without-derailing.jpg"
   },
   {
     "slug": "meal-prep-indian-kitchens",
@@ -1664,7 +1671,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A prep plan built around your schedule, family and kitchen."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/meal-prep-indian-kitchens.jpg"
   },
   {
     "slug": "mindful-eating-guide",
@@ -1751,7 +1759,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal guidance on hunger, fullness and eating patterns."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/mindful-eating-guide.jpg"
   },
   {
     "slug": "healthy-indian-breakfasts",
@@ -1838,7 +1847,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A breakfast pattern that fits your schedule, family and goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-indian-breakfasts.jpg"
   },
   {
     "slug": "healthy-weight-loss-india",
@@ -1933,7 +1943,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Start with a one-on-one consultation anywhere in India."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-weight-loss-india.jpg"
   },
   {
     "slug": "calorie-deficit-explained",
@@ -2024,7 +2035,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Know your actual needs and how to hit them with your favourite foods."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/calorie-deficit-explained.jpg"
   },
   {
     "slug": "weight-loss-plateaus",
@@ -2115,7 +2127,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A structured review of what is holding your progress back."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/weight-loss-plateaus.jpg"
   },
   {
     "slug": "emotional-eating",
@@ -2202,7 +2215,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Personal strategies for cravings, stress eating and sustainable change."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/emotional-eating.jpg"
   },
   {
     "slug": "late-night-eating",
@@ -2289,7 +2303,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A night-eating pattern that works with your actual daily routine."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/late-night-eating.jpg"
   },
   {
     "slug": "healthy-weight-gain-plan",
@@ -2380,7 +2395,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Appetite-friendly meal and shake plans for your routine."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-weight-gain-plan.jpg"
   },
   {
     "slug": "belly-fat-myths",
@@ -2467,7 +2483,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Nutrition support for metabolic health alongside medical care."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/belly-fat-myths.jpg"
   },
   {
     "slug": "intermittent-fasting-what-to-know",
@@ -2554,7 +2571,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Safe weight-loss guidance for people with medical conditions."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/intermittent-fasting-what-to-know.jpg"
   },
   {
     "slug": "crash-diets-why-they-fail",
@@ -2641,7 +2659,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Replace the cycle with a plan built for your real life."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/crash-diets-why-they-fail.jpg"
   },
   {
     "slug": "slow-metabolism-myths",
@@ -2728,7 +2747,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Weight guidance that accounts for thyroid and other medical factors."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/slow-metabolism-myths.jpg"
   },
   {
     "slug": "sustainable-habits-not-diets",
@@ -2815,7 +2835,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Start with the one or two habits that will matter most for you."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/sustainable-habits-not-diets.jpg"
   },
   {
     "slug": "progress-beyond-weighing-scale",
@@ -2902,7 +2923,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Learn which markers matter for your body and goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/progress-beyond-weighing-scale.jpg"
   },
   {
     "slug": "prediabetes-what-to-do",
@@ -2994,7 +3016,8 @@
         "path": "/services/diabetes-nutrition",
         "description": "Early, practical action for prediabetes with your doctor."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/prediabetes-what-to-do.jpg"
   },
   {
     "slug": "gestational-diabetes-diet",
@@ -3081,7 +3104,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised GDM meal plan that fits your readings and routine."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/gestational-diabetes-diet.jpg"
   },
   {
     "slug": "anaemia-iron-rich-diet",
@@ -3168,7 +3192,8 @@
         "path": "/online-dietitian-consultation",
         "description": "An iron-rich meal plan built around your blood results and preferences."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/anaemia-iron-rich-diet.jpg"
   },
   {
     "slug": "high-cholesterol-diet",
@@ -3255,7 +3280,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised cholesterol-friendly plan from your blood results."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/high-cholesterol-diet.jpg"
   },
   {
     "slug": "blood-pressure-diet",
@@ -3342,7 +3368,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised low-salt, high-potassium Indian meal plan."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/blood-pressure-diet.jpg"
   },
   {
     "slug": "acidity-and-reflux-diet",
@@ -3429,7 +3456,8 @@
         "path": "/services/weight-loss",
         "description": "Modest weight loss is one of the most effective non-medical reflux fixes."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/acidity-and-reflux-diet.jpg"
   },
   {
     "slug": "ibs-diet-guide",
@@ -3521,7 +3549,8 @@
         "path": "/services/gut-health-nutrition",
         "description": "Structured eating patterns for bloating and IBS."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/ibs-diet-guide.jpg"
   },
   {
     "slug": "fatty-liver-diet",
@@ -3613,7 +3642,8 @@
         "path": "/services/fatty-liver-nutrition",
         "description": "Weight and food-pattern support for liver health."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/fatty-liver-diet.jpg"
   },
   {
     "slug": "kidney-stones-prevention",
