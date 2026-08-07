@@ -275,7 +275,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen((open) => !open)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition hover:bg-slate-200"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700 transition hover:bg-green-100"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle menu"
             >
@@ -290,7 +290,7 @@ export default function Header() {
           <button
             type="button"
             aria-label="Close menu overlay"
-            className="fixed inset-0 z-[55] hidden bg-black/20 lg:block"
+            className="fixed inset-0 z-[55] hidden bg-green-100/70 lg:block"
             onClick={() => setOpenMenu(null)}
           />
           {openMenu === "services" ? (
@@ -352,7 +352,7 @@ export default function Header() {
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
                 <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
               </Link>
-              <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700" aria-label="Close menu">
+              <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700" aria-label="Close menu">
                 <X className="h-5 w-5" />
               </button>
             </div>
