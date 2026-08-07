@@ -18,6 +18,11 @@ import rybelsusSupport from "@/public/image/glp1-rybelsus-support.jpg";
 import mounjaroSupport from "@/public/image/glp1-mounjaro-support.jpg";
 import zepboundSupport from "@/public/image/glp1-zepbound-support.jpg";
 import saxendaSupport from "@/public/image/glp1-saxenda-support.jpg";
+import victozaSupport from "@/public/image/glp1-victoza-support.jpg";
+import trulicitySupport from "@/public/image/glp1-trulicity-support.jpg";
+import byettaSupport from "@/public/image/glp1-byetta-support.jpg";
+import bydureonSupport from "@/public/image/glp1-bydureon-support.jpg";
+import adlyxinSupport from "@/public/image/glp1-adlyxin-support.jpg";
 import foundayoSupport from "@/public/image/glp1-foundayo-support.jpg";
 
 type AccentTheme = {
@@ -555,7 +560,7 @@ export const glpMedications: GlpMedicationPage[] = [
       { question: "Is Trulicity support only about weight loss?", answer: "No. It can also help with glucose-aware meal structure, digestion, consistency and daily decision-making." },
     ],
     heroImage: trulicityHero,
-    supportImage,
+    supportImage: trulicitySupport,
     accent: classicTheme,
   },
   {
