@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, User, BadgeCheck, BookOpen } from "lucide-react";
@@ -17,6 +18,7 @@ interface Post {
   updatedAt: string;
   readingTime: string;
   status: string;
+  coverImage?: string;
   quickAnswer: string;
   sections: { heading: string; body: string }[];
   faqs: { question: string; answer: string }[];
@@ -50,11 +52,13 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
       type: "article",
       url: `${SITE_URL}/blog/${post.slug}`,
       siteName: "DietFiniti",
+      images: post.coverImage ? [{ url: `${SITE_URL}${post.coverImage}`, alt: post.title }] : undefined,
     },
     twitter: {
-      card: "summary",
+      card: post.coverImage ? "summary_large_image" : "summary",
       title: post.title,
       description: post.excerpt,
+      images: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
     },
   };
 }
@@ -86,6 +90,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     },
     publisher: { "@id": `${SITE_URL}/#organization` },
     about: post.tags.map((tag) => ({ "@type": "Thing", name: tag })),
+    image: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
   };
 
   const faqSchema = {
@@ -138,6 +143,14 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
           </div>
 
           <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-4xl">{post.title}</h1>
+
+          {post.coverImage && (
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+              <div className="relative aspect-[16/9] w-full">
+                <Image src={post.coverImage} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 768px" priority />
+              </div>
+            </div>
+          )}
 
           {/* Byline — YMYL/E-E-A-T */}
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-slate-200 py-4">

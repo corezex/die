@@ -101,7 +101,8 @@
         "path": "/services/pcos-nutrition",
         "description": "A personalised plan for hormonal health alongside your gynaecologist."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/pcos-nutrition-support.jpg"
   },
   {
     "slug": "thyroid-nutrition-support",
@@ -205,7 +206,8 @@
         "path": "/services/thyroid-nutrition",
         "description": "Eating patterns that work alongside thyroid medication."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/thyroid-nutrition-support.jpg"
   },
   {
     "slug": "diabetes-meal-planning",
@@ -313,7 +315,8 @@
         "path": "/services/diabetes-nutrition",
         "description": "Personalised Indian meal planning for steady blood sugar."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/diabetes-meal-planning.jpg"
   },
   {
     "slug": "postpartum-nutrition",
@@ -408,7 +411,8 @@
         "path": "/services/weight-loss",
         "description": "Gradual, sustainable weight management for after the first 6 months."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/postpartum-nutrition.jpg"
   },
   {
     "slug": "bmi-calculator-guide",
@@ -503,7 +507,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Turn your numbers into a practical, personalised eating plan."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/bmi-calculator-guide.jpg"
   },
   {
     "slug": "what-to-expect-dietitian-consultation",
@@ -598,7 +603,8 @@
         "path": "/contact",
         "description": "Ask about clinics in Lower Parel and Thane, fees and availability."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/what-to-expect-dietitian-consultation.jpg"
   },
   {
     "slug": "indian-meal-planning-faqs",
@@ -697,7 +703,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Turn these patterns into a personalised plan for your goals."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/indian-meal-planning-faqs.jpg"
   },
   {
     "slug": "how-to-read-food-labels-india",
@@ -784,7 +791,8 @@
         "path": "/services/weight-loss",
         "description": "Sustainable eating patterns built around real Indian food and habits."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/how-to-read-food-labels-india.jpg"
   },
   {
     "slug": "healthy-cooking-oils-india",
@@ -871,7 +879,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Heart-healthy eating patterns that complement your doctor's care."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-cooking-oils-india.jpg"
   },
   {
     "slug": "reduce-salt-indian-diet",
@@ -958,7 +967,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A personalised low-salt plan for your kitchen and health history."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/reduce-salt-indian-diet.jpg"
   },
   {
     "slug": "hidden-sugar-indian-foods",
