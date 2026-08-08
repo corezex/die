@@ -260,8 +260,8 @@ const AboutPage = () => {
       color: "from-green-500 to-emerald-500",
     },
     {
-      number: "250+",
-      label: "5★ Reviews",
+      number: "258",
+      label: "Google Reviews",
       icon: Star,
       color: "from-green-500 to-emerald-500",
     },

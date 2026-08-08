@@ -115,6 +115,13 @@ export function SiteStructuredData() {
             ],
           },
         ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: "258",
+          bestRating: "5",
+          worstRating: "1",
+        },
         sameAs: [
           "https://www.facebook.com/dieticiantejal",
           "https://www.instagram.com/dieticiantejal/",

@@ -167,7 +167,7 @@ const TrustSection = () => {
                             ))}
                           </div>
                           <span className="ml-2 text-sm font-semibold text-gray-900">
-                            View reviews
+                            5.0 · 258 Google reviews
                           </span>
                         </div>
                         <p className="text-sm text-gray-600 mt-1">

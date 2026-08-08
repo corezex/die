@@ -206,7 +206,7 @@ export default function Footer() {
                     <Star key={i} className="h-4 w-4 fill-current text-yellow-500" />
                   ))}
                 </div>
-                <p className="text-sm text-gray-700">Read client reviews on Google</p>
+                <p className="text-sm text-gray-700">5.0 · 258 Google reviews</p>
               </a>
             </div>
           </div>
