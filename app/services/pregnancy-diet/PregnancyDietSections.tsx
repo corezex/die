@@ -703,20 +703,20 @@ export const PregnancyDietSections = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Star className="w-5 h-5" fill="currentColor" />
-                  <span className="text-lg font-semibold">5/5</span>
+                  <span className="text-lg font-semibold">5.0/5</span>
                 </div>
                 <div className="text-green-100 text-sm mt-1">
-                  Satisfaction Rating
+                  Google Rating
                 </div>
               </div>
 
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Baby className="w-5 h-5" />
-                  <span className="text-lg font-semibold">99%</span>
+                  <span className="text-lg font-semibold">258</span>
                 </div>
                 <div className="text-green-100 text-sm mt-1">
-                  Healthy Outcomes
+                  Google Reviews
                 </div>
               </div>
             </motion.div>

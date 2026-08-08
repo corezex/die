@@ -1,4 +1,7 @@
 const SITE_URL = "https://dietfiniti.com";
+const GOOGLE_REVIEW_RATING = "5.0";
+const GOOGLE_REVIEW_COUNT = "258";
+const GOOGLE_REVIEW_URL = "https://www.google.com/maps/place/DietFiniti+by+Dietitian+Tejal,+Mumbai/data=!4m2!3m1!1s0x0:0xd25456de67ebaa3b?sa=X&ved=1t:2428&ictx=111";
 
 /**
  * One authoritative entity graph for the practice. Keep factual business
@@ -126,6 +129,7 @@ export function SiteStructuredData() {
           "https://www.facebook.com/dieticiantejal",
           "https://www.instagram.com/dieticiantejal/",
           "https://www.pinterest.com/dieticiantejal/",
+          GOOGLE_REVIEW_URL,
         ],
         makesOffer: [
           { "@type": "Offer", name: "Personalised Weight-Loss Program", url: `${SITE_URL}/services/weight-loss` },

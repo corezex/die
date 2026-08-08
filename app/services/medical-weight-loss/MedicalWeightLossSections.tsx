@@ -394,11 +394,11 @@ export const MedicalWeightLossSections = ({
                 <div className="flex items-center justify-center space-x-2">
                   <Star className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" />
                   <span className="text-base md:text-lg font-semibold">
-                    5/5
+                    5.0/5
                   </span>
                 </div>
                 <div className="text-green-100 text-xs md:text-sm mt-1">
-                  Satisfaction Rating
+                  Google Rating
                 </div>
               </div>
 
@@ -406,11 +406,11 @@ export const MedicalWeightLossSections = ({
                 <div className="flex items-center justify-center space-x-2">
                   <Activity className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
-                    99%
+                    258
                   </span>
                 </div>
                 <div className="text-green-100 text-xs md:text-sm mt-1">
-                  Health Improvement
+                  Google Reviews
                 </div>
               </div>
             </div>

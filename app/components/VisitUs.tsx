@@ -67,12 +67,12 @@ const VisitUs = () => {
                       ))}
                     </div>
                     <span className="ml-2 text-sm font-semibold text-gray-900">
-                      5/5
+                      5.0/5
                     </span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Users className="w-4 h-4 mr-2" />
-                    <span className="text-sm">2000+ Happy Clients</span>
+                    <span className="text-sm">258 Google Reviews</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Award className="w-4 h-4 mr-2" />
@@ -188,9 +188,9 @@ const VisitUs = () => {
                           className="w-4 h-4 text-green-500 mr-1"
                           fill="#f59e0b"
                         />
-                        <span className="font-medium">5/5</span>
+                        <span className="font-medium">5.0/5</span>
                         <span className="mx-2">•</span>
-                        <span>Perfect Rating</span>
+                        <span>258 Google Reviews</span>
                       </div>
                     </div>
                   </div>

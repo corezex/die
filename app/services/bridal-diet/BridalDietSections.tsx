@@ -658,11 +658,11 @@ export const BridalDietSections = () => {
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Star className="w-4 h-4 lg:w-5 lg:h-5" fill="currentColor" />
                   <span className="text-base lg:text-lg font-semibold">
-                    5/5
+                    5.0/5
                   </span>
                 </div>
                 <div className="text-green-100 text-xs lg:text-sm mt-1">
-                  Bride Satisfaction
+                  Google Rating
                 </div>
               </div>
 
@@ -670,11 +670,11 @@ export const BridalDietSections = () => {
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Crown className="w-4 h-4 lg:w-5 lg:h-5" />
                   <span className="text-base lg:text-lg font-semibold">
-                    99%
+                    258
                   </span>
                 </div>
                 <div className="text-green-100 text-xs lg:text-sm mt-1">
-                  Goal Achievement
+                  Google Reviews
                 </div>
               </div>
             </motion.div>
