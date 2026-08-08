@@ -416,31 +416,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-green-100 bg-green-50 p-6 sm:p-8 lg:p-10">
-          <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">All services listed clearly</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#262262] sm:text-4xl">
-              Explore every DietFiniti service in one place
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-700">
-              If you are comparing nutrition services, these quick links let you go straight to the support you need — whether that is a weight loss dietitian, GLP-1 nutrition support, PCOS dietitian, thyroid nutrition support, diabetes meal planning, sports nutrition, pregnancy nutrition or kids nutrition.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {allServices.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="rounded-xl border border-green-200 bg-white px-4 py-3 font-semibold text-[#262262] transition hover:border-green-400 hover:bg-green-100"
-              >
-                {service.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="px-4 pb-4 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
