@@ -188,9 +188,9 @@ const VisitUs = () => {
                           className="w-4 h-4 text-green-500 mr-1"
                           fill="#f59e0b"
                         />
-                        <span className="font-medium">5.0/5</span>
+                        <span className="font-medium">4.9/5</span>
                         <span className="mx-2">•</span>
-                        <span>258 Google Reviews</span>
+                        <span>9 Google Reviews</span>
                       </div>
                     </div>
                   </div>

@@ -2,6 +2,9 @@ const SITE_URL = "https://dietfiniti.com";
 const GOOGLE_REVIEW_RATING = "5.0";
 const GOOGLE_REVIEW_COUNT = "258";
 const GOOGLE_REVIEW_URL = "https://www.google.com/maps/place/DietFiniti+by+Dietitian+Tejal,+Mumbai/data=!4m2!3m1!1s0x0:0xd25456de67ebaa3b?sa=X&ved=1t:2428&ictx=111";
+const THANE_REVIEW_RATING = "4.9";
+const THANE_REVIEW_COUNT = "9";
+const THANE_REVIEW_URL = "https://www.google.com/maps/place/DietFiniti+by+Dietitian+Tejal,+Thane/data=!4m2!3m1!1s0x0:0xe44c26febabb14b4?sa=X&ved=1t:2428&hl=en-GB&ictx=111";
 
 /**
  * One authoritative entity graph for the practice. Keep factual business
@@ -83,6 +86,14 @@ export function SiteStructuredData() {
               addressCountry: "IN",
             },
             geo: { "@type": "GeoCoordinates", latitude: 19.22986, longitude: 72.985099 },
+            sameAs: [THANE_REVIEW_URL],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: THANE_REVIEW_RATING,
+              reviewCount: THANE_REVIEW_COUNT,
+              bestRating: "5",
+              worstRating: "1",
+            },
           },
         ],
         openingHoursSpecification: [
