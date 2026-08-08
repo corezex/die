@@ -1,6 +1,5 @@
 // components/Footer.tsx
 import Image from "next/image";
-import footerlogo from "@/public/image/footerlogo.png";
 import Link from "next/link";
 import {
   Mail,
@@ -55,6 +54,8 @@ const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
+const footerLogoSrc = "/image/footerlogo.png?v=tm-approved";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -69,9 +70,10 @@ export default function Footer() {
               <div className="w-full max-w-sm p-4">
                 <div className="relative mx-auto mb-4 h-20 w-48">
                   <Image
-                    src={footerlogo}
+                    src={footerLogoSrc}
                     alt="DietFiniti"
                     fill
+                    unoptimized
                     className="object-contain"
                   />
                 </div>
