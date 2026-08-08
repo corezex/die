@@ -1,6 +1,6 @@
 // components/Footer.tsx
 import Image from "next/image";
-import footerlogo from "@/public/image/footerlogo.png";
+import footerlogo from "@/public/image/footerlogo-tm-approved.png";
 import Link from "next/link";
 import {
   Mail,
