@@ -45,48 +45,26 @@ export const testimonialSlides: CarouselSlide[] = [
   { src: weightloss4, alt: "Google review - Weight loss 4", label: "Google Review" },
 ];
 
-function shuffleSlides<T>(items: T[]): T[] {
-  const arr = [...items];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
+function interleaveSlides<T>(primary: T[], secondary: T[]): T[] {
+  const mixed: T[] = [];
+  const maxLength = Math.max(primary.length, secondary.length);
 
-/** Random order that mixes Before & After with Google Review slides */
-export function shuffleMixedTestimonialSlides(slides: CarouselSlide[]): CarouselSlide[] {
-  const beforeAfter = shuffleSlides(
-    slides.filter((s) => s.label === "Before & After")
-  );
-  const googleReviews = shuffleSlides(
-    slides.filter((s) => s.label === "Google Review")
-  );
-
-  const mixed: CarouselSlide[] = [];
-  let baIndex = 0;
-  let grIndex = 0;
-  let lastLabel: string | null = null;
-
-  while (baIndex < beforeAfter.length || grIndex < googleReviews.length) {
-    const canShowBefore = baIndex < beforeAfter.length;
-    const canShowReview = grIndex < googleReviews.length;
-
-    let pickBefore: boolean;
-    if (!canShowReview) pickBefore = true;
-    else if (!canShowBefore) pickBefore = false;
-    else if (lastLabel === "Before & After") pickBefore = Math.random() < 0.35;
-    else if (lastLabel === "Google Review") pickBefore = Math.random() < 0.65;
-    else pickBefore = Math.random() < 0.5;
-
-    if (pickBefore) {
-      mixed.push(beforeAfter[baIndex++]);
-      lastLabel = "Before & After";
-    } else {
-      mixed.push(googleReviews[grIndex++]);
-      lastLabel = "Google Review";
-    }
+  for (let i = 0; i < maxLength; i++) {
+    if (primary[i]) mixed.push(primary[i]);
+    if (secondary[i]) mixed.push(secondary[i]);
   }
 
   return mixed;
+}
+
+/**
+ * Deterministic order for SSR + hydration stability.
+ * We intentionally avoid randomising slides during initial render because
+ * client-side random order causes React hydration mismatches in production.
+ */
+export function shuffleMixedTestimonialSlides(slides: CarouselSlide[]): CarouselSlide[] {
+  const beforeAfter = slides.filter((s) => s.label === "Before & After");
+  const googleReviews = slides.filter((s) => s.label === "Google Review");
+
+  return interleaveSlides(beforeAfter, googleReviews);
 }
