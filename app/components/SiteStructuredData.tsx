@@ -101,7 +101,20 @@ export function SiteStructuredData() {
           { "@type": "City", name: "Thane" },
           { "@type": "Country", name: "India" },
         ],
-        availableLanguage: ["English", "Hindi", "Marathi"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            telephone: "+91-93210-57899",
+            email: "dietfiniti@gmail.com",
+            areaServed: { "@type": "Country", name: "India" },
+            availableLanguage: [
+              { "@type": "Language", name: "English", alternateName: "en" },
+              { "@type": "Language", name: "Hindi", alternateName: "hi" },
+              { "@type": "Language", name: "Marathi", alternateName: "mr" },
+            ],
+          },
+        ],
         sameAs: [
           "https://www.facebook.com/dieticiantejal",
           "https://www.instagram.com/dieticiantejal/",
