@@ -7275,7 +7275,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Nutrition support that respects mental health alongside physical health."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/food-and-mood.jpg"
   },
   {
     "slug": "calorie-tracking-guide",
@@ -7362,7 +7363,8 @@
         "path": "/online-dietitian-consultation",
         "description": "A tracking plan with a defined end date and a habit exit strategy."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/calorie-tracking-guide.jpg"
   },
   {
     "slug": "healthy-grocery-shopping",
@@ -7449,7 +7451,8 @@
         "path": "/services/weight-loss",
         "description": "Weekly plans that make the supermarket work for you."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/healthy-grocery-shopping.jpg"
   },
   {
     "slug": "supplements-what-you-need",
@@ -7536,7 +7539,8 @@
         "path": "/services/medical-weight-loss",
         "description": "Supplement guidance that respects your medical conditions and medications."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/supplements-what-you-need.jpg"
   },
   {
     "slug": "reading-nutrition-claims",
@@ -7623,7 +7627,8 @@
         "path": "/services/weight-loss",
         "description": "Packaged-food choices that fit your goals without the marketing noise."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/reading-nutrition-claims.jpg"
   },
   {
     "slug": "how-our-program-works",
@@ -7710,7 +7715,8 @@
         "path": "/online-dietitian-consultation",
         "description": "Start with a one-on-one consultation anywhere in India."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/how-our-program-works.jpg"
   },
   {
     "slug": "online-vs-clinic-consultation",
@@ -7797,6 +7803,7 @@
         "path": "/contact",
         "description": "Clinic locations in Lower Parel and Thane, plus fees and availability."
       }
-    ]
+    ],
+    "coverImage": "/image/blog/online-vs-clinic-consultation.jpg"
   }
 ]
