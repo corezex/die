@@ -627,11 +627,11 @@ export const SportsNutritionSections = () => {
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <TrendingUp className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
-                    99%
+                    5.0/5
                   </span>
                 </div>
                 <div className="text-green-100 text-xs md:text-sm mt-1">
-                  Performance Improvement
+                  Google Rating
                 </div>
               </div>
 
@@ -639,11 +639,11 @@ export const SportsNutritionSections = () => {
                 <div className="flex items-center justify-center space-x-2 text-green-200">
                   <Activity className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="text-base md:text-lg font-semibold">
-                    99%
+                    258
                   </span>
                 </div>
                 <div className="text-green-100 text-xs md:text-sm mt-1">
-                  Faster Recovery
+                  Google Reviews
                 </div>
               </div>
             </motion.div>
