@@ -67,16 +67,13 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <div className="w-full max-w-sm p-4">
-                <div className="mx-auto mb-4 flex w-fit items-start">
-                  <div className="relative h-20 w-48">
-                    <Image
-                      src={footerlogo}
-                      alt="DietFiniti"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <span className="mt-2 text-[10px] font-bold leading-none text-green-700">TM</span>
+                <div className="relative mx-auto mb-4 h-20 w-48">
+                  <Image
+                    src={footerlogo}
+                    alt="DietFiniti"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </Link>
