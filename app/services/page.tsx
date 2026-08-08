@@ -4,7 +4,7 @@ import ServicesPage from "./services";
 export const metadata: Metadata = {
   title: "Dietitian Services in Mumbai, Thane & Online",
   description:
-    "Explore DietFiniti dietitian services for weight loss, GLP-1 nutrition support, PCOS, thyroid, diabetes, fatty liver, gut health, pregnancy, sports nutrition, kids nutrition and corporate wellness in Mumbai, Thane and online across India.",
+    "Explore DietFiniti dietitian services for weight loss, GLP-1 nutrition support, Ozempic, Wegovy, Mounjaro, PCOS, thyroid, diabetes, fatty liver, gut health, pregnancy, sports nutrition, kids nutrition and corporate wellness in Mumbai, Thane and online across India.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Dietitian Services | DietFiniti",

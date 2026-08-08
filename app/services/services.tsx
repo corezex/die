@@ -35,6 +35,7 @@ import fattyLiverImg from "@/public/image/fatty-liver-nutritionimg1.jpg";
 import gutImg from "@/public/image/gut-health-nutritionimg1.jpg";
 import kidsImg from "@/public/image/kids-nutritionimg1.jpg";
 import corpImg from "@/public/image/corporate-wellnessimg1.jpg";
+import { glpMedications } from "@/app/glp-1-medications/medicationData";
 
 type Service = {
   title: string;
@@ -116,6 +117,30 @@ const coreServices: Service[] = [
   },
 ];
 
+const glpServices: Service[] = [
+  {
+    title: "GLP-1 Nutrition Support",
+    description:
+      "Dietitian support for people taking Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound and other GLP-1 medications who need practical help with meals, protein and hydration.",
+    href: "/glp-1-medications",
+    image: glp1Img,
+    imageAlt: "GLP-1 medication nutrition support with practical meal guidance",
+    icon: Pill,
+    features: ["Ozempic, Wegovy, Mounjaro & more", "Protein, hydration and side-effect support"],
+    accent: "bg-green-700",
+  },
+  ...glpMedications.map((medication) => ({
+    title: `${medication.brand} Nutrition Support`,
+    description: medication.cardDescription ?? medication.intro[0],
+    href: `/glp-1-medications/${medication.slug}`,
+    image: medication.heroImage,
+    imageAlt: `${medication.brand} diet plan and nutrition support`,
+    icon: Pill,
+    features: [medication.family, medication.route],
+    accent: "bg-green-600",
+  })),
+];
+
 const conditionServices: Service[] = [
   {
     title: "Condition Nutrition",
@@ -127,17 +152,6 @@ const conditionServices: Service[] = [
     icon: Stethoscope,
     features: ["Condition-specific support", "PCOS, thyroid, diabetes and more"],
     accent: "bg-green-700",
-  },
-  {
-    title: "GLP-1 Nutrition Support",
-    description:
-      "Dietitian support for people taking Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound and other GLP-1 medications who need practical help with meals, protein and hydration.",
-    href: "/glp-1-medications",
-    image: glp1Img,
-    imageAlt: "GLP-1 medication nutrition support with practical meal guidance",
-    icon: Pill,
-    features: ["Ozempic, Wegovy, Mounjaro & more", "Protein, hydration and side-effect support"],
-    accent: "bg-green-600",
   },
   {
     title: "PCOS Nutrition Support",
@@ -221,7 +235,7 @@ const lifestyleServices: Service[] = [
   },
 ];
 
-const allServices = [...coreServices, ...conditionServices, ...lifestyleServices];
+const allServices = [...coreServices, ...glpServices, ...conditionServices, ...lifestyleServices];
 
 const process = [
   ["01", "Tell us about you", "Share your goal, routine, food preferences and relevant health information."],
@@ -439,6 +453,7 @@ export default function ServicesPage() {
                 "Medical weight loss nutrition",
                 "PCOS dietitian guidance",
                 "GLP-1 dietitian support",
+                "Ozempic, Wegovy and Mounjaro meal guidance",
                 "Thyroid meal planning",
                 "Diabetes diet support",
                 "Pregnancy diet planning",
@@ -478,9 +493,16 @@ export default function ServicesPage() {
       />
 
       <ServiceSection
+        eyebrow="GLP-1 medication support"
+        title="GLP-1 nutrition support hub plus every medication-specific page"
+        description="Browse the main GLP-1 support page and the dedicated pages for Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound, Saxenda, Victoza, Trulicity, Byetta, Bydureon BCise, Adlyxin and Foundayo."
+        services={glpServices}
+      />
+
+      <ServiceSection
         eyebrow="Condition-specific support"
-        title="GLP-1, PCOS, thyroid, diabetes, fatty liver and gut health nutrition services"
-        description="Explore the hub plus the dedicated pages if you are specifically looking for GLP-1 nutrition support, a PCOS dietitian, thyroid dietitian, diabetes diet plan, fatty liver diet or gut health nutrition support."
+        title="PCOS, thyroid, diabetes, fatty liver and gut health nutrition services"
+        description="Explore the broader condition hub plus the dedicated pages if you are specifically looking for a PCOS dietitian, thyroid dietitian, diabetes diet plan, fatty liver diet or gut health nutrition support."
         services={conditionServices}
       />
 
