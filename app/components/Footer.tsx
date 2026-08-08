@@ -70,7 +70,7 @@ export default function Footer() {
                 <div className="relative mx-auto mb-4 h-20 w-48">
                   <Image
                     src={footerlogo}
-                    alt="Nutritionist Logo"
+                    alt="DietFiniti"
                     fill
                     className="object-contain"
                   />

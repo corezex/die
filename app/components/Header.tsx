@@ -207,7 +207,10 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between gap-3 lg:h-[72px]">
           <Link href="/" className="flex shrink-0 items-center text-green-700 transition hover:text-green-800" onClick={closeAllMenus}>
             <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
-            <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+            <span className="relative inline-flex">
+              <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+              <span className="absolute -right-4 top-0 text-[9px] font-bold leading-none text-current">TM</span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-1">
@@ -348,9 +351,12 @@ export default function Header() {
         <div className="fixed inset-0 z-[70] h-[100dvh] overflow-y-auto overscroll-contain bg-white lg:hidden">
           <div className="sticky top-0 z-10 border-b border-slate-200 bg-white px-4 py-4 shadow-sm">
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center" onClick={closeAllMenus}>
+              <Link href="/" className="flex items-center text-green-700" onClick={closeAllMenus}>
                 <Image src={logoMark} alt="DietFiniti logo mark" width={40} height={40} className="mr-2 object-contain" priority />
-                <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+                <span className="relative inline-flex">
+                  <Image src={logoWordmark} alt="DietFiniti" width={126} height={40} className="object-contain" priority />
+                  <span className="absolute -right-4 top-0 text-[9px] font-bold leading-none text-current">TM</span>
+                </span>
               </Link>
               <button type="button" onClick={closeAllMenus} className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-700" aria-label="Close menu">
                 <X className="h-5 w-5" />
