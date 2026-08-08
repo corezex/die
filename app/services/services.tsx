@@ -8,6 +8,7 @@ import {
   Dumbbell,
   HeartPulse,
   MessageCircle,
+  Pill,
   Salad,
   Scale,
   Sparkles,
@@ -26,6 +27,7 @@ import weightGain from "@/public/image/weightgainimg1.jpg";
 import sports from "@/public/image/sports-nutritionimg1.jpg";
 import bridal from "@/public/image/bridal-dietimg1.jpg";
 import conditionImg from "@/public/image/condition-nutritionimg1.jpg";
+import glp1Img from "@/public/image/glp1-hub-hero.jpg";
 import pcosImg from "@/public/image/pcos-nutritionimg1.jpg";
 import thyroidImg from "@/public/image/thyroid-nutritionimg1.jpg";
 import diabetesImg from "@/public/image/diabetes-nutritionimg1.jpg";
@@ -125,6 +127,17 @@ const conditionServices: Service[] = [
     icon: Stethoscope,
     features: ["Condition-specific support", "PCOS, thyroid, diabetes and more"],
     accent: "bg-green-700",
+  },
+  {
+    title: "GLP-1 Nutrition Support",
+    description:
+      "Dietitian support for people taking Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound and other GLP-1 medications who need practical help with meals, protein and hydration.",
+    href: "/glp-1-medications",
+    image: glp1Img,
+    imageAlt: "GLP-1 medication nutrition support with practical meal guidance",
+    icon: Pill,
+    features: ["Ozempic, Wegovy, Mounjaro & more", "Protein, hydration and side-effect support"],
+    accent: "bg-green-600",
   },
   {
     title: "PCOS Nutrition Support",
@@ -298,7 +311,7 @@ export default function ServicesPage() {
         url: "https://dietfiniti.com/services",
         name: "DietFiniti Services",
         description:
-          "A collection of DietFiniti dietitian services covering weight loss, medical weight loss, pregnancy nutrition, weight gain, sports nutrition, bridal nutrition, PCOS, thyroid, diabetes, fatty liver, gut health, kids nutrition and corporate wellness.",
+          "A collection of DietFiniti dietitian services covering weight loss, medical weight loss, GLP-1 nutrition support, pregnancy nutrition, weight gain, sports nutrition, bridal nutrition, PCOS, thyroid, diabetes, fatty liver, gut health, kids nutrition and corporate wellness.",
         inLanguage: "en-IN",
         isPartOf: { "@id": "https://dietfiniti.com/#website" },
         publisher: { "@id": "https://dietfiniti.com/#organization" },
@@ -338,7 +351,7 @@ export default function ServicesPage() {
               Dietitian services for <span className="text-green-700">weight loss, PCOS, diabetes, pregnancy and more</span>
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-              Looking for a dietitian in Mumbai, Thane or online? This page brings together every DietFiniti service — from weight loss, medical weight loss and weight gain to PCOS, thyroid, diabetes, fatty liver, gut health, pregnancy nutrition, kids nutrition, sports nutrition and corporate wellness.
+              Looking for a dietitian in Mumbai, Thane or online? This page brings together every DietFiniti service — from weight loss, medical weight loss, GLP-1 nutrition support and weight gain to PCOS, thyroid, diabetes, fatty liver, gut health, pregnancy nutrition, kids nutrition, sports nutrition and corporate wellness.
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
               Each service is designed around your routine, food preferences and health context so the plan feels practical in everyday Indian life, not just on paper.
@@ -397,7 +410,7 @@ export default function ServicesPage() {
               Explore every DietFiniti service in one place
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-700">
-              If you are comparing nutrition services, these quick links let you go straight to the support you need — whether that is a weight loss dietitian, PCOS dietitian, thyroid nutrition support, diabetes meal planning, sports nutrition, pregnancy nutrition or kids nutrition.
+              If you are comparing nutrition services, these quick links let you go straight to the support you need — whether that is a weight loss dietitian, GLP-1 nutrition support, PCOS dietitian, thyroid nutrition support, diabetes meal planning, sports nutrition, pregnancy nutrition or kids nutrition.
             </p>
           </div>
 
@@ -425,6 +438,7 @@ export default function ServicesPage() {
                 "Weight loss diet plan",
                 "Medical weight loss nutrition",
                 "PCOS dietitian guidance",
+                "GLP-1 dietitian support",
                 "Thyroid meal planning",
                 "Diabetes diet support",
                 "Pregnancy diet planning",
@@ -447,7 +461,7 @@ export default function ServicesPage() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">Why the page is arranged this way</p>
             <h2 className="mt-3 text-2xl font-bold text-[#262262] sm:text-3xl">Choose by goal first, then by condition</h2>
             <p className="mt-5 leading-8 text-slate-700">
-              Some people start with a broad goal like weight loss, pregnancy nutrition or sports performance. Others are searching for support around a specific condition such as PCOS, thyroid issues, diabetes, fatty liver or gut health. This page separates those paths so it is easier to compare the right service quickly.
+              Some people start with a broad goal like weight loss, pregnancy nutrition or sports performance. Others are searching for support around a specific condition or treatment situation such as PCOS, thyroid issues, diabetes, GLP-1 medication use, fatty liver or gut health. This page separates those paths so it is easier to compare the right service quickly.
             </p>
             <p className="mt-4 leading-8 text-slate-700">
               If you are not sure where you fit, start with the broader service page or contact DietFiniti directly — the team can help you choose the right next step.
@@ -465,8 +479,8 @@ export default function ServicesPage() {
 
       <ServiceSection
         eyebrow="Condition-specific support"
-        title="PCOS, thyroid, diabetes, fatty liver and gut health nutrition services"
-        description="Explore the hub plus the dedicated condition pages if you are specifically looking for a PCOS dietitian, thyroid dietitian, diabetes diet plan, fatty liver diet or gut health nutrition support."
+        title="GLP-1, PCOS, thyroid, diabetes, fatty liver and gut health nutrition services"
+        description="Explore the hub plus the dedicated pages if you are specifically looking for GLP-1 nutrition support, a PCOS dietitian, thyroid dietitian, diabetes diet plan, fatty liver diet or gut health nutrition support."
         services={conditionServices}
       />
 
