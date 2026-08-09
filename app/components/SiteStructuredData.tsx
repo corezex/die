@@ -69,6 +69,14 @@ export function SiteStructuredData() {
               addressCountry: "IN",
             },
             geo: { "@type": "GeoCoordinates", latitude: 18.994891, longitude: 72.831515 },
+            sameAs: [GOOGLE_REVIEW_URL],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: GOOGLE_REVIEW_RATING,
+              reviewCount: GOOGLE_REVIEW_COUNT,
+              bestRating: "5",
+              worstRating: "1",
+            },
           },
           {
             "@type": "MedicalClinic",
@@ -129,18 +137,10 @@ export function SiteStructuredData() {
             ],
           },
         ],
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: "258",
-          bestRating: "5",
-          worstRating: "1",
-        },
         sameAs: [
           "https://www.facebook.com/dieticiantejal",
           "https://www.instagram.com/dieticiantejal/",
           "https://www.pinterest.com/dieticiantejal/",
-          GOOGLE_REVIEW_URL,
         ],
         makesOffer: [
           { "@type": "Offer", name: "Personalised Weight-Loss Program", url: `${SITE_URL}/services/weight-loss` },
