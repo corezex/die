@@ -23,7 +23,8 @@ import {
   Star,
   PhoneCall,
   ChefHat,
-  Activity 
+  Activity,
+  BookOpen
 } from "lucide-react";
 
 // Define servicesItems first since navigationItems depends on it
@@ -36,6 +37,9 @@ const servicesItems = [
   { name: "Pregnancy Diet Plan", path: "/services/pregnancy-diet", icon: Baby },
   { name: "Bridal Diet Plan", path: "/services/bridal-diet", icon: Sparkles },
   { name: "Sports Nutrition Plan", path: "/services/sports-nutrition", icon: Trophy },
+  { name: "Condition Nutrition", path: "/services/condition-nutrition", icon: HeartPulse },
+  { name: "Kids Nutrition", path: "/services/kids-nutrition", icon: Baby },
+  { name: "Corporate Wellness", path: "/services/corporate-wellness", icon: Users },
 ];
 
 const navigationItems = [
@@ -43,6 +47,7 @@ const navigationItems = [
   { name: "About", path: "/about", icon: Users },
   { name: "Services", path: "/services", icon: Utensils, submenu: servicesItems },
   { name: "Recipes", path: "/recipe", icon: ChefHat },
+  { name: "Blog", path: "/blog", icon: BookOpen },
   { name: "Testimonials", path: "/testimonials", icon: Star },
     { name: "BMI", path: "/bmi-calculator", icon: Activity  },
   { name: "Contact", path: "/contact", icon: PhoneCall },

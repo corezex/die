@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import SportsNutrition from "./SportsNutrition";
-import { SportsNutritionStructuredData } from "./SportsNutritionStructuredData";
 
 export const metadata: Metadata = {
-  title: "Sports Nutrition Support in Mumbai & Online | DietFiniti",
+  title: "Sports Nutritionist in Mumbai & Online",
   description: "Explore personalised sports nutrition support from DietFiniti in Mumbai, Thane and online across India for training and active-routine goals.",
   alternates: { canonical: "/services/sports-nutrition" },
   openGraph: { title: "Sports Nutrition Support | DietFiniti", description: "Practical personalised nutrition support for training and active routines.", url: "https://dietfiniti.com/services/sports-nutrition", images: [{ url: "/image/sports-nutritionimg1.jpg", alt: "Athlete meal planning" }] },
@@ -11,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function SportsNutritionPage() {
-  return <><SportsNutrition /><SportsNutritionStructuredData /></>;
+  // SportsNutrition already renders <SportsNutritionStructuredData /> —
+  // rendering it here too would duplicate the JSON-LD block.
+  return <><SportsNutrition /></>;
 }

@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import tejalImage from "@/public/image/homeimage1.jpg"; // You'll need to add this image
+import tejalImage from "@/public/image/tejal-founder.jpg";
 
 const AboutTrustSection = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-cyan-400"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-emerald-400"></div>
       <div className="absolute -top-20 -right-20 w-64 h-64 bg-green-100 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-100 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-emerald-100 rounded-full opacity-20 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -81,11 +81,11 @@ const AboutTrustSection = () => {
             className="lg:col-span-5"
           >
             <div className="sticky top-8">
-              <div className="bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl p-8 text-white shadow-xl">
+              <div className="bg-gradient-to-br from-emerald-500 to-emerald-500 rounded-2xl p-8 text-white shadow-xl">
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mr-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
                         <CheckCircle className="w-6 h-6 text-white" />
                       </div>
                     </div>
@@ -123,7 +123,7 @@ const AboutTrustSection = () => {
                           viewport={{ once: true }}
                           className="flex items-start"
                         >
-                          <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mr-3 mt-0.5" />
+                          <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mr-3 mt-0.5" />
                           <p className="text-gray-700">{benefit}</p>
                         </motion.div>
                       ))}
@@ -185,13 +185,13 @@ const AboutTrustSection = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">
                   Founded & Led by Dietitian Tejal
                 </h2>
-                <div className="w-20 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4"></div>
+                <div className="w-20 h-1.5 bg-gradient-to-r from-green-500 to-green-500 rounded-full mb-4"></div>
 
                 <div className="flex flex-wrap gap-3 mb-6">
-                  <span className="px-4 py-2 bg-gradient-to-r from-emerald-100 to-cyan-100 text-emerald-800 rounded-full text-sm font-semibold">
+                  <span className="px-4 py-2 bg-gradient-to-r from-emerald-100 to-emerald-100 text-emerald-800 rounded-full text-sm font-semibold">
                     Where Nutrition Meets Real Life
                   </span>
-                  <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 rounded-full text-sm font-semibold">
+                  <span className="px-4 py-2 bg-gradient-to-r from-green-100 to-green-100 text-green-800 rounded-full text-sm font-semibold">
                     Mumbai&apos;s Trusted Dietician
                   </span>
                 </div>
@@ -210,7 +210,7 @@ const AboutTrustSection = () => {
                     loss, PCOS, and metabolic health.
                   </p>
 
-                  <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100">
+                  <div className="p-6 bg-gradient-to-r from-green-50 to-green-50 rounded-xl border border-green-100">
                     <p className="text-lg italic text-gray-800 leading-relaxed">
                       &quot;After seeing how often people blamed themselves for plans
                       that were never designed for real life, I built Dietfiniti

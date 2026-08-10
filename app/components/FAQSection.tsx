@@ -223,7 +223,7 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-green-600 to-cyan-600 rounded-3xl p-8 lg:p-12 text-white shadow-2xl">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl p-8 lg:p-12 text-white shadow-2xl">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
               Still Have Questions?
             </h3>

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import WeightLoss from "./WeightLoss";
-import { WeightLossStructuredData } from "./WeightLossStructuredData";
 
 export const metadata: Metadata = {
   title: "Weight-Loss Dietitian in Mumbai & Online",
-  description: "Explore personalised weight-loss nutrition support from DietFiniti in Mumbai, Thane and online across India. Practical guidance shaped around your routine, food preferences and goals.",
+  description: "Personalised weight-loss diet plans from a dietitian in Mumbai, Thane and online across India — built around your routine, health history and Indian food.",
   alternates: { canonical: "/services/weight-loss" },
   openGraph: {
     title: "Weight-Loss Dietitian in Mumbai & Online | DietFiniti",
@@ -21,5 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default function WeightLossPage() {
-  return <><WeightLoss /><WeightLossStructuredData /></>;
+  // WeightLoss already renders <WeightLossStructuredData /> — avoid duplicate JSON-LD.
+  return <><WeightLoss /></>;
 }

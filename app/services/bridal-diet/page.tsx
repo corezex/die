@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import BridalDiet from "./BridalDiet";
-import { BridalDietStructuredData } from "./BridalDietStructuredData";
 
 export const metadata: Metadata = {
-  title: "Bridal Nutrition Support in Mumbai & Online | DietFiniti",
+  title: "Bridal Dietitian in Mumbai & Online",
   description: "Explore personalised bridal nutrition support from DietFiniti in Mumbai, Thane and online across India for practical pre-wedding food routines.",
   alternates: { canonical: "/services/bridal-diet" },
   openGraph: { title: "Bridal Nutrition Support | DietFiniti", description: "Practical personalised nutrition support for pre-wedding routines.", url: "https://dietfiniti.com/services/bridal-diet", images: [{ url: "/image/bridal-dietimg1.jpg", alt: "Bridal nutrition planning" }] },
@@ -11,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function BridalDietPage() {
-  return <><BridalDiet /><BridalDietStructuredData /></>;
+  // BridalDiet already renders <BridalDietStructuredData /> —
+  // rendering it here too would duplicate the JSON-LD block.
+  return <><BridalDiet /></>;
 }
